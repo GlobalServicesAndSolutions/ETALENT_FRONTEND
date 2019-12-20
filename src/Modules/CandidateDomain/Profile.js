@@ -12,7 +12,7 @@ import Skills from '../../../src/components/profile/Skills/Skills';
 import SkillsDialogue from '../../util/Models/Skills';
 import Awards from '../../../src/components/profile/Awards/Awards';
 import AwardDialog from '../../util/Models/Awards';
-
+import Certification from '../../../src/components/profile/LisenceAndCertification/Certification';
 class Profile extends Component {
     constructor(props) {
         super(props);
@@ -53,15 +53,18 @@ class Profile extends Component {
         this.setState({ awardOpen: false });
     }
     onEducationView=()=>{
-        debugger;
         var elmnt = document.getElementById("educationcard");
         elmnt.scrollIntoView();
     }
     onSkillView=()=>{
-        debugger;
         var elmnt = document.getElementById("skillCard");
         elmnt.scrollIntoView();
     }
+    onCertificationView=()=>{
+        var elmnt = document.getElementById("certificationCard");
+        elmnt.scrollIntoView();
+    }
+
     render() {
         return (
             <div className="app-wrapper">
@@ -71,6 +74,7 @@ class Profile extends Component {
                 <ProfileHeader 
                 onEducationView={this.onEducationView}
                 onSkillView={this.onSkillView}
+                onCertificationView={this.onCertificationView}
                 />
                 <div className="row">
                     <div className="col-xl-8 col-lg-8 col-md-7 col-12">
@@ -91,14 +95,10 @@ class Profile extends Component {
                         <Contact />
                         <Awards 
                         openAwardDialog={this.openAwardDialogue}/>
-
+                        <div id="certificationCard">    
+                        <Certification openCertificationDialog={this.openLisenceDialog}/>
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <Button style={{ float: 'right' }} color='secondry' onClick={this.openEducationDialog}>Education</Button>
-                    <Button style={{ float: 'right' }} color='secondry' onClick={this.openLisenceDialog}>Lisence And Certification</Button>
-                    <Button style={{ float: 'right' }} color='secondry' onClick={this.openSkillDialogue}>Skills</Button>
-                    <Button style={{ float: 'right' }} color='secondry' onClick={this.openAwardDialogue}>Award</Button>
                 </div>
                 {this.state.educationOpen ?
                     <EducationDialog

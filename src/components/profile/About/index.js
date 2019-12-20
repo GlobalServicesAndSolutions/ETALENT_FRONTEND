@@ -36,11 +36,6 @@ class About extends React.Component {
           <h4 className="card-title mb-0">About</h4>
         </div>
         <div className="jr-tabs-classic">
-          <Tabs className="jr-tabs-up" value={value} onChange={this.handleChange}>
-            <Tab className="jr-tabs-label" label="Overview"/>
-            <Tab className="jr-tabs-label" label="Work"/>
-            <Tab className="jr-tabs-label" label="Education"/>
-          </Tabs>
           <div className="jr-tabs-content jr-task-list">
              <div className="row">
               {value === 0 && data.map((about, index) => <div className="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">

@@ -26,7 +26,6 @@ const Skills = ({ratingValue, onRatingChange,onSkillDialogue}) => {
                             primary="Java Script"
                         />
                         <ThumbUpIcon color="primary" style={{cursor:"pointer"}}>Likes</ThumbUpIcon>
-                        <ThumbDownIcon color="primary" style={{cursor:"pointer"}}/>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <Rating
                             name="simple-controlled"
@@ -38,8 +37,7 @@ const Skills = ({ratingValue, onRatingChange,onSkillDialogue}) => {
                         <ListItemText
                             primary="React Js"
                         />
-                        <ThumbUpIcon color="primary" style={{cursor:"pointer"}}>Likes</ThumbUpIcon>
-                        <ThumbDownIcon color="primary" style={{cursor:"pointer"}}/>
+                        <ThumbUpIcon color="primary" style={{cursor:"pointer"}}>123</ThumbUpIcon>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <Rating
                             name="simple-controlled"

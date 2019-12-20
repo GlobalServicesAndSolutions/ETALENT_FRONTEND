@@ -1,7 +1,7 @@
 import React from "react";
 import Avatar from '@material-ui/core/Avatar';
 
-const ProfileHeader = ({onEducationView,onSkillView}) => {
+const ProfileHeader = ({onEducationView,onSkillView,onCertificationView}) => {
   return (
     <div className="jr-profile-banner">
       <div className="jr-profile-container">
@@ -46,7 +46,7 @@ const ProfileHeader = ({onEducationView,onSkillView}) => {
                 <span className="jr-link">Awards</span>
               </li>
               <li>
-                <span className="jr-link">Certification</span>
+                <span className="jr-link" onClick={onCertificationView}>Certification</span>
               </li>
               <li>
                 <span className="jr-link">Contact</span>
