@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link,withRouter} from 'react-router-dom';
+import {Link,withRouter, Redirect} from 'react-router-dom';
 import {connect} from 'react-redux';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -146,10 +146,11 @@ class Header extends React.Component {
                      value={this.state.searchText}/>
 
           <ul className="header-notifications list-inline ml-auto">
+            <Link to="/profile">
             <li className="list-inline-item">
-              Profile
+              <span style={{color : "white"}}>Profile</span>
             </li>
-            
+            </Link>
             <li className="list-inline-item app-tour">
               <Dropdown
                 className="quick-menu"
@@ -175,9 +176,11 @@ class Header extends React.Component {
             <li className="list-inline-item ">
               Jobs
             </li>
+            <Link to="/dashboard">
             <li className="list-inline-item">
-              Home
+            <span style={{color : "white"}}>Home</span>
             </li>
+            </Link>
           </ul>
           
           <div className="ellipse-shape"></div>

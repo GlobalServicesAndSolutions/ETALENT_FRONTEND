@@ -53,9 +53,9 @@ class App extends Component {
     const {match, location, locale, authUser, initURL, isDirectionRTL} = this.props;
     if (location.pathname === '/') {
       if (authUser === null) {
-        return ( <Redirect to={'/app/sample-page'}/> );
+        return ( <Redirect to={'/signin'}/> );
       } else if (initURL === '' || initURL === '/' || initURL === '/signin') {
-        return ( <Redirect to={'/app/sample-page'}/> );
+        return ( <Redirect to={'/dashboard'}/> );
       } else {
         return ( <Redirect to={initURL}/> );
       }
@@ -80,13 +80,13 @@ class App extends Component {
             <RTL>
               <div className="app-main">
                 <Switch>
-                  <RestrictedRoute path={`${match.url}app`} authUser={authUser}
+                  <RestrictedRoute path="/dashboard" authUser={authUser}
                                    component={MainApp}/>
-                  <Route path="/forgetPassword" authUser={authUser} component={ForgetPassword}/>
+                  <Route path="/forgetPassword"  component={ForgetPassword}/>
                   <Route path='/signin' component={SignIn}/>
                   <Route path='/signup' component={SignUp}/>
-                  <Route path='/candidatehone' component={CandidateHome}/>
-                  <Route path='/profile' component={Profile} />
+                  {/* <Route path='/profile' component={Profile} /> */}
+                  <RestrictedRoute path='/profile' authUser={authUser} component={Profile} />
                   <Route
                     component={asyncComponent(() => import('components/Error404'))}/>
                 </Switch>

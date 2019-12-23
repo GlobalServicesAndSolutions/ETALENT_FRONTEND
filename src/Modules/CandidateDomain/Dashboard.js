@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{Component} from 'react';
 import Header from 'components/Header';
 import Avatar from '@material-ui/core/Avatar';
 import List from '@material-ui/core/List';
@@ -6,25 +6,21 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Typography from '@material-ui/core/Typography';
-
-class CandidateHome extends React.Component {
+import Sidebar from '../../containers/SideNav/index';
+import ProfileCard from '../../components/ProfileCard/index'
+class CandidateHome extends Component {
 listClick=()=>{
   alert('Hello click')
 }
   render() {
     return (
-      <div className="col-md-12">
-        <div className="app-wrapper">
+      <div className="app-wrapper">
+        <div className="app-main-container">
+        <div className="app-header">
           <Header />
         </div>
-        <div className="candidate-profile">
-          <h1>Profile</h1>
-          <Avatar
-            alt="Remy Sharp" src="/static/images/avatar/1.jpg"
-          />
-          <br></br>
-          <h4>Job Title</h4>
-          <h4>Progress</h4>
+        <div style={{marginTop:"-100px"}}>
+          <ProfileCard />
         </div>
         <div className="verticalLine jobslist">
           <List >
@@ -76,6 +72,7 @@ listClick=()=>{
             </ListItem>
           </List>
         </div>
+      </div>
       </div>
     );
   }

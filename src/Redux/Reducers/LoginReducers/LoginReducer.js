@@ -10,7 +10,8 @@ import {
     SIGNIN_TWITTER_USER_SUCCESS,
     SIGNIN_USER_SUCCESS,
     SIGNOUT_USER_SUCCESS,
-    SIGNUP_USER_SUCCESS
+    SIGNUP_USER_SUCCESS,
+    SIGNIN_USER
 } from "constants/ActionTypes";
 
 const INIT_STATE = {
@@ -18,11 +19,13 @@ const INIT_STATE = {
     alertMessage: '',
     showMessage: false,
     initURL: '',
+    isAuthenticate:false,
     authUser: localStorage.getItem('user_id'),
 };
 
 
 export default (state = INIT_STATE, action) => {
+    debugger;
     switch (action.type) {
         case SIGNUP_USER_SUCCESS: {
             
@@ -37,6 +40,13 @@ export default (state = INIT_STATE, action) => {
                 ...state,
                 loader: false,
                 authUser: action.payload
+            }
+        }
+        case SIGNIN_USER: {
+            debugger;
+            return {
+                ...state,
+                isAuthenticate: true 
             }
         }
         case INIT_URL: {

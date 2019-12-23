@@ -21,29 +21,29 @@ import {
 } from 'constants/ActionTypes';
 import axios from "axios";
 
-export const userSignUp = (user) => {
-    return dispach=>{
-        axios.post(apilogin,{
-            Email: user.email,
-            Password: user.password
-        })
-        .then(responce=>{
-            let baseModle=responce.data;
-            if(baseModle.sucess)
-            {
-                dispatch({
-                    type: SIGNUP_USER,
-                    payload: user
-                });
-            }
+// export const userSignUp = (user) => {
+//     return dispach=>{
+//         axios.post(apilogin,{
+//             Email: user.email,
+//             Password: user.password
+//         })
+//         .then(responce=>{
+//             let baseModle=responce.data;
+//             if(baseModle.sucess)
+//             {
+//                 dispatch({
+//                     type: SIGNUP_USER,
+//                     payload: user
+//                 });
+//             }
             
-        })
-    };
-};
-export const userSignIn = (user) => {
+//         })
+//     };
+// };
+export const userSignIn = () => {
+    debugger;
     return {
-        type: SIGNIN_USER,
-        payload: user
+        type: SIGNIN_USER
     };
 };
 export const userSignOut = () => {

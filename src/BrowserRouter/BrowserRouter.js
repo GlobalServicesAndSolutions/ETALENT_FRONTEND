@@ -2,51 +2,55 @@ import React, { Component } from "react";
 import { PropTypes } from "prop-types";
 import { connect } from "react-redux";
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
-import { appBodyContainer } from "./styles/commonStyle";
-import { ValidatorForm } from "react-material-ui-form-validator";
 import { bindActionCreators } from "redux";
-import * as userActions from "./redux/Actions/LoginActions";
-import * as GenericAction from "./redux/Actions/GenericAction";
-import Radium from "radium";
-import { RouteNames } from "./utilities";
+import * as userActions from "../Redux/Actions/LoginActions/LoginAction";
+import { RouteNames } from "../util/Routes/Routes";
+import SignUp from '../Modules/LoginDomain/SignUp/SignUp';
+import CandidateHome from '../Modules/CandidateDomain/Dashboard';
+import Profile from '../Modules/CandidateDomain/Profile';
+import SignIn from '../Modules/LoginDomain/Login/SignIn';
 
-import {
-
-  Dashboard,
-} from './Routes';
 
 
 class BrowserRouter extends Component {
 
-
+  scrollToTop=()=> {
+    window.scroll(0, 0);
+  }
   render() {
+    debugger;
     this.scrollToTop();
-    const {
-      isAuthenticate,
-      unAuthorize,
-      //currrentUser,
-      isRegistered,
-    
-    } = this.props;
+    const{isAuthenticate} = this.props;
     return (
       <Router>
         <div>
-          {unAuthorize && isNotNewUser && <Redirect to={RouteNames.Login.route} />}
-          <div style={appBodyContainer} id="mainAppContainer">
+          <Redirect to={RouteNames.Login.route} />
+          <div >
+          <Route
+              exact
+              path={RouteNames.Registeration.route}
+              render={props => <SignUp {...props} />}
+            />
+            <Route
+              exact
+              path={RouteNames.Login.route}
+              render={props =>
+                isAuthenticate  ?(
+                  <Redirect to={RouteNames.Dashboard.route} />
+                ) : (
+                  <SignIn {...props} />
+                )}
+            />
             <Route
               exact
               path={RouteNames.Dashboard.route}
-              render={() =>
-                isAuthenticate || isRegistered ? (
-                  <Dashboard />
-                ) : (
-                    <Redirect to={RouteNames.Organisations.route} />
-                  )}
+              render={props => <CandidateHome {...props} />}
             />
-
-           
-
-            {/* End of Auth Routes */}
+            <Route
+              exact
+              path={RouteNames.UserProfile.route}
+              render={props => <Profile {...props} />}
+            />
           </div>
         </div>
       </Router>
@@ -56,7 +60,7 @@ class BrowserRouter extends Component {
 const mapStateToProps = ({
   login,
 }) => {
-  const { isAuthenticate, unAuthorize, currrentUser } = login;
+  const { isAuthenticate } = login;
 
   return {
     isAuthenticate,
@@ -66,15 +70,12 @@ const mapStateToProps = ({
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(userActions, dispatch),
-    genericAction: bindActionCreators(GenericAction, dispatch)
+    actions: bindActionCreators(userActions, dispatch)
   };
 }
 
 BrowserRouter.propTypes = {
-  
+  isAuthenticate: PropTypes.bool
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(
-  Radium(BrowserRouter)
-);
+export default connect(mapStateToProps, mapDispatchToProps)(BrowserRouter);

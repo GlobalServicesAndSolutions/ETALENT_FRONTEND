@@ -23,6 +23,7 @@ const INIT_STATE = {
 
 
 export default (state = INIT_STATE, action) => {
+    debugger;
     switch (action.type) {
         case SIGNUP_USER_SUCCESS: {
             
@@ -49,7 +50,7 @@ export default (state = INIT_STATE, action) => {
             return {
                 ...state,
                 authUser: null,
-                initURL: '/app/sample-page',
+                initURL: '/dashboard',
                 loader: false
             }
         }
