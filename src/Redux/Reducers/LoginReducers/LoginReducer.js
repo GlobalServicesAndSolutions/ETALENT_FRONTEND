@@ -25,7 +25,6 @@ const INIT_STATE = {
 
 
 export default (state = INIT_STATE, action) => {
-    debugger;
     switch (action.type) {
         case SIGNUP_USER_SUCCESS: {
             
@@ -43,7 +42,6 @@ export default (state = INIT_STATE, action) => {
             }
         }
         case SIGNIN_USER: {
-            debugger;
             return {
                 ...state,
                 isAuthenticate: true 

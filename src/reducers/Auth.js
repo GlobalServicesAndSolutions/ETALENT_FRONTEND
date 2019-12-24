@@ -23,7 +23,6 @@ const INIT_STATE = {
 
 
 export default (state = INIT_STATE, action) => {
-    debugger;
     switch (action.type) {
         case SIGNUP_USER_SUCCESS: {
             

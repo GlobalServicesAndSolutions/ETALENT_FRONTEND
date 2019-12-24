@@ -25,7 +25,6 @@ class Profile extends Component {
         }
     }
     onRatingChange = (event, newValue) => {
-        debugger;
         this.setState({ ratingValue: newValue });
     }
     openEducationDialog = () => {
@@ -78,7 +77,6 @@ class Profile extends Component {
                 />
                 <div className="row">
                     <div className="col-xl-8 col-lg-8 col-md-7 col-12">
-                        <About />
                         <Biography />
                         <div id="educationcard">
                         <Education openEducationDialog={this.openEducationDialog}/>
@@ -90,14 +88,14 @@ class Profile extends Component {
                             onSkillDialogue={this.openSkillDialogue}
                         />
                         </div>
+                        <div id="certificationCard">    
+                        <Certification openCertificationDialog={this.openLisenceDialog}/>
+                        </div>
                     </div>
                     <div className="col-xl-4 col-lg-4 col-md-5 col-12">
                         <Contact />
                         <Awards 
                         openAwardDialog={this.openAwardDialogue}/>
-                        <div id="certificationCard">    
-                        <Certification openCertificationDialog={this.openLisenceDialog}/>
-                        </div>
                     </div>
                 </div>
                 {this.state.educationOpen ?

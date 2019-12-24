@@ -18,7 +18,6 @@ class BrowserRouter extends Component {
     window.scroll(0, 0);
   }
   render() {
-    debugger;
     this.scrollToTop();
     const{isAuthenticate} = this.props;
     return (

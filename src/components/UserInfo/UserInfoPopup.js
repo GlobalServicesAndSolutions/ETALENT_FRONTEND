@@ -9,11 +9,10 @@ class UserInfoPopup extends React.Component {
       <div>
         <div className="user-profile">
           <img className="user-avatar border-0 size-40 rounded-circle"
-               src="https://via.placeholder.com/150x150"
+               src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Phoenicopterus_ruber_in_S%C3%A3o_Paulo_Zoo.jpg"
                alt="User"/>
           <div className="user-detail ml-2">
             <h4 className="user-name mb-0">Chris Harris</h4>
-            <small>Administrator</small>
           </div>
         </div>
         <span className="jr-link dropdown-item text-muted">

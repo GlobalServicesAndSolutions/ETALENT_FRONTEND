@@ -1,5 +1,6 @@
 import React from "react";
 import Avatar from '@material-ui/core/Avatar';
+import { Button } from "@material-ui/core";
 
 const ProfileHeader = ({onEducationView,onSkillView,onCertificationView}) => {
   return (
@@ -51,7 +52,12 @@ const ProfileHeader = ({onEducationView,onSkillView,onCertificationView}) => {
               <li>
                 <span className="jr-link">Contact</span>
               </li>
+              <li>
+              <Button >Add Sections</Button>
+              </li>
             </ul>
+
+            
           </div>
         </div>
       </div>

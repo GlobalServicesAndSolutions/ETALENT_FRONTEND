@@ -16,7 +16,7 @@ class SideNav extends React.PureComponent {
 
   componentDidMount() {
     window.addEventListener('resize', () => {
-      this.props.updateWindowWidth(window.innerWidth)
+      this.props.updateWindowWidth(window.innerWidth);
     });
   }
 
@@ -24,12 +24,12 @@ class SideNav extends React.PureComponent {
     const {navCollapsed, drawerType, width, navigationStyle} = this.props;
     let drawerStyle = drawerType.includes(FIXED_DRAWER) ? 'd-xl-flex' : drawerType.includes(COLLAPSED_DRAWER) ? '' : 'd-flex';
     let type = 'permanent';
-    if (drawerType.includes(COLLAPSED_DRAWER) || (drawerType.includes(FIXED_DRAWER) && width < 1200)) {
+    if (drawerType.includes(COLLAPSED_DRAWER) || (drawerType.includes(FIXED_DRAWER) &&( width <= 1100))) {
       type = 'temporary';
     }
 
     if (navigationStyle === HORIZONTAL_NAVIGATION) {
-      drawerStyle = '';
+      drawerStyle = 'collapisble';
       type = 'temporary';
     }
     return (
