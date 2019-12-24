@@ -107,7 +107,7 @@ class SignUp extends React.Component {
 
           <div className="app-login-content">
             <div className="signupfields">
-              <AppBar position="static" className="tabListalign">
+              <AppBar color="default" position="static" className="tabListalign">
                 <Tabs initialSelectedIndex={this.state.value} value={this.state.value} onChange={this.tabHandleChange} >
                   <Tab value="one" label="Candidate" {...this.a11yProps('one')} />
                   <Tab value="two" label="Employer" {...this.a11yProps('two')} />
@@ -186,7 +186,7 @@ class SignUp extends React.Component {
                       <Button variant="contained" onClick={() => {
                         this.props.showAuthLoader();
                         this.props.userSignUp({ email, password });
-                      }} color="primary">
+                      }} >
                         <IntlMessages
                           id="appModule.regsiter" />
                       </Button>

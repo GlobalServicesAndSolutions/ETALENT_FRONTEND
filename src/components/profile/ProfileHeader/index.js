@@ -53,7 +53,7 @@ const ProfileHeader = ({onEducationView,onSkillView,onCertificationView}) => {
                 <span className="jr-link">Contact</span>
               </li>
               <li>
-              <Button >Add Sections</Button>
+              <Button >Add Sections will be add soon</Button>
               </li>
             </ul>
 

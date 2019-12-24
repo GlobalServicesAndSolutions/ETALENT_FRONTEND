@@ -125,7 +125,7 @@ class SignIn extends React.Component {
                     <Button onClick={() => {
                       this.props.showAuthLoader();
                       this.props.userSignIn({ email, password })
-                    }} variant="contained" color="primary">
+                    }} variant="contained" >
                       <IntlMessages id="appModule.signIn" />
                     </Button>
 
