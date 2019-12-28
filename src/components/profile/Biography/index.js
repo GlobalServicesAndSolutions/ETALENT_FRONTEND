@@ -5,7 +5,7 @@ const Biography = () => {
   return (
     <Widget styleName="jr-card-profile">
       <div className="mb-3">
-        <h3 className="card-title mb-2 mb-md-3">Biography</h3>
+        <h3 className="card-title mb-2 mb-md-3">About</h3>
         <hr/>
         <p className="text-grey jr-fs-sm mb-0">A little flash back of Kiley Brown</p>
       </div>

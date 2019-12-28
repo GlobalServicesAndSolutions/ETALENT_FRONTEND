@@ -13,6 +13,12 @@ import SkillsDialogue from '../../util/Models/Skills';
 import Awards from '../../../src/components/profile/Awards/Awards';
 import AwardDialog from '../../util/Models/Awards';
 import Certification from '../../../src/components/profile/LisenceAndCertification/Certification';
+import BasicInfoProfile from '../../../src/util/Models/BasicInfo';
+import SoftSkills from '../../components/profile/SoftSkills/SoftSkills';
+import Projects from '../../components/profile/Projects/Projects';
+import Courses from '../../components/profile/CourseAndTrainings/CoursesAndTraining';
+import CourseAndTrainings from '../../util/Models/CoursesAndTrainings';
+
 class Profile extends Component {
     constructor(props) {
         super(props);
@@ -21,11 +27,17 @@ class Profile extends Component {
             lisenceOpen: false,
             skillOpen:false,
             awardOpen:false,
-            ratingValue: 0
+            basicInfoOpen:false,
+            courseAndtraining:false,
+            ratingValue: 0,
+            expansionPanelvalue:''
         }
     }
     onRatingChange = (event, newValue) => {
         this.setState({ ratingValue: newValue });
+    }
+    onExpansionPanelChange=panel=>(event,expandedPanel)=>{
+        this.setState({expansionPanelvalue:expandedPanel? panel:'notExpanded'})
     }
     openEducationDialog = () => {
         this.setState({ educationOpen: true });
@@ -63,6 +75,18 @@ class Profile extends Component {
         var elmnt = document.getElementById("certificationCard");
         elmnt.scrollIntoView();
     }
+    basicInfoClick=()=>{
+        this.setState({basicInfoOpen:true});
+    }
+    closeBasicInfo=()=>{
+        this.setState({basicInfoOpen:false});
+    }
+    openCourseAndTrainingDialogue=()=>{
+        this.setState({courseAndtraining:true});
+    }
+    closeCourseAndTrainingDialogue=()=>{
+        this.setState({courseAndtraining:false});
+    }
 
     render() {
         return (
@@ -74,12 +98,20 @@ class Profile extends Component {
                 onEducationView={this.onEducationView}
                 onSkillView={this.onSkillView}
                 onCertificationView={this.onCertificationView}
+                openEducationDialog={this.openEducationDialog}
+                onSkillDialogue={this.openSkillDialogue}
+                openCertificationDialog={this.openLisenceDialog}
+                openAwardDialog={this.openAwardDialogue}
+                basicInfoClick={this.basicInfoClick}
+                openCourseAndTrainingDialogue={this.openCourseAndTrainingDialogue}
+                onExpansionPanelChange={this.onExpansionPanelChange}
+                expansionPanelvalue={this.state.expansionPanelvalue}
                 />
                 <div className="row">
                     <div className="col-xl-8 col-lg-8 col-md-7 col-12">
                         <Biography />
                         <div id="educationcard">
-                        <Education openEducationDialog={this.openEducationDialog}/>
+                        <Education openEducationDialog={this.openEducationDialog} />
                         </div>
                         <div id="skillCard">
                         <Skills
@@ -87,6 +119,13 @@ class Profile extends Component {
                             onRatingChange={this.onRatingChange}
                             onSkillDialogue={this.openSkillDialogue}
                         />
+                        </div>
+                        <div id="softskills">
+                            <SoftSkills
+                            ratingValue={this.state.ratingValue}
+                            onRatingChange={this.onRatingChange}
+                            onSkillDialogue={this.openSkillDialogue}
+                             />
                         </div>
                         <div id="certificationCard">    
                         <Certification openCertificationDialog={this.openLisenceDialog}/>
@@ -96,6 +135,8 @@ class Profile extends Component {
                         <Contact />
                         <Awards 
                         openAwardDialog={this.openAwardDialogue}/>
+                        <Projects />
+                        <Courses />
                     </div>
                 </div>
                 {this.state.educationOpen ?
@@ -123,6 +164,20 @@ class Profile extends Component {
                     <AwardDialog
                         open={this.state.awardOpen}
                         handleClose={this.closeAwardDialog}
+                    />
+                    :
+                    <span></span>}
+                    {this.state.basicInfoOpen ?
+                    <BasicInfoProfile
+                        open={this.state.basicInfoOpen}
+                        handleClose={this.closeBasicInfo}
+                    />
+                    :
+                    <span></span>}
+                    {this.state.courseAndtraining ?
+                    <CourseAndTrainings
+                        open={this.state.courseAndtraining}
+                        handleClose={this.closeCourseAndTrainingDialogue}
                     />
                     :
                     <span></span>}

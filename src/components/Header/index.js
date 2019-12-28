@@ -148,7 +148,7 @@ class Header extends React.Component {
           <ul className="header-notifications list-inline ml-auto">
             <Link to="/profile">
             <li className="list-inline-item">
-              <span style={{color : "white"}}>Profile</span>
+              <span className="fontLabelColor">Profile</span>
             </li>
             </Link>
             <li className="list-inline-item app-tour">
@@ -178,7 +178,7 @@ class Header extends React.Component {
             </li>
             <Link to="/dashboard">
             <li className="list-inline-item">
-            <span style={{color : "white"}}>Home</span>
+            <span className="fontLabelColor">Home</span>
             </li>
             </Link>
           </ul>
