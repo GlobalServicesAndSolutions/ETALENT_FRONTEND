@@ -17,7 +17,7 @@ const Education = ({openEducationDialog}) => {
         <p className="text-grey jr-fs-sm mb-0">Experience</p>
         <br />
         <div className="row">
-          <img alt="image" src="example.com" ></img>
+          <img aria-hidden alt="image" src="example.com" />
           <h2>Seven software development ltd.</h2>
         </div>
         <div>
@@ -38,7 +38,7 @@ const Education = ({openEducationDialog}) => {
         <p className="text-grey jr-fs-sm mb-0">Education</p>
         <br />
         <div className="row">
-          <img alt="image" src="example.com" ></img>
+          <img aria-hidden alt="image" src="example.com" />
           <h2>Abasyn University Islamabad</h2><br />
         </div>
         <ul>

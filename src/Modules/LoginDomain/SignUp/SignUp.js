@@ -135,7 +135,7 @@ class SignUp extends React.Component {
                         name="lastName"
                         label="Last Name"
                         onChange={this.updateUserState}
-                        value={this.state.user.lastName}
+                        value={lastName}
                         margin="normal"
                         className="mt-0 mb-2 lastName"
                       />

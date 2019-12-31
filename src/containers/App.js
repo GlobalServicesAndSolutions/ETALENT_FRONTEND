@@ -8,7 +8,6 @@ import {IntlProvider} from 'react-intl'
 import "assets/vendors/style"
 import defaultTheme from './themes/defaultTheme';
 import AppLocale from '../lngProvider';
-
 import MainApp from 'app/index';
 import SignIn from '../Modules/LoginDomain/Login/SignIn';
 import SignUp from '../Modules/LoginDomain/SignUp/SignUp';
@@ -16,7 +15,6 @@ import {setInitUrl} from '../actions/Auth';
 import RTL from 'util/RTL';
 import ForgetPassword from '../Modules/LoginDomain/ForgetPassword/ForgetPassword';
 import asyncComponent from 'util/asyncComponent';
-import CandidateHome from '../Modules/CandidateDomain/Dashboard';
 import Profile from '../Modules/CandidateDomain/Profile';
 import { ValidatorForm } from "react-material-ui-form-validator";
 
@@ -50,7 +48,7 @@ class App extends Component {
   }
 
   render() {
-    const {match, location, locale, authUser, initURL, isDirectionRTL} = this.props;
+    const {location, locale, authUser, initURL, isDirectionRTL} = this.props;
     if (location.pathname === '/') {
       if (authUser === null) {
         return ( <Redirect to={'/signin'}/> );

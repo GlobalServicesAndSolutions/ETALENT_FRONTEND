@@ -16,11 +16,12 @@ listClick=()=>{
         <div style={{display:"flex"}}>
           <div>
           <PicturePost />
+          <JobPost />
           <PicturePost />
           <PicturePost />
           <PicturePost />
           </div>
-        <div style={{marginRight:"28%"}}> <JobPost /></div>
+        <div style={{marginRight:"28%"}}> </div>
         </div>
         </div>
         </div>

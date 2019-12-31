@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import Header from 'components/Header';
-import { Button } from '@material-ui/core';
 import EducationDialog from '../../util/Models/EducationDialog';
 import LisenceAndCertification from '../../util/Models/LisenceAndCertification';
 import ProfileHeader from '../../../src/components/profile/ProfileHeader/index';
-import About from '../../../src/components/profile/About/index';
 import Contact from '../../../src/components/profile/Contact/index';
 import Biography from '../../../src/components/profile/Biography/index';
 import Education from '../../../src/components/profile/Education/EducationAndExperience';
@@ -38,6 +36,12 @@ class Profile extends Component {
     }
     onExpansionPanelChange=panel=>(event,expandedPanel)=>{
         this.setState({expansionPanelvalue:expandedPanel? panel:'notExpanded'})
+    }
+    onParentExpansion=(e, parentPanel)=>{
+        if(parentPanel===false)
+        {
+            this.setState({expansionPanelvalue:''});
+        }
     }
     openEducationDialog = () => {
         this.setState({ educationOpen: true });
@@ -106,6 +110,7 @@ class Profile extends Component {
                 openCourseAndTrainingDialogue={this.openCourseAndTrainingDialogue}
                 onExpansionPanelChange={this.onExpansionPanelChange}
                 expansionPanelvalue={this.state.expansionPanelvalue}
+                onParentExpansion={this.onParentExpansion}
                 />
                 <div className="row">
                     <div className="col-xl-8 col-lg-8 col-md-7 col-12">

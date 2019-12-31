@@ -18,7 +18,8 @@ const ProfileHeader = ({ onEducationView,
     basicInfoClick,
     openCourseAndTrainingDialogue,
     onExpansionPanelChange,
-    expansionPanelvalue
+    expansionPanelvalue,
+    onParentExpansion
    }) => {
   return (
     <div className="jr-profile-banner">
@@ -73,7 +74,7 @@ const ProfileHeader = ({ onEducationView,
           </div>
         </div>
       </div>
-      <ExpansionPanel style={{width: '50%'}} >
+      <ExpansionPanel style={{width: '40%'}} onChange={onParentExpansion}>
                   <ExpansionPanelSummary
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel1bh-content"
@@ -92,13 +93,11 @@ const ProfileHeader = ({ onEducationView,
                     <Typography >Info</Typography>
                   </ExpansionPanelSummary>
                   <ExpansionPanelDetails className='expansionPanel'>
-                  <Typography>
-                      <div className='addSection'>
+                  <Typography className='addSection'>
                         Basic Info
                         <Fab size="small" aria-label="add" onClick={basicInfoClick}>
                         <AddIcon />
                         </Fab>
-                      </div>
                     </Typography>
                   </ExpansionPanelDetails>
                 </ExpansionPanel>
@@ -111,13 +110,11 @@ const ProfileHeader = ({ onEducationView,
                     <Typography >About</Typography>
                   </ExpansionPanelSummary>
                   <ExpansionPanelDetails className='expansionPanel'>
-                  <Typography>
-                      <div className='addSection'>
+                  <Typography className='addSection'>
                         About
                         <Fab size="small" aria-label="add">
                         <AddIcon />
                         </Fab>
-                      </div>
                     </Typography>
                   </ExpansionPanelDetails>
                 </ExpansionPanel>
@@ -130,22 +127,18 @@ const ProfileHeader = ({ onEducationView,
                     <Typography >Background</Typography>
                   </ExpansionPanelSummary>
                   <ExpansionPanelDetails className='expansionPanel'>
-                    <Typography>
-                      <div className='addSection'>
+                    <Typography className='addSection'>
                         Education And Work Experience
                         <Fab size="small" aria-label="add" onClick={openEducationDialog}>
                         <AddIcon />
                         </Fab>
-                      </div>
                     </Typography>
                     <hr/>
-                    <Typography>
-                      <div className='addSection'>
+                    <Typography className='addSection'>
                         Lisence And Certification
                         <Fab size="small" aria-label="add" onClick={openCertificationDialog}> 
                         <AddIcon />
                         </Fab>
-                      </div>
                     </Typography>
                   </ExpansionPanelDetails>
                 </ExpansionPanel>
@@ -158,22 +151,18 @@ const ProfileHeader = ({ onEducationView,
                     <Typography >Skills</Typography>
                   </ExpansionPanelSummary>
                   <ExpansionPanelDetails className='expansionPanel'>
-                    <Typography>
-                    <div className='addSection'>
+                  <Typography className='addSection'>
                         Skills
                         <Fab size="small" aria-label="add" onClick={onSkillDialogue}>
                         <AddIcon />
                         </Fab>
-                      </div>
                   </Typography>
                   <hr/>
-                  <Typography>
-                    <div className='addSection'>
+                  <Typography className='addSection'>
                         Soft Skills
-                        <Fab size="small" aria-label="add">
+                        <Fab size="small" aria-label="add" >
                         <AddIcon />
                         </Fab>
-                      </div>
                   </Typography>
                   </ExpansionPanelDetails>
                 </ExpansionPanel>
@@ -186,31 +175,25 @@ const ProfileHeader = ({ onEducationView,
                     <Typography >Accomplishments</Typography>
                   </ExpansionPanelSummary>
                   <ExpansionPanelDetails className='expansionPanel'>
-                    <Typography>
-                    <div className='addSection'>
+                    <Typography className='addSection'>
                         Projects
                         <Fab size="small" aria-label="add">
                         <AddIcon />
                         </Fab>
-                      </div>
                   </Typography>
                   <hr/>
-                  <Typography>
-                    <div className='addSection'>
+                  <Typography className='addSection'>
                         Courses/Trainings
                         <Fab size="small" aria-label="add" onClick={openCourseAndTrainingDialogue}>
                         <AddIcon />
                         </Fab>
-                      </div>
                   </Typography>
                   <hr/>
-                  <Typography>
-                    <div className='addSection'>
+                  <Typography className='addSection'>
                         Awards
                         <Fab size="small" aria-label="add" onClick={openAwardDialog}>
                         <AddIcon />
                         </Fab>
-                      </div>
                   </Typography>
                   </ExpansionPanelDetails>
                 </ExpansionPanel>

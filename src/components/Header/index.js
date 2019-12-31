@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link,withRouter, Redirect} from 'react-router-dom';
+import {Link,withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
