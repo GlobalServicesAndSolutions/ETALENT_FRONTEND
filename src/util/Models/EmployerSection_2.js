@@ -17,6 +17,9 @@ import {
     MuiPickersUtilsProvider,
     KeyboardDatePicker,
 } from '@material-ui/pickers';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import Select from '@material-ui/core/Select';
 
 const EmployerSectionTwo = ({ open,
     onCloseSection_2,
@@ -29,13 +32,15 @@ const EmployerSectionTwo = ({ open,
     jobStatusvalue,
     onChangeEmployerJobStatus,
     jobFunctionvalue,
-    onChangeEmployerJobFunction
+    onChangeEmployerJobFunction,
+    travelRequiredValue,
+    ontravelRequiredValueChange
 }) => {
 
     return (
         <div>
             <Dialog aria-labelledby="form-dialog-title" maxWidth="sm" open={open} onClose={onCloseSection_2}>
-                <DialogTitle id="form-dialog-title">Section 2 Job Info</DialogTitle>
+                <DialogTitle id="form-dialog-title">Job Info</DialogTitle>
                 <DialogContent>
                     <div>
                     <TextField
@@ -168,13 +173,16 @@ const EmployerSectionTwo = ({ open,
                             />
                         </RadioGroup>
                     </FormControl>
-                    <TextField
-                        margin="dense"
-                        name="requiredTravel"
-                        label="Required Travel"
-                        type="text"
-                        className="profileInfoTextField"
-                    />
+                    <FormControl style={{ width: '45%' }}>
+                        <InputLabel>Required Travel</InputLabel>
+                        <Select
+                            value={travelRequiredValue}
+                            onChange={ontravelRequiredValueChange}
+                        >
+                            <MenuItem value='yes'>Yes</MenuItem>
+                            <MenuItem value='no'>No</MenuItem>
+                        </Select>
+                    </FormControl>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <TextField
                         margin="dense"

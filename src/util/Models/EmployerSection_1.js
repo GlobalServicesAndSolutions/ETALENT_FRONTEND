@@ -36,7 +36,7 @@ const EmployerSectionOne = ({ open,
     return (
         <div>
             <Dialog aria-labelledby="form-dialog-title" maxWidth="sm" open={open} onClose={onCloseSection_1}>
-                <DialogTitle id="form-dialog-title">Section 1 Job Info</DialogTitle>
+                <DialogTitle id="form-dialog-title">Basic Info</DialogTitle>
                 <DialogContent>
                     <TextField
                         autoFocus
