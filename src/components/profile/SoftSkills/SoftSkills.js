@@ -7,25 +7,33 @@ import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import Rating from '@material-ui/lab/Rating';
+import EditIcon from '@material-ui/icons/Edit'; 
 
-const SoftSkills = ({ratingValue, onRatingChange,onSkillDialogue}) => {
+const SoftSkills = ({ ratingValue, onRatingChange, onSkillDialogue,isEditClick }) => {
     return (
-        
+
         <Widget styleName="jr-card-profile">
             <div >
                 <div className="cardHeaderAndAddButton">
-                    <h3 className="card-title mb-2 mb-md-3">Soft Skills</h3>
-                    <Fab size="small" color="primary" aria-label="add" onClick={onSkillDialogue}>
-                        <AddIcon />
-                    </Fab>
+                    <div>
+                        <h3 className="card-title mb-2 mb-md-3">Soft Skills</h3>
+                    </div>
+                    <div>
+                    {isEditClick&& <Fab size="small" color="primary" aria-label="add" onClick={onSkillDialogue}>
+                            <EditIcon />
+                        </Fab>}
+                        <Fab size="small" color="primary" aria-label="edit" onClick={onSkillDialogue}>
+                            <AddIcon />
+                        </Fab>
+                    </div>
                 </div>
-                <hr/>
+                <hr />
                 <List style={{ width: "100%" }}>
                     <ListItem divider alignItems="center">
                         <ListItemText
                             primary="Communication"
                         />
-                         <ThumbUpIcon color="primary" style={{cursor:"pointer"}}>Likes</ThumbUpIcon>
+                        <ThumbUpIcon color="primary" style={{ cursor: "pointer" }}>Likes</ThumbUpIcon>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <Rating
                             name="simple-controlled"
@@ -37,7 +45,7 @@ const SoftSkills = ({ratingValue, onRatingChange,onSkillDialogue}) => {
                         <ListItemText
                             primary="Team Work"
                         />
-                        <ThumbUpIcon color="primary" style={{cursor:"pointer"}}>Likes</ThumbUpIcon>
+                        <ThumbUpIcon color="primary" style={{ cursor: "pointer" }}>Likes</ThumbUpIcon>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <Rating
                             name="simple-controlled"

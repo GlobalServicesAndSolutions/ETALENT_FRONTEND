@@ -1,11 +1,26 @@
 import React from "react";
 import Widget from "components/Widget";
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
+import EditIcon from '@material-ui/icons/Edit';
 
-const Biography = () => {
+const Biography = ({isEditClick}) => {
   return (
     <Widget styleName="jr-card-profile">
       <div className="mb-3">
+      <div className="cardHeaderAndAddButton">
+        <div>
         <h3 className="card-title mb-2 mb-md-3">About</h3>
+        </div>
+        <div>
+            {isEditClick&& <Fab size="small" color="primary" aria-label="edit">
+              <EditIcon />
+            </Fab>}
+            <Fab size="small" color="primary" aria-label="add">
+              <AddIcon />
+            </Fab>
+          </div>
+          </div>
         <hr/>
         <p className="text-grey jr-fs-sm mb-0">A little flash back of Kiley Brown</p>
       </div>

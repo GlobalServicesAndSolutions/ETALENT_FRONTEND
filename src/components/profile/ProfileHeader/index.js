@@ -7,20 +7,28 @@ import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
+import Dropdown from 'react-bootstrap/Dropdown';
+import EditIcon from '@material-ui/icons/Edit';
+import { Button } from "@material-ui/core";
 
 const ProfileHeader = ({ onEducationView,
-   onSkillView,
-    onCertificationView,
-    openEducationDialog,
-    onSkillDialogue,
-    openCertificationDialog,
-    openAwardDialog,
-    basicInfoClick,
-    openCourseAndTrainingDialogue,
-    onExpansionPanelChange,
-    expansionPanelvalue,
-    onParentExpansion
-   }) => {
+  onSkillView,
+  onCertificationView,
+  openEducationDialog,
+  onSkillDialogue,
+  openCertificationDialog,
+  openAwardDialog,
+  basicInfoClick,
+  openCourseAndTrainingDialogue,
+  onExpansionPanelChange,
+  expansionPanelvalue,
+  onParentExpansion,
+  downloadPDF,
+  shareProfile,
+  isEditClick,
+  isEditCancel,
+  isEdit
+}) => {
   return (
     <div className="jr-profile-banner">
       <div className="jr-profile-container">
@@ -49,6 +57,134 @@ const ProfileHeader = ({ onEducationView,
             </ul>
           </div>
         </div>
+          <ExpansionPanel onChange={onParentExpansion} style={{ width: '30%' }}>
+            <ExpansionPanelSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1bh-content"
+              id="panel1bh-header"
+            >
+              <Typography >Add Sections</Typography>
+            </ExpansionPanelSummary>
+            <ExpansionPanelDetails className='expansionPanel'>
+              {/*********************************************************************/}
+              <ExpansionPanel onChange={onExpansionPanelChange('panel1')} expanded={expansionPanelvalue === 'panel1'}>
+                <ExpansionPanelSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel1bh-content"
+                  id="panel1bh-header"
+                >
+                  <Typography >Info</Typography>
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails className='expansionPanel'>
+                  <Typography className='addSection'>
+                    Basic Info
+                        <Fab size="small" aria-label="add" onClick={basicInfoClick}>
+                      <AddIcon />
+                    </Fab>
+                  </Typography>
+                </ExpansionPanelDetails>
+              </ExpansionPanel>
+              <ExpansionPanel onChange={onExpansionPanelChange('panel2')} expanded={expansionPanelvalue === 'panel2'}>
+                <ExpansionPanelSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel1bh-content"
+                  id="panel1bh-header"
+                >
+                  <Typography >About</Typography>
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails className='expansionPanel'>
+                  <Typography className='addSection'>
+                    About
+                        <Fab size="small" aria-label="add">
+                      <AddIcon />
+                    </Fab>
+                  </Typography>
+                </ExpansionPanelDetails>
+              </ExpansionPanel>
+              <ExpansionPanel onChange={onExpansionPanelChange('panel3')} expanded={expansionPanelvalue === 'panel3'}>
+                <ExpansionPanelSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel1bh-content"
+                  id="panel1bh-header"
+                >
+                  <Typography >Background</Typography>
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails className='expansionPanel'>
+                  <Typography className='addSection'>
+                    Education And Work Experience
+                        <Fab size="small" aria-label="add" onClick={openEducationDialog}>
+                      <AddIcon />
+                    </Fab>
+                  </Typography>
+                  <hr />
+                  <Typography className='addSection'>
+                    Lisence And Certification
+                        <Fab size="small" aria-label="add" onClick={openCertificationDialog}>
+                      <AddIcon />
+                    </Fab>
+                  </Typography>
+                </ExpansionPanelDetails>
+              </ExpansionPanel>
+              <ExpansionPanel onChange={onExpansionPanelChange('panel4')} expanded={expansionPanelvalue === 'panel4'}>
+                <ExpansionPanelSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel1bh-content"
+                  id="panel1bh-header"
+                >
+                  <Typography >Skills</Typography>
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails className='expansionPanel'>
+                  <Typography className='addSection'>
+                    Skills
+                        <Fab size="small" aria-label="add" onClick={onSkillDialogue}>
+                      <AddIcon />
+                    </Fab>
+                  </Typography>
+                  <hr />
+                  <Typography className='addSection'>
+                    Soft Skills
+                        <Fab size="small" aria-label="add" >
+                      <AddIcon />
+                    </Fab>
+                  </Typography>
+                </ExpansionPanelDetails>
+              </ExpansionPanel>
+              <ExpansionPanel onChange={onExpansionPanelChange('panel5')} expanded={expansionPanelvalue === 'panel5'}>
+                <ExpansionPanelSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel1bh-content"
+                  id="panel1bh-header"
+                >
+                  <Typography >Accomplishments</Typography>
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails className='expansionPanel'>
+                  <Typography className='addSection'>
+                    Projects
+                        <Fab size="small" aria-label="add">
+                      <AddIcon />
+                    </Fab>
+                  </Typography>
+                  <hr />
+                  <Typography className='addSection'>
+                    Courses/Trainings
+                        <Fab size="small" aria-label="add" onClick={openCourseAndTrainingDialogue}>
+                      <AddIcon />
+                    </Fab>
+                  </Typography>
+                  <hr />
+                  <Typography className='addSection'>
+                    Awards
+                        <Fab size="small" aria-label="add" onClick={openAwardDialog}>
+                      <AddIcon />
+                    </Fab>
+                  </Typography>
+                </ExpansionPanelDetails>
+              </ExpansionPanel>
+              {/*************************************************************************************/}
+            </ExpansionPanelDetails>
+          </ExpansionPanel>
+        <br />
+        <br />
         <div className="jr-profile-banner-bottom">
           <div className="jr-tab-list">
             <ul className="jr-navbar-nav">
@@ -70,136 +206,42 @@ const ProfileHeader = ({ onEducationView,
               <li>
                 <span className="jr-link">Contact</span>
               </li>
+              <li>
+                <Dropdown>
+                  <Dropdown.Toggle variant="success" id="dropdown-basic">
+                    Download/Share Profile
+                  </Dropdown.Toggle>
+
+                  <Dropdown.Menu>
+                    <Dropdown.Item onClick={downloadPDF}><svg  width="24" height="24" viewBox="0 0 24 24">
+                      <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                      </svg>
+                      &nbsp;&nbsp;&nbsp;
+                    Download as PDF
+                    </Dropdown.Item>
+                    <Dropdown.Item onClick={shareProfile}>
+                    <svg  width="24" height="24" viewBox="0 0 24 24">
+                      <path d="M7 8V5l-7 7 7 7v-3l-4-4 4-4zm6 1V5l-7 7 7 7v-4.1c5 0 8.5 1.6 11 5.1-1-5-4-10-11-11z"/>
+                      </svg>
+                      &nbsp;&nbsp;&nbsp;
+                      Share Profile via Message								
+                    </Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+              </li>
+              <li>
+                <p>Click Edit Sections</p>
+              <Fab size="small"  variant='success' aria-label="edit" onClick={isEditClick}>
+              <EditIcon />
+            </Fab>
+              </li>
+              {isEdit && <li>
+                <Button color='default' onClick={isEditCancel}>Cancel Edit</Button>
+              </li>}
             </ul>
           </div>
         </div>
       </div>
-      <ExpansionPanel style={{width: '40%'}} onChange={onParentExpansion}>
-                  <ExpansionPanelSummary
-                    expandIcon={<ExpandMoreIcon />}
-                    aria-controls="panel1bh-content"
-                    id="panel1bh-header"
-                  >
-                    <Typography >Add Sections</Typography>
-                  </ExpansionPanelSummary>
-                <ExpansionPanelDetails className='expansionPanel'>
-                  {/*********************************************************************/}
-                  <ExpansionPanel onChange={onExpansionPanelChange('panel1')} expanded={expansionPanelvalue==='panel1'}>
-                  <ExpansionPanelSummary
-                    expandIcon={<ExpandMoreIcon />}
-                    aria-controls="panel1bh-content"
-                    id="panel1bh-header"
-                  >
-                    <Typography >Info</Typography>
-                  </ExpansionPanelSummary>
-                  <ExpansionPanelDetails className='expansionPanel'>
-                  <Typography className='addSection'>
-                        Basic Info
-                        <Fab size="small" aria-label="add" onClick={basicInfoClick}>
-                        <AddIcon />
-                        </Fab>
-                    </Typography>
-                  </ExpansionPanelDetails>
-                </ExpansionPanel>
-                <ExpansionPanel onChange={onExpansionPanelChange('panel2')} expanded={expansionPanelvalue==='panel2'}>
-                  <ExpansionPanelSummary
-                    expandIcon={<ExpandMoreIcon />}
-                    aria-controls="panel1bh-content"
-                    id="panel1bh-header"
-                  >
-                    <Typography >About</Typography>
-                  </ExpansionPanelSummary>
-                  <ExpansionPanelDetails className='expansionPanel'>
-                  <Typography className='addSection'>
-                        About
-                        <Fab size="small" aria-label="add">
-                        <AddIcon />
-                        </Fab>
-                    </Typography>
-                  </ExpansionPanelDetails>
-                </ExpansionPanel>
-                <ExpansionPanel onChange={onExpansionPanelChange('panel3')} expanded={expansionPanelvalue==='panel3'}>
-                  <ExpansionPanelSummary
-                    expandIcon={<ExpandMoreIcon />}
-                    aria-controls="panel1bh-content"
-                    id="panel1bh-header"
-                  >
-                    <Typography >Background</Typography>
-                  </ExpansionPanelSummary>
-                  <ExpansionPanelDetails className='expansionPanel'>
-                    <Typography className='addSection'>
-                        Education And Work Experience
-                        <Fab size="small" aria-label="add" onClick={openEducationDialog}>
-                        <AddIcon />
-                        </Fab>
-                    </Typography>
-                    <hr/>
-                    <Typography className='addSection'>
-                        Lisence And Certification
-                        <Fab size="small" aria-label="add" onClick={openCertificationDialog}> 
-                        <AddIcon />
-                        </Fab>
-                    </Typography>
-                  </ExpansionPanelDetails>
-                </ExpansionPanel>
-                <ExpansionPanel onChange={onExpansionPanelChange('panel4')} expanded={expansionPanelvalue==='panel4'}>
-                  <ExpansionPanelSummary
-                    expandIcon={<ExpandMoreIcon />}
-                    aria-controls="panel1bh-content"
-                    id="panel1bh-header"
-                  >
-                    <Typography >Skills</Typography>
-                  </ExpansionPanelSummary>
-                  <ExpansionPanelDetails className='expansionPanel'>
-                  <Typography className='addSection'>
-                        Skills
-                        <Fab size="small" aria-label="add" onClick={onSkillDialogue}>
-                        <AddIcon />
-                        </Fab>
-                  </Typography>
-                  <hr/>
-                  <Typography className='addSection'>
-                        Soft Skills
-                        <Fab size="small" aria-label="add" >
-                        <AddIcon />
-                        </Fab>
-                  </Typography>
-                  </ExpansionPanelDetails>
-                </ExpansionPanel>
-                <ExpansionPanel onChange={onExpansionPanelChange('panel5')} expanded={expansionPanelvalue==='panel5'}>
-                  <ExpansionPanelSummary
-                    expandIcon={<ExpandMoreIcon />}
-                    aria-controls="panel1bh-content"
-                    id="panel1bh-header"
-                  >
-                    <Typography >Accomplishments</Typography>
-                  </ExpansionPanelSummary>
-                  <ExpansionPanelDetails className='expansionPanel'>
-                    <Typography className='addSection'>
-                        Projects
-                        <Fab size="small" aria-label="add">
-                        <AddIcon />
-                        </Fab>
-                  </Typography>
-                  <hr/>
-                  <Typography className='addSection'>
-                        Courses/Trainings
-                        <Fab size="small" aria-label="add" onClick={openCourseAndTrainingDialogue}>
-                        <AddIcon />
-                        </Fab>
-                  </Typography>
-                  <hr/>
-                  <Typography className='addSection'>
-                        Awards
-                        <Fab size="small" aria-label="add" onClick={openAwardDialog}>
-                        <AddIcon />
-                        </Fab>
-                  </Typography>
-                  </ExpansionPanelDetails>
-                </ExpansionPanel>
-                {/*************************************************************************************/}
-                  </ExpansionPanelDetails>
-                </ExpansionPanel>
     </div>
   )
 }

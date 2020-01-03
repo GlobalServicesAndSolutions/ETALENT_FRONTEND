@@ -2,19 +2,27 @@ import React from "react";
 import Widget from "components/Widget";
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
+import EditIcon from '@material-ui/icons/Edit';
 
-const Certification = ({openCertificationDialog}) => {
+const Certification = ({ openCertificationDialog,isEditClick }) => {
   return (
     <Widget styleName="jr-card-profile">
       <div className="mb-3">
         <div className="cardHeaderAndAddButton">
+          <div>
           <h3 className="card-title mb-2 mb-md-3">Certification</h3>
-          <Fab size="small" color="primary" aria-label="add"onClick={openCertificationDialog}>
+          </div>
+          <div>
+          {isEditClick&& <Fab size="small" color="primary" onClick={openCertificationDialog} aria-label="edit">
+            <EditIcon />
+          </Fab>}
+          <Fab size="small" color="primary" aria-label="add" onClick={openCertificationDialog}>
             <AddIcon />
           </Fab>
+          </div>
         </div>
         <hr />
-          <h2>PMP (Project Management)</h2>
+        <h4>PMP (Project Management)</h4>
         <div>
           <ul>
             <li>
@@ -24,7 +32,7 @@ const Certification = ({openCertificationDialog}) => {
             </li>
           </ul>
         </div>
-        <h2> PMP Certification</h2>
+        <h4> PMP Certification</h4>
         <div>
           <ul>
             <li>

@@ -28,11 +28,18 @@ class Profile extends Component {
             basicInfoOpen:false,
             courseAndtraining:false,
             ratingValue: 0,
-            expansionPanelvalue:''
+            expansionPanelvalue:'',
+            isEdit:false
         }
     }
     onRatingChange = (event, newValue) => {
         this.setState({ ratingValue: newValue });
+    }
+    downloadPDF=()=>{
+        alert('Downloaded');
+    }
+    shareProfile=()=>{
+        alert('You shared a profile');
     }
     onExpansionPanelChange=panel=>(event,expandedPanel)=>{
         this.setState({expansionPanelvalue:expandedPanel? panel:'notExpanded'})
@@ -91,6 +98,12 @@ class Profile extends Component {
     closeCourseAndTrainingDialogue=()=>{
         this.setState({courseAndtraining:false});
     }
+    isEditClick=()=>{
+        this.setState({isEdit:true});
+    }
+    isEditCancel=()=>{
+        this.setState({isEdit:false});
+    }
 
     render() {
         return (
@@ -111,18 +124,28 @@ class Profile extends Component {
                 onExpansionPanelChange={this.onExpansionPanelChange}
                 expansionPanelvalue={this.state.expansionPanelvalue}
                 onParentExpansion={this.onParentExpansion}
+                downloadPDF={this.downloadPDF}
+                shareProfile={this.shareProfile}
+                isEditClick={this.isEditClick}
+                isEditCancel={this.isEditCancel}
+                isEdit={this.state.isEdit}
                 />
                 <div className="row">
                     <div className="col-xl-8 col-lg-8 col-md-7 col-12">
-                        <Biography />
+                        <Biography 
+                        isEditClick={this.state.isEdit}/>
                         <div id="educationcard">
-                        <Education openEducationDialog={this.openEducationDialog} />
+                        <Education 
+                        openEducationDialog={this.openEducationDialog}
+                        isEditClick={this.state.isEdit}
+                         />
                         </div>
                         <div id="skillCard">
                         <Skills
                             ratingValue={this.state.ratingValue}
                             onRatingChange={this.onRatingChange}
                             onSkillDialogue={this.openSkillDialogue}
+                            isEditClick={this.state.isEdit}
                         />
                         </div>
                         <div id="softskills">
@@ -130,18 +153,25 @@ class Profile extends Component {
                             ratingValue={this.state.ratingValue}
                             onRatingChange={this.onRatingChange}
                             onSkillDialogue={this.openSkillDialogue}
+                            isEditClick={this.state.isEdit}
                              />
                         </div>
                         <div id="certificationCard">    
-                        <Certification openCertificationDialog={this.openLisenceDialog}/>
+                        <Certification 
+                        openCertificationDialog={this.openLisenceDialog}
+                        isEditClick={this.state.isEdit}/>
                         </div>
                     </div>
                     <div className="col-xl-4 col-lg-4 col-md-5 col-12">
                         <Contact />
                         <Awards 
-                        openAwardDialog={this.openAwardDialogue}/>
-                        <Projects />
-                        <Courses />
+                        openAwardDialog={this.openAwardDialogue}
+                        isEditClick={this.state.isEdit}/>
+                        <Projects 
+                        isEditClick={this.state.isEdit}/>
+                        <Courses 
+                        openCourseAndTrainingDialogue={this.openCourseAndTrainingDialogue}
+                        isEditClick={this.state.isEdit}/>
                     </div>
                 </div>
                 {this.state.educationOpen ?

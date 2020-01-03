@@ -127,6 +127,12 @@ class SidenavContent extends Component {
               <span className="nav-text">Notification</span>
             </NavLink>
           </li>
+          <li className="menu no-arrow">
+            <NavLink to="/employerHome">
+              <i className="zmdi zmdi-view-dashboard zmdi-hc-fw"/>
+              <span className="nav-text">Employer Home</span>
+            </NavLink>
+          </li>
         </ul>
       </CustomScrollbars>
     );

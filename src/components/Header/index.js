@@ -146,6 +146,14 @@ class Header extends React.Component {
                      value={this.state.searchText}/>
 
           <ul className="header-notifications list-inline ml-auto">
+          <Link to="/dashboard">
+            <li className="list-inline-item">
+            <span className="fontLabelColor">Home</span>
+            </li>
+            </Link>
+            <li className="list-inline-item ">
+              Jobs
+            </li>
             <Link to="/profile">
             <li className="list-inline-item">
               <span className="fontLabelColor">Profile</span>
@@ -173,14 +181,6 @@ class Header extends React.Component {
                 </DropdownMenu>
               </Dropdown>
             </li>
-            <li className="list-inline-item ">
-              Jobs
-            </li>
-            <Link to="/dashboard">
-            <li className="list-inline-item">
-            <span className="fontLabelColor">Home</span>
-            </li>
-            </Link>
           </ul>
           
           <div className="ellipse-shape"></div>

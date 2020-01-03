@@ -2,23 +2,34 @@ import React from "react";
 import Widget from "components/Widget";
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
+import EditIcon from '@material-ui/icons/Edit';
 
-const Education = ({openEducationDialog}) => {
+const Education = ({ openEducationDialog,isEditClick }) => {
   return (
     <Widget styleName="jr-card-profile" >
       <div className="mb-3">
         <div className="cardHeaderAndAddButton" >
-          <h3 className="card-title mb-2 mb-md-3">Education And Experience</h3>
+          <div>
+          <h3 className="card-title mb-2 mb-md-3">Experience</h3>
+          </div>
+          <div>
           <Fab onClick={openEducationDialog} size="small" color="primary" aria-label="add" >
             <AddIcon />
           </Fab>
+          </div>
         </div>
         <hr />
-        <p className="text-grey jr-fs-sm mb-0">Experience</p>
         <br />
-        <div className="row">
+        <div className="row profileSectionEditAndDelete">
+          <div className="row">
           <img aria-hidden alt="image" src="example.com" />
-          <h2>Seven software development ltd.</h2>
+          <h5>Seven software development ltd.</h5>
+          </div>
+          <div>
+         { isEditClick && <Fab onClick={openEducationDialog} size="small" color="primary" aria-label="edit" >
+            <EditIcon />
+          </Fab>}
+          </div>
         </div>
         <div>
           <ul>
@@ -35,11 +46,27 @@ const Education = ({openEducationDialog}) => {
           </ul>
         </div>
         <hr />
-        <p className="text-grey jr-fs-sm mb-0">Education</p>
+        <div className="cardHeaderAndAddButton" >
+          <div>
+          <h3 className="card-title mb-2 mb-md-3">Education</h3>
+          </div>
+          <div>
+          <Fab onClick={openEducationDialog} size="small" color="primary" aria-label="add" >
+            <AddIcon />
+          </Fab>
+          </div>
+        </div>
         <br />
-        <div className="row">
+        <div className="row profileSectionEditAndDelete">
+          <div className="row">
           <img aria-hidden alt="image" src="example.com" />
-          <h2>Abasyn University Islamabad</h2><br />
+          <h5>Abasyn University Islamabad</h5>
+          </div>
+          <div>
+         { isEditClick && <Fab onClick={openEducationDialog} size="small" color="primary" aria-label="edit" >
+            <EditIcon />
+          </Fab>}
+          </div>
         </div>
         <ul>
           <li>

@@ -5,26 +5,34 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
+import EditIcon from '@material-ui/icons/Edit';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import Rating from '@material-ui/lab/Rating';
-const Skills = ({ratingValue, onRatingChange,onSkillDialogue}) => {
+const Skills = ({ ratingValue, onRatingChange, onSkillDialogue,isEditClick }) => {
     return (
-        
+
         <Widget styleName="jr-card-profile">
             <div >
                 <div className="cardHeaderAndAddButton">
-                    <h3 className="card-title mb-2 mb-md-3">Skills</h3>
-                    <Fab size="small" color="primary" aria-label="add" onClick={onSkillDialogue}>
-                        <AddIcon />
-                    </Fab>
+                    <div>
+                        <h3 className="card-title mb-2 mb-md-3">Skills</h3>
+                    </div>
+                    <div>
+                        {isEditClick && <Fab size="small" color="primary" onClick={onSkillDialogue} aria-label="edit">
+                            <EditIcon />
+                        </Fab>}
+                        <Fab size="small" color="primary" aria-label="add" onClick={onSkillDialogue}>
+                            <AddIcon />
+                        </Fab>
+                    </div>
                 </div>
-                <hr/>
+                <hr />
                 <List style={{ width: "100%" }}>
                     <ListItem divider alignItems="center">
                         <ListItemText
                             primary="Java Script"
                         />
-                        <ThumbUpIcon color="primary" style={{cursor:"pointer"}}>Likes</ThumbUpIcon>
+                        <ThumbUpIcon color="primary" style={{ cursor: "pointer" }}>Likes</ThumbUpIcon>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <Rating
                             name="simple-controlled"
@@ -36,7 +44,7 @@ const Skills = ({ratingValue, onRatingChange,onSkillDialogue}) => {
                         <ListItemText
                             primary="React Js"
                         />
-                        <ThumbUpIcon color="primary" style={{cursor:"pointer"}}>123</ThumbUpIcon>
+                        <ThumbUpIcon color="primary" style={{ cursor: "pointer" }}>123</ThumbUpIcon>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <Rating
                             name="simple-controlled"

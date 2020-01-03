@@ -1,24 +1,22 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 
-const ProfileCard = () => {
+const EmployerProfileCard = () => {
   return (
     <div className="profile-intro card shadow  border-0 text-left">
 
       <div >
         <div className="card-image">
           <img className="avatar-circle" src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Phoenicopterus_ruber_in_S%C3%A3o_Paulo_Zoo.jpg" aria-hidden alt="Profile"/>
-          
-          
         </div>
       </div>
       <div className="pi-content">
-      <h4 >Salman haider</h4>
-        <p>Web Developer</p>
-        <p className="card-text">Hello everyone, I am Salman.</p>
+         <Link to='/employerProfile'> <h4>Seven Software development Ltd.</h4></Link>
+        <p>Computer Software. Islamabad</p>
       </div>
     </div>
   )
 };
 
-export default ProfileCard;
+export default EmployerProfileCard;
 
