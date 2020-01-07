@@ -78,3 +78,8 @@ export const UPDATE_SEARCH_CHAT_USER = 'update_search_chat_user';
 // Employer Module Types
 
 export const SHOW_SECTION_ONE_DATA = 'show_section_one-data';
+export const DELETE_SECTION_ONE_DATA = 'delete_section_one-data';
+export const SHOW_SECTION_TWO_DATA = 'show_section_two-data';
+export const DELETE_SECTION_TWO_DATA = 'delete_section_two-data';
+export const SHOW_SECTION_THREE_DATA = 'show_section_three-data';
+export const DELETE_SECTION_THREE_DATA = 'delete_section_three-data';

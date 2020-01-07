@@ -7,7 +7,8 @@ import DeleteIcon from '@material-ui/icons/Delete';
 
 const EmployerSectionOneReview = ({
     data,
-    onEditSectionOne
+    onEditSectionOne,
+    onDeleteSectionOne
 }) => {
     return (
         <Widget styleName="jr-card-profile">
@@ -20,7 +21,7 @@ const EmployerSectionOneReview = ({
                         <Fab size="small" color="primary" aria-label="delete" onClick={onEditSectionOne}>
                             <EditIcon />
                         </Fab>
-                        <IconButton aria-label="delete" color="primary">
+                        <IconButton aria-label="delete" color="primary" onClick={onDeleteSectionOne}>
                             <DeleteIcon fontSize="large" />
                         </IconButton>
                     </div>

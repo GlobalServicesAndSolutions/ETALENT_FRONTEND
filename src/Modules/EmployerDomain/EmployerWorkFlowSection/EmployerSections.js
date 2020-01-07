@@ -17,7 +17,7 @@ import EmployerSectionSix from 'util/Models/EmployerSection_6';
 import EmployerSectionTwoReview from '../EmployerSectionsCards/SectionTwoCard';
 import EmployerSectionThreeReview from '../EmployerSectionsCards/SectionThreeCard';
 import EmployerSectionFourReview from '../EmployerSectionsCards/SectionFourCard';
-import * as employerAction from '../../../actions/EmployerActions/EmployerSectionOne';
+import * as employerAction from '../../../actions/EmployerActions/EmployerSection';
 import { PropTypes } from "prop-types";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
@@ -106,12 +106,7 @@ class EmployerWorkFlow extends Component {
             openEmployerSection_4: false,
             openEmployerSection_5: false,
             openEmployerSection_6: false,
-            isSectionOneDone: false,
-            isSectionTwoDone: false,
-            isSectionThreeDone: false,
             isSectionFourDone: false,
-            isSectionFiveDone: false,
-            isSectionSixDone: false
         }
     }
     onSectionValuesChange = (event, date, name) => {
@@ -128,13 +123,24 @@ class EmployerWorkFlow extends Component {
     }
     onSaveSectionOne = () => {
         this.props.employerActions.onSaveSectionOnedata(this.state.employerSections); 
-        this.setState({ isSectionOneDone: true, openEmployerSection_1: false });
+        this.setState({  openEmployerSection_1: false });
+    }
+    onDeleteSectionOne=()=>{
+        this.props.employerActions.onDeleteSectionOnedata();
     }
     onSaveSectionTwo=()=>{
-        this.setState({ isSectionTwoDone: true, openEmployerSection_2: false });
+        this.props.employerActions.onSaveSectionTwodata(this.state.employerSections);
+        this.setState({ openEmployerSection_2: false });
+    }
+    onDeleteSectionTwo=()=>{
+        this.props.employerActions.onDeleteSectionTwodata();
     }
     onSaveSectionThree=()=>{
-        this.setState({ isSectionThreeDone: true, openEmployerSection_3: false });
+        this.props.employerActions.onSaveSectionThreedata(this.state.employerSections);
+        this.setState({ openEmployerSection_3: false });
+    }
+    onDeleteSectionThree=()=>{
+        this.props.employerActions.onDeleteSectionThreedata();
     }
     onSaveSectionFour=()=>{
         this.setState({ isSectionFourDone: true, openEmployerSection_4: false });
@@ -264,16 +270,21 @@ class EmployerWorkFlow extends Component {
                             <EmployerSectionOneReview
                                data={this.props.sectionOneData}
                                onEditSectionOne={this.onSection_1Open}
+                               onDeleteSectionOne={this.onDeleteSectionOne}
                             />
                         }
-                        {this.state.isSectionTwoDone &&
+                        {this.props.sectionTwoData &&
                         <EmployerSectionTwoReview 
-                        data={this.state.employerSections}
+                        data={this.props.sectionTwoData}
+                        onEditSectionTwo={this.onSection_2Open}
+                        onDeleteSectionTwo={this.onDeleteSectionTwo}
                         />
                         }
-                        {this.state.isSectionThreeDone &&
+                        {this.props.sectionThreeData &&
                         <EmployerSectionThreeReview 
-                        data={this.state.employerSections}
+                        data={this.props.sectionThreeData}
+                        onEditSectionThree={this.onSection_3Open}
+                        onDeleteSectionThree={this.onDeleteSectionThree}
                         />
                         }
                         {this.state.isSectionFourDone &&
@@ -348,9 +359,11 @@ class EmployerWorkFlow extends Component {
 const mapStateToProps = ({
     employerSection,
   }) => {
-    const { sectionOneData } = employerSection;
+    const { sectionOneData,sectionTwoData,sectionThreeData } = employerSection;
     return {
         sectionOneData,
+        sectionTwoData,
+        sectionThreeData
     };
   }
 function mapDispatchToProps(dispatch) {
@@ -360,7 +373,9 @@ function mapDispatchToProps(dispatch) {
   }
   
   EmployerWorkFlow.propTypes = {
-    sectionOneData: PropTypes.object
+    sectionOneData: PropTypes.object,
+    sectionTwoData:PropTypes.object,
+    sectionThreeData:PropTypes.object
   };
   
   export default connect(mapStateToProps, mapDispatchToProps)(EmployerWorkFlow);
