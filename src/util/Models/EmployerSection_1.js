@@ -24,33 +24,8 @@ import {
 const EmployerSectionOne = ({ open,
     onCloseSection_1,
     onSectionValuesChange,
-    onSaveSection,
-    jobStatus,
-    country,
-    jobCreatedDate,
-    changeDateSelected,
-    externalJobTitle,
-    internalJobTitle,
-    numberOfOpenings,
-    jobSummary,
-    houseNo,
-    street,
-    skill1,
-    skill2,
-    skill3,
-    skill4,
-    skill5,
-    softSkill1,
-    softSkill2,
-    softSkill3,
-    softSkill4,
-    softSkill5,
-    city,
-    province,
-    zipCode,
-    targetCountry,
-    createdBy,
-    changeBy
+    onSaveSectionOne,
+    data
 }) => {
 
     return (
@@ -62,7 +37,7 @@ const EmployerSectionOne = ({ open,
                         autoFocus
                         margin="dense"
                         name="externalJobTitle"
-                        value={externalJobTitle}
+                        value={data.externalJobTitle}
                         label="External Job Title"
                         type="text"
                         onChange={onSectionValuesChange}
@@ -73,7 +48,7 @@ const EmployerSectionOne = ({ open,
                     <TextField
                         margin="dense"
                         name="internalJobTitle"
-                        value={internalJobTitle}
+                        value={data.internalJobTitle}
                         label="Internal Job Title"
                         type="text"
                         onChange={onSectionValuesChange}
@@ -84,7 +59,7 @@ const EmployerSectionOne = ({ open,
                         <div>
                             <FormControl component="fieldset">
                                 <FormLabel component="legend"><strong>Job Status</strong></FormLabel>
-                                <RadioGroup aria-label="position" name="jobStatus" value={jobStatus} onChange={onSectionValuesChange} row>
+                                <RadioGroup aria-label="position" name="jobStatus" value={data.jobStatus} onChange={onSectionValuesChange} row>
                                     <FormControlLabel
                                         value="Open"
                                         control={<Radio color="primary" />}
@@ -114,7 +89,7 @@ const EmployerSectionOne = ({ open,
                             <TextField
                                 margin="dense"
                                 name="numberOfOpenings"
-                                value={numberOfOpenings}
+                                value={data.numberOfOpenings}
                                 label="Number Of Openings"
                                 onChange={onSectionValuesChange}
                                 type="number"
@@ -126,7 +101,7 @@ const EmployerSectionOne = ({ open,
                     <TextField
                         id="standard-multiline-static"
                         name="jobSummary"
-                        value={jobSummary}
+                        value={data.jobSummary}
                         label="Job Summary"
                         onChange={onSectionValuesChange}
                         multiline
@@ -138,7 +113,7 @@ const EmployerSectionOne = ({ open,
                     <TextField
                         margin="dense"
                         name="houseNo"
-                        value={houseNo}
+                        value={data.houseNo}
                         label="House/Flat No."
                         type="text"
                         onChange={onSectionValuesChange}
@@ -149,7 +124,7 @@ const EmployerSectionOne = ({ open,
                     <TextField
                         margin="dense"
                         name="street"
-                        value={street}
+                        value={data.street}
                         label="Street"
                         type="text"
                         onChange={onSectionValuesChange}
@@ -159,7 +134,7 @@ const EmployerSectionOne = ({ open,
                     <FormControl style={{ width: '45%' }}>
                         <InputLabel>Country</InputLabel>
                         <Select
-                            value={country}
+                            value={data.country}
                             name='country'
                             onChange={onSectionValuesChange}
                         >
@@ -174,7 +149,7 @@ const EmployerSectionOne = ({ open,
                         name="city"
                         label="City"
                         type="text"
-                        value={city}
+                        value={data.city}
                         onChange={onSectionValuesChange}
                         placeholder="Ex: Islamabad"
                         className="profileInfoTextField"
@@ -183,7 +158,7 @@ const EmployerSectionOne = ({ open,
                         margin="dense"
                         name="province"
                         label="Province/State"
-                        value={province}
+                        value={data.province}
                         type="text"
                         onChange={onSectionValuesChange}
                         placeholder="Ex: Federal"
@@ -193,7 +168,7 @@ const EmployerSectionOne = ({ open,
                     <TextField
                         margin="dense"
                         name="zipCode"
-                        value={zipCode}
+                        value={data.zipCode}
                         label="Zip Code"
                         type="text"
                         onChange={onSectionValuesChange}
@@ -203,7 +178,7 @@ const EmployerSectionOne = ({ open,
                     <TextField
                         margin="dense"
                         name="targetCountry"
-                        value={targetCountry}
+                        value={data.targetCountry}
                         label="Target Country"
                         type="text"
                         onChange={onSectionValuesChange}
@@ -215,7 +190,7 @@ const EmployerSectionOne = ({ open,
                     <TextField
                         margin="dense"
                         name="skill1"
-                        value={skill1}
+                        value={data.skill1}
                         label="1. Skill"
                         type="text"
                         onChange={onSectionValuesChange}
@@ -226,7 +201,7 @@ const EmployerSectionOne = ({ open,
                     <TextField
                         margin="dense"
                         name="skill2"
-                        value={skill2}
+                        value={data.skill2}
                         label="2. Skill"
                         type="text"
                         onChange={onSectionValuesChange}
@@ -236,7 +211,7 @@ const EmployerSectionOne = ({ open,
                     <TextField
                         margin="dense"
                         name="skill3"
-                        value={skill3}
+                        value={data.skill3}
                         label="3. Skill"
                         type="text"
                         onChange={onSectionValuesChange}
@@ -247,7 +222,7 @@ const EmployerSectionOne = ({ open,
                     <TextField
                         margin="dense"
                         name="skill4"
-                        value={skill4}
+                        value={data.skill4}
                         label="4. Skill"
                         type="text"
                         onChange={onSectionValuesChange}
@@ -257,7 +232,7 @@ const EmployerSectionOne = ({ open,
                     <TextField
                         margin="dense"
                         name="skill5"
-                        value={skill5}
+                        value={data.skill5}
                         label="5. Skill"
                         type="text"
                         onChange={onSectionValuesChange}
@@ -269,7 +244,7 @@ const EmployerSectionOne = ({ open,
                     <TextField
                         margin="dense"
                         name="softSkill1"
-                        value={softSkill1}
+                        value={data.softSkill1}
                         label="1. Skill"
                         type="text"
                         onChange={onSectionValuesChange}
@@ -280,7 +255,7 @@ const EmployerSectionOne = ({ open,
                     <TextField
                         margin="dense"
                         name="softSkill2"
-                        value={softSkill2}
+                        value={data.softSkill2}
                         label="2. Skill"
                         type="text"
                         onChange={onSectionValuesChange}
@@ -290,7 +265,7 @@ const EmployerSectionOne = ({ open,
                     <TextField
                         margin="dense"
                         name="softSkill3"
-                        value={softSkill3}
+                        value={data.softSkill3}
                         label="3. Skill"
                         type="text"
                         onChange={onSectionValuesChange}
@@ -301,7 +276,7 @@ const EmployerSectionOne = ({ open,
                     <TextField
                         margin="dense"
                         name="softSkill4"
-                        value={softSkill4}
+                        value={data.softSkill4}
                         label="4. Skill"
                         type="text"
                         onChange={onSectionValuesChange}
@@ -311,7 +286,7 @@ const EmployerSectionOne = ({ open,
                     <TextField
                         margin="dense"
                         name="softSkill5"
-                        value={softSkill5}
+                        value={data.softSkill5}
                         label="5. Skill"
                         type="text"
                         onChange={onSectionValuesChange}
@@ -324,11 +299,12 @@ const EmployerSectionOne = ({ open,
                             <KeyboardDatePicker
                                 className="profileInfoTextField"
                                 margin="normal"
+                                id='jobCreateDate'
                                 label="Job Create Date"
                                 format="MM/dd/yyyy"
-                                value={jobCreatedDate}
+                                value={data.jobCreatedDate}
                                 name='jobCreatedDate'
-                                onChange={onSectionValuesChange}
+                                onChange={(e,date,name)=>onSectionValuesChange(e,date,'jobCreatedDate')}
                                 KeyboardButtonProps={{
                                     'aria-label': 'change date',
                                 }}
@@ -339,9 +315,9 @@ const EmployerSectionOne = ({ open,
                                 margin="normal"
                                 label="Job Change Date"
                                 format="MM/dd/yyyy"
-                                value={changeDateSelected}
+                                value={data.changeDateSelected}
                                 name='changeDateSelected'
-                                onChange={onSectionValuesChange}
+                                onChange={(e,date,name)=>onSectionValuesChange(e,date,'changeDateSelected')}
                                 KeyboardButtonProps={{
                                     'aria-label': 'change date',
                                 }}
@@ -351,7 +327,7 @@ const EmployerSectionOne = ({ open,
                     <FormControl style={{ width: '45%' }}>
                         <InputLabel>Created By</InputLabel>
                         <Select
-                            value={createdBy}
+                            value={data.createdBy}
                             name='createdBy'
                             onChange={onSectionValuesChange}
                         >
@@ -362,7 +338,7 @@ const EmployerSectionOne = ({ open,
                     <FormControl style={{ width: '45%' }}>
                         <InputLabel>Change By</InputLabel>
                         <Select
-                            value={changeBy}
+                            value={data.changeBy}
                             name='changeBy'
                             onChange={onSectionValuesChange}
                         >
@@ -371,7 +347,7 @@ const EmployerSectionOne = ({ open,
                     </FormControl>
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={onSaveSection} color="primary">
+                    <Button onClick={onSaveSectionOne} color="primary">
                         Save
                     </Button>
                     <Button onClick={onCloseSection_1} color="primary">

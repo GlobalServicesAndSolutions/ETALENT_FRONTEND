@@ -16,13 +16,9 @@ import Select from '@material-ui/core/Select';
 
 const EmployerSectionFour = ({ open,
     onCloseSection_4,
-    contractYears,
-    contractMonth,
-    contractDays,
-    visaStatusvalue,
-    commuteCurrencyValue,
-    commuteAmountValue,
-    onContractinformationChange
+    data,
+    onSectionValuesChange,
+    onSaveSectionFour
 }) => {
 
     return (
@@ -34,9 +30,9 @@ const EmployerSectionFour = ({ open,
                     <FormControl style={{ width: '45%' }}>
                         <InputLabel>Years</InputLabel>
                         <Select
-                            value={contractYears}
+                            value={data.contractYears}
                             name='contractYears'
-                            onChange={onContractinformationChange}
+                            onChange={onSectionValuesChange}
                         >
                             <MenuItem value='1'>1</MenuItem>
                             <MenuItem value='2'>2</MenuItem>
@@ -47,8 +43,9 @@ const EmployerSectionFour = ({ open,
                     <FormControl style={{ width: '45%' }}>
                         <InputLabel>Months</InputLabel>
                         <Select
-                            value={contractMonth}
-                            onChange={onContractinformationChange}
+                            value={data.contractMonth}
+                            name='contractMonth'
+                            onChange={onSectionValuesChange}
                         >
                             <MenuItem value={1}>1</MenuItem>
                             <MenuItem value={2}>2</MenuItem>
@@ -67,8 +64,9 @@ const EmployerSectionFour = ({ open,
                     <FormControl style={{ width: '45%' }}>
                         <InputLabel>Days</InputLabel>
                         <Select
-                            value={contractDays}
-                            onChange={onContractinformationChange}
+                            value={data.contractDays}
+                            name='contractDays'
+                            onChange={onSectionValuesChange}
                         >
                             <MenuItem value={1}>1</MenuItem>
                             <MenuItem value={2}>2</MenuItem>
@@ -107,7 +105,7 @@ const EmployerSectionFour = ({ open,
                     <hr/>
                     <FormControl component="fieldset">
                         <FormLabel component="legend"><strong>Visa Status</strong></FormLabel>
-                        <RadioGroup aria-label="position" name="visaStatusvalue" value={visaStatusvalue} onChange={onContractinformationChange} row>
+                        <RadioGroup aria-label="position" name="visaStatusvalue" value={data.visaStatusvalue} onChange={onSectionValuesChange} row>
                             <FormControlLabel
                                 value="F1"
                                 control={<Radio color="primary" />}
@@ -151,6 +149,8 @@ const EmployerSectionFour = ({ open,
                         name="billRateCurrency"
                         label="Bill Rate Currency"
                         type="text"
+                        value={data.billRateCurrency}
+                        onChange={onSectionValuesChange}
                         placeholder="Ex: USD"
                         className="profileInfoTextField"
                     />
@@ -160,6 +160,8 @@ const EmployerSectionFour = ({ open,
                         name="billRate"
                         label="Bill Rate/Hour"
                         type="text"
+                        value={data.billRate}
+                        onChange={onSectionValuesChange}
                         placeholder="Ex: 1"
                         className="profileInfoTextField"
                     />
@@ -168,29 +170,29 @@ const EmployerSectionFour = ({ open,
                     <FormControl style={{ width: '45%' }}>
                         <InputLabel>Commute Currency</InputLabel>
                         <Select
-                            value={commuteCurrencyValue}
+                            value={data.commuteCurrencyValue}
                             name='commuteCurrencyValue'
-                            onChange={onContractinformationChange}
+                            onChange={onSectionValuesChange}
                         >
-                            <MenuItem value='yes'>Yes</MenuItem>
-                            <MenuItem value='no'>No</MenuItem>
+                            <MenuItem value='Yes'>Yes</MenuItem>
+                            <MenuItem value='No'>No</MenuItem>
                         </Select>
                     </FormControl>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <FormControl style={{ width: '45%' }}>
                         <InputLabel>Commute Amount</InputLabel>
                         <Select
-                            value={commuteAmountValue}
+                            value={data.commuteAmountValue}
                             name='commuteAmountValue'
-                            onChange={onContractinformationChange}
+                            onChange={onSectionValuesChange}
                         >
-                            <MenuItem value='yes'>Yes</MenuItem>
-                            <MenuItem value='no'>No</MenuItem>
+                            <MenuItem value='Yes'>Yes</MenuItem>
+                            <MenuItem value='No'>No</MenuItem>
                         </Select>
                     </FormControl>
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={onCloseSection_4} color="primary">
+                    <Button onClick={onSaveSectionFour} color="primary">
                         Save
                     </Button>
                     <Button onClick={onCloseSection_4} color="primary">

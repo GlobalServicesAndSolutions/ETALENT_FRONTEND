@@ -13,8 +13,9 @@ import Select from '@material-ui/core/Select';
 
 const EmployerSectionThree = ({ open,
     onCloseSection_3,
-    organizationCountry,
-    onOrganizationInformationChange
+    onSectionValuesChange,
+    onSaveSectionThree,
+    data
 }) => {
 
     return (
@@ -27,6 +28,8 @@ const EmployerSectionThree = ({ open,
                         margin="dense"
                         name="legalEntity"
                         label="Legal Entity"
+                        value={data.legalEntity}
+                        onChange={onSectionValuesChange}
                         type="text"
                         className="profileInfoTextField"
                     />
@@ -36,6 +39,8 @@ const EmployerSectionThree = ({ open,
                         name="industry"
                         label="Industry"
                         type="text"
+                        value={data.industry}
+                        onChange={onSectionValuesChange}
                         placeholder="Ex: Software"
                         className="profileInfoTextField"
                     />
@@ -44,6 +49,8 @@ const EmployerSectionThree = ({ open,
                         name="depatment"
                         label="Department"
                         type="text"
+                        value={data.depatment}
+                        onChange={onSectionValuesChange}
                         placeholder="Ex: IT"
                         className="profileInfoTextField"
                     />
@@ -53,15 +60,19 @@ const EmployerSectionThree = ({ open,
                         name="division"
                         label="Devision"
                         type="text"
+                        value={data.division}
+                        onChange={onSectionValuesChange}
                         className="profileInfoTextField"
                     />
                     <hr />
                     <FormLabel component="legend"><strong>Organization Address</strong></FormLabel>
                     <TextField
                         margin="dense"
-                        name="houseNo"
+                        name="organizationHouseNo"
                         label="House/Flat No."
                         type="text"
+                        value={data.organizationHouseNo}
+                        onChange={onSectionValuesChange}
                         placeholder="Ex: A123"
                         className="profileInfoTextField"
                     />
@@ -69,9 +80,9 @@ const EmployerSectionThree = ({ open,
                     <FormControl style={{ width: '45%' }}>
                         <InputLabel>Country</InputLabel>
                         <Select
-                            value={organizationCountry}
+                            value={data.organizationCountry}
                             name='organizationCountry'
-                            onChange={onOrganizationInformationChange}
+                            onChange={onSectionValuesChange}
                         >
                             <MenuItem value='pakistan'>Pakistan</MenuItem>
                             <MenuItem value='usa'>USA</MenuItem>
@@ -80,28 +91,32 @@ const EmployerSectionThree = ({ open,
                     </FormControl>
                     <TextField
                         margin="dense"
-                        name="city"
+                        name="organizationCity"
                         label="City"
                         type="text"
-                        value={organizationCountry === 'pakistan' ? 'Islamabad' : ''}
+                        value={data.organizationCity}
+                        onChange={onSectionValuesChange}
                         placeholder="Ex: Islamabad"
                         className="profileInfoTextField"
                     />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <TextField
                         margin="dense"
-                        name="province"
+                        name="organizationProvince"
                         label="Province/State"
-                        value={organizationCountry === 'pakistan' ? "Federal" : ''}
+                        value={data.organizationProvince}
+                        onChange={onSectionValuesChange}
                         type="text"
                         placeholder="Ex: Federal"
                         className="profileInfoTextField"
                     />
                     <TextField
                         margin="dense"
-                        name="zipCode"
+                        name="organizationZipCode"
                         label="Zip Code"
                         type="text"
+                        value={data.organizationZipCode}
+                        onChange={onSectionValuesChange}
                         placeholder="Ex: 44000"
                         className="profileInfoTextField"
                     />
@@ -111,6 +126,8 @@ const EmployerSectionThree = ({ open,
                         name="jobJustification"
                         label="Job Justification"
                         type="text"
+                        value={data.jobJustification}
+                        onChange={onSectionValuesChange}
                         className="profileInfoTextField"
                     />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -119,6 +136,8 @@ const EmployerSectionThree = ({ open,
                         name="positionNumber"
                         label="Position Number"
                         type="number"
+                        value={data.positionNumber}
+                        onChange={onSectionValuesChange}
                         placeholder="Ex: 123"
                         className="profileInfoTextField"
                     />
@@ -127,6 +146,8 @@ const EmployerSectionThree = ({ open,
                         name="costCenterId"
                         label="Cost Center Id"
                         type="text"
+                        value={data.costCenterId}
+                        onChange={onSectionValuesChange}
                         className="profileInfoTextField"
                     />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -135,6 +156,8 @@ const EmployerSectionThree = ({ open,
                         name="reasonForVacancy"
                         label="Reason For Vacancy"
                         type="text"
+                        value={data.reasonForVacancy}
+                        onChange={onSectionValuesChange}
                         placeholder="Ex: Any Reason"
                         className="profileInfoTextField"
                     />
@@ -143,6 +166,8 @@ const EmployerSectionThree = ({ open,
                         name="replacementForWhom"
                         label="Replacement For Whom"
                         type="text"
+                        value={data.replacementForWhom}
+                        onChange={onSectionValuesChange}
                         className="profileInfoTextField"
                     />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -151,11 +176,13 @@ const EmployerSectionThree = ({ open,
                         name="requirementJustification"
                         label="Requirement Justification"
                         type="text"
+                        value={data.requirementJustification}
+                        onChange={onSectionValuesChange}
                         className="profileInfoTextField"
                     />
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={onCloseSection_3} color="primary">
+                    <Button onClick={onSaveSectionThree} color="primary">
                         Save
                     </Button>
                     <Button onClick={onCloseSection_3} color="primary">

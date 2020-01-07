@@ -23,18 +23,9 @@ import Select from '@material-ui/core/Select';
 
 const EmployerSectionTwo = ({ open,
     onCloseSection_2,
-    selectedStartDate,
-    onStartDateChange,
-    selectedEndDate,
-    onEndDateChange,
-    selectedDeadlineDate,
-    onDeadlineDateChange,
-    jobStatusvalue,
-    onChangeEmployerJobStatus,
-    jobFunctionvalue,
-    onChangeEmployerJobFunction,
-    travelRequiredValue,
-    ontravelRequiredValueChange
+    onSectionValuesChange,
+    data,
+    onSaveSectionTwo
 }) => {
 
     return (
@@ -49,6 +40,8 @@ const EmployerSectionTwo = ({ open,
                         name="jobCode"
                         label="Job Code"
                         type="text"
+                        value={data.jobCode}
+                        onChange={onSectionValuesChange}
                         placeholder="Ex: D4DF"
                         className="profileInfoTextField"
                     />
@@ -59,8 +52,8 @@ const EmployerSectionTwo = ({ open,
                                 margin="normal"
                                 label="Job Start Date"
                                 format="MM/dd/yyyy"
-                                value={selectedStartDate}
-                                onChange={onStartDateChange}
+                                value={data.selectedStartDate}
+                                onChange={(e,date,name)=>onSectionValuesChange(e,date,'selectedStartDate')}
                                 className="profileInfoTextField"
                                 KeyboardButtonProps={{
                                     'aria-label': 'change date',
@@ -76,8 +69,8 @@ const EmployerSectionTwo = ({ open,
                                 margin="normal"
                                 label="Job End Date"
                                 format="MM/dd/yyyy"
-                                value={selectedEndDate}
-                                onChange={onEndDateChange}
+                                value={data.selectedEndDate}
+                                onChange={(e,date,name)=>onSectionValuesChange(e,date,'selectedEndDate')}
                                 className="profileInfoTextField"
                                 KeyboardButtonProps={{
                                     'aria-label': 'change date',
@@ -88,8 +81,8 @@ const EmployerSectionTwo = ({ open,
                                 margin="normal"
                                 label="Application Deadline Date"
                                 format="MM/dd/yyyy"
-                                value={selectedDeadlineDate}
-                                onChange={onDeadlineDateChange}
+                                value={data.selectedDeadlineDate}
+                                onChange={(e,date,name)=>onSectionValuesChange(e,date,'selectedDeadlineDate')}
                                 className="profileInfoTextField"
                                 KeyboardButtonProps={{
                                     'aria-label': 'change date',
@@ -102,6 +95,8 @@ const EmployerSectionTwo = ({ open,
                         name="jobRole"
                         label="Job Role"
                         type="text"
+                        value={data.jobRole}
+                        onChange={onSectionValuesChange}
                         placeholder="Ex: Developer"
                         className="profileInfoTextField"
                     />
@@ -111,12 +106,14 @@ const EmployerSectionTwo = ({ open,
                         name="jobLevel"
                         label="Job Level"
                         type="text"
+                        value={data.jobLevel}
+                        onChange={onSectionValuesChange}
                         placeholder="Ex: Engineer II"
                         className="profileInfoTextField"
                     />
                     <FormControl component="fieldset">
                         <FormLabel component="legend"><strong>Job Status</strong></FormLabel>
-                        <RadioGroup aria-label="position" name="position" value={jobStatusvalue} onChange={onChangeEmployerJobStatus} row>
+                        <RadioGroup aria-label="position" name="jobStatusvalue" value={data.jobStatusvalue} onChange={onSectionValuesChange} row>
                             <FormControlLabel
                                 value="Regular"
                                 control={<Radio color="primary" />}
@@ -149,7 +146,7 @@ const EmployerSectionTwo = ({ open,
                     </FormControl>
                     <FormControl component="fieldset">
                         <FormLabel component="legend"><strong>Job Function</strong></FormLabel>
-                        <RadioGroup aria-label="position" name="position" value={jobFunctionvalue} onChange={onChangeEmployerJobFunction} row>
+                        <RadioGroup aria-label="position" name="jobFunctionvalue" value={data.jobFunctionvalue} onChange={onSectionValuesChange} row>
                             <FormControlLabel
                                 value="Professional"
                                 control={<Radio color="primary" />}
@@ -176,11 +173,12 @@ const EmployerSectionTwo = ({ open,
                     <FormControl style={{ width: '45%' }}>
                         <InputLabel>Required Travel</InputLabel>
                         <Select
-                            value={travelRequiredValue}
-                            onChange={ontravelRequiredValueChange}
+                            value={data.travelRequiredValue}
+                            name='travelRequiredValue'
+                            onChange={onSectionValuesChange}
                         >
-                            <MenuItem value='yes'>Yes</MenuItem>
-                            <MenuItem value='no'>No</MenuItem>
+                            <MenuItem value='Yes'>Yes</MenuItem>
+                            <MenuItem value='No'>No</MenuItem>
                         </Select>
                     </FormControl>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -189,6 +187,8 @@ const EmployerSectionTwo = ({ open,
                         name="requiredExperience"
                         label="Required Experience"
                         type="text"
+                        value={data.requiredExperience} 
+                        onChange={onSectionValuesChange}      
                         placeholder="Ex: 5 Year"
                         className="profileInfoTextField"
                     />
@@ -197,13 +197,15 @@ const EmployerSectionTwo = ({ open,
                         name="requiredEducation"
                         label="Required Education"
                         type="text"
+                        value={data.requiredEducation} 
+                        onChange={onSectionValuesChange}
                         placeholder="Ex: BS"
                         fullWidth
                     />
                     
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={onCloseSection_2} color="primary">
+                    <Button onClick={onSaveSectionTwo} color="primary">
                         Save
                     </Button>
                     <Button onClick={onCloseSection_2} color="primary">
