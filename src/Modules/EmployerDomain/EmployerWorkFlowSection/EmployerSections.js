@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Header from 'components/Header';
-import Biography from '../../../../src/components/profile/Biography/index';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
@@ -8,6 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
+import EmployerSectionOneReview from 'Modules/EmployerDomain/EmployerSectionsCards/SectionOneCard';
 import EmployerSectionOne from '../../../util/Models/EmployerSection_1';
 import EmployerSectionTwo from '../../../util/Models/EmployerSection_2';
 import EmployerSectionThree from '../../../util/Models/EmployerSection_3';
@@ -19,55 +19,78 @@ class EmployerWorkFlow extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            employerSections: {
+                jobStatus: '',
+                country: '',
+                jobCreatedDate: new Date(),
+                changeDateSelected: new Date(),
+                externalJobTitle: '',
+                internalJobTitle: '',
+                numberOfOpenings: 0,
+                jobSummary: '',
+                houseNo: '',
+                street: '',
+                skill1: '',
+                skill2: '',
+                skill3: '',
+                skill4: '',
+                skill5: '',
+                softSkill1: '',
+                softSkill2: '',
+                softSkill3: '',
+                softSkill4: '',
+                softSkill5: '',
+                city: '',
+                province: '',
+                zipCode: '',
+                targetCountry: '',
+                createdBy: '',
+                changeBy: '',
+                selectedStartDate: new Date(),
+                selectedEndDate: new Date(),
+                selectedDeadlineDate: new Date(),
+                jobStatusvalue: '',
+                jobFunctionvalue: '',
+                travelRequiredValue: '',
+                organizationCountry: '',
+                contractYears: '',
+                contractMonth: '',
+                contractDays: '',
+                visaStatusvalue: '',
+                commuteAmountValue: '',
+                budgetedPositionValue: '',
+                salaryFrequencyValue: '',
+                commissionValue: '',
+                motorVehicleValue: '',
+                accomodationValue: '',
+                relocationPackValue: '',
+            },
+            sectiondata:{},
             expansionPanelvalue: '',
-            employerStatus: '',
             openEmployerSection_1: false,
-            country: '',
-            selectedDate: new Date(),
-            changeDateSelected: new Date(),
             openEmployerSection_2: false,
-            selectedStartDate: new Date(),
-            selectedEndDate: new Date(),
-            selectedDeadlineDate: new Date(),
-            jobStatusvalue: '',
-            jobFunctionvalue: '',
-            travelRequiredValue:'',
             openEmployerSection_3: false,
-            organizationInformation:
-            {
-                organizationCountry: ''
-            },
             openEmployerSection_4: false,
-            contractInformation:
-            {
-                contractYears:'',
-                contractMonth:'',
-                contractDays:'',
-                visaStatusvalue:'',
-                commuteCurrencyValue:'',
-                commuteAmountValue:''
-            },
             openEmployerSection_5: false,
-            fullTimeSalaryAndBenifits:
-            {
-                budgetedPositionValue:'',
-                salaryFrequencyValue:'',
-                commissionValue:'',
-                motorVehicleValue:'',
-                accomodationValue:'',
-                relocationPackValue:''
-            },
-            openEmployerSection_6:false
+            openEmployerSection_6: false,
+            isSectionDone: false
         }
     }
-    onDateChange = (date) => {
-        this.setState({ selectedDate: date });
+    onSectionValuesChange = (event, date) => {
+        let sectionInformation = this.state.employerSections;
+        let field = event.target.name;
+        if (date) {
+            sectionInformation[field] = event.target.value;
+            this.setState({ sectionInformation });
+        }
+        else {
+            sectionInformation[field] = event.target.value;
+            this.setState({ sectionInformation });
+        }
     }
-    onJobChangeDateChange = (date) => {
-        this.setState({ changeDateSelected: date });
-    }
-    onChangeEmployerStatus = (event) => {
-        this.setState({ employerStatus: event.target.value });
+    onSaveSection=()=>{
+        let data=this.state.employerSections;
+        this.setState({isSectionDone:true, openEmployerSection_1:false, closeExpandedPanel:true});
     }
     onExpansionPanelChange = panel => (event, expandedPanel) => {
         this.setState({ expansionPanelvalue: expandedPanel ? panel : 'notExpanded' })
@@ -82,9 +105,6 @@ class EmployerWorkFlow extends Component {
     }
     onCloseSection_1 = () => {
         this.setState({ openEmployerSection_1: false });
-    }
-    onCountryChange = (event) => {
-        this.setState({ country: event.target.value });
     }
     onCloseSection_2 = () => {
         this.setState({ openEmployerSection_2: false });
@@ -107,8 +127,8 @@ class EmployerWorkFlow extends Component {
     onSection_2Open = () => {
         this.setState({ openEmployerSection_2: true });
     }
-    ontravelRequiredValueChange=(event) =>{
-        this.setState({travelRequiredValue:event.target.value});
+    ontravelRequiredValueChange = (event) => {
+        this.setState({ travelRequiredValue: event.target.value });
     }
     onSection_3Open = () => {
         this.setState({ openEmployerSection_3: true });
@@ -117,10 +137,10 @@ class EmployerWorkFlow extends Component {
         this.setState({ openEmployerSection_3: false });
     }
     onOrganizationInformationChange = (event) => {
-        let organizationInformation=this.state.organizationInformation;
-        let field=event.target.name;
-        organizationInformation[field]=event.target.value;
-        this.setState({ organizationInformation})
+        let organizationInformation = this.state.organizationInformation;
+        let field = event.target.name;
+        organizationInformation[field] = event.target.value;
+        this.setState({ organizationInformation })
     }
     onSection_4Open = () => {
         this.setState({ openEmployerSection_4: true });
@@ -128,11 +148,11 @@ class EmployerWorkFlow extends Component {
     onCloseSection_4 = () => {
         this.setState({ openEmployerSection_4: false });
     }
-    onContractinformationChange=(event)=>{
-        let contractInformation=this.state.contractInformation;
-        let field=event.target.name;
-        contractInformation[field]=event.target.value;
-        this.setState({contractInformation});
+    onContractinformationChange = (event) => {
+        let contractInformation = this.state.contractInformation;
+        let field = event.target.name;
+        contractInformation[field] = event.target.value;
+        this.setState({ contractInformation });
     }
     onSection_5Open = () => {
         this.setState({ openEmployerSection_5: true });
@@ -140,11 +160,11 @@ class EmployerWorkFlow extends Component {
     onCloseSection_5 = () => {
         this.setState({ openEmployerSection_5: false });
     }
-    onChangefullTimeSalaryAndBenifits=(event)=>{
-        let fullTimeSalaryAndBenifits=this.state.fullTimeSalaryAndBenifits;
-        let field=event.target.name;
-        fullTimeSalaryAndBenifits[field]=event.target.value;
-        this.setState({fullTimeSalaryAndBenifits});
+    onChangefullTimeSalaryAndBenifits = (event) => {
+        let fullTimeSalaryAndBenifits = this.state.fullTimeSalaryAndBenifits;
+        let field = event.target.name;
+        fullTimeSalaryAndBenifits[field] = event.target.value;
+        this.setState({ fullTimeSalaryAndBenifits });
     }
     onSection_6Open = () => {
         this.setState({ openEmployerSection_6: true });
@@ -158,7 +178,7 @@ class EmployerWorkFlow extends Component {
                 <div className="app-header ">
                     <Header />
                 </div>
-                <ExpansionPanel onChange={this.onParentExpansion} style={{ width: '40%' }}>
+                <ExpansionPanel onChange={this.onParentExpansion} style={{ width: '40%' }} >
                     <ExpansionPanelSummary
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel1bh-content"
@@ -229,7 +249,36 @@ class EmployerWorkFlow extends Component {
                 <br />
                 <div className="row">
                     <div className="col-xl-8 col-lg-8 col-md-7 col-12">
-                        <Biography />
+                        {this.state.isSectionDone &&
+                            <EmployerSectionOneReview
+                                externalJobTitle={this.state.employerSections.externalJobTitle}
+                                internalJobTitle={this.state.employerSections.internalJobTitle}
+                                jobStatus={this.state.employerSections.jobStatus}
+                                noOfOpenings={this.state.employerSections.numberOfOpenings}
+                                jobSummary={this.state.employerSections.jobSummary}
+                                houseNo={this.state.employerSections.houseNo}
+                                streetNo={this.state.employerSections.street}
+                                country={this.state.employerSections.country}
+                                city={this.state.employerSections.city}
+                                province={this.state.employerSections.province}
+                                zipCode={this.state.employerSections.zipCode}
+                                targetCountry={this.state.employerSections.targetCountry}
+                                skill1={this.state.employerSections.skill1}
+                                skill2={this.state.employerSections.skill2}
+                                skill3={this.state.employerSections.skill3}
+                                skill4={this.state.employerSections.skill4}
+                                skill5={this.state.employerSections.skill5}
+                                softSkill1={this.state.employerSections.softSkill1}
+                                softSkill2={this.state.employerSections.softSkill2}
+                                softSkill3={this.state.employerSections.softSkill3}
+                                softSkill4={this.state.employerSections.softSkill4}
+                                softSkill5={this.state.employerSections.oftSkill5}
+                                jobCreatedDate={this.state.employerSections.jobCreatedDate}
+                                jobChangeDate={this.state.employerSections.changeDateSelected}
+                                jobCreatedBy={this.state.employerSections.createdBy}
+                                jobChangeBy={this.state.employerSections.changeBy}
+                            />
+                        }
                     </div>
                     <div className="col-xl-4 col-lg-4 col-md-5 col-12">
                     </div>
@@ -238,14 +287,34 @@ class EmployerWorkFlow extends Component {
                     <EmployerSectionOne
                         open={this.state.openEmployerSection_1}
                         onCloseSection_1={this.onCloseSection_1}
-                        onChangeEmployerStatus={this.onChangeEmployerStatus}
-                        value={this.state.onChangeEmployerStatus}
-                        onCountryChange={this.onCountryChange}
+                        onSectionValuesChange={this.onSectionValuesChange}
+                        jobStatus={this.state.jobStatus}
+                        onSaveSection={this.onSaveSection}
                         country={this.state.country}
-                        onDateChange={this.onDateChange}
-                        selectedDate={this.state.selectedDate}
-                        onJobChangeDateChange={this.onJobChangeDateChange}
+                        jobCreatedDate={this.state.jobCreatedDate}
                         changeDateSelected={this.state.changeDateSelected}
+                        externalJobTitle={this.state.employerSections.externalJobTitle}
+                        internalJobTitle={this.state.employerSections.internalJobTitle}
+                        numberOfOpenings={this.state.employerSections.numberOfOpenings}
+                        jobSummary={this.state.employerSections.jobSummary}
+                        houseNo={this.state.employerSections.houseNo}
+                        street={this.state.employerSections.street}
+                        skill1={this.state.employerSections.skill1}
+                        skill2={this.state.employerSections.skill2}
+                        skill3={this.state.employerSections.skill3}
+                        skill4={this.state.employerSections.skill4}
+                        skill5={this.state.employerSections.skill5}
+                        softSkill1={this.state.employerSections.softSkill1}
+                        softSkill2={this.state.employerSections.softSkill2}
+                        softSkill3={this.state.employerSections.softSkill3}
+                        softSkill4={this.state.employerSections.softSkill4}
+                        softSkill5={this.state.employerSections.softSkill5}
+                        city={this.state.employerSections.city}
+                        province={this.state.employerSections.province}
+                        zipCode={this.state.employerSections.zipCode}
+                        targetCountry={this.state.employerSections.targetCountry}
+                        createdBy={this.state.employerSections.createdBy}
+                        changeBy={this.state.employerSections.changeBy}
                     />
                 }
                 {this.state.openEmployerSection_2
@@ -277,35 +346,35 @@ class EmployerWorkFlow extends Component {
                 }
                 {this.state.openEmployerSection_4 &&
                     <EmployerSectionFour
-                    open={this.state.openEmployerSection_4}
-                    onCloseSection_4={this.onCloseSection_4}
-                    contractYears={this.state.contractInformation.contractYears}
-                    contractMonth={this.state.contractInformation.contractMonth}
-                    contractDays={this.state.contractInformation.contractDays}
-                    visaStatusvalue={this.state.contractInformation.visaStatusvalue}
-                    commuteCurrencyValue={this.state.commuteCurrencyValue}
-                    commuteAmountValue={this.state.contractInformation.commuteAmountValue}
-                    onContractinformationChange={this.onContractinformationChange}
+                        open={this.state.openEmployerSection_4}
+                        onCloseSection_4={this.onCloseSection_4}
+                        contractYears={this.state.contractInformation.contractYears}
+                        contractMonth={this.state.contractInformation.contractMonth}
+                        contractDays={this.state.contractInformation.contractDays}
+                        visaStatusvalue={this.state.contractInformation.visaStatusvalue}
+                        commuteCurrencyValue={this.state.commuteCurrencyValue}
+                        commuteAmountValue={this.state.contractInformation.commuteAmountValue}
+                        onContractinformationChange={this.onContractinformationChange}
                     />
                 }
                 {this.state.openEmployerSection_5 &&
-                <EmployerSectionFive 
-                open={this.state.openEmployerSection_5}
-                onCloseSection_5={this.onCloseSection_5}
-                budgetedPositionValue={this.state.fullTimeSalaryAndBenifits.budgetedPositionValue}
-                salaryFrequencyValue={this.state.fullTimeSalaryAndBenifits.salaryFrequencyValue}
-                commissionValue={this.state.fullTimeSalaryAndBenifits.commissionValue}
-                motorVehicleValue={this.state.fullTimeSalaryAndBenifits.motorVehicleValue}
-                accomodationValue={this.state.fullTimeSalaryAndBenifits.accomodationValue}
-                relocationPackValue={this.state.fullTimeSalaryAndBenifits.relocationPackValue}
-                onChangefullTimeSalaryAndBenifits={this.onChangefullTimeSalaryAndBenifits}
-                />
+                    <EmployerSectionFive
+                        open={this.state.openEmployerSection_5}
+                        onCloseSection_5={this.onCloseSection_5}
+                        budgetedPositionValue={this.state.fullTimeSalaryAndBenifits.budgetedPositionValue}
+                        salaryFrequencyValue={this.state.fullTimeSalaryAndBenifits.salaryFrequencyValue}
+                        commissionValue={this.state.fullTimeSalaryAndBenifits.commissionValue}
+                        motorVehicleValue={this.state.fullTimeSalaryAndBenifits.motorVehicleValue}
+                        accomodationValue={this.state.fullTimeSalaryAndBenifits.accomodationValue}
+                        relocationPackValue={this.state.fullTimeSalaryAndBenifits.relocationPackValue}
+                        onChangefullTimeSalaryAndBenifits={this.onChangefullTimeSalaryAndBenifits}
+                    />
                 }
                 {this.state.openEmployerSection_6 &&
-                <EmployerSectionSix 
-                open={this.state.openEmployerSection_6}
-                onCloseSection_6={this.onCloseSection_6}
-                />
+                    <EmployerSectionSix
+                        open={this.state.openEmployerSection_6}
+                        onCloseSection_6={this.onCloseSection_6}
+                    />
                 }
             </div>
         );

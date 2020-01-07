@@ -37,7 +37,7 @@ const EmployerInfo = ({onOpenEployerInfo}) => {
                     <tr>
                         <td><th>Type</th></td>
                         <td></td>
-                        <td>Private</td>
+                        <td> Private </td>
                     </tr>
                     <tr>
                         <td><th>Founded</th></td>
