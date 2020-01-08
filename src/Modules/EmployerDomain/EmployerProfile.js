@@ -8,9 +8,15 @@ class EmployerProfile extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            employerInfo:{
             companySize: '',
-            openEmployerBasicInfoDialogue:false
+            openEmployerBasicInfoDialogue:false,
+            employerTypeValue:''
+            }
         }
+    }
+    onChangeEmployerTypeValue=(event)=>{
+        this.setState({employerTypeValue:event.target.value});
     }
     onChangeCompanySize=(event)=>{
         this.setState({companySize:event.target.value});
@@ -37,9 +43,10 @@ class EmployerProfile extends Component {
                     <EmployerProfileInfo 
                     open={this.state.openEmployerBasicInfoDialogue}
                     handleClose={this.onCloseEployerInfo}
-                    companySize={this.state.companySize}
+                    companySize={this.state.employerInfo.companySize}
                     onCompanySizeChange={this.onCompanySizeChange}
-
+                    employerTypeValue={this.state.employerInfo.employerTypeValue} 
+                    onChangeEmployerTypeValue={this.onChangeEmployerTypeValue}      
                     />}
                 </div>
         );

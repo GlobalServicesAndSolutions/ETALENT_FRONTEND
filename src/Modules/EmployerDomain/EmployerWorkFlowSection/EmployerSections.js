@@ -21,6 +21,8 @@ import * as employerAction from '../../../actions/EmployerActions/EmployerSectio
 import { PropTypes } from "prop-types";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
+import EmployerSectionFiveReview from '../EmployerSectionsCards/SectionFiveCard';
+import EmployerSectionSixReview from '../EmployerSectionsCards/SectionSixCard';
 
 class EmployerWorkFlow extends Component {
     constructor(props) {
@@ -55,7 +57,7 @@ class EmployerWorkFlow extends Component {
                 createdBy: '',
                 changeBy: '',
                 //******************** Section 2 Values *********************** */
-                jobCode:'',
+                jobCode: '',
                 selectedStartDate: new Date(),
                 selectedEndDate: new Date(),
                 selectedDeadlineDate: new Date(),
@@ -87,9 +89,9 @@ class EmployerWorkFlow extends Component {
                 contractMonth: '',
                 contractDays: '',
                 visaStatusvalue: '',
-                billRateCurrency:'',
-                billRate:'',
-                commuteCurrencyValue:'',
+                billRateCurrency: '',
+                billRate: '',
+                commuteCurrencyValue: '',
                 commuteAmountValue: '',
                 //******************** Section 5 Values *********************** */
                 budgetedPositionValue: '',
@@ -98,6 +100,20 @@ class EmployerWorkFlow extends Component {
                 motorVehicleValue: '',
                 accomodationValue: '',
                 relocationPackValue: '',
+                currency: '',
+                baseSalary: '',
+                employmentType: '',
+                jobPayGrade: '',
+                payType: '',
+                targetBonusAmount: '',
+                stokePakage: '',
+                comments: '',
+                //******************** Section 6 Values *********************** */
+                hiringManager: '',
+                recruiter: '',
+                targetRecruiters: '',
+                recruitementCoordinator: '',
+                humanResourceAdministrator: ''
             },
             expansionPanelvalue: '',
             openEmployerSection_1: false,
@@ -106,7 +122,6 @@ class EmployerWorkFlow extends Component {
             openEmployerSection_4: false,
             openEmployerSection_5: false,
             openEmployerSection_6: false,
-            isSectionFourDone: false,
         }
     }
     onSectionValuesChange = (event, date, name) => {
@@ -122,28 +137,46 @@ class EmployerWorkFlow extends Component {
         }
     }
     onSaveSectionOne = () => {
-        this.props.employerActions.onSaveSectionOnedata(this.state.employerSections); 
-        this.setState({  openEmployerSection_1: false });
+        this.props.employerActions.onSaveSectionOnedata(this.state.employerSections);
+        this.setState({ openEmployerSection_1: false });
     }
-    onDeleteSectionOne=()=>{
+    onDeleteSectionOne = () => {
         this.props.employerActions.onDeleteSectionOnedata();
     }
-    onSaveSectionTwo=()=>{
+    onSaveSectionTwo = () => {
         this.props.employerActions.onSaveSectionTwodata(this.state.employerSections);
         this.setState({ openEmployerSection_2: false });
     }
-    onDeleteSectionTwo=()=>{
+    onDeleteSectionTwo = () => {
         this.props.employerActions.onDeleteSectionTwodata();
     }
-    onSaveSectionThree=()=>{
+    onSaveSectionThree = () => {
         this.props.employerActions.onSaveSectionThreedata(this.state.employerSections);
         this.setState({ openEmployerSection_3: false });
     }
-    onDeleteSectionThree=()=>{
+    onDeleteSectionThree = () => {
         this.props.employerActions.onDeleteSectionThreedata();
     }
-    onSaveSectionFour=()=>{
-        this.setState({ isSectionFourDone: true, openEmployerSection_4: false });
+    onSaveSectionFour = () => {
+        this.props.employerActions.onSaveSectionFourdata(this.state.employerSections);
+        this.setState({ openEmployerSection_4: false });
+    }
+    onDeleteSectionFour = () => {
+        this.props.employerActions.onDeleteSectionFourdata();
+    }
+    onSaveSectionFive = () => {
+        this.props.employerActions.onSaveSectionFivedata(this.state.employerSections);
+        this.setState({ openEmployerSection_5: false });
+    }
+    onDeleteSectionFive = () => {
+        this.props.employerActions.onDeleteSectionFivedata();
+    }
+    onSaveSectionSix = () => {
+        this.props.employerActions.onSaveSectionSixdata(this.state.employerSections);
+        this.setState({ openEmployerSection_6: false });
+    }
+    onDeleteSectionSix = () => {
+        this.props.employerActions.onDeleteSectionSixdata();
     }
     onExpansionPanelChange = panel => (event, expandedPanel) => {
         this.setState({ expansionPanelvalue: expandedPanel ? panel : 'notExpanded' })
@@ -268,28 +301,45 @@ class EmployerWorkFlow extends Component {
                     <div className="col-xl-8 col-lg-8 col-md-7 col-12">
                         {this.props.sectionOneData &&
                             <EmployerSectionOneReview
-                               data={this.props.sectionOneData}
-                               onEditSectionOne={this.onSection_1Open}
-                               onDeleteSectionOne={this.onDeleteSectionOne}
+                                data={this.props.sectionOneData}
+                                onEditSectionOne={this.onSection_1Open}
+                                onDeleteSectionOne={this.onDeleteSectionOne}
                             />
                         }
                         {this.props.sectionTwoData &&
-                        <EmployerSectionTwoReview 
-                        data={this.props.sectionTwoData}
-                        onEditSectionTwo={this.onSection_2Open}
-                        onDeleteSectionTwo={this.onDeleteSectionTwo}
-                        />
+                            <EmployerSectionTwoReview
+                                data={this.props.sectionTwoData}
+                                onEditSectionTwo={this.onSection_2Open}
+                                onDeleteSectionTwo={this.onDeleteSectionTwo}
+                            />
                         }
                         {this.props.sectionThreeData &&
-                        <EmployerSectionThreeReview 
-                        data={this.props.sectionThreeData}
-                        onEditSectionThree={this.onSection_3Open}
-                        onDeleteSectionThree={this.onDeleteSectionThree}
-                        />
+                            <EmployerSectionThreeReview
+                                data={this.props.sectionThreeData}
+                                onEditSectionThree={this.onSection_3Open}
+                                onDeleteSectionThree={this.onDeleteSectionThree}
+                            />
                         }
-                        {this.state.isSectionFourDone &&
-                        <EmployerSectionFourReview
-                        data={this.state.employerSections}
+                        {this.props.sectionFourData &&
+                            <EmployerSectionFourReview
+                                data={this.props.sectionFourData}
+                                onEditSectionFour={this.onSection_4Open}
+                                onDeleteSectionFour={this.onDeleteSectionFour}
+
+                            />
+                        }
+                        {this.props.sectionFiveData &&
+                            <EmployerSectionFiveReview
+                                data={this.props.sectionFiveData}
+                                onEditSectionFive={this.onSection_5Open}
+                                onDeleteSectionFive={this.onDeleteSectionFive}
+                            />
+                        }
+                        {this.props.sectionSixData && 
+                        <EmployerSectionSixReview 
+                        data ={this.props.sectionSixData}
+                        onEditSectionSix={this.onSection_6Open}
+                        onDeleteSectionSix={this.onDeleteSectionSix}
                         />
                         }
                     </div>
@@ -302,54 +352,53 @@ class EmployerWorkFlow extends Component {
                         onCloseSection_1={this.onCloseSection_1}
                         onSectionValuesChange={this.onSectionValuesChange}
                         onSaveSectionOne={this.onSaveSectionOne}
-                        data={this.state.employerSections}
+                        data={this.props.sectionOneData ? this.props.sectionOneData : this.state.employerSections}
                     />
                 }
                 {this.state.openEmployerSection_2
                     &&
                     <EmployerSectionTwo
-                    open={this.state.openEmployerSection_2}
-                    onCloseSection_2={this.onCloseSection_2}
-                    data={this.state.employerSections}
-                    onSectionValuesChange={this.onSectionValuesChange}
-                    onSaveSectionTwo={this.onSaveSectionTwo}
-                   />
-        }
+                        open={this.state.openEmployerSection_2}
+                        onCloseSection_2={this.onCloseSection_2}
+                        data={this.props.sectionTwoData ? this.props.sectionTwoData : this.state.employerSections}
+                        onSectionValuesChange={this.onSectionValuesChange}
+                        onSaveSectionTwo={this.onSaveSectionTwo}
+                    />
+                }
                 {this.state.openEmployerSection_3 &&
                     <EmployerSectionThree
                         open={this.state.openEmployerSection_3}
                         onCloseSection_3={this.onCloseSection_3}
                         onSectionValuesChange={this.onSectionValuesChange}
                         onSaveSectionThree={this.onSaveSectionThree}
-                        data={this.state.employerSections}
+                        data={this.props.sectionThreeData ? this.props.sectionThreeData : this.state.employerSections}
                     />
                 }
                 {this.state.openEmployerSection_4 &&
                     <EmployerSectionFour
                         open={this.state.openEmployerSection_4}
                         onCloseSection_4={this.onCloseSection_4}
-                        onSectionValuesChange={this.onSectionValuesChange}
-                        data={this.state.employerSections}
+                        data={this.props.sectionFourData ? this.props.sectionFourData : this.state.employerSections}
                         onSaveSectionFour={this.onSaveSectionFour}
+                        onSectionValuesChange={this.onSectionValuesChange}
                     />
                 }
                 {this.state.openEmployerSection_5 &&
                     <EmployerSectionFive
                         open={this.state.openEmployerSection_5}
                         onCloseSection_5={this.onCloseSection_5}
-                        budgetedPositionValue={this.state.fullTimeSalaryAndBenifits.budgetedPositionValue}
-                        salaryFrequencyValue={this.state.fullTimeSalaryAndBenifits.salaryFrequencyValue}
-                        commissionValue={this.state.fullTimeSalaryAndBenifits.commissionValue}
-                        motorVehicleValue={this.state.fullTimeSalaryAndBenifits.motorVehicleValue}
-                        accomodationValue={this.state.fullTimeSalaryAndBenifits.accomodationValue}
-                        relocationPackValue={this.state.fullTimeSalaryAndBenifits.relocationPackValue}
-                        onChangefullTimeSalaryAndBenifits={this.onChangefullTimeSalaryAndBenifits}
+                        data={this.props.sectionFourData ? this.props.sectionFourData : this.state.employerSections}
+                        onSectionValuesChange={this.onSectionValuesChange}
+                        onSaveSectionFive={this.onSaveSectionFive}
                     />
                 }
                 {this.state.openEmployerSection_6 &&
                     <EmployerSectionSix
                         open={this.state.openEmployerSection_6}
                         onCloseSection_6={this.onCloseSection_6}
+                        onSectionValuesChange={this.onSectionValuesChange}
+                        onSaveSectionSix={this.onSaveSectionSix}
+                        data={this.props.sectionSixData ? this.props.sectionSixData : this.state.employerSections}
                     />
                 }
             </div>
@@ -358,24 +407,30 @@ class EmployerWorkFlow extends Component {
 }
 const mapStateToProps = ({
     employerSection,
-  }) => {
-    const { sectionOneData,sectionTwoData,sectionThreeData } = employerSection;
+}) => {
+    const { sectionOneData, sectionTwoData, sectionThreeData, sectionFourData, sectionFiveData,sectionSixData } = employerSection;
     return {
         sectionOneData,
         sectionTwoData,
-        sectionThreeData
+        sectionThreeData,
+        sectionFourData,
+        sectionFiveData,
+        sectionSixData
     };
-  }
+}
 function mapDispatchToProps(dispatch) {
     return {
-      employerActions: bindActionCreators(employerAction, dispatch)
+        employerActions: bindActionCreators(employerAction, dispatch)
     };
-  }
-  
-  EmployerWorkFlow.propTypes = {
+}
+
+EmployerWorkFlow.propTypes = {
     sectionOneData: PropTypes.object,
-    sectionTwoData:PropTypes.object,
-    sectionThreeData:PropTypes.object
-  };
-  
-  export default connect(mapStateToProps, mapDispatchToProps)(EmployerWorkFlow);
+    sectionTwoData: PropTypes.object,
+    sectionThreeData: PropTypes.object,
+    sectionFourData: PropTypes.object,
+    sectionFiveData: PropTypes.object,
+    sectionSixData:PropTypes.object
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(EmployerWorkFlow);

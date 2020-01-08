@@ -8,6 +8,9 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 
 const EmployerSectionSix = ({ open,
     onCloseSection_6,
+    onSectionValuesChange,
+    onSaveSectionSix,
+    data
 }) => {
 
     return (
@@ -21,6 +24,8 @@ const EmployerSectionSix = ({ open,
                         name="hiringManager"
                         label="Hiring Manager"
                         type="text"
+                        onChange={onSectionValuesChange}
+                        value={data.hiringManager}
                         className="profileInfoTextField"
                     />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -29,13 +34,17 @@ const EmployerSectionSix = ({ open,
                         name="recruiter"
                         label="Recruiter"
                         type="text"
+                        onChange={onSectionValuesChange}
+                        value={data.recruiter}
                         className="profileInfoTextField"
                     />
                     <TextField
                         margin="dense"
-                        name="targetRecruiters/Agents"
+                        name="targetRecruiters"
                         label="Target Recruiters/Agents"
                         type="text"
+                        onChange={onSectionValuesChange}
+                        value={data.targetRecruiters}
                         className="profileInfoTextField"
                     />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -44,6 +53,8 @@ const EmployerSectionSix = ({ open,
                         name="recruitementCoordinator"
                         label="Recruitement Coordinator"
                         type="text"
+                        onChange={onSectionValuesChange}
+                        value={data.recruitementCoordinator}
                         className="profileInfoTextField"
                     />
                     <TextField
@@ -51,12 +62,14 @@ const EmployerSectionSix = ({ open,
                         name="humanResourceAdministrator"
                         label="Human Resource Administrator"
                         type="text"
+                        onChange={onSectionValuesChange}
+                        value={data.humanResourceAdministrator}
                         className="profileInfoTextField"
                     />
                     
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={onCloseSection_6} color="primary">
+                    <Button onClick={onSaveSectionSix} color="primary">
                         Save
                     </Button>
                     <Button onClick={onCloseSection_6} color="primary">

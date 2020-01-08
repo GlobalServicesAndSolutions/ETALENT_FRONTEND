@@ -1,14 +1,31 @@
 import React from "react";
 import Widget from "components/Widget";
+import Fab from '@material-ui/core/Fab';
+import EditIcon from '@material-ui/icons/Edit';
+import IconButton from '@material-ui/core/IconButton';
+import DeleteIcon from '@material-ui/icons/Delete';
+
 
 const EmployerSectionFourReview = ({
-    data
+    data,
+    onEditSectionFour,
+    onDeleteSectionFour
 }) => {
     return (
         <Widget styleName="jr-card-profile">
             <div className="mb-3">
-                <div>
-                    <h3 className="card-title mb-2 mb-md-3">Contract Information</h3>
+            <div className="cardHeaderAndAddButton" >
+                    <div>
+                        <h3 className="card-title mb-2 mb-md-3">Contract Information</h3>
+                    </div>
+                    <div>
+                        <Fab size="small" color="primary" aria-label="delete" onClick={onEditSectionFour}>
+                            <EditIcon />
+                        </Fab>
+                        <IconButton aria-label="delete" color="primary" onClick={onDeleteSectionFour}>
+                            <DeleteIcon fontSize="large" />
+                        </IconButton>
+                    </div>
                 </div>
                 <hr />
                 <table>

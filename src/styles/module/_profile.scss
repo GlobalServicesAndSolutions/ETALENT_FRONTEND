@@ -109,7 +109,20 @@
 .profileSectionEditAndDelete{
   justify-content: space-between;
 }
+.customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+.customers tr:nth-child(even){
+  background-color: #f2f2f2;
+}
 
+.customers tr:hover {
+  background-color: #ddd;
+}
 .jr-profile-content {
   position: relative;
   z-index: 2;

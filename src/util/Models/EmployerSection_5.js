@@ -16,13 +16,9 @@ import Select from '@material-ui/core/Select';
 
 const EmployerSectionFive = ({ open,
     onCloseSection_5,
-    budgetedPositionValue,
-    onChangefullTimeSalaryAndBenifits,
-    salaryFrequencyValue,
-    commissionValue,
-    motorVehicleValue,
-    accomodationValue,
-    relocationPackValue,
+    onSectionValuesChange,
+    onSaveSectionFive,
+    data
 }) => {
 
     return (
@@ -33,9 +29,9 @@ const EmployerSectionFive = ({ open,
                     <FormControl style={{ width: '45%' }}>
                         <InputLabel>Is This a Budgeted Position</InputLabel>
                         <Select
-                            value={budgetedPositionValue}
+                            value={data.budgetedPositionValue}
                             name='budgetedPositionValue'
-                            onChange={onChangefullTimeSalaryAndBenifits}
+                            onChange={onSectionValuesChange}
                         >
                             <MenuItem value='yes'>Yes</MenuItem>
                             <MenuItem value='no'>No</MenuItem>
@@ -48,6 +44,8 @@ const EmployerSectionFive = ({ open,
                         name="currency"
                         label="Currency"
                         type="text"
+                        value={data.currency}
+                        onChange={onSectionValuesChange}
                         placeholder="Ex: USD"
                         className="profileInfoTextField"
                     />
@@ -56,13 +54,15 @@ const EmployerSectionFive = ({ open,
                         name="baseSalary"
                         label="Base Salary"
                         type="text"
+                        value={data.baseSalary}
+                        onChange={onSectionValuesChange}
                         className="profileInfoTextField"
                     />
                     
                     <hr/>
                     <FormControl component="fieldset">
                         <FormLabel component="legend"><strong>Salary Frequency</strong></FormLabel>
-                        <RadioGroup aria-label="position" name="salaryFrequencyValue" value={salaryFrequencyValue} onChange={onChangefullTimeSalaryAndBenifits} row>
+                        <RadioGroup aria-label="position" name="salaryFrequencyValue" value={data.salaryFrequencyValue} onChange={onSectionValuesChange} row>
                             <FormControlLabel
                                 value="Weekly"
                                 control={<Radio color="primary" />}
@@ -92,6 +92,8 @@ const EmployerSectionFive = ({ open,
                         name="employmentType"
                         label="Employment type"
                         type="text"
+                        value={data.employmentType}
+                        onChange={onSectionValuesChange}
                         className="profileInfoTextField"
                     />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -100,6 +102,8 @@ const EmployerSectionFive = ({ open,
                         name="jobPayGrade"
                         label="Job Pay Grade"
                         type="text"
+                        value={data.jobPayGrade}
+                        onChange={onSectionValuesChange}
                         className="profileInfoTextField"
                     />
                     <TextField
@@ -107,6 +111,8 @@ const EmployerSectionFive = ({ open,
                         name="payType"
                         label="Pay Type"
                         type="text"
+                        value={data.payType}
+                        onChange={onSectionValuesChange}
                         className="profileInfoTextField"
                     />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -115,6 +121,8 @@ const EmployerSectionFive = ({ open,
                         name="targetBonusAmount"
                         label="Target Bonus Amount"
                         type="text"
+                        value={data.targetBonusAmount}
+                        onChange={onSectionValuesChange}
                         className="profileInfoTextField"
                     />
                     <TextField
@@ -122,45 +130,28 @@ const EmployerSectionFive = ({ open,
                         name="stokePakage"
                         label="Stock Pakage"
                         type="text"
+                        value={data.stokePakage}
+                        onChange={onSectionValuesChange}
                         className="profileInfoTextField"
                     />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <TextField
-                        margin="dense"
-                        name="targetBonusAmount"
-                        label="Target Bonus Amount"
-                        type="text"
-                        className="profileInfoTextField"
-                    />
                     <FormControl style={{ width: '45%' }}>
                         <InputLabel>Commission</InputLabel>
                         <Select
-                            value={commissionValue}
+                            value={data.commissionValue}
                             name='commissionValue'
-                            onChange={onChangefullTimeSalaryAndBenifits}
+                            onChange={onSectionValuesChange}
                         >
                             <MenuItem value='yes'>Yes</MenuItem>
                             <MenuItem value='no'>No</MenuItem>
                         </Select>
                     </FormControl>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <FormControl style={{ width: '45%' }}>
                         <InputLabel>Motor vehicle</InputLabel>
                         <Select
-                            value={motorVehicleValue}
+                            value={data.motorVehicleValue}
                             name='motorVehicleValue'
-                            onChange={onChangefullTimeSalaryAndBenifits}
-                        >
-                            <MenuItem value='yes'>Yes</MenuItem>
-                            <MenuItem value='no'>No</MenuItem>
-                        </Select>
-                    </FormControl>
-                    <FormControl style={{ width: '45%' }}>
-                        <InputLabel>Accomodation</InputLabel>
-                        <Select
-                            value={accomodationValue}
-                            name='accomodationValue'
-                            onChange={onChangefullTimeSalaryAndBenifits}
+                            onChange={onSectionValuesChange}
                         >
                             <MenuItem value='yes'>Yes</MenuItem>
                             <MenuItem value='no'>No</MenuItem>
@@ -168,11 +159,22 @@ const EmployerSectionFive = ({ open,
                     </FormControl>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <FormControl style={{ width: '45%' }}>
+                        <InputLabel>Accomodation</InputLabel>
+                        <Select
+                            value={data.accomodationValue}
+                            name='accomodationValue'
+                            onChange={onSectionValuesChange}
+                        >
+                            <MenuItem value='yes'>Yes</MenuItem>
+                            <MenuItem value='no'>No</MenuItem>
+                        </Select>
+                    </FormControl>
+                    <FormControl style={{ width: '45%' }}>
                         <InputLabel>Relocation Pack</InputLabel>
                         <Select
-                            value={relocationPackValue}
+                            value={data.relocationPackValue}
                             name='relocationPackValue'
-                            onChange={onChangefullTimeSalaryAndBenifits}
+                            onChange={onSectionValuesChange}
                         >
                             <MenuItem value='yes'>Yes</MenuItem>
                             <MenuItem value='no'>No</MenuItem>
@@ -184,11 +186,13 @@ const EmployerSectionFive = ({ open,
                         label="Comments"
                         multiline
                         rows="4"
+                        value={data.comments}
+                        onChange={onSectionValuesChange}
                         fullWidth
                     />
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={onCloseSection_5} color="primary">
+                    <Button onClick={onSaveSectionFive} color="primary">
                         Save
                     </Button>
                     <Button onClick={onCloseSection_5} color="primary">

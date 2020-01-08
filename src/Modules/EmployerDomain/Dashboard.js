@@ -12,6 +12,8 @@ class EmployerDashboard extends Component {
         </div>
         <div style={{float:'right'}}>
           <Link to='/employerWorkflow'>Create Job</Link>
+          <br/>
+          <Link to='/activeVendors'>Active Vendors</Link>
         </div>
         <div  className="app-wrapper">
         <div style={{display:"flex"}}>

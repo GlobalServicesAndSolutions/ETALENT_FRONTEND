@@ -9,39 +9,161 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
 import Select from '@material-ui/core/Select';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormLabel from '@material-ui/core/FormLabel';
 
 const EmployerProfileInfo = ({ open, 
     handleClose,
     onCompanySizeChange,
-    companySize
+    companySize,
+    employerTypeValue,
+    onChangeEmployerTypeValue
 }) => {
-
     return (
         <div>
             <Dialog open={open} onClose={handleClose}  aria-labelledby="form-dialog-title" maxWidth="sm" >
                 <DialogTitle id="form-dialog-title">Employer Basic Info</DialogTitle>
                 <DialogContent>
+                <FormControl component="fieldset">
+                        <FormLabel component="legend"><strong>Employer Type</strong></FormLabel>
+                        <RadioGroup aria-label="position" name="employerTypeValue" value={employerTypeValue} onChange={onChangeEmployerTypeValue} row>
+                            <FormControlLabel
+                                value="Recruiting"
+                                control={<Radio color="primary" />}
+                                label="Recruiting"
+                                component="legend"
+                                labelPlacement="start"
+                            />
+                            <FormControlLabel
+                                value="BackgroundCheck"
+                                control={<Radio color="primary" />}
+                                label="Background Check"
+                                component="legend"
+                                labelPlacement="start"
+                            />
+                            <FormControlLabel
+                                value="Others"
+                                control={<Radio color="primary" />}
+                                label="Others"
+                                component="legend"
+                                labelPlacement="start"
+                            />
+                        </RadioGroup>
+                    </FormControl>
+                    {employerTypeValue === 'Others' &&
                     <TextField
                         autoFocus
+                        margin="dense"
+                        name="industry"
+                        label="Industry"
+                        type="text"
+                        placeholder="Ex: Software"
+                        required
+                        className="profileInfoTextField"
+                    />
+                    }
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <TextField
                         margin="dense"
                         name="website"
                         label="Web Site link"
                         type="text"
                         placeholder="Ex: http://www.google.com"
-                        fullWidth
                         required
+                        className="profileInfoTextField"
+                    />
+                    <hr/>
+                    <FormLabel component="legend"><strong>Address</strong></FormLabel>
+                    <TextField
+                        margin="dense"
+                        name="employerHouseNo"
+                        label="House No."
+                        type="text"
+                        placeholder="Ex: 123A"
+                        required
+                        className="profileInfoTextField"
+                    />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <TextField
+                        margin="dense"
+                        name="employerStreet"
+                        label="Street No."
+                        type="text"
+                        placeholder="Ex: 23"
+                        required
+                        className="profileInfoTextField"
                     />
                     <TextField
                         margin="dense"
-                        name="industry"
-                        label="Industry"
+                        name="employerCity"
+                        label="City"
                         type="text"
-                        fullWidth
-                        placeholder="Ex: Software"
+                        placeholder="Ex: Islamabad"
                         required
+                        className="profileInfoTextField"
+                    />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <TextField
+                        margin="dense"
+                        name="employerDistrict"
+                        label="District/County"
+                        type="text"
+                        placeholder="Ex: Federal"
+                        required
+                        className="profileInfoTextField"
+                    />
+                    <TextField
+                        margin="dense"
+                        name="employerProvinse"
+                        label="Province State"
+                        type="text"
+                        placeholder="Ex: Federal"
+                        required
+                        className="profileInfoTextField"
+                    />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <TextField
+                        margin="dense"
+                        name="employerZipCode"
+                        label="Po Box/Zip Code"
+                        type="text"
+                        placeholder="Ex: 44000"
+                        required
+                        className="profileInfoTextField"
+                    />
+                    <TextField
+                        margin="dense"
+                        name="employerCountry"
+                        label="Country"
+                        type="text"
+                        placeholder="Ex: Pakistan"
+                        required
+                        className="profileInfoTextField"
+                    />
+                    <hr/>
+                    <FormLabel component="legend"><strong>Contact</strong></FormLabel>
+                    <TextField
+                        margin="dense"
+                        name="employerPhoneNo"
+                        label="Phone No."
+                        type="text"
+                        placeholder="Ex: 0510000000"
+                        className="profileInfoTextField"
+                    />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <TextField
+                        margin="dense"
+                        name="employeremail"
+                        label="Email"
+                        type="email"
+                        placeholder="Ex: salmanhaider0006@hotmail.com"
+                        required
+                        className="profileInfoTextField"
                     />
                     <FormControl style={{ width: '100%' }}>
-                        <InputLabel>Created By</InputLabel>
+                        <InputLabel>Company Size</InputLabel>
                         <Select
                             value={companySize}
                             onChange={onCompanySizeChange}
