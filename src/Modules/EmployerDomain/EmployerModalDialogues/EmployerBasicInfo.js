@@ -16,10 +16,9 @@ import FormLabel from '@material-ui/core/FormLabel';
 
 const EmployerProfileInfo = ({ open, 
     handleClose,
-    onCompanySizeChange,
     companySize,
     employerTypeValue,
-    onChangeEmployerTypeValue
+    onEmployerInfochange
 }) => {
     return (
         <div>
@@ -28,7 +27,7 @@ const EmployerProfileInfo = ({ open,
                 <DialogContent>
                 <FormControl component="fieldset">
                         <FormLabel component="legend"><strong>Employer Type</strong></FormLabel>
-                        <RadioGroup aria-label="position" name="employerTypeValue" value={employerTypeValue} onChange={onChangeEmployerTypeValue} row>
+                        <RadioGroup aria-label="position" name="employerTypeValue" value={employerTypeValue} onChange={onEmployerInfochange} row>
                             <FormControlLabel
                                 value="Recruiting"
                                 control={<Radio color="primary" />}
@@ -166,7 +165,8 @@ const EmployerProfileInfo = ({ open,
                         <InputLabel>Company Size</InputLabel>
                         <Select
                             value={companySize}
-                            onChange={onCompanySizeChange}
+                            name='companySize'
+                            onChange={onEmployerInfochange}
                         >
                             <MenuItem value='10-50'>10-50</MenuItem>
                             <MenuItem value='51-100'>51-100</MenuItem>

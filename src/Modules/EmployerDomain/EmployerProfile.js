@@ -15,11 +15,11 @@ class EmployerProfile extends Component {
             }
         }
     }
-    onChangeEmployerTypeValue=(event)=>{
-        this.setState({employerTypeValue:event.target.value});
-    }
-    onChangeCompanySize=(event)=>{
-        this.setState({companySize:event.target.value});
+    onEmployerInfochange=(event)=>{
+        let employerInfo=this.state.employerInfo;
+        let field=event.target.name;
+        employerInfo[field]=event.target.value;
+        this.setState({employerInfo});
     }
     onCloseEployerInfo=()=>{
         this.setState({openEmployerBasicInfoDialogue:false});
@@ -44,9 +44,8 @@ class EmployerProfile extends Component {
                     open={this.state.openEmployerBasicInfoDialogue}
                     handleClose={this.onCloseEployerInfo}
                     companySize={this.state.employerInfo.companySize}
-                    onCompanySizeChange={this.onCompanySizeChange}
                     employerTypeValue={this.state.employerInfo.employerTypeValue} 
-                    onChangeEmployerTypeValue={this.onChangeEmployerTypeValue}      
+                    onEmployerInfochange={this.onEmployerInfochange}      
                     />}
                 </div>
         );
