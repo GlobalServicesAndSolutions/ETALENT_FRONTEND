@@ -35,6 +35,9 @@ class Profile extends Component {
                 credentialId: '',
                 credentialUrl: ''
             },
+            skillInfo:{
+                skillName:''
+            },
             educationOpen: false,
             lisenceOpen: false,
             skillOpen: false,
@@ -129,6 +132,12 @@ class Profile extends Component {
         lisenceInfo[field] = event.target.value;
         this.setState({ lisenceInfo });
     }
+    onChangeSkillsInfo=(event)=>{
+        let skillInfo = this.state.skillInfo;
+        let field = event.target.name;
+        skillInfo[field] = event.target.value;
+        this.setState({ skillInfo });
+    }
 
     render() {
         return (
@@ -221,6 +230,8 @@ class Profile extends Component {
                     <SkillsDialogue
                         open={this.state.skillOpen}
                         handleClose={this.closeSkillDialog}
+                        onChangeSkillsInfo={this.onChangeSkillsInfo}
+                        data={this.state.skillInfo}
                     />
                     :
                     <span></span>}

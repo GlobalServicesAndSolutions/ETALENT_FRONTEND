@@ -6,7 +6,11 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
-const SkillsDialogue = ({ open, handleClose }) => {
+const SkillsDialogue = ({ open,
+     handleClose,
+     onChangeSkillsInfo,
+     data 
+    }) => {
 
     return (
         <div>
@@ -16,9 +20,11 @@ const SkillsDialogue = ({ open, handleClose }) => {
                     <TextField
                         autoFocus
                         margin="dense"
-                        id="school"
+                        name="skillName"
                         label="Skill"
                         type="text"
+                        value={data.skillName}
+                        onChange={onChangeSkillsInfo}
                         placeholder="Ex: Web Development"
                         fullWidth
                     />
