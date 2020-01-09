@@ -16,9 +16,9 @@ import FormLabel from '@material-ui/core/FormLabel';
 
 const EmployerProfileInfo = ({ open, 
     handleClose,
-    companySize,
     employerTypeValue,
-    onEmployerInfochange
+    onEmployerInfochange,
+    data
 }) => {
     return (
         <div>
@@ -27,7 +27,7 @@ const EmployerProfileInfo = ({ open,
                 <DialogContent>
                 <FormControl component="fieldset">
                         <FormLabel component="legend"><strong>Employer Type</strong></FormLabel>
-                        <RadioGroup aria-label="position" name="employerTypeValue" value={employerTypeValue} onChange={onEmployerInfochange} row>
+                        <RadioGroup aria-label="position" name="employerTypeValue" value={data.employerTypeValue} onChange={onEmployerInfochange} row>
                             <FormControlLabel
                                 value="Recruiting"
                                 control={<Radio color="primary" />}
@@ -58,6 +58,8 @@ const EmployerProfileInfo = ({ open,
                         name="industry"
                         label="Industry"
                         type="text"
+                        value={data.industry}
+                        onChange={onEmployerInfochange}
                         placeholder="Ex: Software"
                         required
                         className="profileInfoTextField"
@@ -69,6 +71,8 @@ const EmployerProfileInfo = ({ open,
                         name="website"
                         label="Web Site link"
                         type="text"
+                        value={data.website}
+                        onChange={onEmployerInfochange}
                         placeholder="Ex: http://www.google.com"
                         required
                         className="profileInfoTextField"
@@ -80,6 +84,8 @@ const EmployerProfileInfo = ({ open,
                         name="employerHouseNo"
                         label="House No."
                         type="text"
+                        value={data.employerHouseNo}
+                        onChange={onEmployerInfochange}
                         placeholder="Ex: 123A"
                         required
                         className="profileInfoTextField"
@@ -90,6 +96,8 @@ const EmployerProfileInfo = ({ open,
                         name="employerStreet"
                         label="Street No."
                         type="text"
+                        value={data.employerStreet}
+                        onChange={onEmployerInfochange}
                         placeholder="Ex: 23"
                         required
                         className="profileInfoTextField"
@@ -99,6 +107,8 @@ const EmployerProfileInfo = ({ open,
                         name="employerCity"
                         label="City"
                         type="text"
+                        value={data.employerCity}
+                        onChange={onEmployerInfochange}
                         placeholder="Ex: Islamabad"
                         required
                         className="profileInfoTextField"
@@ -109,15 +119,19 @@ const EmployerProfileInfo = ({ open,
                         name="employerDistrict"
                         label="District/County"
                         type="text"
+                        value={data.employerDistrict}
+                        onChange={onEmployerInfochange}
                         placeholder="Ex: Federal"
                         required
                         className="profileInfoTextField"
                     />
                     <TextField
                         margin="dense"
-                        name="employerProvinse"
+                        name="employerProvince"
                         label="Province State"
                         type="text"
+                        value={data.employerProvince}
+                        onChange={onEmployerInfochange}
                         placeholder="Ex: Federal"
                         required
                         className="profileInfoTextField"
@@ -128,6 +142,8 @@ const EmployerProfileInfo = ({ open,
                         name="employerZipCode"
                         label="Po Box/Zip Code"
                         type="text"
+                        value={data.employerZipCode}
+                        onChange={onEmployerInfochange}
                         placeholder="Ex: 44000"
                         required
                         className="profileInfoTextField"
@@ -137,6 +153,8 @@ const EmployerProfileInfo = ({ open,
                         name="employerCountry"
                         label="Country"
                         type="text"
+                        value={data.employerCountry}
+                        onChange={onEmployerInfochange}
                         placeholder="Ex: Pakistan"
                         required
                         className="profileInfoTextField"
@@ -147,7 +165,9 @@ const EmployerProfileInfo = ({ open,
                         margin="dense"
                         name="employerPhoneNo"
                         label="Phone No."
-                        type="text"
+                        type="number"
+                        value={data.employerPhoneNo}
+                        onChange={onEmployerInfochange}
                         placeholder="Ex: 0510000000"
                         className="profileInfoTextField"
                     />
@@ -157,6 +177,8 @@ const EmployerProfileInfo = ({ open,
                         name="employeremail"
                         label="Email"
                         type="email"
+                        value={data.employeremail}
+                        onChange={onEmployerInfochange}
                         placeholder="Ex: salmanhaider0006@hotmail.com"
                         required
                         className="profileInfoTextField"
@@ -164,7 +186,7 @@ const EmployerProfileInfo = ({ open,
                     <FormControl style={{ width: '100%' }}>
                         <InputLabel>Company Size</InputLabel>
                         <Select
-                            value={companySize}
+                            value={data.companySize}
                             name='companySize'
                             onChange={onEmployerInfochange}
                         >
@@ -175,9 +197,11 @@ const EmployerProfileInfo = ({ open,
                     </FormControl>
                     <TextField
                         margin="dense"
-                        name="foundYear"
+                        name="foundedYear"
                         label="Founded Year"
                         type="text"
+                        value={data.foundedYear}
+                        onChange={onEmployerInfochange}
                         fullWidth
                         placeholder="Ex: 2020"
                         required
@@ -186,6 +210,8 @@ const EmployerProfileInfo = ({ open,
                         name="speciality"
                         label="Speciality"
                         multiline
+                        value={data.speciality}
+                        onChange={onEmployerInfochange}
                         rows="5"
                         fullWidth
                     />

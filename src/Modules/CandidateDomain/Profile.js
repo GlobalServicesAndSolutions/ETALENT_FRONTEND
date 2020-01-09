@@ -21,33 +21,46 @@ class Profile extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            educationInfo: {
+                school: '',
+                degree: '',
+                fieldofstudy: '',
+                grade: '',
+                activitiesAndSocieties: '',
+                description: ''
+            },
+            lisenceAndCertificationinfo: {
+                lisenceName: '',
+                organization: '',
+                credentialId: '',
+                credentialUrl: ''
+            },
             educationOpen: false,
             lisenceOpen: false,
-            skillOpen:false,
-            awardOpen:false,
-            basicInfoOpen:false,
-            courseAndtraining:false,
+            skillOpen: false,
+            awardOpen: false,
+            basicInfoOpen: false,
+            courseAndtraining: false,
             ratingValue: 0,
-            expansionPanelvalue:'',
-            isEdit:false
+            expansionPanelvalue: '',
+            isEdit: false
         }
     }
     onRatingChange = (event, newValue) => {
         this.setState({ ratingValue: newValue });
     }
-    downloadPDF=()=>{
+    downloadPDF = () => {
         alert('Downloaded');
     }
-    shareProfile=()=>{
+    shareProfile = () => {
         alert('You shared a profile');
     }
-    onExpansionPanelChange=panel=>(event,expandedPanel)=>{
-        this.setState({expansionPanelvalue:expandedPanel? panel:'notExpanded'})
+    onExpansionPanelChange = panel => (event, expandedPanel) => {
+        this.setState({ expansionPanelvalue: expandedPanel ? panel : 'notExpanded' })
     }
-    onParentExpansion=(e, parentPanel)=>{
-        if(parentPanel===false)
-        {
-            this.setState({expansionPanelvalue:''});
+    onParentExpansion = (e, parentPanel) => {
+        if (parentPanel === false) {
+            this.setState({ expansionPanelvalue: '' });
         }
     }
     openEducationDialog = () => {
@@ -62,47 +75,59 @@ class Profile extends Component {
     closeLisenceDialog = () => {
         this.setState({ lisenceOpen: false });
     }
-    openSkillDialogue=()=>{
+    openSkillDialogue = () => {
         this.setState({ skillOpen: true });
     }
-    closeSkillDialog=()=>{
+    closeSkillDialog = () => {
         this.setState({ skillOpen: false });
     }
-    openAwardDialogue=()=>{
+    openAwardDialogue = () => {
         this.setState({ awardOpen: true });
     }
-    closeAwardDialog=()=>{
+    closeAwardDialog = () => {
         this.setState({ awardOpen: false });
     }
-    onEducationView=()=>{
+    onEducationView = () => {
         var elmnt = document.getElementById("educationcard");
         elmnt.scrollIntoView();
     }
-    onSkillView=()=>{
+    onSkillView = () => {
         var elmnt = document.getElementById("skillCard");
         elmnt.scrollIntoView();
     }
-    onCertificationView=()=>{
+    onCertificationView = () => {
         var elmnt = document.getElementById("certificationCard");
         elmnt.scrollIntoView();
     }
-    basicInfoClick=()=>{
-        this.setState({basicInfoOpen:true});
+    basicInfoClick = () => {
+        this.setState({ basicInfoOpen: true });
     }
-    closeBasicInfo=()=>{
-        this.setState({basicInfoOpen:false});
+    closeBasicInfo = () => {
+        this.setState({ basicInfoOpen: false });
     }
-    openCourseAndTrainingDialogue=()=>{
-        this.setState({courseAndtraining:true});
+    openCourseAndTrainingDialogue = () => {
+        this.setState({ courseAndtraining: true });
     }
-    closeCourseAndTrainingDialogue=()=>{
-        this.setState({courseAndtraining:false});
+    closeCourseAndTrainingDialogue = () => {
+        this.setState({ courseAndtraining: false });
     }
-    isEditClick=()=>{
-        this.setState({isEdit:true});
+    isEditClick = () => {
+        this.setState({ isEdit: true });
     }
-    isEditCancel=()=>{
-        this.setState({isEdit:false});
+    isEditCancel = () => {
+        this.setState({ isEdit: false });
+    }
+    onChangeEducationInfo = (event) => {
+        let educationInfo = this.state.educationInfo;
+        let field = event.target.name;
+        educationInfo[field] = event.target.value;
+        this.setState({ educationInfo });
+    }
+    onChangeLisenceInfo = (event) => {
+        let lisenceInfo = this.state.lisenceAndCertificationinfo;
+        let field = event.target.name;
+        lisenceInfo[field] = event.target.value;
+        this.setState({ lisenceInfo });
     }
 
     render() {
@@ -111,73 +136,75 @@ class Profile extends Component {
                 <div className="app-header ">
                     <Header />
                 </div>
-                <ProfileHeader 
-                onEducationView={this.onEducationView}
-                onSkillView={this.onSkillView}
-                onCertificationView={this.onCertificationView}
-                openEducationDialog={this.openEducationDialog}
-                onSkillDialogue={this.openSkillDialogue}
-                openCertificationDialog={this.openLisenceDialog}
-                openAwardDialog={this.openAwardDialogue}
-                basicInfoClick={this.basicInfoClick}
-                openCourseAndTrainingDialogue={this.openCourseAndTrainingDialogue}
-                onExpansionPanelChange={this.onExpansionPanelChange}
-                expansionPanelvalue={this.state.expansionPanelvalue}
-                onParentExpansion={this.onParentExpansion}
-                downloadPDF={this.downloadPDF}
-                shareProfile={this.shareProfile}
-                isEditClick={this.isEditClick}
-                isEditCancel={this.isEditCancel}
-                isEdit={this.state.isEdit}
+                <ProfileHeader
+                    onEducationView={this.onEducationView}
+                    onSkillView={this.onSkillView}
+                    onCertificationView={this.onCertificationView}
+                    openEducationDialog={this.openEducationDialog}
+                    onSkillDialogue={this.openSkillDialogue}
+                    openCertificationDialog={this.openLisenceDialog}
+                    openAwardDialog={this.openAwardDialogue}
+                    basicInfoClick={this.basicInfoClick}
+                    openCourseAndTrainingDialogue={this.openCourseAndTrainingDialogue}
+                    onExpansionPanelChange={this.onExpansionPanelChange}
+                    expansionPanelvalue={this.state.expansionPanelvalue}
+                    onParentExpansion={this.onParentExpansion}
+                    downloadPDF={this.downloadPDF}
+                    shareProfile={this.shareProfile}
+                    isEditClick={this.isEditClick}
+                    isEditCancel={this.isEditCancel}
+                    isEdit={this.state.isEdit}
                 />
                 <div className="row">
                     <div className="col-xl-8 col-lg-8 col-md-7 col-12">
-                        <Biography 
-                        isEditClick={this.state.isEdit}/>
+                        <Biography
+                            isEditClick={this.state.isEdit} />
                         <div id="educationcard">
-                        <Education 
-                        openEducationDialog={this.openEducationDialog}
-                        isEditClick={this.state.isEdit}
-                         />
+                            <Education
+                                openEducationDialog={this.openEducationDialog}
+                                isEditClick={this.state.isEdit}
+                            />
                         </div>
                         <div id="skillCard">
-                        <Skills
-                            ratingValue={this.state.ratingValue}
-                            onRatingChange={this.onRatingChange}
-                            onSkillDialogue={this.openSkillDialogue}
-                            isEditClick={this.state.isEdit}
-                        />
+                            <Skills
+                                ratingValue={this.state.ratingValue}
+                                onRatingChange={this.onRatingChange}
+                                onSkillDialogue={this.openSkillDialogue}
+                                isEditClick={this.state.isEdit}
+                            />
                         </div>
                         <div id="softskills">
                             <SoftSkills
-                            ratingValue={this.state.ratingValue}
-                            onRatingChange={this.onRatingChange}
-                            onSkillDialogue={this.openSkillDialogue}
-                            isEditClick={this.state.isEdit}
-                             />
+                                ratingValue={this.state.ratingValue}
+                                onRatingChange={this.onRatingChange}
+                                onSkillDialogue={this.openSkillDialogue}
+                                isEditClick={this.state.isEdit}
+                            />
                         </div>
-                        <div id="certificationCard">    
-                        <Certification 
-                        openCertificationDialog={this.openLisenceDialog}
-                        isEditClick={this.state.isEdit}/>
+                        <div id="certificationCard">
+                            <Certification
+                                openCertificationDialog={this.openLisenceDialog}
+                                isEditClick={this.state.isEdit} />
                         </div>
                     </div>
                     <div className="col-xl-4 col-lg-4 col-md-5 col-12">
                         <Contact />
-                        <Awards 
-                        openAwardDialog={this.openAwardDialogue}
-                        isEditClick={this.state.isEdit}/>
-                        <Projects 
-                        isEditClick={this.state.isEdit}/>
-                        <Courses 
-                        openCourseAndTrainingDialogue={this.openCourseAndTrainingDialogue}
-                        isEditClick={this.state.isEdit}/>
+                        <Awards
+                            openAwardDialog={this.openAwardDialogue}
+                            isEditClick={this.state.isEdit} />
+                        <Projects
+                            isEditClick={this.state.isEdit} />
+                        <Courses
+                            openCourseAndTrainingDialogue={this.openCourseAndTrainingDialogue}
+                            isEditClick={this.state.isEdit} />
                     </div>
                 </div>
                 {this.state.educationOpen ?
                     <EducationDialog
                         open={this.state.educationOpen}
                         handleClose={this.closeEducationDialoge}
+                        onChangeEducationInfo={this.onChangeEducationInfo}
+                        data={this.state.educationInfo}
                     />
                     :
                     <span></span>}
@@ -185,31 +212,33 @@ class Profile extends Component {
                     <LisenceAndCertification
                         open={this.state.lisenceOpen}
                         handleClose={this.closeLisenceDialog}
+                        onChangeLisenceInfo={this.onChangeLisenceInfo}
+                        data={this.state.lisenceAndCertificationinfo}
                     />
                     :
                     <span></span>}
-                    {this.state.skillOpen ?
+                {this.state.skillOpen ?
                     <SkillsDialogue
                         open={this.state.skillOpen}
                         handleClose={this.closeSkillDialog}
                     />
                     :
                     <span></span>}
-                    {this.state.awardOpen ?
+                {this.state.awardOpen ?
                     <AwardDialog
                         open={this.state.awardOpen}
                         handleClose={this.closeAwardDialog}
                     />
                     :
                     <span></span>}
-                    {this.state.basicInfoOpen ?
+                {this.state.basicInfoOpen ?
                     <BasicInfoProfile
                         open={this.state.basicInfoOpen}
                         handleClose={this.closeBasicInfo}
                     />
                     :
                     <span></span>}
-                    {this.state.courseAndtraining ?
+                {this.state.courseAndtraining ?
                     <CourseAndTrainings
                         open={this.state.courseAndtraining}
                         handleClose={this.closeCourseAndTrainingDialogue}

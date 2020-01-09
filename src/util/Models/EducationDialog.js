@@ -7,7 +7,11 @@ import DialogContent from '@material-ui/core/DialogContent';
 import MenuItem from '@material-ui/core/MenuItem';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
-const EducationDialog = ({ open, handleClose }) => {
+const EducationDialog = ({ open, 
+    handleClose,
+    onChangeEducationInfo,
+    data
+}) => {
 
     return (
         <div>
@@ -17,25 +21,31 @@ const EducationDialog = ({ open, handleClose }) => {
                     <TextField
                         autoFocus
                         margin="dense"
-                        id="school"
+                        name="school"
                         label="School"
                         type="text"
+                        value={data.school}
+                        onChange={onChangeEducationInfo}
                         placeholder="Ex: Abasyn University"
                         fullWidth
                     />
                     <TextField
                         margin="dense"
-                        id="degree"
+                        name="degree"
                         label="Degree"
                         type="text"
+                        value={data.degree}
+                        onChange={onChangeEducationInfo}
                         fullWidth
                         placeholder="Ex: BSSE"
                     />
                     <TextField
                         margin="dense"
-                        id="fieldofstudy"
+                        name="fieldofstudy"
                         label="Field Of Study"
                         type="text"
+                        value={data.fieldofstudy}
+                        onChange={onChangeEducationInfo}
                         fullWidth
                         placeholder="Ex: Computer Science or IT"
                     />
@@ -64,22 +74,28 @@ const EducationDialog = ({ open, handleClose }) => {
                     </TextField>
                     <TextField
                         margin="dense"
-                        id="grade"
+                        name="grade"
                         label="Grade"
                         type="text"
+                        value={data.grade}
+                        onChange={onChangeEducationInfo}
                         fullWidth
                         placeholder="Enter your Grade"
                     />
                     <TextField
-                        id="standard-multiline-static"
+                        name="activitiesAndSocieties"
                         label="Activities and societies"
                         multiline
                         rows="5"
                         fullWidth
+                        value={data.activitiesAndSocieties}
+                        onChange={onChangeEducationInfo}
                     />
                     <TextField
-                        id="standard-multiline-static"
+                        name="description"
                         label="Description"
+                        value={data.description}
+                        onChange={onChangeEducationInfo}
                         multiline
                         rows="5"
                         fullWidth
@@ -108,7 +124,7 @@ const EducationDialog = ({ open, handleClose }) => {
                     </Button>
                     <TextField
                         margin="dense"
-                        id="link"
+                        name="link"
                         label="Link"
                         type="text"
                         fullWidth

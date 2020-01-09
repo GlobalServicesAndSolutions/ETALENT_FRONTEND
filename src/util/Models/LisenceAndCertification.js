@@ -7,7 +7,11 @@ import DialogContent from '@material-ui/core/DialogContent';
 import MenuItem from '@material-ui/core/MenuItem';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
-const LisenceAndCertification = ({ open, handleClose }) => {
+const LisenceAndCertification = ({ open, 
+    handleClose,
+    onChangeLisenceInfo,
+    data
+}) => {
 
     return (
         <div>
@@ -17,18 +21,22 @@ const LisenceAndCertification = ({ open, handleClose }) => {
                     <TextField
                         autoFocus
                         margin="dense"
-                        id="name"
+                        name="lisenceName"
                         label="Name"
                         type="text"
+                        value={data.lisenceName}
+                        onChange={onChangeLisenceInfo}
                         placeholder="Ex: CCNA"
                         fullWidth
                         required
                     />
                     <TextField
                         margin="dense"
-                        id="organization"
+                        name="organization"
                         label="Issuing Organization"
                         type="text"
+                        value={data.organization}
+                        onChange={onChangeLisenceInfo}
                         fullWidth
                         placeholder="Ex: Cisco"
                         required
@@ -81,16 +89,20 @@ const LisenceAndCertification = ({ open, handleClose }) => {
                     </TextField>
                     <TextField
                         margin="dense"
-                        id="credentialId"
+                        name="credentialId"
                         label="Credential ID"
                         type="text"
+                        value={data.credentialId}
+                        onChange={onChangeLisenceInfo}
                         fullWidth
                         placeholder="Enter Credential ID"
                     />
                     <TextField
-                        id="standard-multiline-static"
+                        name="credentialUrl"
                         label="Credential URL"
                         fullWidth
+                        value={data.credentialUrl}
+                        onChange={onChangeLisenceInfo}
                         placeholder="Enter Credential URL"
                     />
                 </DialogContent>
