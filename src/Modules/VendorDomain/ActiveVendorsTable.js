@@ -2,7 +2,7 @@ import React from "react";
 import Widget from "components/Widget";
 import Switch from '@material-ui/core/Switch';
 
-const ActiveVendorsTable = () => {
+const ActiveVendorsTable = ({onChangeVendorActiveInactive,vendorActiveInactiveSwitch}) => {
     return (
         <Widget styleName="jr-card-profile">
             <div className="mb-3">
@@ -11,6 +11,7 @@ const ActiveVendorsTable = () => {
                 </div>
                 <hr />
                 <table border='2' className='customers' >
+                    <tbody>
                     <tr>
                         <th width='15%'>Name</th>
                         <th width='15%'>Industry</th>
@@ -34,14 +35,15 @@ const ActiveVendorsTable = () => {
                             Abc@gmail.com
                         </td>
                         <td>
-                           <a a href="http://www.seven.pk" target="_blank" rel="noopener noreferrer">www.seven.pk</a>
+                           <a  href="http://www.seven.pk" target="_blank" rel="noopener noreferrer">www.seven.pk</a>
                         </td>
                         <td>
                             I-9/3 Islamabad
                         </td>
                         <td>
                             <Switch
-                                value="checkedB"
+                                value={vendorActiveInactiveSwitch}
+                                onChange={onChangeVendorActiveInactive}
                                 color="primary"
                                 inputProps={{ 'aria-label': 'primary checkbox' }}
                             />
@@ -61,20 +63,22 @@ const ActiveVendorsTable = () => {
                             Abc@gmail.com
                         </td>
                         <td>
-                           <a a href="http://www.seven.pk" target="_blank" rel="noopener noreferrer">www.seven.pk</a>
+                           <a  href="http://www.seven.pk" target="_blank" rel="noopener noreferrer">www.seven.pk</a>
                         </td>
                         <td>
                             I-9/3 Islamabad
                         </td>
                         <td>
                             <Switch
-                                value="checkedB"
+                                name='vendorActiveInactive'
+                                value={vendorActiveInactiveSwitch}
                                 color="primary"
                                 inputProps={{ 'aria-label': 'primary checkbox' }}
+                                onChange={onChangeVendorActiveInactive}
                             />
                         </td>
                     </tr>
-
+                    </tbody>
                 </table>
             </div>
         </Widget>

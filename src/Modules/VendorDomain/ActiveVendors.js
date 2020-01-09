@@ -6,7 +6,11 @@ class ActiveVendors extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            vendorActiveInactiveSwitch:false
         }
+    }
+    onChangeVendorActiveInactive=(event)=>{
+        this.setState({vendorActiveInactiveSwitch:event.target.checked});
     }
     render() {
         return (
@@ -16,7 +20,10 @@ class ActiveVendors extends Component {
                 </div>
                 <div className="row">
                     <div className="col-xl-8 col-lg-8 col-md-7 col-12">
-                        <ActiveVendorsTable />
+                        <ActiveVendorsTable 
+                        onChangeVendorActiveInactive={this.onChangeVendorActiveInactive}
+                        vendorActiveInactiveSwitch={this.state.vendorActiveInactiveSwitch}
+                        />
                     </div>
                     <div className="col-xl-4 col-lg-4 col-md-5 col-12">
                     </div>
