@@ -47,7 +47,7 @@ class App extends React.Component {
                 <Route path="/dashboard"
                   component={asyncComponent(() => import('../Modules/CandidateDomain/Dashboard'))} />
                 <Route path="/employerHome"
-                  component={asyncComponent(() => import('../Modules/EmployerDomain/Dashboard'))} />
+                  component={asyncComponent(() => import('../Modules/EmployerDomain/EmployerDashboardDomain/Dashboard'))} />
                 <Route path="/employerProfile"
                   component={asyncComponent(() => import('../Modules/EmployerDomain/EmployerProfile'))} />
                 <Route component={asyncComponent(() => import('components/Error404'))} />

@@ -19,7 +19,7 @@ const ActiveVendorsTable = ({onChangeVendorActiveInactive,vendorActiveInactiveSw
                         <th width='15%'>Email</th>
                         <th width='15%'>Web Site Link</th>
                         <th width='15%'>Address</th>
-                        <th width='15%'>Statsu (Active/Inactive)</th>
+                        <th width='15%'>Status </th>
                     </tr>
                     <tr>
                         <td>
@@ -46,6 +46,36 @@ const ActiveVendorsTable = ({onChangeVendorActiveInactive,vendorActiveInactiveSw
                                 onChange={onChangeVendorActiveInactive}
                                 color="primary"
                                 inputProps={{ 'aria-label': 'primary checkbox' }}
+                            />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Salman haider
+                        </td>
+                        <td>
+                            Software House
+                        </td>
+                        <td>
+                            03111234567
+                        </td>
+                        <td>
+                            Abc@gmail.com
+                        </td>
+                        <td>
+                           <a  href="http://www.seven.pk" target="_blank" rel="noopener noreferrer">www.seven.pk</a>
+                        </td>
+                        <td>
+                            I-9/3 Islamabad
+                        </td>
+                        <td>
+                            <Switch
+                                checked
+                                name='vendorActiveInactive'
+                                value={vendorActiveInactiveSwitch}
+                                color="primary"
+                                inputProps={{ 'aria-label': 'primary checkbox' }}
+                                onChange={onChangeVendorActiveInactive}
                             />
                         </td>
                     </tr>

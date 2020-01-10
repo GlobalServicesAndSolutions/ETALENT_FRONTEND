@@ -112,12 +112,16 @@
 .customers th {
   padding-top: 12px;
   padding-bottom: 12px;
+  padding: 7px;
   text-align: left;
   background-color: #3b7652;
   color: white;
 }
 .customers tr:nth-child(even){
   background-color: #f2f2f2;
+}
+.customers td {
+  padding: 7px;
 }
 
 .customers tr:hover {
