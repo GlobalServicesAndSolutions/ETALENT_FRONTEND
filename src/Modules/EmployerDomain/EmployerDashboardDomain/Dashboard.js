@@ -4,6 +4,16 @@ import { Link } from 'react-router-dom';
 import EmployerDashboardView from './EmployerDashboardData';
 
 class EmployerDashboard extends Component {
+  constructor(props)
+  {
+    super(props);
+    this.state={
+      isFilterOptionClick:false
+    }
+  }
+  onClickFilterOptions=()=>{
+    this.setState({isFilterOptionClick:!this.state.isFilterOptionClick});
+  }
   render() {
     return (
       <div>
@@ -11,7 +21,10 @@ class EmployerDashboard extends Component {
           <EmployerProfileCard />
         </div>
         <div  className="app-wrapper">
-          <EmployerDashboardView />
+          <EmployerDashboardView 
+          onClickFilterOptions={this.onClickFilterOptions}
+          isFilterOptionClick={this.state.isFilterOptionClick}
+          />
         </div>
         <div style={{float:'right'}}>
           <Link to='/employerWorkflow'>Create Job</Link>

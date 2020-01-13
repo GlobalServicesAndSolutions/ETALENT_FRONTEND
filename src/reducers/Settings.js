@@ -1,7 +1,7 @@
 import {
   CHANGE_DIRECTION,
   CHANGE_NAVIGATION_STYLE,
-  FIXED_DRAWER,
+  MINI_DRAWER,
   HORIZONTAL_MENU_POSITION,
   INSIDE_THE_HEADER,
   SWITCH_LANGUAGE,
@@ -13,7 +13,7 @@ import {
 const rltLocale = ['ar'];
 const initialSettings = {
   navCollapsed: false,
-  drawerType: FIXED_DRAWER,
+  drawerType: MINI_DRAWER,
   width: window.innerWidth,
   isDirectionRTL: false,
   navigationStyle: VERTICAL_NAVIGATION,

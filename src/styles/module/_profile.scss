@@ -114,8 +114,8 @@
   padding-bottom: 12px;
   padding: 7px;
   text-align: left;
-  background-color: #3b7652;
-  color: white;
+  background-color: lightgray;
+  color: black;
 }
 .customers tr:nth-child(even){
   background-color: #f2f2f2;
@@ -172,7 +172,9 @@
 .fontLabelColor{
   color:white;
 }
-
+.cardScrolling{
+  overflow-x: scroll;
+}
 .jr-card-profile {
   position: relative;
 

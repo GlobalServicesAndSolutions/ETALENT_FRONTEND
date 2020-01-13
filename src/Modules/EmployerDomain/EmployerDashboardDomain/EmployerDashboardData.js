@@ -1,202 +1,156 @@
 import React from "react";
 import Widget from "components/Widget";
-import ProgressBar from 'react-bootstrap/ProgressBar'
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import SearchField from "react-search-field";
+import PageviewRoundedIcon from '@material-ui/icons/PageviewRounded';
+import { Link } from "react-router-dom";
 
-const EmployerDashboardView = () => {
+const EmployerDashboardView = ({ onClickFilterOptions, isFilterOptionClick }) => {
     return (
-        <Widget styleName="jr-card-profile">
+        <Widget styleName="jr-card-profile cardScrolling" >
             <div className="mb-3">
-                <div>
-                    <h3 className="card-title mb-2 mb-md-3">Active Vendors</h3>
+                <div className='row'>
+                        <FormControl style={{ width: '20%' ,paddingLeft:'1%'}}>
+                            <InputLabel style={{ paddingLeft:'5%'}}>Filter Job Requisition</InputLabel>
+                            <Select
+                                labelId="demo-simple-select-label"
+                                id="demo-simple-select"
+                            >
+                                <MenuItem value='all'>All</MenuItem>
+                                <MenuItem value='openJobs'>Open</MenuItem>
+                                <MenuItem value='closedJobs'>Closed</MenuItem>
+                            </Select>
+                        </FormControl>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <div className='row'>
+
+                        <p>Filter Options</p>
+
+                        <PageviewRoundedIcon onClick={onClickFilterOptions} color='inherit' fontSize='large' />
+                    </div>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    {isFilterOptionClick && <div>
+                        <SearchField
+                            placeholder="Search by hiring manager"
+                            classNames="test-class"
+                        />
+                        &nbsp;&nbsp;
+                        <SearchField
+                            placeholder="Search by Recriuter (R)"
+                            classNames="test-class"
+                        />
+                        &nbsp;&nbsp;
+                        <SearchField
+                            placeholder="Search by HR Administrator"
+                            classNames="test-class"
+                        />
+                        &nbsp;&nbsp;
+                        <SearchField
+                            placeholder="Recruiter Collaborator"
+                            classNames="test-class"
+                        />
+                        &nbsp;&nbsp;
+                        <SearchField
+                            placeholder="Requisition Administrator"
+                            classNames="test-class"
+                        />
+                        &nbsp;&nbsp;
+                        <SearchField
+                            placeholder="Search by Recriutment Coordinator"
+                            classNames="test-class"
+                        />
+                    </div>}
                 </div>
                 <hr />
-                <table border='2' className='customers' style={{width:'100%',overflowX:'scroll'}}>
+                <table border='2' className='customers' style={{ width: '115%' }}>
                     <tbody>
-                    <tr>
-                        <th >Job Title</th>
-                        <th >Hiring Manager</th>
-                        <th >Recruiter(R)</th>
-                        <th >Division</th>
-                        <th >HR Manager</th>
-                        <th >Department</th>
-                        <th>Location</th>
-                        <th>Active Candidates </th>
-                        <th>Progress and Status</th>
-                    </tr>
-                    <tr>
-                        <td>
-                            Salman haider
+                        <tr>
+                            <th>Recriuter ID</th>
+                            <th >Job Title</th>
+                            <th >Hiring Manager</th>
+                            <th >Division</th>
+                            <th >Department</th>
+                            <th >Job Status</th>
+                            <th >Create Date</th>
+                            <th >End Date</th>
+                            <th >Days Left</th>
+                            <th>Location</th>
+                            <th>Candidates </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                1
                         </td>
-                        <td>
-                            Software House
+                            <td>
+                                <Link to='#'> Software House</Link>
+                            </td>
+                            <td>
+                                03111234567
                         </td>
-                        <td>
-                            03111234567
+                            <td>
+                                www.seven.pk
+                            </td>
+                            <td>
+                                IT
                         </td>
-                        <td>
-                            Abc@gmail.com
+                            <td>
+                                Closed
                         </td>
-                        <td>
-                            Abc@gmail.com
+                            <td>
+                                1/09/2020
                         </td>
-                        <td>
-                           <a  href="http://www.seven.pk" target="_blank" rel="noopener noreferrer">www.seven.pk</a>
+                            <td>
+                                1/13/2020
                         </td>
-                        <td>
-                            I-9/3 Islamabad
+                            <td>
+                                0
                         </td>
-                        <td>
-                            4
+                            <td>
+                                I-9/3 Islamabad
                         </td>
-                        <td>
-                        <ProgressBar striped variant="success" now={60} />
+                            <td>
+                                <Link to='/candidates'> 4</Link>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                2
                         </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Salman haider
+                            <td>
+                                <Link to='#'> Software House</Link>
+                            </td>
+                            <td>
+                                03111234567
                         </td>
-                        <td>
-                            Software House
+                            <td>
+                                www.seven.pk
+                            </td>
+                            <td>
+                                IT
                         </td>
-                        <td>
-                            03111234567
+                            <td>
+                                Closed
                         </td>
-                        <td>
-                            Abc@gmail.com
+
+                            <td>
+                                1/09/2020
                         </td>
-                        <td>
-                            Abc@gmail.com
+                            <td>
+                                1/13/2020
                         </td>
-                        <td>
-                           <a  href="http://www.seven.pk" target="_blank" rel="noopener noreferrer">www.seven.pk</a>
+                            <td>
+                                0
                         </td>
-                        <td>
-                            I-9/3 Islamabad
+                            <td>
+                                I-9/3 Islamabad
                         </td>
-                        <td>
-                            5
-                        </td>
-                        <td>
-                        <ProgressBar striped variant="success" now={20} />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Salman haider
-                        </td>
-                        <td>
-                            Software House
-                        </td>
-                        <td>
-                            03111234567
-                        </td>
-                        <td>
-                            Abc@gmail.com
-                        </td>
-                        <td>
-                            Abc@gmail.com
-                        </td>
-                        <td>
-                           <a  href="http://www.seven.pk" target="_blank" rel="noopener noreferrer">www.seven.pk</a>
-                        </td>
-                        <td>
-                            I-9/3 Islamabad
-                        </td>
-                        <td>
-                            9
-                        </td>
-                        <td>
-                        <ProgressBar striped variant="success" now={10} />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Salman haider
-                        </td>
-                        <td>
-                            Software House
-                        </td>
-                        <td>
-                            03111234567
-                        </td>
-                        <td>
-                            Abc@gmail.com
-                        </td>
-                        <td>
-                            Abc@gmail.com
-                        </td>
-                        <td>
-                           <a  href="http://www.seven.pk" target="_blank" rel="noopener noreferrer">www.seven.pk</a>
-                        </td>
-                        <td>
-                            I-9/3 Islamabad
-                        </td>
-                        <td>
-                            10
-                        </td>
-                        <td>
-                        <ProgressBar striped variant="success" now={90} />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Salman haider
-                        </td>
-                        <td>
-                            Software House
-                        </td>
-                        <td>
-                            03111234567
-                        </td>
-                        <td>
-                            Abc@gmail.com
-                        </td>
-                        <td>
-                            Abc@gmail.com
-                        </td>
-                        <td>
-                           <a  href="http://www.seven.pk" target="_blank" rel="noopener noreferrer">www.seven.pk</a>
-                        </td>
-                        <td>
-                            I-9/3 Islamabad
-                        </td>
-                        <td>
-                            11
-                        </td>
-                        <td>
-                        <ProgressBar striped variant="success" now={70} />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Salman haider
-                        </td>
-                        <td>
-                            Software House
-                        </td>
-                        <td>
-                            Abc@gmail.com
-                        </td>
-                        <td>
-                            03111234567
-                        </td>
-                        <td>
-                            Abc@gmail.com
-                        </td>
-                        <td>
-                           <a  href="http://www.seven.pk" target="_blank" rel="noopener noreferrer">www.seven.pk</a>
-                        </td>
-                        <td>
-                            I-9/3 Islamabad
-                        </td>
-                        <td>
-                            2
-                        </td>
-                        <td>
-                        <ProgressBar striped variant="success" now={100} />
-                        </td>
-                    </tr>
+                            <td>
+                                <Link to='#'> 5</Link>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
