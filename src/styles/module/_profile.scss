@@ -127,6 +127,10 @@
 .customers tr:hover {
   background-color: #ddd;
 }
+.stages:hover{
+  color: gray;
+  cursor: pointer;
+}
 .jr-profile-content {
   position: relative;
   z-index: 2;

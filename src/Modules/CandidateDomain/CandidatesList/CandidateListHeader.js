@@ -1,53 +1,61 @@
 import React from 'react';
+import Widget from 'components/Widget';
 
-const CandidateListHeader = () => {
+const CandidateListHeader = ({ onClickStage, jobStatus }) => {
   return (
-    <div className="profile-intro card shadow  border-0 text-left">
-
-        <div className="card-image">
-        <h4>Operations Manager</h4>
-        <table className='customers' border='1'> 
-          <tr>
-            <th>
-              Ready To Apply<br/>
-              0
-            </th>
-            <th>
-              InterView<br/>
-              0
-            </th>
-            <th>
-              New Application<br/>
-              0
-            </th>
-            <th>
-              Short List<br/>
-              0
-            </th>
-            <th>
-              Background Check<br/>
-              0
-            </th>
-            <th>
-              Assesments<br/>
-              0
-            </th>
-            <th>
-              Offers<br/>
-              0
-            </th>
-            <th>
-              Ready For Hire<br/>
-              0
-            </th>
-            <th>
-              Hired<br/>
-              0
-            </th>
-          </tr>
-        </table>
+    <Widget styleName="jr-card-profile" >
+      <div className="mb-3">
+        <h4>Operations Manager{` (${jobStatus})`}</h4>
+        <br />
+        <h5>Filter Stages</h5>
+        <div className='row'>
+          <h6 onClick={onClickStage} className='stages'>
+            Ready To Apply
+             <sup> 20</sup>
+          </h6>
+          &nbsp;&nbsp;&nbsp;
+        <h6 onClick={onClickStage} className='stages'>
+            InterView
+            <sup>10</sup>
+          </h6>
+          &nbsp;&nbsp;&nbsp;
+        <h6 onClick={onClickStage} className='stages'>
+            New Application
+            <sup> 3</sup>
+          </h6>
+          &nbsp;&nbsp;&nbsp;
+        <h6 onClick={onClickStage} className='stages'>
+            Short List
+            <sup> 5</sup>
+          </h6>
+          &nbsp;&nbsp;&nbsp;
+        <h6 onClick={onClickStage} className='stages'>
+            Background Check
+            <sup> 6</sup>
+          </h6>
+          &nbsp;&nbsp;&nbsp;
+        <h6 onClick={onClickStage} className='stages'>
+            Assesments
+            <sup> 4</sup>
+          </h6>
+          &nbsp;&nbsp;&nbsp;
+        <h6 onClick={onClickStage} className='stages'>
+            Offers
+            <sup> 5</sup>
+          </h6>
+          &nbsp;&nbsp;&nbsp;
+        <h6 onClick={onClickStage} className='stages'>
+            Ready For Hire
+            <sup> 7</sup>
+          </h6>
+          &nbsp;&nbsp;&nbsp;
+        <h6 onClick={onClickStage} className='stages'>
+            Hired
+            <sup> 8</sup>
+          </h6>
+        </div>
       </div>
-    </div>
+    </Widget>
   )
 };
 

@@ -4,8 +4,10 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
+import CreateIcon from '@material-ui/icons/Create';
+import { Link } from "react-router-dom";
 
-const CandidatesTable = () => {
+const CandidatesTable = ({data,onCandidateEditClick}) => {
     return (
         <Widget styleName="jr-card-profile">
             <div className="mb-3">
@@ -28,52 +30,46 @@ const CandidatesTable = () => {
                     <tbody>
                         <tr>
                             <th>Select</th>
+                            <th>Id</th>
                             <th >Name</th>
                             <th >Phone No.</th>
                             <th >Recruiter</th>
-                            <th >Job Status</th>
+                            <th >Stage</th>
                             <th >Applied Date</th>
                         </tr>
-                        <tr>
+                        {
+                            data.map((candidates, index)=>{
+                            return (
+                        <tr onClick={()=>onCandidateEditClick(candidates)}>
                             <td>
                                 1
-                        </td>
-                            <td>
-                                Salman haider
-                        </td>
-                            <td>
-                                03111234567
-                        </td>
-                            <td>
-                                Seven tech
                             </td>
                             <td>
-                                Active
-                        </td>
-                            <td>
-                                1/10/2020
-                        </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                1
-                        </td>
-                            <td>
-                                Salman haider
-                        </td>
-                            <td>
-                                03111234567
-                        </td>
-                            <td>
-                                Seven tech
+                                {index}
                             </td>
                             <td>
-                                Active
+                               <Link to='/candidateDetails'> {candidates.name}</Link>
                         </td>
                             <td>
-                                1/10/2020
+                                {candidates.phoneNo}
                         </td>
+                            <td>
+                                {candidates.recruiter}
+                            </td>
+                            <td>
+                                <div style={{justifyContent:'space-between', display:'flex'}}>
+                               {candidates.stage}
+                               <CreateIcon fontSize='small' className='stages' onClick={()=>onCandidateEditClick(candidates)}/>
+                               </div>
+                            </td>
+                            <td>
+                                {candidates.appliedDate}
+                            </td>
                         </tr>
+                                );
+                            })
+                        }
+                        
                     </tbody>
                 </table>
             </div>

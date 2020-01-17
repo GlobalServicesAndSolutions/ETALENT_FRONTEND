@@ -20,6 +20,7 @@ import { ValidatorForm } from "react-material-ui-form-validator";
 import EmployerWorkFlow from '../Modules/EmployerDomain/EmployerWorkFlowSection/EmployerSections';
 import Candidates from '../Modules/CandidateDomain/CandidatesList/CandidatesWithEmployers';
 import ActiveVendors from 'Modules/VendorDomain/ActiveVendors';
+import CandidateDetails from 'Modules/CandidateDomain/CandidatesList/CandidateDetail';
 
 const RestrictedRoute = ({component: Component, authUser, ...rest}) =>
   <Route
@@ -93,6 +94,7 @@ class App extends Component {
                   <RestrictedRoute path='/employerWorkflow' authUser={authUser} component={EmployerWorkFlow} />
                   <RestrictedRoute path='/activeVendors' authUser={authUser} component={ActiveVendors} />
                   <RestrictedRoute path='/candidates' authUser={authUser} component={Candidates} />
+                  <RestrictedRoute path='/candidateDetails' authUser={authUser} component={CandidateDetails}/>
                   <Route
                     component={asyncComponent(() => import('components/Error404'))}/>
                 </Switch>

@@ -13,7 +13,7 @@ const EmployerDashboardView = ({ onClickFilterOptions, isFilterOptionClick }) =>
         <Widget styleName="jr-card-profile cardScrolling" >
             <div className="mb-3">
                 <div className='row'>
-                        <FormControl style={{ width: '20%' ,paddingLeft:'1%'}}>
+                        <FormControl style={{ width: '20%'}}>
                             <InputLabel style={{ paddingLeft:'5%'}}>Filter Job Requisition</InputLabel>
                             <Select
                                 labelId="demo-simple-select-label"
