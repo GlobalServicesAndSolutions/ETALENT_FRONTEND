@@ -22,7 +22,7 @@
 .app-main-container {
   @include display-flex(flex, column, nowrap);
   width: 100%;
-  overflow: visible;
+  overflow: scroll;
 }
 
 .app-header {
@@ -33,7 +33,7 @@
   flex: 1;
   @include display-flex(flex, column, nowrap);
   width: 100%;
-  overflow-x: hidden;
+  overflow-x: scroll;
   overflow-y: auto;
 }
 

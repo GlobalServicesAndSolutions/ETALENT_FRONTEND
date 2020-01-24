@@ -11,13 +11,16 @@ class Candidates extends Component {
             candidateStage:'',
             isCandidatePopUpOpen:false,
             candidatesData:[],
-            selecteCandidate:{}
+            selecteCandidate:{},
+            candidateStatus:'',
+            candidateStagefilter:''
         }
     }
     componentWillMount()
     {
         const data=[
             {
+                id:1,
                 name:'Salman',
                 phoneNo:'03110200751',
                 recruiter:'Seven',
@@ -25,14 +28,21 @@ class Candidates extends Component {
                 appliedDate:'1/17/2020'
             },
             {
+                id:2,
                 name:'Haider',
                 phoneNo:'03110200751',
                 recruiter:'Zigron',
-                stage:'Ready For Hire',
+                stage:'New Application',
                 appliedDate:'1/17/2020'
             }
         ];
         this.setState({candidatesData:data});
+    }
+    onChangeCandidateStatus=(event)=>{
+        this.setState({candidateStatus:event.target.value});
+    }
+    onSaveCandidateEdit=(item)=>{
+        this.setState({isCandidatePopUpOpen:false});
     }
     onCandidateStageChange=(event)=>{
         this.setState({candidateStage:event.target.value});
@@ -47,9 +57,9 @@ class Candidates extends Component {
         let str=event.target.innerText;
         let res=str.slice(0, str.length-2);
         alert(res +' is Clicked');
+        this.setState({candidateStagefilter:res});
     }
     render() {
-        let jobStatus="All"
         return (
             <div className="app-main-container">
                 <div className="app-header ">
@@ -57,12 +67,16 @@ class Candidates extends Component {
                 </div>
                 <CandidateListHeader 
                 onClickStage={this.onClickStage}
-                jobStatus={jobStatus}
+                jobStatus={this.state.candidateStatus ?this.state.candidateStatus:'All' }
+                candidateStagefilter={this.state.candidateStagefilter}
                 />
                 <div style={{width:'100%'}} >
                     <CandidatesTable
                     data={this.state.candidatesData}
                     onCandidateEditClick={this.onCandidateEditClick}
+                    onChangeCandidateStatus={this.onChangeCandidateStatus}
+                    candidateStatus={this.state.candidateStatus}
+                    candidateStagefilter={this.state.candidateStagefilter}
                     />
                 </div>
                 {this.state.isCandidatePopUpOpen ?
@@ -73,6 +87,7 @@ class Candidates extends Component {
                     onCloseCandidateEdit={this.onCloseCandidateEdit}
                     candidateStage={this.state.candidateStage}
                     selecteCandidate={this.state.selecteCandidate}
+                    onSaveCandidateEdit={this.onSaveCandidateEdit}
                     />
                     :
                     <span></span>

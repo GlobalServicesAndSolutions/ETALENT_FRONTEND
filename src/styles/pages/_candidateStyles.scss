@@ -1,0 +1,33 @@
+.candidate-details {
+    padding: 0px 0px 0px 255px;
+    width: 105%;
+    order: 1;
+  
+    @media screen and (max-width: 575px) {
+        width: 100%;
+        order: 2;
+        padding: 0px 0px 0px 5px;
+    }
+  }
+
+  .candidate-profilefields {
+      width: 25%;
+
+      @media screen and (max-width: 575px) {
+        width: 30%;
+    }
+  }
+  .candidatedetailheader{
+      padding: 35px 50px 0px;
+      margin: -30px -30px -55px;
+      background-color: #f8f9fa;
+      color: black;
+      position: relative;
+    
+      @media screen and (max-width: 575px) {
+        padding: 30px 49px;
+        padding-bottom: 45px;
+        margin: -20px;
+        margin-bottom: -58px;
+      }
+  }

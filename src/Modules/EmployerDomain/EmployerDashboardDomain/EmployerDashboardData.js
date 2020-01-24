@@ -85,7 +85,7 @@ const EmployerDashboardView = ({ onClickFilterOptions, isFilterOptionClick }) =>
                                 1
                         </td>
                             <td>
-                                <Link to='#'> Software House</Link>
+                                <Link to='#'>Operational Manager</Link>
                             </td>
                             <td>
                                 03111234567
@@ -120,7 +120,7 @@ const EmployerDashboardView = ({ onClickFilterOptions, isFilterOptionClick }) =>
                                 2
                         </td>
                             <td>
-                                <Link to='#'> Software House</Link>
+                                <Link to='#'> Software Developer</Link>
                             </td>
                             <td>
                                 03111234567

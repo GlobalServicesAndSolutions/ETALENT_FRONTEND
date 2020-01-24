@@ -51,8 +51,6 @@ TabPanel.propTypes = {
   index: PropTypes.any.isRequired,
   value: PropTypes.any.isRequired,
 };
-
-
 class SignUp extends React.Component {
   constructor() {
     super();

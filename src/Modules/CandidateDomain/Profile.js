@@ -141,7 +141,7 @@ class Profile extends Component {
 
     render() {
         return (
-            <div className="app-wrapper">
+            <div className="app-main-container">
                 <div className="app-header ">
                     <Header />
                 </div>

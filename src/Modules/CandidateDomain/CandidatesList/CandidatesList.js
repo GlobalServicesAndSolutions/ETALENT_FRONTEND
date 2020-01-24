@@ -7,7 +7,12 @@ import MenuItem from '@material-ui/core/MenuItem';
 import CreateIcon from '@material-ui/icons/Create';
 import { Link } from "react-router-dom";
 
-const CandidatesTable = ({data,onCandidateEditClick}) => {
+const CandidatesTable = ({ data,
+    onCandidateEditClick,
+    candidateStatus,
+    onChangeCandidateStatus,
+    candidateStagefilter
+}) => {
     return (
         <Widget styleName="jr-card-profile">
             <div className="mb-3">
@@ -15,13 +20,14 @@ const CandidatesTable = ({data,onCandidateEditClick}) => {
                     <FormControl style={{ width: '20%', paddingLeft: '1%' }}>
                         <InputLabel style={{ paddingLeft: '5%' }}>Filter Jobs</InputLabel>
                         <Select
-                            labelId="demo-simple-select-label"
-                            id="demo-simple-select"
+                            name='candidateStatus'
+                            value={candidateStatus}
+                            onChange={onChangeCandidateStatus}
                         >
-                            <MenuItem value='all'>All</MenuItem>
-                            <MenuItem value='active'>Active</MenuItem>
-                            <MenuItem value='rejected'>Rejected</MenuItem>
-                            <MenuItem value='hired'>Hired</MenuItem>
+                            <MenuItem value='All'>All</MenuItem>
+                            <MenuItem value='Active'>Active</MenuItem>
+                            <MenuItem value='Rejected'>Rejected</MenuItem>
+                            <MenuItem value='Hired'>Hired</MenuItem>
                         </Select>
                     </FormControl>
                 </div>
@@ -38,38 +44,51 @@ const CandidatesTable = ({data,onCandidateEditClick}) => {
                             <th >Applied Date</th>
                         </tr>
                         {
-                            data.map((candidates, index)=>{
-                            return (
-                        <tr onClick={()=>onCandidateEditClick(candidates)}>
-                            <td>
-                                1
+                            data.map((candidates, index) => {
+                                return (
+                                    <tr onClick={() => onCandidateEditClick(candidates)} key={index}>
+                                        <td>
+                                            1
                             </td>
-                            <td>
-                                {index}
-                            </td>
-                            <td>
-                               <Link to='/candidateDetails'> {candidates.name}</Link>
-                        </td>
-                            <td>
-                                {candidates.phoneNo}
-                        </td>
-                            <td>
-                                {candidates.recruiter}
-                            </td>
-                            <td>
-                                <div style={{justifyContent:'space-between', display:'flex'}}>
-                               {candidates.stage}
-                               <CreateIcon fontSize='small' className='stages' onClick={()=>onCandidateEditClick(candidates)}/>
-                               </div>
-                            </td>
-                            <td>
-                                {candidates.appliedDate}
-                            </td>
-                        </tr>
+                                        <td>
+                                            {index}
+                                        </td>
+                                        <td>
+                                            <Link to='/candidateDetails'> {candidates.name}</Link>
+                                        </td>
+                                        <td>
+                                            {candidates.phoneNo}
+                                        </td>
+                                        <td>
+                                            {candidates.recruiter}
+                                        </td>
+                                        <td >
+                                            <div style={{ justifyContent: 'space-between', display: 'flex' }}>
+                                                <div style={{ color: candidates.stage === 'Hired' &&candidateStagefilter=== 'Hired' ? 'red' :
+                                                 candidates.stage === 'Ready For Hire' &&candidateStagefilter=== 'Ready For Hire' ? 'blue':
+                                                 candidates.stage==='Ready To Apply' &&candidateStagefilter==='Ready To Apply' ?'maroon':
+                                                 candidates.stage==='InterView' &&candidateStagefilter==='InterView' ?'aqua' :
+                                                 candidates.stage==='New Application' &&candidateStagefilter==='New Application'?'orange' :
+                                                 candidates.stage==='Short List' &&candidateStagefilter==='Short List' ?'olive' :
+                                                 candidates.stage==='Background Check' &&candidateStagefilter==='Background Check'?'purple' :
+                                                 candidates.stage==='Assesments' &&candidateStagefilter==='Assesments'?'gray' :
+                                                 candidates.stage==='Offers' &&candidateStagefilter==='Offers'?'green' : '' 
+                                                 }}>
+                                                    {candidates.stage}
+                                                </div>
+                                                <div>
+                                                    <CreateIcon fontSize='small' className='stages' onClick={() => onCandidateEditClick(candidates)} />
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            {candidates.appliedDate}
+                                        </td>
+                                    </tr>
                                 );
                             })
                         }
-                        
+
                     </tbody>
                 </table>
             </div>

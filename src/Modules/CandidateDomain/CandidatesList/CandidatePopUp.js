@@ -13,8 +13,8 @@ import Select from '@material-ui/core/Select';
 const CandidatesPopUpInfo = ({ open,
     onCloseCandidateEdit,
     onCandidateStageChange,
-    candidateStage,
     selecteCandidate,
+    onSaveCandidateEdit
 }) => {
     return (
         <div>
@@ -88,7 +88,7 @@ const CandidatesPopUpInfo = ({ open,
                     />
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={onCloseCandidateEdit} color="primary">
+                    <Button onClick={()=>onSaveCandidateEdit(selecteCandidate)} color="primary">
                         Save
                     </Button>
                     <Button onClick={onCloseCandidateEdit} color="primary">
