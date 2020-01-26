@@ -7,23 +7,29 @@ import MenuItem from '@material-ui/core/MenuItem';
 import SearchField from "react-search-field";
 import PageviewRoundedIcon from '@material-ui/icons/PageviewRounded';
 import { Link } from "react-router-dom";
+import CreateIcon from '@material-ui/icons/Create';
 
 const EmployerDashboardView = ({ onClickFilterOptions, isFilterOptionClick }) => {
     return (
         <Widget styleName="jr-card-profile cardScrolling" >
             <div className="mb-3">
                 <div className='row'>
-                        <FormControl style={{ width: '20%'}}>
-                            <InputLabel style={{ paddingLeft:'5%'}}>Filter Job Requisition</InputLabel>
-                            <Select
-                                labelId="demo-simple-select-label"
-                                id="demo-simple-select"
-                            >
-                                <MenuItem value='all'>All</MenuItem>
-                                <MenuItem value='openJobs'>Open</MenuItem>
-                                <MenuItem value='closedJobs'>Closed</MenuItem>
-                            </Select>
-                        </FormControl>
+                <SearchField
+                            placeholder="Search by Job title"
+                            classNames="test-class"
+                        />
+                    <FormControl style={{ width: '20%' }}>
+                        <InputLabel style={{ paddingLeft: '5%' }}>Filter Job Requisition</InputLabel>
+                        <Select
+                            labelId="demo-simple-select-label"
+                            id="demo-simple-select"
+                            value='All'
+                        >
+                            <MenuItem value='all'>All</MenuItem>
+                            <MenuItem value='openJobs'>Open</MenuItem>
+                            <MenuItem value='closedJobs'>Closed</MenuItem>
+                        </Select>
+                    </FormControl>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <div className='row'>
 
@@ -68,16 +74,15 @@ const EmployerDashboardView = ({ onClickFilterOptions, isFilterOptionClick }) =>
                 <table border='2' className='customers' style={{ width: '115%' }}>
                     <tbody>
                         <tr>
-                            <th>Recriuter ID</th>
+                            <th>Req. ID</th>
                             <th >Job Title</th>
                             <th >Hiring Manager</th>
                             <th >Division</th>
                             <th >Department</th>
-                            <th >Job Status</th>
-                            <th >Create Date</th>
+                            <th>Location</th>
                             <th >End Date</th>
                             <th >Days Left</th>
-                            <th>Location</th>
+                            <th >Job Status</th>
                             <th>Candidates </th>
                         </tr>
                         <tr>
@@ -97,11 +102,8 @@ const EmployerDashboardView = ({ onClickFilterOptions, isFilterOptionClick }) =>
                                 IT
                         </td>
                             <td>
-                                Closed
-                        </td>
-                            <td>
-                                1/09/2020
-                        </td>
+                                I-9/3 Islamabad
+                            </td>
                             <td>
                                 1/13/2020
                         </td>
@@ -109,7 +111,14 @@ const EmployerDashboardView = ({ onClickFilterOptions, isFilterOptionClick }) =>
                                 0
                         </td>
                             <td>
-                                I-9/3 Islamabad
+                            <div style={{ justifyContent: 'space-between', display: 'flex' }}>
+                                <div>
+                                    Closed
+                                </div>
+                                <div>
+                                    <CreateIcon fontSize='small' className='stages'  />
+                                </div>
+                                </div>
                         </td>
                             <td>
                                 <Link to='/candidates'> 4</Link>
@@ -132,11 +141,7 @@ const EmployerDashboardView = ({ onClickFilterOptions, isFilterOptionClick }) =>
                                 IT
                         </td>
                             <td>
-                                Closed
-                        </td>
-
-                            <td>
-                                1/09/2020
+                            I-9/3 Islamabad
                         </td>
                             <td>
                                 1/13/2020
@@ -145,7 +150,14 @@ const EmployerDashboardView = ({ onClickFilterOptions, isFilterOptionClick }) =>
                                 0
                         </td>
                             <td>
-                                I-9/3 Islamabad
+                            <div style={{ justifyContent: 'space-between', display: 'flex' }}>
+                                <div>
+                                    Closed
+                                </div>
+                                <div>
+                                    <CreateIcon fontSize='small' className='stages'  />
+                                </div>
+                                </div>
                         </td>
                             <td>
                                 <Link to='#'> 5</Link>

@@ -13,6 +13,8 @@ const CandidateDetailHeader = () => {
             <div className="jr-profile-banner-avatar-info">
               <h2 className="mb-2 jr-mb-sm-3 jr-fs-xxl jr-font-weight-black">Salman Haider</h2>
               <p className="mb-0 jr-fs-lg">Operation Manager, Seven Tech</p>
+              <p className="mb-0 jr-fs-lg">I-9/3 Islamabad, Pakistan</p>
+              <p className="mb-0 jr-fs-lg">Status: Closed</p>
             </div>
           </div>
         </div>
