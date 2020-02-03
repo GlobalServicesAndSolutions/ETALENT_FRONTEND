@@ -4,11 +4,13 @@ import Fab from '@material-ui/core/Fab';
 import EditIcon from '@material-ui/icons/Edit';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
+import {Link} from 'react-router-dom';
 
 const EmployerSectionThreeReview = ({
     data,
     onEditSectionThree,
-    onDeleteSectionThree
+    onDeleteSectionThree,
+    isEdit
 }) => {
     return (
         <Widget styleName="jr-card-profile">
@@ -18,71 +20,85 @@ const EmployerSectionThreeReview = ({
                         <h3 className="card-title mb-2 mb-md-3">Organizational Information</h3>
                     </div>
                     <div>
-                        <Fab size="small" color="primary" aria-label="delete" onClick={onEditSectionThree}>
+                    {isEdit &&
+                        
+                        <Link 
+                        to={{
+                            pathname: '/employerWorkflow',
+                            state: { isEditjob:true }
+                          }}>
+                            <Fab size="small" color="primary" aria-label="edit" >
                             <EditIcon />
                         </Fab>
+                        </Link>}
+                        {!isEdit && 
+                        <Fab size="small" color="primary" aria-label="delete" onClick={onEditSectionThree}>
+                            <EditIcon />
+                        </Fab>}
+                        {!isEdit &&
                         <IconButton aria-label="delete" color="primary" onClick={onDeleteSectionThree}>
                             <DeleteIcon fontSize="large" />
                         </IconButton>
+                        }
                     </div>
                 </div>
                 <hr />
                 <table>
                     <tbody>
                         <tr>
-                            <td><th>Legal Entity</th></td>
+                            <th>Legal Entity</th>
                             <td> : {data.legalEntity}</td>
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <td><th>Industry</th></td>
+                        <th>Industry</th>
                             <td> : {data.industry}</td>
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <td><th>Department</th></td>
+                        <th>Department</th>
                             <td> : {data.depatment}</td>
                         </tr>
                         <tr>
-                           <td><th>Devision</th></td>
+                           <th>Devision</th>
                             <td> : {data.division}</td>
                         </tr>
                         <hr/>
                         <tr>
-                        <td><th><strong>Organization Address</strong></th></td>
+                        <th><strong>Organization Address</strong></th>
                         </tr>
                         <tr>
-                            <td><th>House or flat No.</th></td>
+                            <th>House or flat No.</th>
                             <td> : {data.organizationHouseNo}</td>
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <td><th>Country</th></td>
+                            <th>Country</th>
                             <td> : {data.organizationCountry}</td>
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <td><th>City</th></td>
+                            <th>City</th>
                             <td> : {data.organizationCity}</td>
                         </tr>
                         <tr>
-                            <td><th>Province</th></td>
+                            <th>Province</th>
                             <td> : {data.organizationProvince}</td>
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <td><th>Zip Code</th></td>
+                            <th>Zip Code</th>
                             <td> : {data.organizationZipCode}</td>
                         </tr>
                         <hr/>
                         <tr>
-                            <td><th>Job Justification</th></td>
+                            <th>Job Justification</th>
                             <td> : {data.jobJustification}</td>
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <td><th>Position Number</th></td>
+                            <th>Position Number</th>
                             <td> : {data.positionNumber}</td>
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <td><th>Cost Center Id</th></td>
+                            <th>Cost Center Id</th>
                             <td> : {data.costCenterId}</td>
                         </tr>
                         <tr>
-                            <td><th>Reason For Vacancy</th></td>
+                            <th>Reason For Vacancy</th>
                             <td> : {data.reasonForVacancy}</td>
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <td><th>Replace For Whom</th></td>
+                            <th>Replace For Whom</th>
                             <td> : {data.replacementForWhom}</td>
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <td><th>Requirement Justification</th></td>
+                            <th>Requirement Justification</th>
                             <td> : {data.requirementJustification}</td>
                         </tr>
                        

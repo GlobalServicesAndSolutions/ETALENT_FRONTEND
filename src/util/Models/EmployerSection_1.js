@@ -27,7 +27,6 @@ const EmployerSectionOne = ({ open,
     onSaveSectionOne,
     data
 }) => {
-
     return (
         <div>
             <Dialog aria-labelledby="form-dialog-title" maxWidth="sm" open={open} onClose={onCloseSection_1}>
@@ -308,6 +307,7 @@ const EmployerSectionOne = ({ open,
                                 KeyboardButtonProps={{
                                     'aria-label': 'change date',
                                 }}
+                                required
                             />
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <KeyboardDatePicker
@@ -321,6 +321,7 @@ const EmployerSectionOne = ({ open,
                                 KeyboardButtonProps={{
                                     'aria-label': 'change date',
                                 }}
+                                required
                             />
                         </Grid>
                     </MuiPickersUtilsProvider>

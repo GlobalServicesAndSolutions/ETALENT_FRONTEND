@@ -21,6 +21,7 @@ import EmployerWorkFlow from '../Modules/EmployerDomain/EmployerWorkFlowSection/
 import Candidates from '../Modules/CandidateDomain/CandidatesList/CandidatesWithEmployers';
 import ActiveVendors from 'Modules/VendorDomain/ActiveVendors';
 import CandidateDetails from 'Modules/CandidateDomain/CandidatesList/CandidateDetail';
+import JobDetails from 'Modules/CandidateDomain/CandidatesList/JobDetails';
 
 const RestrictedRoute = ({component: Component, authUser, ...rest}) =>
   <Route
@@ -95,6 +96,7 @@ class App extends Component {
                   <RestrictedRoute path='/activeVendors' authUser={authUser} component={ActiveVendors} />
                   <RestrictedRoute path='/candidates' authUser={authUser} component={Candidates} />
                   <RestrictedRoute path='/candidateDetails' authUser={authUser} component={CandidateDetails}/>
+                  <RestrictedRoute path='/jobDetails' authUser={authUser} component={JobDetails} />
                   <Route
                     component={asyncComponent(() => import('components/Error404'))}/>
                 </Switch>

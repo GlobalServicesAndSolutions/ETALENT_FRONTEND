@@ -32,8 +32,8 @@ class EmployerWorkFlow extends Component {
                 //******************** Section 1 Values *********************** */
                 jobStatus: '',
                 country: '',
-                jobCreatedDate: new Date(),
-                changeDateSelected: new Date(),
+                jobCreatedDate: new Date().toLocaleDateString(),
+                changeDateSelected: new Date().toLocaleDateString(),
                 externalJobTitle: '',
                 internalJobTitle: '',
                 numberOfOpenings: 0,
@@ -58,9 +58,9 @@ class EmployerWorkFlow extends Component {
                 changeBy: '',
                 //******************** Section 2 Values *********************** */
                 jobCode: '',
-                selectedStartDate: new Date(),
-                selectedEndDate: new Date(),
-                selectedDeadlineDate: new Date(),
+                selectedStartDate: new Date().toLocaleDateString(),
+                selectedEndDate: new Date().toLocaleDateString(),
+                selectedDeadlineDate: new Date().toLocaleDateString(),
                 jobStatusvalue: '',
                 jobFunctionvalue: '',
                 travelRequiredValue: '',
@@ -122,9 +122,11 @@ class EmployerWorkFlow extends Component {
             openEmployerSection_4: false,
             openEmployerSection_5: false,
             openEmployerSection_6: false,
+            isValueChanges:false
         }
     }
     onSectionValuesChange = (event, date, name) => {
+        this.setState({isValueChanges:true})
         let sectionInformation = this.state.employerSections;
         if (name) {
             sectionInformation[name] = date;
@@ -352,7 +354,7 @@ class EmployerWorkFlow extends Component {
                         onCloseSection_1={this.onCloseSection_1}
                         onSectionValuesChange={this.onSectionValuesChange}
                         onSaveSectionOne={this.onSaveSectionOne}
-                        data={this.props.sectionOneData ? this.props.sectionOneData : this.state.employerSections}
+                        data={this.props.sectionOneData && !this.state.isValueChanges?this.props.sectionOneData: this.state.employerSections}
                     />
                 }
                 {this.state.openEmployerSection_2
@@ -360,7 +362,7 @@ class EmployerWorkFlow extends Component {
                     <EmployerSectionTwo
                         open={this.state.openEmployerSection_2}
                         onCloseSection_2={this.onCloseSection_2}
-                        data={this.props.sectionTwoData ? this.props.sectionTwoData : this.state.employerSections}
+                        data={this.props.sectionTwoData && !this.state.isValueChanges?this.props.sectionTwoData: this.state.employerSections}
                         onSectionValuesChange={this.onSectionValuesChange}
                         onSaveSectionTwo={this.onSaveSectionTwo}
                     />
@@ -371,14 +373,14 @@ class EmployerWorkFlow extends Component {
                         onCloseSection_3={this.onCloseSection_3}
                         onSectionValuesChange={this.onSectionValuesChange}
                         onSaveSectionThree={this.onSaveSectionThree}
-                        data={this.props.sectionThreeData ? this.props.sectionThreeData : this.state.employerSections}
+                        data={this.props.sectionThreeData && !this.state.isValueChanges?this.props.sectionThreeData: this.state.employerSections}
                     />
                 }
                 {this.state.openEmployerSection_4 &&
                     <EmployerSectionFour
                         open={this.state.openEmployerSection_4}
                         onCloseSection_4={this.onCloseSection_4}
-                        data={this.props.sectionFourData ? this.props.sectionFourData : this.state.employerSections}
+                        data={this.props.sectionFourData && !this.state.isValueChanges?this.props.sectionFourData: this.state.employerSections}
                         onSaveSectionFour={this.onSaveSectionFour}
                         onSectionValuesChange={this.onSectionValuesChange}
                     />
@@ -387,7 +389,7 @@ class EmployerWorkFlow extends Component {
                     <EmployerSectionFive
                         open={this.state.openEmployerSection_5}
                         onCloseSection_5={this.onCloseSection_5}
-                        data={this.props.sectionFourData ? this.props.sectionFourData : this.state.employerSections}
+                        data={this.props.sectionFiveData && !this.state.isValueChanges?this.props.sectionFiveData: this.state.employerSections}
                         onSectionValuesChange={this.onSectionValuesChange}
                         onSaveSectionFive={this.onSaveSectionFive}
                     />
@@ -398,7 +400,7 @@ class EmployerWorkFlow extends Component {
                         onCloseSection_6={this.onCloseSection_6}
                         onSectionValuesChange={this.onSectionValuesChange}
                         onSaveSectionSix={this.onSaveSectionSix}
-                        data={this.props.sectionSixData ? this.props.sectionSixData : this.state.employerSections}
+                        data={this.props.sectionSixData && !this.state.isValueChanges?this.props.sectionSixData: this.state.employerSections}
                     />
                 }
             </div>

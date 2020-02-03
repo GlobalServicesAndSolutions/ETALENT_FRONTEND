@@ -4,12 +4,12 @@ import Fab from '@material-ui/core/Fab';
 import EditIcon from '@material-ui/icons/Edit';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
-
-
+import {Link} from 'react-router-dom';
 const EmployerSectionFiveReview = ({
     data,
     onEditSectionFive,
-    onDeleteSectionFive
+    onDeleteSectionFive,
+    isEdit
 }) => {
     return (
         <Widget styleName="jr-card-profile">
@@ -19,12 +19,26 @@ const EmployerSectionFiveReview = ({
                         <h3 className="card-title mb-2 mb-md-3">Full Time Salary and Benefits Information</h3>
                     </div>
                     <div>
-                        <Fab size="small" color="primary" aria-label="delete" onClick={onEditSectionFive}>
+                    {isEdit &&
+                        
+                        <Link 
+                        to={{
+                            pathname: '/employerWorkflow',
+                            state: { isEditjob:true }
+                          }}>
+                            <Fab size="small" color="primary" aria-label="edit" >
                             <EditIcon />
                         </Fab>
+                        </Link>}
+                        {!isEdit && 
+                        <Fab size="small" color="primary" aria-label="delete" onClick={onEditSectionFive}>
+                            <EditIcon />
+                        </Fab>}
+                        {!isEdit &&
                         <IconButton aria-label="delete" color="primary" onClick={onDeleteSectionFive}>
                             <DeleteIcon fontSize="large" />
                         </IconButton>
+                        }
                     </div>
                 </div>
                 <hr />

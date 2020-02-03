@@ -18,12 +18,11 @@ const EmployerDashboardView = ({ onClickFilterOptions, isFilterOptionClick }) =>
                             placeholder="Search by Job title"
                             classNames="test-class"
                         />
+                        &nbsp;&nbsp;&nbsp;&nbsp;
                     <FormControl style={{ width: '20%' }}>
                         <InputLabel style={{ paddingLeft: '5%' }}>Filter Job Requisition</InputLabel>
                         <Select
-                            labelId="demo-simple-select-label"
-                            id="demo-simple-select"
-                            value='All'
+                            value="All"
                         >
                             <MenuItem value='all'>All</MenuItem>
                             <MenuItem value='openJobs'>Open</MenuItem>
@@ -90,7 +89,7 @@ const EmployerDashboardView = ({ onClickFilterOptions, isFilterOptionClick }) =>
                                 1
                         </td>
                             <td>
-                                <Link to='#'>Operational Manager</Link>
+                                <Link to='/jobDetails'>Operational Manager</Link>
                             </td>
                             <td>
                                 03111234567
