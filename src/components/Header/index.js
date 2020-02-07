@@ -151,9 +151,11 @@ class Header extends React.Component {
             <span className="fontLabelColor">Home</span>
             </li>
             </Link>
+            <Link to='/jobs'>
             <li className="list-inline-item ">
-              Jobs
+              <span className='fontLabelColor'>Jobs</span>
             </li>
+            </Link>
             <Link to="/profile">
             <li className="list-inline-item">
               <span className="fontLabelColor">Profile</span>

@@ -12,6 +12,8 @@ import EmployerSectionThreeReview from '../../EmployerDomain/EmployerSectionsCar
 import EmployerSectionFourReview from '../../EmployerDomain/EmployerSectionsCards/SectionFourCard';
 import EmployerSectionFiveReview from '../../EmployerDomain/EmployerSectionsCards/SectionFiveCard';
 import EmployerSectionSixReview from '../../EmployerDomain/EmployerSectionsCards/SectionSixCard';
+import ActiveVendorsTable from 'Modules/VendorDomain/ActiveVendorsTable';
+
 
 const TabPanel = (props) => {
     const { children, value, index, ...other } = props;
@@ -56,8 +58,10 @@ const JobTabList = ({ tabValue, tabHandleChange, sectionOneData,
     sectionFiveData,
     sectionSixData,
     isEdit,
-    onEditClick
- }) => {
+    onEditClick,
+    onActivityClick,
+    onNavigateClick
+}) => {
     const classes = useStyles();
     return (
         <div className={classes.root}>
@@ -79,7 +83,7 @@ const JobTabList = ({ tabValue, tabHandleChange, sectionOneData,
                 </Tabs>
             </AppBar>
             <TabPanel value={tabValue} index={0}>
-            <div className="row">
+                <div className="row">
                     <div className="col-xl-8 col-lg-8 col-md-7 col-12">
                         {sectionOneData &&
                             <EmployerSectionOneReview
@@ -117,30 +121,24 @@ const JobTabList = ({ tabValue, tabHandleChange, sectionOneData,
                                 onEditClick={onEditClick}
                             />
                         }
-                        {sectionSixData && 
-                        <EmployerSectionSixReview 
-                        data ={sectionSixData}
-                        isEdit={isEdit}
-                        onEditClick={onEditClick}
-                        />
+                        {sectionSixData &&
+                            <EmployerSectionSixReview
+                                data={sectionSixData}
+                                isEdit={isEdit}
+                                onEditClick={onEditClick}
+                            />
                         }
                     </div>
                     <div className="col-xl-4 col-lg-4 col-md-5 col-12">
                     </div>
                 </div>
-      </TabPanel>
+            </TabPanel>
             <TabPanel value={tabValue} index={1}>
-                <div className='candidate-details'>
-                    <h5>Team and Vendors</h5>
-                    <ul>
-                        <li>
-                            <p>Team</p>
-                        </li>
-                    </ul>
-                </div>
-      </TabPanel>
+                <h5>Team and Vendors</h5>
+                <ActiveVendorsTable />
+            </TabPanel>
             <TabPanel value={tabValue} index={2}>
-            <div className='candidate-details'>
+                <div className='candidate-details'>
                     <h5>Test Form</h5>
                     <ul>
                         <li>
@@ -148,19 +146,12 @@ const JobTabList = ({ tabValue, tabHandleChange, sectionOneData,
                         </li>
                     </ul>
                 </div>
-      </TabPanel>
+            </TabPanel>
             <TabPanel value={tabValue} index={3}>
-            <div className='candidate-details'>
-                    <h5>Interview Form</h5>
-                    <ul>
-                        <li>
-                            <p>Interview Form</p>
-                        </li>
-                    </ul>
-                </div>
-      </TabPanel>
+                
+            </TabPanel>
             <TabPanel value={tabValue} index={4}>
-            <div className='candidate-details'>
+                <div className='candidate-details'>
                     <h5>Feedback Form</h5>
                     <ul>
                         <li>
@@ -168,7 +159,7 @@ const JobTabList = ({ tabValue, tabHandleChange, sectionOneData,
                         </li>
                     </ul>
                 </div>
-      </TabPanel>
+            </TabPanel>
         </div>
     );
 }

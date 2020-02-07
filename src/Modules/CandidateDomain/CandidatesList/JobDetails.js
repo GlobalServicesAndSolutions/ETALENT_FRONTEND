@@ -4,7 +4,6 @@ import JobDetailHeader from './JboDetailsHeader';
 import JobTabList from './JobTabList';
 import { PropTypes } from "prop-types";
 import { connect } from "react-redux";
-import {Redirect} from 'react-router-dom';
 
 class JobDetails extends Component {
     constructor(props) {
