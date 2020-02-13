@@ -1,12 +1,12 @@
 .candidate-details {
-    padding: 0px 0px 0px 255px;
+    padding: 0px 0px 0px 330px;
     width: 105%;
     order: 1;
   
     @media screen and (max-width: 575px) {
         width: 100%;
         order: 2;
-        padding: 0px 0px 0px 5px;
+        padding: 0px 0px 0px 10px;
     }
   }
 
@@ -16,6 +16,15 @@
       @media screen and (max-width: 575px) {
         width: 30%;
     }
+  }
+  .allfontCapital{
+    font-variant-caps: all-petite-caps;
+    font-family: serif;
+    color: cadetblue;
+  }
+  .jobList{
+    width:60%;
+    padding-bottom: 0px;
   }
   .candidatedetailheader{
       padding: 35px 50px 0px;
@@ -30,4 +39,6 @@
         margin: -20px;
         margin-bottom: -58px;
       }
+
+    
   }
