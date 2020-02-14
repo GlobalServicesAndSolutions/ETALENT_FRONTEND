@@ -22,13 +22,13 @@ const JobsListView = ({makeFaveriot,onFaveriotClick}) => {
     return (
         <div>
         <List>
-            <ListItem data-tip={tooltipTile} >
-                <Widget styleName="jr-card-profile jobList">
+            <ListItem  >
+                <Widget styleName="jr-card-profile jobList" data-tip={tooltipTile}>
                     <div className="mb-3" >
                         <div className="cardHeaderAndAddButton" >
                             <div>
                                 <Link to='#' >
-                                    <h3 className="card-title mb-2 mb-md-3" className='allfontCapital' >Sr.</h3>
+                                    <h3 className="card-title mb-2 mb-md-3" className='allfontCapital' >Sr.Software Engineer</h3>
                                 </Link>
                                 <h6>Employer Name</h6>
                                 <h6>Location, City</h6>
@@ -43,7 +43,7 @@ const JobsListView = ({makeFaveriot,onFaveriotClick}) => {
                         <div style={{ lineHeight: '20px' }}>
                             <div className='row' style={{display:'flex', justifyContent:'space-between'}}>
                             <p>Full time/ Part time</p><p>days ago</p>
-                            <FavoriteIcon onClick={onFaveriotClick} style={{fill:makeFaveriot?'red':''}} />
+                            <FavoriteIcon onClick={onFaveriotClick} style={{fill:makeFaveriot?'red':'', cursor:'pointer'}} />
                             </div>
                             <Truncate lines={2}>
                                 <p style={{ overflow: 'hidden' }}>UW Continuum College (UWC ) has an outstanding opportunity for an Assistant Director of Software Engineering

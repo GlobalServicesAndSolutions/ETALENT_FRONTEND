@@ -55,12 +55,12 @@ class JobsList extends Component {
                     }
                     {((this.state.toogleSwitchValue === '') || (this.state.toogleSwitchValue === 'listView')) &&
                         <div className='row'>
-                            <div className="col-xl-3 col-lg-3 col-md-5 col-12" style={{ marginTop: '15px' }}>
+                            <div className="col-xl-3 col-lg-3 col-md-4 col-12" style={{ marginTop: '15px' }}>
                                 <h5>Filter Jobs</h5>
                                 <JobFilters
                                     onFilterOptionClick={this.onFilterOptionClick} />
                             </div>
-                            <div className="col-xl-9 col-lg-9 col-md-10 col-12">
+                            <div className="col-xl-9 col-lg-8 col-md-9 col-12">
                                 <JobsListView 
                                 makeFaveriot={this.state.makeFaveriot}
                                 onFaveriotClick={this.onFaveriotClick}

@@ -170,7 +170,12 @@ const JobsSearchInput = ({ onToogleSwitchChange,
                         <hr />
                     </div>
                 }
-                <div style={{ float: 'right', marginTop:(toogleSwitchValue==='listView' || toogleSwitchValue==='') ? '88px' :'' }}>
+                <div style={{ float: 'right', marginTop:(toogleSwitchValue==='listView' || toogleSwitchValue==='') ? '88px' :'' , display:'flex', justifyContent:'space-between'}}>
+                <div>  
+                <h5 className="allfontCapital"  >Choose View</h5>
+                </div>
+                &nbsp;&nbsp;&nbsp;
+                <div>
                     <Grid container spacing={2} direction="column" alignItems="center">
                         <Grid item>
                             <ToggleButtonGroup size="small" value={toogleSwitchValue} exclusive onChange={onToogleSwitchChange}>
@@ -178,6 +183,7 @@ const JobsSearchInput = ({ onToogleSwitchChange,
                             </ToggleButtonGroup>
                         </Grid>
                     </Grid>
+                    </div>
                 </div>
             </div>
 

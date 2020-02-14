@@ -21,15 +21,7 @@ const useStyles = makeStyles(theme => ({
     height: 100,
   },
 }));
-const longText = `
-Aliquam eget finibus ante, non facilisis lectus. Sed vitae dignissim est, vel aliquam tellus.
-Praesent non nunc mollis, fermentum neque at, semper arcu.
-Nullam eget est sed sem iaculis gravida eget vitae justo.Aliquam eget finibus ante, non facilisis lectus. Sed vitae dignissim est, vel aliquam tellus.
-Praesent non nunc mollis, fermentum neque at, semper arcu.
-Nullam eget est sed sem iaculis gravida eget vitae justo.Aliquam eget finibus ante, non facilisis lectus. Sed vitae dignissim est, vel aliquam tellus.
-Praesent non nunc mollis, fermentum neque at, semper arcu.
-Nullam eget est sed sem iaculis gravida eget vitae justo.
-`;
+const longText = `Aliquam eget finibus ante, non facilisis lectus. Sed vitae dignissim est, vel aliquam tellus.`;
 const JobsGridList = ({makeFaveriot,onFaveriotClick}) => {
   const classes = useStyles();
   return (
@@ -44,7 +36,7 @@ const JobsGridList = ({makeFaveriot,onFaveriotClick}) => {
                 <div style={{display:'flex', justifyContent:'space-between'}}>
                 <img   className={classes.image} src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Phoenicopterus_ruber_in_S%C3%A3o_Paulo_Zoo.jpg" aria-hidden alt='image' />
                 <FavoriteIcon onClick={onFaveriotClick}
-                style={{fill:makeFaveriot?'red':''}}
+                style={{fill:makeFaveriot?'red':'',cursor:'pointer'}}
                 />
                 </div>
                 <h5>Front End Developer</h5> 
