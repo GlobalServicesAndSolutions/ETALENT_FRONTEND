@@ -7,7 +7,8 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
 import { makeStyles } from '@material-ui/core/styles';
 import Truncate from 'react-truncate';
-import ReactTooltip from 'react-tooltip'
+import ReactTooltip from 'react-tooltip';
+import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 
 const useStyles = makeStyles(theme => ({
     image: {
@@ -15,7 +16,7 @@ const useStyles = makeStyles(theme => ({
         height: 100,
     },
 }));
-const JobsListView = () => {
+const JobsListView = ({makeFaveriot,onFaveriotClick}) => {
     const classes = useStyles();
     const tooltipTile='Here is the description on the job';
     return (
@@ -40,7 +41,10 @@ const JobsListView = () => {
                         </div>
                         <hr />
                         <div style={{ lineHeight: '20px' }}>
+                            <div className='row' style={{display:'flex', justifyContent:'space-between'}}>
                             <p>Full time/ Part time</p><p>days ago</p>
+                            <FavoriteBorderIcon onClick={onFaveriotClick} style={{fill:makeFaveriot?'red':''}} />
+                            </div>
                             <Truncate lines={2}>
                                 <p style={{ overflow: 'hidden' }}>UW Continuum College (UWC ) has an outstanding opportunity for an Assistant Director of Software Engineering
                             to lead our software development team. The Assistant Director of Software Engineering is </p>

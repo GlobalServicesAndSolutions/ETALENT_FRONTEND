@@ -12,7 +12,8 @@ class JobsList extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            toogleSwitchValue: ''
+            toogleSwitchValue: '',
+            makeFaveriot:false
         }
     }
     onToogleSwitchChange = (event, newValue) => {
@@ -23,6 +24,9 @@ class JobsList extends Component {
             this.setState({ toogleSwitchValue: event.target.id });
         }
 
+    }
+    onFaveriotClick=()=>{
+        this.setState({makeFaveriot:!this.state.makeFaveriot});
     }
     onFilterOptionClick = (event, text) => {
     }
@@ -43,7 +47,10 @@ class JobsList extends Component {
                     </div>
                     {this.state.toogleSwitchValue === 'gridView' &&
                         <div>
-                            <JobsGridList />
+                            <JobsGridList
+                            makeFaveriot={this.state.makeFaveriot}
+                            onFaveriotClick={this.onFaveriotClick}
+                            />
                         </div>
                     }
                     {((this.state.toogleSwitchValue === '') || (this.state.toogleSwitchValue === 'listView')) &&
@@ -54,7 +61,10 @@ class JobsList extends Component {
                                     onFilterOptionClick={this.onFilterOptionClick} />
                             </div>
                             <div className="col-xl-9 col-lg-9 col-md-10 col-12">
-                                <JobsListView />
+                                <JobsListView 
+                                makeFaveriot={this.state.makeFaveriot}
+                                onFaveriotClick={this.onFaveriotClick}
+                                />
                             </div>
                         </div>
                     }

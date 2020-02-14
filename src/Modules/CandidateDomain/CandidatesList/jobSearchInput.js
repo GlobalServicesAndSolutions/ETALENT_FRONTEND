@@ -66,7 +66,7 @@ const JobsSearchInput = ({ onToogleSwitchChange,
 }) => {
     const classes = useStyles();
     return (
-        <Widget styleName="jr-card-profile" >
+        <Widget styleName="jr-card-profile jobsearchHeader">
             <div className="mb-3" >
                 <div style={{ display: 'flex', justifyContent: 'center' }} >
                     <Paper component="form" className={classes.root}>
@@ -170,7 +170,7 @@ const JobsSearchInput = ({ onToogleSwitchChange,
                         <hr />
                     </div>
                 }
-                <div style={{ marginBottom: '-47px', float: 'right' }}>
+                <div style={{ float: 'right', marginTop:(toogleSwitchValue==='listView' || toogleSwitchValue==='') ? '88px' :'' }}>
                     <Grid container spacing={2} direction="column" alignItems="center">
                         <Grid item>
                             <ToggleButtonGroup size="small" value={toogleSwitchValue} exclusive onChange={onToogleSwitchChange}>
