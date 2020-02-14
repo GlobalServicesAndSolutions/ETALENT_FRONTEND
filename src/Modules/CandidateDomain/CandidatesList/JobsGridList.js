@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import ReactTooltip from 'react-tooltip';
-import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import FavoriteIcon from '@material-ui/icons/Favorite';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -43,7 +43,7 @@ const JobsGridList = ({makeFaveriot,onFaveriotClick}) => {
               <Paper className={classes.paper} data-tip={longText} data-multiline={true} data-border={true} data-scroll-hide={true}>
                 <div style={{display:'flex', justifyContent:'space-between'}}>
                 <img   className={classes.image} src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Phoenicopterus_ruber_in_S%C3%A3o_Paulo_Zoo.jpg" aria-hidden alt='image' />
-                <FavoriteBorderIcon onClick={onFaveriotClick}
+                <FavoriteIcon onClick={onFaveriotClick}
                 style={{fill:makeFaveriot?'red':''}}
                 />
                 </div>

@@ -8,7 +8,7 @@ import Avatar from '@material-ui/core/Avatar';
 import { makeStyles } from '@material-ui/core/styles';
 import Truncate from 'react-truncate';
 import ReactTooltip from 'react-tooltip';
-import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import FavoriteIcon from '@material-ui/icons/Favorite';
 
 const useStyles = makeStyles(theme => ({
     image: {
@@ -43,7 +43,7 @@ const JobsListView = ({makeFaveriot,onFaveriotClick}) => {
                         <div style={{ lineHeight: '20px' }}>
                             <div className='row' style={{display:'flex', justifyContent:'space-between'}}>
                             <p>Full time/ Part time</p><p>days ago</p>
-                            <FavoriteBorderIcon onClick={onFaveriotClick} style={{fill:makeFaveriot?'red':''}} />
+                            <FavoriteIcon onClick={onFaveriotClick} style={{fill:makeFaveriot?'red':''}} />
                             </div>
                             <Truncate lines={2}>
                                 <p style={{ overflow: 'hidden' }}>UW Continuum College (UWC ) has an outstanding opportunity for an Assistant Director of Software Engineering
