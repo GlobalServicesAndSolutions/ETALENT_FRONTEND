@@ -22,19 +22,19 @@ import Tooltip from '@material-ui/core/Tooltip';
 
 const toogleOptions = [
     <Tooltip title='Grid View' arrow>
-    <ToggleButton key={1} value="gridView">
-       <AppsIcon id='gridView'/>
-    </ToggleButton>
+        <ToggleButton key={1} value="gridView">
+            <AppsIcon id='gridView' />
+        </ToggleButton>
     </Tooltip>,
     <Tooltip title='List View' arrow>
-    <ToggleButton key={2} value="listView">
-        <ViewListIcon id='listView'/>
-    </ToggleButton>
+        <ToggleButton key={2} value="listView">
+            <ViewListIcon id='listView' />
+        </ToggleButton>
     </Tooltip>,
     <Tooltip title='Map View' arrow>
-    <ToggleButton key={3} value="mapView">
-        <RoomIcon id='mapView'/>
-    </ToggleButton>
+        <ToggleButton key={3} value="mapView">
+            <RoomIcon id='mapView' />
+        </ToggleButton>
     </Tooltip>,
 ];
 
@@ -56,91 +56,18 @@ const useStyles = makeStyles(theme => ({
         height: 28,
         margin: 4,
     },
+    formControl: {
+        margin: theme.spacing(1),
+        minWidth: 120,
+      },
 }));
-const JobsSearchInput = ({onToogleSwitchChange,
+const JobsSearchInput = ({ onToogleSwitchChange,
     toogleSwitchValue,
 }) => {
     const classes = useStyles();
     return (
         <Widget styleName="jr-card-profile" >
             <div className="mb-3" >
-                {toogleSwitchValue==='gridView' &&
-                <div>
-                <div style={{ display: 'flex', justifyContent: 'center' }}>
-                    <FormControl style={{ width: '10%' }}>
-                        <InputLabel>Jobs</InputLabel>
-                        <Select
-                            name='jobs'
-                        >
-                            <MenuItem value='All'>All</MenuItem>
-                            <MenuItem value='People'>People</MenuItem>
-                            <MenuItem value='Content'>Content</MenuItem>
-                            <MenuItem value='Companies'>Companies</MenuItem>
-                            <MenuItem value='Group'>Group</MenuItem>
-                            <MenuItem value='School'>School</MenuItem>
-                        </Select>
-                    </FormControl>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <Divider style={{ height: '45px', margin: '4px' }} orientation="vertical" />
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <FormControl style={{ width: '10%' }} variant="filled">
-                        <InputLabel>Sort By</InputLabel>
-                        <Select
-                            name='jobs'
-                        >
-                            <MenuItem value='Most relevent'>Most relevent</MenuItem>
-                            <MenuItem value='Most Recent'>Most Recent</MenuItem>
-                        </Select>
-                    </FormControl>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <FormControl style={{ width: '10%' }} variant="filled">
-                        <InputLabel>Date Posted</InputLabel>
-                        <Select
-                            name='jobs'
-                        >
-                            <MenuItem value='Past 24 Hours'>Past 24 Hours</MenuItem>
-                            <MenuItem value='Past Week'>Past Week</MenuItem>
-                            <MenuItem value='Past Month'>Past Month</MenuItem>
-                            <MenuItem value='All Time'>All Time</MenuItem>
-                        </Select>
-                    </FormControl>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <FormControl style={{ width: '15%' }} variant="filled">
-                        <InputLabel>E-Talent Features</InputLabel>
-                        <Select
-                            name='jobs'
-                        >
-                            <MenuItem value='Apply Easy'>Apply Easy</MenuItem>
-                            <MenuItem value='In Networks'>In Networks</MenuItem>
-                        </Select>
-                    </FormControl>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <FormControl style={{ width: '10%' }} variant="filled">
-                        <InputLabel>Company</InputLabel>
-                        <Select
-                            name='jobs'
-                        >
-                            <MenuItem value='Seven Technology'>Seven Technology</MenuItem>
-                            <MenuItem value='VisionX'>VisionX</MenuItem>
-                            <MenuItem value='Careem'>Careem</MenuItem>
-                        </Select>
-                    </FormControl>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <FormControl style={{ width: '15%' }} variant="filled">
-                        <InputLabel>Experience Level</InputLabel>
-                        <Select
-                            name='jobs'
-                        >
-                            <MenuItem value='InternShip'>InternShip</MenuItem>
-                            <MenuItem value='Mid Level'>Mid Level</MenuItem>
-                            <MenuItem value='Senior Level'>Senior Level</MenuItem>
-                            <MenuItem value='Director'>Director</MenuItem>
-                        </Select>
-                    </FormControl>
-                </div>
-                <hr />
-                </div>
-                }
                 <div style={{ display: 'flex', justifyContent: 'center' }} >
                     <Paper component="form" className={classes.root}>
                         <IconButton className={classes.iconButton} aria-label="search">
@@ -165,8 +92,85 @@ const JobsSearchInput = ({onToogleSwitchChange,
                     &nbsp;&nbsp;&nbsp;
                 <Button variant="outlined" color="primary">Search</Button>
                 </div>
-                <hr/>
-                <div>
+                <hr />
+                {toogleSwitchValue === 'gridView' &&
+                    <div>
+                        <div style={{ display: 'flex', justifyContent: 'center' }}>
+                            <FormControl style={{ width: '10%' }}>
+                                <InputLabel>Jobs</InputLabel>
+                                <Select
+                                    name='jobs'
+                                >
+                                    <MenuItem value='All'>All</MenuItem>
+                                    <MenuItem value='People'>People</MenuItem>
+                                    <MenuItem value='Content'>Content</MenuItem>
+                                    <MenuItem value='Companies'>Companies</MenuItem>
+                                    <MenuItem value='Group'>Group</MenuItem>
+                                    <MenuItem value='School'>School</MenuItem>
+                                </Select>
+                            </FormControl>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <Divider style={{ height: '45px', margin: '4px' }}  variant="outlined"/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <FormControl style={{ width: '10%' }}  variant="outlined">
+                                <InputLabel>Sort By</InputLabel>
+                                <Select
+                                    name='jobs'
+                                >
+                                    <MenuItem value='Most relevent'>Most relevent</MenuItem>
+                                    <MenuItem value='Most Recent'>Most Recent</MenuItem>
+                                </Select>
+                            </FormControl>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                    <FormControl style={{ width: '10%' }} variant="outlined" >
+                                <InputLabel>Date Posted</InputLabel>
+                                <Select
+                                    name='jobs'
+                                >
+                                    <MenuItem value='Past 24 Hours'>Past 24 Hours</MenuItem>
+                                    <MenuItem value='Past Week'>Past Week</MenuItem>
+                                    <MenuItem value='Past Month'>Past Month</MenuItem>
+                                    <MenuItem value='All Time'>All Time</MenuItem>
+                                </Select>
+                            </FormControl>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <FormControl style={{ width: '15%' }}  variant="outlined">
+                                <InputLabel>E-Talent Features</InputLabel>
+                                <Select
+                                    name='jobs'
+                                >
+                                    <MenuItem value='Apply Easy'>Apply Easy</MenuItem>
+                                    <MenuItem value='In Networks'>In Networks</MenuItem>
+                                </Select>
+                            </FormControl>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <FormControl style={{ width: '10%' }} variant="outlined">
+                                <InputLabel>Company</InputLabel>
+                                <Select
+                                    name='jobs'
+                                >
+                                    <MenuItem value='Seven Technology'>Seven Technology</MenuItem>
+                                    <MenuItem value='VisionX'>VisionX</MenuItem>
+                                    <MenuItem value='Careem'>Careem</MenuItem>
+                                </Select>
+                            </FormControl>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <FormControl style={{ width: '15%' }}  variant="outlined">
+                                <InputLabel>Experience Level</InputLabel>
+                                <Select
+                                    name='jobs'
+                                >
+                                    <MenuItem value='InternShip'>InternShip</MenuItem>
+                                    <MenuItem value='Mid Level'>Mid Level</MenuItem>
+                                    <MenuItem value='Senior Level'>Senior Level</MenuItem>
+                                    <MenuItem value='Director'>Director</MenuItem>
+                                </Select>
+                            </FormControl>
+                        </div>
+                        <hr />
+                    </div>
+                }
+                <div style={{ marginBottom: '-47px', float: 'right' }}>
                     <Grid container spacing={2} direction="column" alignItems="center">
                         <Grid item>
                             <ToggleButtonGroup size="small" value={toogleSwitchValue} exclusive onChange={onToogleSwitchChange}>

@@ -90,7 +90,8 @@ const JobsListView = () => {
                 </Widget>
             </ListItem>
         </List>
-        <ReactTooltip />
+        <ReactTooltip 
+        effect='solid'/>
         </div>
     )
 }

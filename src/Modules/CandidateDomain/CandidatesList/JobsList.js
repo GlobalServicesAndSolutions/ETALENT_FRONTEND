@@ -35,7 +35,7 @@ class JobsList extends Component {
                 <div className="app-main-content">
                     <JobListHeader
                     />
-                    <div>
+                    <div style={{padding:'3px'}}>
                         <JobsSearchInput
                             onToogleSwitchChange={this.onToogleSwitchChange}
                             toogleSwitchValue={this.state.toogleSwitchValue}
@@ -53,7 +53,7 @@ class JobsList extends Component {
                                 <JobFilters
                                     onFilterOptionClick={this.onFilterOptionClick} />
                             </div>
-                            <div className="col-xl-9 col-lg-9 col-md-7 col-12">
+                            <div className="col-xl-9 col-lg-9 col-md-10 col-12">
                                 <JobsListView />
                             </div>
                         </div>
