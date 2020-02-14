@@ -39,7 +39,7 @@ const JobsGridList = ({makeFaveriot,onFaveriotClick}) => {
                 style={{fill:makeFaveriot?'red':'',cursor:'pointer'}}
                 />
                 </div>
-                <h5>Front End Developer</h5> 
+                <h4 className='allfontCapital'>Front End Developer</h4> 
                 <h6>Seven Technology</h6>
                 <h7>Islamabad</h7>
                 <hr/>
