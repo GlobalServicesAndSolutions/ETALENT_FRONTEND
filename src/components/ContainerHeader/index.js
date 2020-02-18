@@ -1,4 +1,5 @@
 import React from 'react';
+import {Breadcrumb, BreadcrumbItem} from 'reactstrap';
 
 const getDisplayString = (sub) => {
   const arr = sub.split("-");
@@ -17,11 +18,20 @@ const getUrlString = (path, sub, index) => {
   }
 };
 
-const ContainerHeader = () => {
+const ContainerHeader = ({ match}) => {
+  const path = match.path.substr(1);
+  const subPath = path.split('/');
   return (
-    <div className="page-heading d-sm-flex justify-content-sm-between align-items-sm-center">
-      <h2 className="title mb-3 mb-sm-0">E-talent</h2>
+    <div >
 
+      <Breadcrumb className="mb-0" tag="nav">
+        {subPath.map((sub, index) => {
+            return <BreadcrumbItem active={subPath.length === index + 1}
+                                   tag={subPath.length === index + 1 ? "span" : "a"} key={index}
+                                   href={getUrlString(path, sub, index)}>{getDisplayString(sub)}</BreadcrumbItem>
+          }
+        )}
+      </Breadcrumb>
     </div>
   )
 };

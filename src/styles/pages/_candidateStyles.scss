@@ -32,8 +32,6 @@
   .candidatedetailheader{
       padding: 35px 50px 0px;
       margin: -30px -30px -55px;
-      background-color: #f8f9fa;
-      color: black;
       position: relative;
     
       @media screen and (max-width: 575px) {
@@ -45,3 +43,24 @@
 
     
   }
+  .cancleJobFilterButton{
+    color: green;
+    cursor: pointer;
+  }
+  .cancleJobFilterButton :hover{
+   color: gray;
+  }
+  .jobListHeader{
+    padding: 35px 50px 0px;
+    margin: -30px -45px -90px;
+    position: relative;
+  
+    @media screen and (max-width: 575px) {
+      padding: 30px 49px;
+      padding-bottom: 45px;
+      margin: -20px;
+      margin-bottom: -58px;
+    }
+
+  
+}

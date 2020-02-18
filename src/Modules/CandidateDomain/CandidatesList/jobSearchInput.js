@@ -59,10 +59,20 @@ const useStyles = makeStyles(theme => ({
     formControl: {
         margin: theme.spacing(1),
         minWidth: 120,
-      },
+    },
 }));
 const JobsSearchInput = ({ onToogleSwitchChange,
     toogleSwitchValue,
+    onChangeSortByFilter,
+    sortByFilter,
+    onChangeDatePostedFilter,
+    datePostedFilter,
+    onChangeEtalentFeatureFilter,
+    eTalentFeatureFilter,
+    onChangeCompanyFilter,
+    companyFilter,
+    onChangeExperienceLevelFilter,
+    experienceLevelFilter
 }) => {
     const classes = useStyles();
     return (
@@ -92,7 +102,7 @@ const JobsSearchInput = ({ onToogleSwitchChange,
                     &nbsp;&nbsp;&nbsp;
                 <Button variant="outlined" color="primary">Search</Button>
                 </div>
-                <hr />
+                <br />
                 {toogleSwitchValue === 'gridView' &&
                     <div>
                         <div style={{ display: 'flex', justifyContent: 'center' }}>
@@ -100,6 +110,7 @@ const JobsSearchInput = ({ onToogleSwitchChange,
                                 <InputLabel>Jobs</InputLabel>
                                 <Select
                                     name='jobs'
+
                                 >
                                     <MenuItem value='All'>All</MenuItem>
                                     <MenuItem value='People'>People</MenuItem>
@@ -110,22 +121,26 @@ const JobsSearchInput = ({ onToogleSwitchChange,
                                 </Select>
                             </FormControl>
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <Divider style={{ height: '45px', margin: '4px' }}  variant="outlined"/>
+                    <Divider style={{ height: '45px', margin: '4px' }} variant="outlined" />
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <FormControl style={{ width: '10%' }}  variant="outlined">
+                    <FormControl style={{ width: '10%' }} variant="outlined">
                                 <InputLabel>Sort By</InputLabel>
                                 <Select
-                                    name='jobs'
+                                    name='sortByFilter'
+                                    value={sortByFilter}
+                                    onChange={onChangeSortByFilter}
                                 >
                                     <MenuItem value='Most relevent'>Most relevent</MenuItem>
                                     <MenuItem value='Most Recent'>Most Recent</MenuItem>
                                 </Select>
                             </FormControl>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <FormControl style={{ width: '10%' }} variant="outlined" >
                                 <InputLabel>Date Posted</InputLabel>
                                 <Select
-                                    name='jobs'
+                                    name='datePostedFilter'
+                                    value={datePostedFilter}
+                                    onChange={onChangeDatePostedFilter}
                                 >
                                     <MenuItem value='Past 24 Hours'>Past 24 Hours</MenuItem>
                                     <MenuItem value='Past Week'>Past Week</MenuItem>
@@ -134,10 +149,12 @@ const JobsSearchInput = ({ onToogleSwitchChange,
                                 </Select>
                             </FormControl>
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <FormControl style={{ width: '15%' }}  variant="outlined">
+                    <FormControl style={{ width: '15%' }} variant="outlined">
                                 <InputLabel>E-Talent Features</InputLabel>
                                 <Select
-                                    name='jobs'
+                                    name='eTalentFeatureFilter'
+                                    value={eTalentFeatureFilter}
+                                    onChange={onChangeEtalentFeatureFilter}
                                 >
                                     <MenuItem value='Apply Easy'>Apply Easy</MenuItem>
                                     <MenuItem value='In Networks'>In Networks</MenuItem>
@@ -147,7 +164,9 @@ const JobsSearchInput = ({ onToogleSwitchChange,
                     <FormControl style={{ width: '10%' }} variant="outlined">
                                 <InputLabel>Company</InputLabel>
                                 <Select
-                                    name='jobs'
+                                    name='companyFilter'
+                                    value={companyFilter}
+                                    onChange={onChangeCompanyFilter}
                                 >
                                     <MenuItem value='Seven Technology'>Seven Technology</MenuItem>
                                     <MenuItem value='VisionX'>VisionX</MenuItem>
@@ -155,10 +174,12 @@ const JobsSearchInput = ({ onToogleSwitchChange,
                                 </Select>
                             </FormControl>
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <FormControl style={{ width: '15%' }}  variant="outlined">
+                    <FormControl style={{ width: '15%' }} variant="outlined">
                                 <InputLabel>Experience Level</InputLabel>
                                 <Select
-                                    name='jobs'
+                                    name='experienceLevelFilter'
+                                    value={experienceLevelFilter}
+                                    onChange={onChangeExperienceLevelFilter}
                                 >
                                     <MenuItem value='InternShip'>InternShip</MenuItem>
                                     <MenuItem value='Mid Level'>Mid Level</MenuItem>
@@ -170,19 +191,17 @@ const JobsSearchInput = ({ onToogleSwitchChange,
                         <hr />
                     </div>
                 }
-                <div style={{ float: 'right', marginTop:(toogleSwitchValue==='listView' || toogleSwitchValue==='') ? '88px' :'' , display:'flex', justifyContent:'space-between'}}>
-                <div>  
-                <h5 className="allfontCapital"  >Choose View</h5>
-                </div>
-                &nbsp;&nbsp;&nbsp;
-                <div>
-                    <Grid container spacing={2} direction="column" alignItems="center">
-                        <Grid item>
-                            <ToggleButtonGroup size="small" value={toogleSwitchValue} exclusive onChange={onToogleSwitchChange}>
-                                {toogleOptions}
-                            </ToggleButtonGroup>
+
+                <div style={{ float: 'right', marginTop: (toogleSwitchValue === 'listView' || toogleSwitchValue === '') ? '88px' : '', display: 'flex', justifyContent: 'space-between' }}>
+
+                    <div>
+                        <Grid container spacing={2} direction="column" alignItems="center">
+                            <Grid item>
+                                <ToggleButtonGroup size="small" value={toogleSwitchValue} exclusive onChange={onToogleSwitchChange}>
+                                    {toogleOptions}
+                                </ToggleButtonGroup>
+                            </Grid>
                         </Grid>
-                    </Grid>
                     </div>
                 </div>
             </div>

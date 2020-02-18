@@ -141,13 +141,14 @@ class EmployerWorkFlow extends Component {
     onSaveSectionOne = () => {
         this.props.employerActions.onSaveSectionOnedata(this.state.employerSections);
         this.setState({ openEmployerSection_1: false });
+
     }
     onDeleteSectionOne = () => {
         this.props.employerActions.onDeleteSectionOnedata();
     }
     onSaveSectionTwo = () => {
         this.props.employerActions.onSaveSectionTwodata(this.state.employerSections);
-        this.setState({ openEmployerSection_2: false });
+        this.setState({ openEmployerSection_2: false, expansionPanelvalue:'' });
     }
     onDeleteSectionTwo = () => {
         this.props.employerActions.onDeleteSectionTwodata();
@@ -179,14 +180,6 @@ class EmployerWorkFlow extends Component {
     }
     onDeleteSectionSix = () => {
         this.props.employerActions.onDeleteSectionSixdata();
-    }
-    onExpansionPanelChange = panel => (event, expandedPanel) => {
-        this.setState({ expansionPanelvalue: expandedPanel ? panel : 'notExpanded' })
-    }
-    onParentExpansion = (e, parentPanel) => {
-        if (parentPanel === false) {
-            this.setState({ expansionPanelvalue: '' });
-        }
     }
     onSection_1Open = () => {
         this.setState({ openEmployerSection_1: true });
@@ -230,7 +223,7 @@ class EmployerWorkFlow extends Component {
                 <div className="app-header ">
                     <Header />
                 </div>
-                <ExpansionPanel onChange={this.onParentExpansion} style={{ width: '40%' }} >
+                <ExpansionPanel  className='workFlowSectionPanal' >
                     <ExpansionPanelSummary
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel1bh-content"

@@ -24,6 +24,7 @@ import CandidateDetails from 'Modules/CandidateDomain/CandidatesList/CandidateDe
 import JobDetails from 'Modules/CandidateDomain/CandidatesList/JobDetails';
 import JobsList from 'Modules/CandidateDomain/CandidatesList/JobsList';
 import JobsSearchedList from 'Modules/CandidateDomain/CandidatesList/SearchedJobList';
+import JobDescription from 'Modules/CandidateDomain/CandidatesList/JobDescription';
 
 const RestrictedRoute = ({component: Component, authUser, ...rest}) =>
   <Route
@@ -100,7 +101,8 @@ class App extends Component {
                   <RestrictedRoute path='/candidateDetails' authUser={authUser} component={CandidateDetails}/>
                   <RestrictedRoute path='/jobDetails' authUser={authUser} component={JobDetails} />
                   <RestrictedRoute path='/jobs' authUser={authUser} component={JobsList}/>
-                  <RestrictedRoute path='/jobsearch' authUser={authUser} component={JobsSearchedList}/>                  <Route
+                  <RestrictedRoute path='/jobsearch' authUser={authUser} component={JobsSearchedList}/>  
+                  <RestrictedRoute path='/jobDescription' authUser={authUser} component={JobDescription} />                <Route
                     component={asyncComponent(() => import('components/Error404'))}/>
                 </Switch>
               </div>

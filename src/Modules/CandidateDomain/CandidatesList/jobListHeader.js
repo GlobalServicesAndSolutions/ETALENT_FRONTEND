@@ -2,7 +2,7 @@ import React from "react";
 
 const JobListHeader = () => {
     return (
-        <div className="candidatedetailheader">
+        <div className="jobListHeader">
           <div className="jr-profile-container">
             <div className="jr-profile-banner-top">
               <div className="jr-profile-banner-top-left">

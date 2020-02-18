@@ -12,7 +12,7 @@ const EmployerInfo = ({onOpenEployerInfo}) => {
                         <h3 className="card-title mb-2 mb-md-3">Info</h3>
                     </div>
                     <div>
-                        <Fab size="small" color="primary" aria-label="add" onClick={onOpenEployerInfo}>
+                        <Fab size="small" color="primary" aria-label="add" onClick={onOpenEployerInfo} className='profileAddEditButton'>
                             <AddIcon />
                         </Fab>
                     </div>

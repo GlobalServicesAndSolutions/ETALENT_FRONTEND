@@ -13,25 +13,22 @@ const Courses = ({openCourseAndTrainingDialogue,isEditClick}) => {
             <h3 className="card-title mb-2 mb-md-3">Courses And Trainings</h3>
           </div>
           <div>
-          {isEditClick&& <Fab size="small" color="primary" aria-label="edit" onClick={openCourseAndTrainingDialogue}>
-              <EditIcon />
-            </Fab>}
-            <Fab size="small" color="primary" aria-label="cross" onClick={openCourseAndTrainingDialogue}>
+            <Fab size="small" color="primary" aria-label="cross" onClick={openCourseAndTrainingDialogue} className='profileAddEditButton'>
               <AddIcon />
             </Fab>
           </div>
         </div>
         <hr />
+        <div className="row profileSectionEditAndDelete">
+          <div>
         <h4>Web Development Workshop</h4>
-        <div>
-          <ul>
-            <li>
-              Abasyn University Islamabad<br />
-              2017<br />
-            </li>
-          </ul>
         </div>
-        <h4>Requirement Engineering</h4>
+        <div>
+        {isEditClick&& <Fab size="small" color="primary" aria-label="edit" onClick={openCourseAndTrainingDialogue} className='profileAddEditButton'>
+              <EditIcon />
+            </Fab>}
+        </div>
+        </div>
         <div>
           <ul>
             <li>

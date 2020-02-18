@@ -2,6 +2,9 @@ import React,{Component} from 'react';
 import ProfileCard from '../../components/ProfileCard/index'
 import PicturePost from './PostingCards/PicturePost';
 import JobPost from './PostingCards/JobPost';
+import JobAlerts from './PostingCards/JobAlerts';
+import Events from './PostingCards/Events';
+
 class CandidateHome extends Component {
 listClick=()=>{
   alert('Hello click')
@@ -12,17 +15,18 @@ listClick=()=>{
         <div style={{marginTop:"-3%"}}>
           <ProfileCard />
         </div>
-        <div  className="app-wrapper">
-        <div style={{display:"flex"}}>
-          <div>
+        <div className='row'>
+          <div className="col-xl-7 col-lg-7 col-md-6 col-12">
           <PicturePost />
-          <JobPost />
           <PicturePost />
           <PicturePost />
           <PicturePost />
           </div>
-        <div style={{marginRight:"28%"}}> </div>
-        </div>
+        <div className="col-xl-5 col-lg-5 col-md-6 col-12">
+        <JobPost />
+        <JobAlerts />
+        <Events />
+           </div>
         </div>
         </div>
       

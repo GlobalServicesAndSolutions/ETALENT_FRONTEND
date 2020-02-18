@@ -13,7 +13,7 @@ const Education = ({ openEducationDialog,isEditClick }) => {
           <h3 className="card-title mb-2 mb-md-3">Experience</h3>
           </div>
           <div>
-          <Fab onClick={openEducationDialog} size="small" color="primary" aria-label="add" >
+          <Fab onClick={openEducationDialog} size="small" color="primary" aria-label="add" className='profileAddEditButton'>
             <AddIcon />
           </Fab>
           </div>
@@ -26,7 +26,7 @@ const Education = ({ openEducationDialog,isEditClick }) => {
           <h5>Seven software development ltd.</h5>
           </div>
           <div>
-         { isEditClick && <Fab onClick={openEducationDialog} size="small" color="primary" aria-label="edit" >
+         { isEditClick && <Fab onClick={openEducationDialog} size="small" color="primary" aria-label="edit" className='profileAddEditButton'>
             <EditIcon />
           </Fab>}
           </div>
@@ -51,7 +51,7 @@ const Education = ({ openEducationDialog,isEditClick }) => {
           <h3 className="card-title mb-2 mb-md-3">Education</h3>
           </div>
           <div>
-          <Fab onClick={openEducationDialog} size="small" color="primary" aria-label="add" >
+          <Fab onClick={openEducationDialog} size="small" color="primary" aria-label="add" className='profileAddEditButton'>
             <AddIcon />
           </Fab>
           </div>
@@ -63,7 +63,7 @@ const Education = ({ openEducationDialog,isEditClick }) => {
           <h5>Abasyn University Islamabad</h5>
           </div>
           <div>
-         { isEditClick && <Fab onClick={openEducationDialog} size="small" color="primary" aria-label="edit" >
+         { isEditClick && <Fab onClick={openEducationDialog} size="small" color="primary" aria-label="edit" className='profileAddEditButton'>
             <EditIcon />
           </Fab>}
           </div>

@@ -16,6 +16,7 @@ import SoftSkills from '../../components/profile/SoftSkills/SoftSkills';
 import Projects from '../../components/profile/Projects/Projects';
 import Courses from '../../components/profile/CourseAndTrainings/CoursesAndTraining';
 import CourseAndTrainings from '../../util/Models/CoursesAndTrainings';
+import SoftSkillsDialogue from 'util/Models/SoftSkills';
 
 class Profile extends Component {
     constructor(props) {
@@ -41,6 +42,7 @@ class Profile extends Component {
             educationOpen: false,
             lisenceOpen: false,
             skillOpen: false,
+            softSkillsOpen:false,
             awardOpen: false,
             basicInfoOpen: false,
             courseAndtraining: false,
@@ -81,8 +83,14 @@ class Profile extends Component {
     openSkillDialogue = () => {
         this.setState({ skillOpen: true });
     }
+    openSoftSkillDialogue=()=>{
+        this.setState({ softSkillsOpen: true });
+    }
     closeSkillDialog = () => {
         this.setState({ skillOpen: false });
+    }
+    closeSoftSkillDialog = () => {
+        this.setState({ softSkillsOpen: false });
     }
     openAwardDialogue = () => {
         this.setState({ awardOpen: true });
@@ -115,7 +123,7 @@ class Profile extends Component {
         this.setState({ courseAndtraining: false });
     }
     isEditClick = () => {
-        this.setState({ isEdit: true });
+        this.setState({ isEdit: !this.state.isEdit });
     }
     isEditCancel = () => {
         this.setState({ isEdit: false });
@@ -151,6 +159,7 @@ class Profile extends Component {
                     onCertificationView={this.onCertificationView}
                     openEducationDialog={this.openEducationDialog}
                     onSkillDialogue={this.openSkillDialogue}
+                    openSoftSkillDialogue={this.openSoftSkillDialogue}
                     openCertificationDialog={this.openLisenceDialog}
                     openAwardDialog={this.openAwardDialogue}
                     basicInfoClick={this.basicInfoClick}
@@ -186,7 +195,7 @@ class Profile extends Component {
                             <SoftSkills
                                 ratingValue={this.state.ratingValue}
                                 onRatingChange={this.onRatingChange}
-                                onSkillDialogue={this.openSkillDialogue}
+                                openSoftSkillDialogue={this.openSoftSkillDialogue}
                                 isEditClick={this.state.isEdit}
                             />
                         </div>
@@ -235,6 +244,12 @@ class Profile extends Component {
                     />
                     :
                     <span></span>}
+                    {this.state.softSkillsOpen &&
+                    <SoftSkillsDialogue 
+                    open={this.state.softSkillsOpen}
+                    handleClose={this.closeSoftSkillDialog}
+                    />
+                    }
                 {this.state.awardOpen ?
                     <AwardDialog
                         open={this.state.awardOpen}

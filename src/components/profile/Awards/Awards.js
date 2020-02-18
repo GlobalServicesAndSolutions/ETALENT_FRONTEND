@@ -13,17 +13,21 @@ const Awards = ({openAwardDialog,isEditClick}) => {
           <h3 className="card-title mb-2 mb-md-3">Awards</h3>
           </div>
           <div>
-          {isEditClick&& <Fab size="small" color="primary" onClick={openAwardDialog} aria-label="edit">
-            <EditIcon />
-          </Fab>}
-          <Fab size="small" color="primary" aria-label="add"onClick={openAwardDialog}>
+          <Fab size="small" color="primary" aria-label="add"onClick={openAwardDialog} className='profileAddEditButton'>
             <AddIcon />
           </Fab>
           </div>
         </div>
         <hr />
-        <div className="row">
+        <div className="row profileSectionEditAndDelete">
+          <div>
           <h4>Emlpoyee of the month</h4>
+          </div>
+          <div>
+          {isEditClick&& <Fab size="small" color="primary" onClick={openAwardDialog} aria-label="edit" className='profileAddEditButton'>
+            <EditIcon />
+          </Fab>}
+          </div>
         </div>
         <div>
           <ul>

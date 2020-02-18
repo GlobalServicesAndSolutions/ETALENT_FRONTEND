@@ -18,17 +18,17 @@ const JobFilters = ({onFilterOptionClick}) => {
                 <Typography >Jobs</Typography>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails className='expansionPanel'>
-                <Typography onClick={onFilterOptionClick} style={{cursor:'pointer'}} >All</Typography>
+                <Typography style={{cursor:'pointer'}} onClick={onFilterOptionClick}>All</Typography>
                 <hr />
-                <Typography style={{cursor:'pointer'}}>People</Typography>
+                <Typography style={{cursor:'pointer'}} onClick={onFilterOptionClick}>People</Typography>
                 <hr />
-                <Typography style={{cursor:'pointer'}}>Content</Typography>
+                <Typography style={{cursor:'pointer'}} onClick={onFilterOptionClick}>Content</Typography>
                 <hr />
-                <Typography style={{cursor:'pointer'}}>Companies</Typography>
+                <Typography style={{cursor:'pointer'}} onClick={onFilterOptionClick}>Companies</Typography>
                 <hr />
-                <Typography style={{cursor:'pointer'}}>Group</Typography>
+                <Typography style={{cursor:'pointer'}} onClick={onFilterOptionClick}>Group</Typography>
                 <hr />
-                <Typography style={{cursor:'pointer'}}>School</Typography>
+                <Typography style={{cursor:'pointer'}} onClick={onFilterOptionClick}>School</Typography>
             </ExpansionPanelDetails>
         </ExpansionPanel>
         <ExpansionPanel  >
@@ -40,9 +40,9 @@ const JobFilters = ({onFilterOptionClick}) => {
                 <Typography >Sort By</Typography>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails className='expansionPanel'>
-                <Typography style={{cursor:'pointer'}}>Most Relevent</Typography>
+                <Typography style={{cursor:'pointer'}} onClick={onFilterOptionClick}>Most Relevent</Typography>
                 <hr />
-                <Typography style={{cursor:'pointer'}}>Most Recent</Typography>
+                <Typography style={{cursor:'pointer'}} onClick={onFilterOptionClick}>Most Recent</Typography>
             </ExpansionPanelDetails>
         </ExpansionPanel>
         <ExpansionPanel  >
@@ -54,13 +54,13 @@ const JobFilters = ({onFilterOptionClick}) => {
                 <Typography >Date Posted</Typography>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails className='expansionPanel'>
-                <Typography style={{cursor:'pointer'}}>Last 24 Hours</Typography>
+                <Typography style={{cursor:'pointer'}} onClick={onFilterOptionClick}>Last 24 Hours</Typography>
                 <hr />
-                <Typography style={{cursor:'pointer'}}>Past Week</Typography>
+                <Typography style={{cursor:'pointer'}} onClick={onFilterOptionClick}>Past Week</Typography>
                 <hr />
-                <Typography style={{cursor:'pointer'}}>Past Month</Typography>
+                <Typography style={{cursor:'pointer'}} onClick={onFilterOptionClick}>Past Month</Typography>
                 <hr />
-                <Typography style={{cursor:'pointer'}}>All Time</Typography>
+                <Typography style={{cursor:'pointer'}} onClick={onFilterOptionClick}>All Time</Typography>
             </ExpansionPanelDetails>
         </ExpansionPanel>
         <ExpansionPanel  >
@@ -72,9 +72,9 @@ const JobFilters = ({onFilterOptionClick}) => {
                 <Typography >E-Talent Features</Typography>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails className='expansionPanel'>
-                <Typography style={{cursor:'pointer'}}>Easy To Apply</Typography>
+                <Typography style={{cursor:'pointer'}} onClick={onFilterOptionClick}>Easy To Apply</Typography>
                 <hr />
-                <Typography style={{cursor:'pointer'}}>In Networks</Typography>
+                <Typography style={{cursor:'pointer'}} onClick={onFilterOptionClick}>In Networks</Typography>
             </ExpansionPanelDetails>
         </ExpansionPanel>
         <ExpansionPanel  >
@@ -86,11 +86,11 @@ const JobFilters = ({onFilterOptionClick}) => {
                 <Typography >Company</Typography>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails className='expansionPanel'>
-                <Typography style={{cursor:'pointer'}}>Seven Technology</Typography>
+                <Typography style={{cursor:'pointer'}} onClick={onFilterOptionClick}>Seven Technology</Typography>
                 <hr />
-                <Typography style={{cursor:'pointer'}}>VisionX</Typography>
+                <Typography style={{cursor:'pointer'}} onClick={onFilterOptionClick}>VisionX</Typography>
                 <hr />
-                <Typography style={{cursor:'pointer'}}>Careem</Typography>
+                <Typography style={{cursor:'pointer'}} onClick={onFilterOptionClick}>Careem</Typography>
             </ExpansionPanelDetails>
         </ExpansionPanel>
         <ExpansionPanel  >
@@ -102,15 +102,15 @@ const JobFilters = ({onFilterOptionClick}) => {
                 <Typography >Experience Level</Typography>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails className='expansionPanel'>
-                <Typography style={{cursor:'pointer'}}>InternShip</Typography>
+                <Typography style={{cursor:'pointer'}} onClick={onFilterOptionClick}>InternShip</Typography>
                 <hr />
-                <Typography style={{cursor:'pointer'}}>Mid Level</Typography>
+                <Typography style={{cursor:'pointer'}} onClick={onFilterOptionClick}>Mid Level</Typography>
                 <hr />
-                <Typography style={{cursor:'pointer'}}>Senior Level</Typography>
+                <Typography style={{cursor:'pointer'}} onClick={onFilterOptionClick}>Senior Level</Typography>
                 <hr />
-                <Typography style={{cursor:'pointer'}}>Executive</Typography>
+                <Typography style={{cursor:'pointer'}} onClick={onFilterOptionClick}>Executive</Typography>
                 <hr />
-                <Typography style={{cursor:'pointer'}}>Director</Typography>
+                <Typography style={{cursor:'pointer'}} onClick={onFilterOptionClick}>Director</Typography>
             </ExpansionPanelDetails>
         </ExpansionPanel>
         </div>

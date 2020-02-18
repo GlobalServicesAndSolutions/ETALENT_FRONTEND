@@ -60,7 +60,7 @@ class SignUp extends React.Component {
         lastName: '',
         email: '',
         password: '',
-        phoneNumber: 0,
+        phoneNumber: '',
         companyName:''
       },
       value: 'one'
@@ -170,12 +170,13 @@ class SignUp extends React.Component {
                       />
                     </FormControl>
                     <TextField
-                      type="number"
+                      type="text"
                       name="phoneNumber"
                       onChange={this.updateUserState}
                       label="Phone Number"
-                      fullWidth
                       value={phoneNumber}
+                      placeholder='xxxx-xxx-xxxx'
+                      fullWidth
                       margin="normal"
                       className="mt-0 mb-4"
                     />

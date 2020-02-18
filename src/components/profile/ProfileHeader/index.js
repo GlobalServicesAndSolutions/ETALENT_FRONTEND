@@ -9,7 +9,6 @@ import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import Dropdown from 'react-bootstrap/Dropdown';
 import EditIcon from '@material-ui/icons/Edit';
-import { Button } from "@material-ui/core";
 
 const ProfileHeader = ({ onEducationView,
   onSkillView,
@@ -26,8 +25,7 @@ const ProfileHeader = ({ onEducationView,
   downloadPDF,
   shareProfile,
   isEditClick,
-  isEditCancel,
-  isEdit
+  openSoftSkillDialogue
 }) => {
   return (
     <div className="jr-profile-banner">
@@ -35,7 +33,7 @@ const ProfileHeader = ({ onEducationView,
         <div className="jr-profile-banner-top">
           <div className="jr-profile-banner-top-left">
             <div className="jr-profile-banner-avatar">
-              <Avatar className="size-90" alt="..." src="" />
+              <Avatar className="size-90" alt="..." src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Phoenicopterus_ruber_in_S%C3%A3o_Paulo_Zoo.jpg" />
             </div>
             <div className="jr-profile-banner-avatar-info">
               <h2 className="mb-2 jr-mb-sm-3 jr-fs-xxl jr-font-weight-black">Salman Haider</h2>
@@ -57,132 +55,133 @@ const ProfileHeader = ({ onEducationView,
             </ul>
           </div>
         </div>
-          <ExpansionPanel onChange={onParentExpansion} style={{ width: '30%' }}>
-            <ExpansionPanelSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1bh-content"
-              id="panel1bh-header"
-            >
-              <Typography >Add Sections</Typography>
-            </ExpansionPanelSummary>
-            <ExpansionPanelDetails className='expansionPanel'>
-              {/*********************************************************************/}
-              <ExpansionPanel onChange={onExpansionPanelChange('panel1')} expanded={expansionPanelvalue === 'panel1'}>
-                <ExpansionPanelSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel1bh-content"
-                  id="panel1bh-header"
-                >
-                  <Typography >Info</Typography>
-                </ExpansionPanelSummary>
-                <ExpansionPanelDetails className='expansionPanel'>
-                  <Typography className='addSection'>
-                    Basic Info
+        <ExpansionPanel onChange={onParentExpansion} className='candidateProfileSectionPanal'>
+          <ExpansionPanelSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1bh-content"
+            id="panel1bh-header"
+          >
+            <Typography >Add Sections</Typography>
+          </ExpansionPanelSummary>
+          <ExpansionPanelDetails className='expansionPanel'>
+            {/*********************************************************************/}
+            <ExpansionPanel onChange={onExpansionPanelChange('panel1')} expanded={expansionPanelvalue === 'panel1'}>
+              <ExpansionPanelSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="panel1bh-content"
+                id="panel1bh-header"
+              >
+                <Typography >Info</Typography>
+              </ExpansionPanelSummary>
+              <ExpansionPanelDetails className='expansionPanel'>
+                <Typography className='addSection'>
+                  Basic Info
                         <Fab size="small" aria-label="add" onClick={basicInfoClick}>
-                      <AddIcon />
-                    </Fab>
-                  </Typography>
-                </ExpansionPanelDetails>
-              </ExpansionPanel>
-              <ExpansionPanel onChange={onExpansionPanelChange('panel2')} expanded={expansionPanelvalue === 'panel2'}>
-                <ExpansionPanelSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel1bh-content"
-                  id="panel1bh-header"
-                >
-                  <Typography >About</Typography>
-                </ExpansionPanelSummary>
-                <ExpansionPanelDetails className='expansionPanel'>
-                  <Typography className='addSection'>
-                    About
+                    <AddIcon />
+                  </Fab>
+                </Typography>
+              </ExpansionPanelDetails>
+            </ExpansionPanel>
+            <ExpansionPanel onChange={onExpansionPanelChange('panel2')} expanded={expansionPanelvalue === 'panel2'}>
+              <ExpansionPanelSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="panel1bh-content"
+                id="panel1bh-header"
+              >
+                <Typography >About</Typography>
+              </ExpansionPanelSummary>
+              <ExpansionPanelDetails className='expansionPanel'>
+                <Typography className='addSection'>
+                  Overview
                         <Fab size="small" aria-label="add">
-                      <AddIcon />
-                    </Fab>
-                  </Typography>
-                </ExpansionPanelDetails>
-              </ExpansionPanel>
-              <ExpansionPanel onChange={onExpansionPanelChange('panel3')} expanded={expansionPanelvalue === 'panel3'}>
-                <ExpansionPanelSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel1bh-content"
-                  id="panel1bh-header"
-                >
-                  <Typography >Background</Typography>
-                </ExpansionPanelSummary>
-                <ExpansionPanelDetails className='expansionPanel'>
-                  <Typography className='addSection'>
-                    Education And Work Experience
+                    <AddIcon />
+                  </Fab>
+                </Typography>
+              </ExpansionPanelDetails>
+            </ExpansionPanel>
+            <ExpansionPanel onChange={onExpansionPanelChange('panel3')} expanded={expansionPanelvalue === 'panel3'}>
+              <ExpansionPanelSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="panel1bh-content"
+                id="panel1bh-header"
+              >
+                <Typography >Background</Typography>
+              </ExpansionPanelSummary>
+              <ExpansionPanelDetails className='expansionPanel'>
+                <Typography className='addSection'>
+                  Education And Work Experience
                         <Fab size="small" aria-label="add" onClick={openEducationDialog}>
-                      <AddIcon />
-                    </Fab>
-                  </Typography>
-                  <hr />
-                  <Typography className='addSection'>
-                    Lisence And Certification
+                    <AddIcon />
+                  </Fab>
+                </Typography>
+                <hr />
+                <Typography className='addSection'>
+                  Lisence And Certification
                         <Fab size="small" aria-label="add" onClick={openCertificationDialog}>
-                      <AddIcon />
-                    </Fab>
-                  </Typography>
-                </ExpansionPanelDetails>
-              </ExpansionPanel>
-              <ExpansionPanel onChange={onExpansionPanelChange('panel4')} expanded={expansionPanelvalue === 'panel4'}>
-                <ExpansionPanelSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel1bh-content"
-                  id="panel1bh-header"
-                >
-                  <Typography >Skills</Typography>
-                </ExpansionPanelSummary>
-                <ExpansionPanelDetails className='expansionPanel'>
-                  <Typography className='addSection'>
-                    Skills
+                    <AddIcon />
+                  </Fab>
+                </Typography>
+              </ExpansionPanelDetails>
+            </ExpansionPanel>
+            <ExpansionPanel onChange={onExpansionPanelChange('panel4')} expanded={expansionPanelvalue === 'panel4'}>
+              <ExpansionPanelSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="panel1bh-content"
+                id="panel1bh-header"
+              >
+                <Typography >Skills</Typography>
+              </ExpansionPanelSummary>
+              <ExpansionPanelDetails className='expansionPanel'>
+                <Typography className='addSection'>
+                  Skills
                         <Fab size="small" aria-label="add" onClick={onSkillDialogue}>
-                      <AddIcon />
-                    </Fab>
-                  </Typography>
-                  <hr />
-                  <Typography className='addSection'>
-                    Soft Skills
-                        <Fab size="small" aria-label="add" >
-                      <AddIcon />
-                    </Fab>
-                  </Typography>
-                </ExpansionPanelDetails>
-              </ExpansionPanel>
-              <ExpansionPanel onChange={onExpansionPanelChange('panel5')} expanded={expansionPanelvalue === 'panel5'}>
-                <ExpansionPanelSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel1bh-content"
-                  id="panel1bh-header"
-                >
-                  <Typography >Accomplishments</Typography>
-                </ExpansionPanelSummary>
-                <ExpansionPanelDetails className='expansionPanel'>
-                  <Typography className='addSection'>
-                    Projects
+                    <AddIcon />
+                  </Fab>
+                </Typography>
+                <hr />
+                <Typography className='addSection'>
+                  Soft Skills
+                        <Fab size="small" aria-label="add" onClick={openSoftSkillDialogue}>
+                    <AddIcon />
+                  </Fab>
+                </Typography>
+              </ExpansionPanelDetails>
+            </ExpansionPanel>
+            <ExpansionPanel onChange={onExpansionPanelChange('panel5')} expanded={expansionPanelvalue === 'panel5'}>
+              <ExpansionPanelSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="panel1bh-content"
+                id="panel1bh-header"
+              >
+                <Typography >Accomplishments</Typography>
+              </ExpansionPanelSummary>
+              <ExpansionPanelDetails className='expansionPanel'>
+                <Typography className='addSection'>
+                  Projects
                         <Fab size="small" aria-label="add">
-                      <AddIcon />
-                    </Fab>
-                  </Typography>
-                  <hr />
-                  <Typography className='addSection'>
-                    Courses/Trainings
+                    <AddIcon />
+                  </Fab>
+                </Typography>
+                <hr />
+                <Typography className='addSection'>
+                  Courses/Trainings
                         <Fab size="small" aria-label="add" onClick={openCourseAndTrainingDialogue}>
-                      <AddIcon />
-                    </Fab>
-                  </Typography>
-                  <hr />
-                  <Typography className='addSection'>
-                    Awards
+                    <AddIcon />
+                  </Fab>
+                </Typography>
+                <hr />
+                <Typography className='addSection'>
+                  Awards
                         <Fab size="small" aria-label="add" onClick={openAwardDialog}>
-                      <AddIcon />
-                    </Fab>
-                  </Typography>
-                </ExpansionPanelDetails>
-              </ExpansionPanel>
-              {/*************************************************************************************/}
-            </ExpansionPanelDetails>
-          </ExpansionPanel>
+                    <AddIcon />
+                  </Fab>
+                </Typography>
+              </ExpansionPanelDetails>
+            </ExpansionPanel>
+            {/*************************************************************************************/}
+          </ExpansionPanelDetails>
+        </ExpansionPanel>
+        <br />
         <br />
         <br />
         <div className="jr-profile-banner-bottom">
@@ -213,31 +212,27 @@ const ProfileHeader = ({ onEducationView,
                   </Dropdown.Toggle>
 
                   <Dropdown.Menu>
-                    <Dropdown.Item onClick={downloadPDF}><svg  width="24" height="24" viewBox="0 0 24 24">
-                      <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
-                      </svg>
+                    <Dropdown.Item onClick={downloadPDF}><svg width="24" height="24" viewBox="0 0 24 24">
+                      <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
+                    </svg>
                       &nbsp;&nbsp;&nbsp;
                     Download as PDF
                     </Dropdown.Item>
                     <Dropdown.Item onClick={shareProfile}>
-                    <svg  width="24" height="24" viewBox="0 0 24 24">
-                      <path d="M7 8V5l-7 7 7 7v-3l-4-4 4-4zm6 1V5l-7 7 7 7v-4.1c5 0 8.5 1.6 11 5.1-1-5-4-10-11-11z"/>
+                      <svg width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M7 8V5l-7 7 7 7v-3l-4-4 4-4zm6 1V5l-7 7 7 7v-4.1c5 0 8.5 1.6 11 5.1-1-5-4-10-11-11z" />
                       </svg>
                       &nbsp;&nbsp;&nbsp;
-                      Share Profile via Message								
+                      Share Profile via Message
                     </Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
               </li>
               <li>
-                <p>Click Edit Sections</p>
-              <Fab size="small"  variant='success' aria-label="edit" onClick={isEditClick}>
-              <EditIcon />
-            </Fab>
+                <Fab size="small" color="primary" onClick={isEditClick} aria-label="edit" className='profileAddEditButton'>
+                  <EditIcon />
+                </Fab>
               </li>
-              {isEdit && <li>
-                <Button color='default' onClick={isEditCancel}>Cancel Edit</Button>
-              </li>}
             </ul>
           </div>
         </div>

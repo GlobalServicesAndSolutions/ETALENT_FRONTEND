@@ -9,7 +9,7 @@ import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import Rating from '@material-ui/lab/Rating';
 import EditIcon from '@material-ui/icons/Edit'; 
 
-const SoftSkills = ({ ratingValue, onRatingChange, onSkillDialogue,isEditClick }) => {
+const SoftSkills = ({ ratingValue, onRatingChange, openSoftSkillDialogue,isEditClick }) => {
     return (
 
         <Widget styleName="jr-card-profile">
@@ -19,40 +19,42 @@ const SoftSkills = ({ ratingValue, onRatingChange, onSkillDialogue,isEditClick }
                         <h3 className="card-title mb-2 mb-md-3">Soft Skills</h3>
                     </div>
                     <div>
-                    {isEditClick&& <Fab size="small" color="primary" aria-label="add" onClick={onSkillDialogue}>
-                            <EditIcon />
-                        </Fab>}
-                        <Fab size="small" color="primary" aria-label="edit" onClick={onSkillDialogue}>
+                        <Fab size="small" color="primary" aria-label="edit" onClick={openSoftSkillDialogue} className='profileAddEditButton'>
                             <AddIcon />
                         </Fab>
                     </div>
                 </div>
                 <hr />
                 <List style={{ width: "100%" }}>
-                    <ListItem divider alignItems="center">
-                        <ListItemText
-                            primary="Communication"
-                        />
-                        <ThumbUpIcon color="primary" style={{ cursor: "pointer" }}>Likes</ThumbUpIcon>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <Rating
-                            name="simple-controlled"
-                            value={ratingValue}
-                            onChange={onRatingChange}
-                        />
-                    </ListItem>
-                    <ListItem divider alignItems="flex-start">
-                        <ListItemText
-                            primary="Team Work"
-                        />
-                        <ThumbUpIcon color="primary" style={{ cursor: "pointer" }}>Likes</ThumbUpIcon>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <Rating
-                            name="simple-controlled"
-                            value={ratingValue}
-                            onChange={onRatingChange}
-                        />
-                    </ListItem>
+                    <div className="row profileSectionEditAndDelete">
+                        <div>
+                            <ListItem divider alignItems="center">
+                                <div >
+                                    <div>
+                                        <ListItemText
+                                            primary="Communication"
+                                        />
+                                    </div>
+                                    <div>
+                                        <ThumbUpIcon color="primary" style={{ cursor: "pointer" }}>Likes</ThumbUpIcon>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <Rating
+                                            name="simple-controlled"
+                                            value={ratingValue}
+                                            onChange={onRatingChange}
+                                        />
+                                    </div>
+                                </div>
+                            </ListItem>
+                        </div>
+                        {isEditClick &&
+                            <div>
+                                <Fab size="small" color="primary" onClick={openSoftSkillDialogue} aria-label="edit" className='profileAddEditButton'>
+                                    <EditIcon />
+                                </Fab>
+                            </div>
+                        }
+                    </div>
 
                 </List>
             </div>

@@ -147,18 +147,18 @@ class Header extends React.Component {
 
           <ul className="header-notifications list-inline ml-auto">
           <Link to="/dashboard">
-            <li className="list-inline-item">
-            <span className="fontLabelColor">Home</span>
+            <li className="list-inline-item headerLinks">
+            <span className="fontLabelColor" >Home</span>
             </li>
             </Link>
             <Link to='/jobs'>
-            <li className="list-inline-item ">
-              <span className='fontLabelColor'>Jobs</span>
+            <li className="list-inline-item headerLinks">
+              <span className='fontLabelColor' >Jobs</span>
             </li>
             </Link>
             <Link to="/profile">
-            <li className="list-inline-item">
-              <span className="fontLabelColor">Profile</span>
+            <li className="list-inline-item headerLinks" >
+              <span className="fontLabelColor" >Profile</span>
             </li>
             </Link>
             <li className="list-inline-item app-tour">

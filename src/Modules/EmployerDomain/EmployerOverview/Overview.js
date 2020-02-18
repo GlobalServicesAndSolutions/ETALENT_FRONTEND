@@ -12,7 +12,7 @@ const EmployerOverview = () => {
           <h3 className="card-title mb-2 mb-md-3">Overview</h3>
           </div>
           <div>
-          <Fab  size="small" color="primary" aria-label="add" >
+          <Fab  size="small" color="primary" aria-label="add" className='profileAddEditButton'>
             <AddIcon />
           </Fab>
           </div>

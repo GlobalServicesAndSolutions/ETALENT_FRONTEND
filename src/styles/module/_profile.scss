@@ -2,7 +2,7 @@
 .jr-profile-banner {
   padding: 35px 50px 65px;
   margin: -30px -30px -55px;
-  background-color: rgba(219, 232, 222, 0.6);
+  background-color: white;
   color: black;
   position: relative;
 
@@ -42,6 +42,15 @@
     &:focus {
       color: $secondary;
     }
+  }
+}
+.workFlowSectionPanal {
+  width: 40%;
+  position:absolute;
+
+  @media screen and (max-width: 575px) {
+    width: 80%;
+    position:absolute;
   }
 }
 .expansionPanel{
@@ -117,6 +126,24 @@
     }
   }
 }
+.candidateProfileSectionPanal {
+  width: 30%;
+  position: absolute !important;
+  @media (max-width: 575px) {
+    width: 100% ;
+    position: absolute !important;
+  }
+}
+.candidateProfileDownloadDropDown {
+  @media (max-width: 575px) {
+    margin-top: 0px;
+    
+  }
+}
+.profileAddEditButton{
+  background: #3b7652 !important;
+}
+
 .cardHeaderAndAddButton {
   justify-content: space-between;
   display: flex;
