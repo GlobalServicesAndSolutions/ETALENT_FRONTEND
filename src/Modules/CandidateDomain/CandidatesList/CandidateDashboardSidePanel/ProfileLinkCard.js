@@ -10,7 +10,7 @@ const QuickProfile = () => {
       <div className="mb-3">
       <h3 className="card-title mb-2 mb-md-3" style={{color:'gray'}}>Profile</h3>
           <PersonIcon fontSize='large'/>
-          <Link to='#'>Click here to View Profile</Link>
+          <Link to='/profile'>Click here to View Profile</Link>
         </div>
     </Widget>
     </div>

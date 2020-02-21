@@ -100,30 +100,13 @@ const JobsSearchInput = ({ onToogleSwitchChange,
                         />
                     </Paper>
                     &nbsp;&nbsp;&nbsp;
-                <Button variant="outlined" color="primary">Search</Button>
+                <Button  color="primary">Search</Button>
                 </div>
                 <br />
                 {toogleSwitchValue === 'gridView' &&
                     <div>
                         <div style={{ display: 'flex', justifyContent: 'center' }}>
-                            <FormControl style={{ width: '10%' }}>
-                                <InputLabel>Jobs</InputLabel>
-                                <Select
-                                    name='jobs'
-
-                                >
-                                    <MenuItem value='All'>All</MenuItem>
-                                    <MenuItem value='People'>People</MenuItem>
-                                    <MenuItem value='Content'>Content</MenuItem>
-                                    <MenuItem value='Companies'>Companies</MenuItem>
-                                    <MenuItem value='Group'>Group</MenuItem>
-                                    <MenuItem value='School'>School</MenuItem>
-                                </Select>
-                            </FormControl>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <Divider style={{ height: '45px', margin: '4px' }} variant="outlined" />
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <FormControl style={{ width: '10%' }} variant="outlined">
+                    <FormControl style={{ width: '10%' }} >
                                 <InputLabel>Sort By</InputLabel>
                                 <Select
                                     name='sortByFilter'
@@ -135,7 +118,7 @@ const JobsSearchInput = ({ onToogleSwitchChange,
                                 </Select>
                             </FormControl>
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <FormControl style={{ width: '10%' }} variant="outlined" >
+                    <FormControl style={{ width: '10%' }}  >
                                 <InputLabel>Date Posted</InputLabel>
                                 <Select
                                     name='datePostedFilter'
@@ -149,7 +132,7 @@ const JobsSearchInput = ({ onToogleSwitchChange,
                                 </Select>
                             </FormControl>
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <FormControl style={{ width: '15%' }} variant="outlined">
+                    <FormControl style={{ width: '15%' }} >
                                 <InputLabel>E-Talent Features</InputLabel>
                                 <Select
                                     name='eTalentFeatureFilter'
@@ -161,7 +144,7 @@ const JobsSearchInput = ({ onToogleSwitchChange,
                                 </Select>
                             </FormControl>
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <FormControl style={{ width: '10%' }} variant="outlined">
+                    <FormControl style={{ width: '10%' }} >
                                 <InputLabel>Company</InputLabel>
                                 <Select
                                     name='companyFilter'
@@ -174,7 +157,7 @@ const JobsSearchInput = ({ onToogleSwitchChange,
                                 </Select>
                             </FormControl>
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <FormControl style={{ width: '15%' }} variant="outlined">
+                    <FormControl style={{ width: '15%' }} >
                                 <InputLabel>Experience Level</InputLabel>
                                 <Select
                                     name='experienceLevelFilter'
@@ -188,11 +171,12 @@ const JobsSearchInput = ({ onToogleSwitchChange,
                                 </Select>
                             </FormControl>
                         </div>
-                        <hr />
+                        <br/>
+                     <br/>
                     </div>
                 }
 
-                <div style={{ float: 'right', marginTop: (toogleSwitchValue === 'listView' || toogleSwitchValue === '') ? '88px' : '', display: 'flex', justifyContent: 'space-between' }}>
+                <div style={{ float: 'right', marginTop: (toogleSwitchValue === 'listView' || toogleSwitchValue === '') ? '95px' : '', display: 'flex', justifyContent: 'space-between' }}>
 
                     <div>
                         <Grid container spacing={2} direction="column" alignItems="center">

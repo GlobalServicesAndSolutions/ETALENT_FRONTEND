@@ -6,7 +6,7 @@ const JobPost = () => {
       <div style={{width: "85%"}} >
     <Widget styleName="jr-card-profile" >
       <div className="mb-3">
-      <h3 className="card-title mb-2 mb-md-3" style={{color:'gray'}}>Most Recent Searched Jobs</h3>
+      <h3 className="card-title mb-2 mb-md-3" style={{color:'gray'}}>Faveriot Jobs</h3>
           <br/>
           <div className="row">
           <img aria-hidden alt="image" src="example.com" ></img>
