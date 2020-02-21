@@ -50,7 +50,7 @@ const JobsGridList = ({makeFaveriot,
       <Grid container className={classes.root} spacing={2} >
       <Grid item xs={12}>
         <Grid container  spacing={2} >
-          {[0, 1, 2,3,4,5,6,7,8,9,10,11,12,13,14,15,16].map(value => (
+          {[0, 1, 2,3,4,5,6,7,8,9,10].map(value => (
             <Grid key={value} item > 
             <BootstrapTooltip  title={longText}>
               <Paper className={classes.paper} style={{padding:'5px'}}>
@@ -63,7 +63,8 @@ const JobsGridList = ({makeFaveriot,
                 <h4 className='allfontCapital'>Front End Developer</h4> 
                 <h6>Seven Technology</h6>
                 <h7>Islamabad</h7>
-                <hr/>
+                <br/>
+                <br/>
                 <p>1 day ago</p>
                 </Paper>
                 </BootstrapTooltip >

@@ -113,7 +113,7 @@ class SignUp extends React.Component {
               </AppBar>
               <TabPanel value={this.state.value} index="one">
                 <div className="app-login-header">
-                  <h1>Candidate Sign Up</h1>
+                  <h3 style={{color:'gray'}}>Candidate Sign Up</h3>
                 </div>
                 <div className="app-login-form">
                   <form method="post" action="/">
@@ -246,7 +246,7 @@ class SignUp extends React.Component {
               </TabPanel>
               <TabPanel value={this.state.value} index="two">
               <div className="app-login-header">
-                  <h1>Employer Sign Up</h1>
+                  <h3 style={{color:'gray'}}>Employer Sign Up</h3>
                 </div>
                 <div className="app-login-form">
                   <form method="post" action="/">
@@ -317,7 +317,7 @@ class SignUp extends React.Component {
                       <Button variant="contained" onClick={() => {
                         this.props.showAuthLoader();
                         this.props.userSignUp({ email, password });
-                      }} color="primary">
+                      }} >
                         <IntlMessages
                           id="appModule.regsiter" />
                       </Button>

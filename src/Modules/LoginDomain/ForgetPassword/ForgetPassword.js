@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button';
 import {NotificationContainer, NotificationManager} from 'react-notifications';
 import IntlMessages from 'util/IntlMessages';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import { Link } from 'react-router-dom';
 class ForgetPassword extends React.Component {
   constructor() {
     super();
@@ -28,7 +29,7 @@ class ForgetPassword extends React.Component {
 
           <div className="app-login-content">
             <div className="app-login-header mb-4">
-              <h1>Forgot password</h1>
+              <h3 style={{color:'gray'}}>Forgot password</h3>
             </div>
 
             <div className="app-login-form">
@@ -49,7 +50,9 @@ class ForgetPassword extends React.Component {
                     </Button>
                   </div>
 
-                 
+                  <Link to="/signin">
+                        Back to login
+                      </Link>
 
                 </fieldset>
               </form>

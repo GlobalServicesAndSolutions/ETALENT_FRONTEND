@@ -6,11 +6,11 @@ const JobAlerts = () => {
       <div style={{width: "85%"}} >
     <Widget styleName="jr-card-profile" >
       <div className="mb-3">
-      <h3 className="card-title mb-2 mb-md-3">Job Alerts</h3>
+      <h3 className="card-title mb-2 mb-md-3" style={{color:'gray'}}>Job Alerts</h3>
           <br/>
           <div className="row">
           <img aria-hidden alt="image" src="example.com" ></img>
-          <h4>Senior Software Engineer</h4>
+          <h5>Senior Software Engineer</h5>
         </div>
         <div>
           <ul>
@@ -23,7 +23,7 @@ const JobAlerts = () => {
           <hr/>
           <div className="row">
           <img aria-hidden alt="image" src="example.com" ></img>
-          <h4>Front End Developer</h4>
+          <h5>Front End Developer</h5>
         </div>
         <div>
           <ul>

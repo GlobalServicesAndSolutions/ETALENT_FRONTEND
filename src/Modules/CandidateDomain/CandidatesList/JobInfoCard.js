@@ -13,11 +13,7 @@ const JobFullInfo = () => {
       <p>Customer relationship management systems (preferably Salesforce), and business intelligence systems 
       Experience developing and managing projects using the Microsoft 
       product stack such as: o Classic ASP, ASP.NET, MVC, SQL Server/SSIS/SSAS/SSRS, Visual Studio Experience with web scripting languages and 
-      tools such as: o HTML, jQuery, JavaScript, XML, XSLT, CSS, Node Knowledge of business intelligence concepts
-       such as data warehousing design, data cubes, predictive modeling, KPIs, and dashboards/scorecards In depth experience architecting,
-        integrating, and maintaining enterprise software systems from different vendors Experience developing
-         and managing systems in a cloud environment (e.g. AWS/Azure) Experience with agile software development practices Ability to work
-          independently with general supervision Excellent communication skills.</p>
+      </p>
           <br/>
           <br/>
           <table >

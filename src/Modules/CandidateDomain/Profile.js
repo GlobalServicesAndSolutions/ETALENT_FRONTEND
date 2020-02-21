@@ -48,7 +48,8 @@ class Profile extends Component {
             courseAndtraining: false,
             ratingValue: 0,
             expansionPanelvalue: '',
-            isEdit: false
+            isEdit: false,
+            switchProfile:false
         }
     }
     onRatingChange = (event, newValue) => {
@@ -146,7 +147,9 @@ class Profile extends Component {
         skillInfo[field] = event.target.value;
         this.setState({ skillInfo });
     }
-
+    onChangeProfileSwitch=()=>{
+        this.setState({switchProfile: !this.state.switchProfile});
+    }
     render() {
         return (
             <div className="app-main-container">
@@ -172,11 +175,14 @@ class Profile extends Component {
                     isEditClick={this.isEditClick}
                     isEditCancel={this.isEditCancel}
                     isEdit={this.state.isEdit}
+                    onChangeProfileSwitch={this.onChangeProfileSwitch}
                 />
                 <div className="row">
-                    <div className="col-xl-8 col-lg-8 col-md-7 col-12">
+                    <div className="col-xl-7 col-lg-7 col-md-6 col-12">
                         <Biography
                             isEditClick={this.state.isEdit} />
+                        { !this.state.switchProfile &&
+                        <div>
                         <div id="educationcard">
                             <Education
                                 openEducationDialog={this.openEducationDialog}
@@ -204,6 +210,8 @@ class Profile extends Component {
                                 openCertificationDialog={this.openLisenceDialog}
                                 isEditClick={this.state.isEdit} />
                         </div>
+                        </div>
+    }
                     </div>
                     <div className="col-xl-4 col-lg-4 col-md-5 col-12">
                         <Contact />
@@ -212,9 +220,9 @@ class Profile extends Component {
                             isEditClick={this.state.isEdit} />
                         <Projects
                             isEditClick={this.state.isEdit} />
-                        <Courses
+                       {!this.state.switchProfile&& <Courses
                             openCourseAndTrainingDialogue={this.openCourseAndTrainingDialogue}
-                            isEditClick={this.state.isEdit} />
+                            isEditClick={this.state.isEdit} />}
                     </div>
                 </div>
                 {this.state.educationOpen ?

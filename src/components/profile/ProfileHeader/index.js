@@ -9,6 +9,9 @@ import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import Dropdown from 'react-bootstrap/Dropdown';
 import EditIcon from '@material-ui/icons/Edit';
+import FormGroup from '@material-ui/core/FormGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Switch from '@material-ui/core/Switch';
 
 const ProfileHeader = ({ onEducationView,
   onSkillView,
@@ -25,7 +28,9 @@ const ProfileHeader = ({ onEducationView,
   downloadPDF,
   shareProfile,
   isEditClick,
-  openSoftSkillDialogue
+  openSoftSkillDialogue,
+  isEdit,
+  onChangeProfileSwitch
 }) => {
   return (
     <div className="jr-profile-banner">
@@ -38,6 +43,7 @@ const ProfileHeader = ({ onEducationView,
             <div className="jr-profile-banner-avatar-info">
               <h2 className="mb-2 jr-mb-sm-3 jr-fs-xxl jr-font-weight-black">Salman Haider</h2>
               <p className="mb-0 jr-fs-lg">Islamabad, Pakistan</p>
+              <p>Profile Level</p>
             </div>
           </div>
           <div className="jr-profile-banner-top-right">
@@ -55,6 +61,18 @@ const ProfileHeader = ({ onEducationView,
             </ul>
           </div>
         </div>
+        <FormGroup row>
+          <FormControlLabel
+            control={
+              <Switch
+                value="checkedB"
+                color="primary"
+                onChange={onChangeProfileSwitch}
+              />
+            }
+            label="Freelance profile"
+          />
+        </FormGroup>
         <ExpansionPanel onChange={onParentExpansion} className='candidateProfileSectionPanal'>
           <ExpansionPanelSummary
             expandIcon={<ExpandMoreIcon />}
@@ -223,13 +241,13 @@ const ProfileHeader = ({ onEducationView,
                         <path d="M7 8V5l-7 7 7 7v-3l-4-4 4-4zm6 1V5l-7 7 7 7v-4.1c5 0 8.5 1.6 11 5.1-1-5-4-10-11-11z" />
                       </svg>
                       &nbsp;&nbsp;&nbsp;
-                      Share Profile via Message
+                      Share Profile
                     </Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
               </li>
               <li>
-                <Fab size="small" color="primary" onClick={isEditClick} aria-label="edit" className='profileAddEditButton'>
+                <Fab size="small" color="primary" onClick={isEditClick} aria-label="edit" className={isEdit ? 'profileAddEditButton' : 'profileAddEditButtonDisable'}>
                   <EditIcon />
                 </Fab>
               </li>

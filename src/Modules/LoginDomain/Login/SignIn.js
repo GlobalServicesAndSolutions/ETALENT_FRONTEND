@@ -76,7 +76,7 @@ class SignIn extends React.Component {
 
           <div className="app-login-content">
             <div className="app-login-header mb-4">
-              <h1>Login</h1>
+              <h3 style={{color:'gray'}}>Login</h3>
             </div>
 
             <div className="app-login-form">
@@ -121,23 +121,26 @@ class SignIn extends React.Component {
                     }
                     label="Keep me signed in on this device"
                   />
-                  <div className="mb-3 d-flex align-items-center justify-content-between">
+                  <div className="mb-3 d-flex align-items-center">
                     <Button onClick={() => {
                       this.props.showAuthLoader();
                       this.props.userSignIn({ email, password })
                     }} variant="contained" >
-                      <IntlMessages id="appModule.signIn" />
+                      Login
                     </Button>
-
+                    </div>
+                    <div className="mb-3 d-flex align-items-center">
+                    <div>
                     <Link to="/signup">
                       <IntlMessages id="signIn.signUp" />
                     </Link>
-
-                  </div>
+                    </div>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
                   <div>
                     <Link to="/forgetPassword">
-                      Forget Password
+                      Forget Password ?
                     </Link>
+                  </div>
                   </div>
                   <div className="app-social-block my-1 my-sm-3">
                     <IntlMessages
