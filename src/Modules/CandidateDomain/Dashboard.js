@@ -20,14 +20,14 @@ class CandidateHome extends Component {
     this.state={
       availabilitySwitch:false,
       availabilityDate:new Date().toLocaleDateString(),
-      showAvailabilityCalender:false
+      showAvailabilityCalender:false,
     }
   }
   onChangeAvailabilityDate=(event, date)=>{
     this.setState({availabilityDate:date,showAvailabilityCalender:false});
   }
   onChangeAvailabilitySwitch=()=>{
-    this.setState({availabilitySwitch:!this.state.availabilitySwitch,showAvailabilityCalender:true})
+    this.setState({availabilitySwitch:!this.state.availabilitySwitch})
   }
   render() {
     return (
@@ -38,6 +38,7 @@ class CandidateHome extends Component {
           availabilitySwitch={this.state.availabilitySwitch}
           onChangeAvailabilityDate={this.onChangeAvailabilityDate}
           availabilityDate={this.state.availabilityDate}
+          showAvailabilityCalender={this.state.showAvailabilityCalender}
           />
         </div>
         <br/>

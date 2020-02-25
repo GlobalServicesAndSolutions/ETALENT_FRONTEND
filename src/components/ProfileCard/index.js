@@ -16,7 +16,8 @@ import { Link } from "react-router-dom";
 const ProfileCard = ({ onChangeAvailabilitySwitch,
   availabilitySwitch,
   availabilityDate,
-  onChangeAvailabilityDate
+  onChangeAvailabilityDate,
+  showAvailabilityCalender
 }) => {
   return (
     <Widget styleName="jr-card-profile">
@@ -39,7 +40,7 @@ const ProfileCard = ({ onChangeAvailabilitySwitch,
                     label={availabilitySwitch ? "Available : " + availabilityDate : "UnAvailable"}
                   />
                 </FormGroup>
-                {availabilitySwitch &&
+                {availabilitySwitch && 
                   <MuiPickersUtilsProvider utils={DateFnsUtils} >
                     <Grid container className='datePickerWidth'>
                       <KeyboardDatePicker
