@@ -7,7 +7,8 @@ import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import Rating from '@material-ui/lab/Rating';
-import EditIcon from '@material-ui/icons/Edit'; 
+import EditIcon from '@material-ui/icons/Edit';
+import DeleteIcon from '@material-ui/icons/Delete'; 
 
 const SoftSkills = ({ ratingValue, onRatingChange, openSoftSkillDialogue,isEditClick }) => {
     return (
@@ -19,7 +20,7 @@ const SoftSkills = ({ ratingValue, onRatingChange, openSoftSkillDialogue,isEditC
                         <h3 className="card-title mb-2 mb-md-3">Soft Skills</h3>
                     </div>
                     <div>
-                        <Fab size="small" color="primary" aria-label="edit" onClick={openSoftSkillDialogue} className='profileAddEditButton'>
+                        <Fab size="small" color="primary" aria-label="add" onClick={openSoftSkillDialogue} className='profileAddEditButton'>
                             <AddIcon />
                         </Fab>
                     </div>
@@ -49,7 +50,10 @@ const SoftSkills = ({ ratingValue, onRatingChange, openSoftSkillDialogue,isEditC
                         </div>
                         {isEditClick &&
                             <div>
-                                <Fab size="small" color="primary" onClick={openSoftSkillDialogue} aria-label="edit" className='profileAddEditButton'>
+                                <Fab size="small" color="primary"  aria-label="delete">
+                                    <DeleteIcon />
+                                </Fab>
+                                <Fab size="small" color="primary" onClick={openSoftSkillDialogue} aria-label="edit">
                                     <EditIcon />
                                 </Fab>
                             </div>

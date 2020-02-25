@@ -1,12 +1,13 @@
 import React from "react";
 import Widget from "components/Widget";
+import { Link } from "react-router-dom";
 
 const JobPost = () => {
   return (
       <div style={{width: "85%"}} >
     <Widget styleName="jr-card-profile" >
       <div className="mb-3">
-      <h3 className="card-title mb-2 mb-md-3" style={{color:'gray'}}>Faveriot Jobs</h3>
+      <Link to='/savejobsandalterts'><h3 className="card-title mb-2 mb-md-3" style={{color:'#4341e0'}}>Faveriot Jobs</h3></Link>
           <br/>
           <div className="row">
           <img aria-hidden alt="image" src="example.com" ></img>

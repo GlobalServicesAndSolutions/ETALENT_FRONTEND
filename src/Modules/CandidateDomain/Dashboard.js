@@ -19,14 +19,15 @@ class CandidateHome extends Component {
     super(props);
     this.state={
       availabilitySwitch:false,
-      availabilityDate:new Date().toLocaleDateString()
+      availabilityDate:new Date().toLocaleDateString(),
+      showAvailabilityCalender:false
     }
   }
   onChangeAvailabilityDate=(event, date)=>{
-    this.setState({availabilityDate:date, availabilitySwitch:false});
+    this.setState({availabilityDate:date,showAvailabilityCalender:false});
   }
   onChangeAvailabilitySwitch=()=>{
-    this.setState({availabilitySwitch:!this.state.availabilitySwitch})
+    this.setState({availabilitySwitch:!this.state.availabilitySwitch,showAvailabilityCalender:true})
   }
   render() {
     return (
@@ -53,7 +54,7 @@ class CandidateHome extends Component {
         </div>
         <br/>
         <div className='row'>
-          <div className='col-xl-2 col-lg-2 col-md-2' style={{ marginLeft: '25px' }}>
+          <div className='col-xl-2 col-lg-2 col-md-2 col-12' style={{ marginLeft: '35px' , marginRight:'-35px'}}>
             <QuickProfile />
             <QuickFreeLanceProfile />
             <QuickEvents />

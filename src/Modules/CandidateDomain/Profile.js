@@ -232,9 +232,9 @@ class Profile extends Component {
                             isEditClick={this.state.isEdit} />
                         <Projects
                             isEditClick={this.state.isEdit} />
-                       {!this.state.switchProfile&& <Courses
+                       <Courses
                             openCourseAndTrainingDialogue={this.openCourseAndTrainingDialogue}
-                            isEditClick={this.state.isEdit} />}
+                            isEditClick={this.state.isEdit} />
                     </div>
                 </div>
                 {this.state.educationOpen ?

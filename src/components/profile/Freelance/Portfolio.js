@@ -8,6 +8,9 @@ const Portfolio = () => {
         <div className="cardHeaderAndAddButton" >
           <div>
           <h3 className="card-title mb-2 mb-md-3">Portfolio</h3>
+          <hr/>
+
+          
           </div>
       </div>
       </div>

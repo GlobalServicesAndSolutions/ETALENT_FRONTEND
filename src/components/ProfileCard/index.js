@@ -11,6 +11,7 @@ import {
   MuiPickersUtilsProvider,
   KeyboardDatePicker,
 } from '@material-ui/pickers';
+import { Link } from "react-router-dom";
 
 const ProfileCard = ({ onChangeAvailabilitySwitch,
   availabilitySwitch,
@@ -25,7 +26,7 @@ const ProfileCard = ({ onChangeAvailabilitySwitch,
             <div className="jr-profile-banner-top-left">
               <div className="jr-profile-banner-avatar-info">
                 <Avatar className="size-120" alt="..." src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Phoenicopterus_ruber_in_S%C3%A3o_Paulo_Zoo.jpg" />
-                
+
                 <FormGroup row>
                   <FormControlLabel
                     control={
@@ -35,38 +36,35 @@ const ProfileCard = ({ onChangeAvailabilitySwitch,
                         onChange={onChangeAvailabilitySwitch}
                       />
                     }
-                    label={availabilitySwitch ? "Available Till : "+availabilityDate : "UnAvailable"}
+                    label={availabilitySwitch ? "Available : " + availabilityDate : "UnAvailable"}
                   />
                 </FormGroup>
-                {/* <div style={{lineHeight:'10px'}}>
-                <p><strong>Availably Till :</strong></p>
-                <p><strong>{availabilityDate}</strong></p>
-                </div> */}
-                {availabilitySwitch&& <MuiPickersUtilsProvider utils={DateFnsUtils} >
-                  <Grid container className='datePickerWidth'>
-                    <KeyboardDatePicker
-                      className="profileInfoTextField"
-                      margin="normal"
-                      id='jobCreateDate'
-                      label="Availablity Date"
-                      format="MM/dd/yyyy"
-                      name='avalibilityDate'
-                      value={availabilityDate}
-                      onChange={onChangeAvailabilityDate}
-                      KeyboardButtonProps={{
-                        'aria-label': 'change date',
-                      }}
-                      required
-                    />
-                  </Grid>
-                </MuiPickersUtilsProvider>}
+                {availabilitySwitch &&
+                  <MuiPickersUtilsProvider utils={DateFnsUtils} >
+                    <Grid container className='datePickerWidth'>
+                      <KeyboardDatePicker
+                        className="profileInfoTextField"
+                        margin="normal"
+                        id='jobCreateDate'
+                        label="Availablity Date"
+                        format="MM/dd/yyyy"
+                        name='avalibilityDate'
+                        value={availabilityDate}
+                        onChange={onChangeAvailabilityDate}
+                        KeyboardButtonProps={{
+                          'aria-label': 'change date',
+                        }}
+                        required
+                      />
+                    </Grid>
+                  </MuiPickersUtilsProvider>}
               </div>
-              <div className={!availabilitySwitch?'jr-profile-banner-avatar-info dashboardProfileheaderAfterSwitch':'jr-profile-banner-avatar-info dashboardProfileheader'}  >
+              <div className={!availabilitySwitch ? 'jr-profile-banner-avatar-info dashboardProfileheaderAfterSwitch' : 'jr-profile-banner-avatar-info dashboardProfileheader'}  >
                 <div>
                   <div className='row'>
                     <div>
-                      <h2 className="mb-2 jr-mb-sm-3 jr-fs-xxl jr-font-weight-black">Salman Haider
-              <sup>
+                      <h2 className="mb-2 jr-mb-sm-3 jr-fs-xxl jr-font-weight-black"><Link to='/profile' className='dashboardEmployeeNameColourLink'>Salman Haider</Link>
+                        <sup>
                           <span className='dot dotGreen'></span>
                         </sup>
                       </h2>

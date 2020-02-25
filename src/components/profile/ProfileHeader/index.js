@@ -270,7 +270,7 @@ const ProfileHeader = ({ onEducationView,
                 </Dropdown>
               </li>
               <li>
-                <Fab size="small" color="primary" onClick={isEditClick} aria-label="edit" className={isEdit ? 'profileAddEditButton' : 'profileAddEditButtonDisable'}>
+                <Fab size="small" color="primary" onClick={isEditClick} aria-label="edit" className={isEdit ? '' : 'profileAddEditButtonDisable'}>
                   <EditIcon />
                 </Fab>
               </li>

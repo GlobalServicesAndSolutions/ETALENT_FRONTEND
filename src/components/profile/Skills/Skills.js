@@ -8,6 +8,8 @@ import AddIcon from '@material-ui/icons/Add';
 import EditIcon from '@material-ui/icons/Edit';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import Rating from '@material-ui/lab/Rating';
+import DeleteIcon from '@material-ui/icons/Delete';
+
 const Skills = ({ ratingValue, onRatingChange, onSkillDialogue, isEditClick }) => {
     return (
 
@@ -48,7 +50,10 @@ const Skills = ({ ratingValue, onRatingChange, onSkillDialogue, isEditClick }) =
                         </div>
                         {isEditClick &&
                             <div>
-                                <Fab size="small" color="primary" onClick={onSkillDialogue} aria-label="edit" className='profileAddEditButton'>
+                                <Fab size="small" color="primary"  aria-label="delete">
+                                    <DeleteIcon />
+                                </Fab>
+                                <Fab size="small" color="primary" onClick={onSkillDialogue} aria-label="edit">
                                     <EditIcon />
                                 </Fab>
                             </div>

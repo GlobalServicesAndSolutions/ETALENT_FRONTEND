@@ -13,9 +13,11 @@ const Biography = ({isEditClick}) => {
         <h3 className="card-title mb-2 mb-md-3">About</h3>
         </div>
         <div>
-            {isEditClick&& <Fab size="small" color="primary" aria-label="edit" className='profileAddEditButton'>
+            {isEditClick&&
+            <Fab size="small" color="primary" aria-label="edit" >
               <EditIcon />
-            </Fab>}
+            </Fab>
+            }
             <Fab size="small" color="primary" aria-label="add" className='profileAddEditButton'>
               <AddIcon />
             </Fab>

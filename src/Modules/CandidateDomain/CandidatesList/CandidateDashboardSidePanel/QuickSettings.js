@@ -6,18 +6,16 @@ import { Link } from "react-router-dom";
 
 const QuickSettingsAndEvents = () => {
   return (
-      <div style={{width: "85%"}} >
-    <Widget styleName="jr-card-profile" >
-      <div className="mb-3">
-      <h3 className="card-title mb-2 mb-md-3" style={{color:'gray'}}>Settings</h3>
-          <SettingsIcon fontSize='large'/>
-          <Link to='#'>Click here for settings</Link>
+      <div style={{width: "65%"}} >
+    <Widget styleName="jr-card-profile dashboardQuicklinkcardsStyle" >
+      <div>
+      <h3 className="card-title mb-2" style={{color:'gray'}}>Settings</h3>
+      <Link to='#'><NotificationsNoneIcon className='dashboardQuickLinksFont'/></Link>
         </div>
         <hr/>
         <div className="mb-3">
-        <h3 className="card-title mb-2 mb-md-3" style={{color:'gray'}}>Alerts</h3>
-          <NotificationsNoneIcon fontSize='large'/>
-          <Link to='#'>Click here for alerts</Link>
+        <h3 className="card-title mb-2" style={{color:'gray'}}>Alerts</h3>
+        <Link to='#'><SettingsIcon className='dashboardQuickLinksFont'/></Link>
         </div>
     </Widget>
     </div>

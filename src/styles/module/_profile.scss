@@ -136,7 +136,7 @@
 .dashboardProfileheader{
   line-height: 40px;
   margin-left: -110px;
-  margin-top: -132px;
+  margin-top: -85px;
   @media (max-width: 575px) {
     margin-left: 0px;
   margin-top: 0px;
@@ -145,7 +145,7 @@
 .dashboardProfileheaderAfterSwitch{
   line-height: 40px;
 margin-left: -20px;
-margin-top: -60px;
+margin-top: -13px;
   @media (max-width: 575px) {
     margin-left: 0px;
   margin-top: 0px;
@@ -187,6 +187,16 @@ margin-top: -60px;
     margin-top: 0px;
     
   }
+}
+.dashboardEmployeeNameColourLink{
+  color: #4341e0 !important;
+}
+.dashboardQuicklinkcardsStyle{
+  align-items: center !important;
+}
+.dashboardQuickLinksFont{
+  font-size: -webkit-xxx-large !important;
+  color: #4341e0 !important;
 }
 .profileAddEditButton{
   background: #3b7652 !important;

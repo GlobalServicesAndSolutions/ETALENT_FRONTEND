@@ -26,6 +26,7 @@ import JobsList from 'Modules/CandidateDomain/CandidatesList/JobsList';
 import JobsSearchedList from 'Modules/CandidateDomain/CandidatesList/SearchedJobList';
 import JobDescription from 'Modules/CandidateDomain/CandidatesList/JobDescription';
 import Events from 'Modules/CandidateDomain/CandidatesList/NewEvents';
+import FavoriteJobsAndAlerts from 'Modules/CandidateDomain/CandidatesList/SaveJobsAndAlert';
 
 const RestrictedRoute = ({component: Component, authUser, ...rest}) =>
   <Route
@@ -104,7 +105,8 @@ class App extends Component {
                   <RestrictedRoute path='/jobs' authUser={authUser} component={JobsList}/>
                   <RestrictedRoute path='/jobsearch' authUser={authUser} component={JobsSearchedList}/>  
                   <RestrictedRoute path='/jobDescription' authUser={authUser} component={JobDescription} />   
-                  <RestrictedRoute path='/Events' authUser={authUser} component={Events}/>             <Route
+                  <RestrictedRoute path='/Events' authUser={authUser} component={Events}/>  
+                  <RestrictedRoute path='/savejobsandalterts' authUser={authUser} component={FavoriteJobsAndAlerts} />           <Route
                     component={asyncComponent(() => import('components/Error404'))}/>
                 </Switch>
               </div>

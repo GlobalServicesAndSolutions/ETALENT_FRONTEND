@@ -5,12 +5,11 @@ import { Link } from "react-router-dom";
 
 const QuickEvents = () => {
   return (
-      <div style={{width: "85%"}} >
-    <Widget styleName="jr-card-profile" >
-      <div className="mb-3">
-      <h3 className="card-title mb-2 mb-md-3" style={{color:'gray'}}>Events</h3>
-          <EventIcon fontSize='large'/>
-          <Link to='/Events'>Click here to View events</Link>
+      <div style={{width: "65%"}} >
+    <Widget styleName="jr-card-profile dashboardQuicklinkcardsStyle" >
+      <div>
+      <h3 className="card-title mb-2" style={{color:'gray'}}>Events</h3>
+      <Link to='/Events'><EventIcon className='dashboardQuickLinksFont'/></Link>
         </div>
     </Widget>
     </div>
