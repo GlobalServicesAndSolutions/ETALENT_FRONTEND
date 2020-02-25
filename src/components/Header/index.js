@@ -3,16 +3,13 @@ import {Link,withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import {Dropdown, DropdownMenu, DropdownToggle} from 'reactstrap';
+import SettingsIcon from '@material-ui/icons/Settings';
 import {
     BELOW_THE_HEADER,
     HORIZONTAL_NAVIGATION,
 } from 'constants/ActionTypes';
 import SearchBox from 'components/SearchBox';
 import {switchLanguage, toggleCollapsedNav} from 'actions/Setting';
-import AppNotification from '../AppNotification/index';
-import CardHeader from 'components/dashboard/Common/CardHeader/index';
 import IntlMessages from 'util/IntlMessages';
 
 class Header extends React.Component {
@@ -162,26 +159,7 @@ class Header extends React.Component {
             </li>
             </Link>
             <li className="list-inline-item app-tour">
-              <Dropdown
-                className="quick-menu"
-                isOpen={this.state.appNotification}
-                toggle={this.onAppNotificationSelect.bind(this)}>
-
-                <DropdownToggle
-                  className="d-inline-block"
-                  tag="span"
-                  data-toggle="dropdown">
-                  <IconButton className="icon-btn">
-                    <i className="zmdi zmdi-notifications-none icon-alert animated infinite wobble"/>
-                  </IconButton>
-                </DropdownToggle>
-
-                <DropdownMenu right>
-                  <CardHeader styleName="align-items-center"
-                              heading="Notification" />
-                  <AppNotification/>
-                </DropdownMenu>
-              </Dropdown>
+            <SettingsIcon className="fontLabelColor" fontSize='medium' style={{cursor:'pointer'}} />
             </li>
           </ul>
           

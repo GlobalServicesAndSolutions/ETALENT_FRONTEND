@@ -17,6 +17,8 @@ import Projects from '../../components/profile/Projects/Projects';
 import Courses from '../../components/profile/CourseAndTrainings/CoursesAndTraining';
 import CourseAndTrainings from '../../util/Models/CoursesAndTrainings';
 import SoftSkillsDialogue from 'util/Models/SoftSkills';
+import ProfileLevelEdit from './CandidatesList/ProfileLevelEditDialogue';
+import Portfolio from 'components/profile/Freelance/Portfolio';
 
 class Profile extends Component {
     constructor(props) {
@@ -49,7 +51,8 @@ class Profile extends Component {
             ratingValue: 0,
             expansionPanelvalue: '',
             isEdit: false,
-            switchProfile:false
+            switchProfile:false,
+            profileLevel:false
         }
     }
     onRatingChange = (event, newValue) => {
@@ -78,6 +81,9 @@ class Profile extends Component {
     openLisenceDialog = () => {
         this.setState({ lisenceOpen: true });
     }
+    openProfileLevelDialogue = () => {
+        this.setState({ profileLevel: true });
+    }
     closeLisenceDialog = () => {
         this.setState({ lisenceOpen: false });
     }
@@ -92,6 +98,9 @@ class Profile extends Component {
     }
     closeSoftSkillDialog = () => {
         this.setState({ softSkillsOpen: false });
+    }
+    closeProfileLevelDialog = () => {
+        this.setState({ profileLevel: false });
     }
     openAwardDialogue = () => {
         this.setState({ awardOpen: true });
@@ -176,13 +185,18 @@ class Profile extends Component {
                     isEditCancel={this.isEditCancel}
                     isEdit={this.state.isEdit}
                     onChangeProfileSwitch={this.onChangeProfileSwitch}
+                    switchProfile={this.state.switchProfile}
+                    openProfileLevelDialogue={this.openProfileLevelDialogue}
+
                 />
                 <div className="row">
                     <div className="col-xl-7 col-lg-7 col-md-6 col-12">
                         <Biography
                             isEditClick={this.state.isEdit} />
-                        { !this.state.switchProfile &&
-                        <div>
+                            {
+                           this.state.switchProfile&& <div>
+                            <Portfolio />
+                        </div>}
                         <div id="educationcard">
                             <Education
                                 openEducationDialog={this.openEducationDialog}
@@ -210,8 +224,6 @@ class Profile extends Component {
                                 openCertificationDialog={this.openLisenceDialog}
                                 isEditClick={this.state.isEdit} />
                         </div>
-                        </div>
-    }
                     </div>
                     <div className="col-xl-4 col-lg-4 col-md-5 col-12">
                         <Contact />
@@ -279,6 +291,12 @@ class Profile extends Component {
                     />
                     :
                     <span></span>}
+                    {this.state.profileLevel &&
+                    <ProfileLevelEdit 
+                    open={this.state.profileLevel}
+                    handleClose={this.closeProfileLevelDialog}
+                    />
+                    }
             </div>
         );
     };

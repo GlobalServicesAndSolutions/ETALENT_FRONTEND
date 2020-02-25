@@ -11,9 +11,14 @@ class JobDescription extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            tabValue: 0
+            tabValue: 0,
+            makeFaveriot:false
         }
     }
+    onFaveriotClick = () => {
+        this.setState({ makeFaveriot: !this.state.makeFaveriot });
+    }
+
     render() {
         return (
             <div className="app-main-content-wrapper">
@@ -39,7 +44,10 @@ class JobDescription extends Component {
                             Print
                                 </Button>
                                 </div>
-                        <JobFullInfo />
+                        <JobFullInfo 
+                        onFaveriotClick={this.onFaveriotClick}
+                        makeFaveriot={this.state.makeFaveriot}
+                        />
                         <JobFullDexciption />
                     </div>
                     <div className="col-xl-3 col-lg-3 col-md-4 col-12" style={{marginTop:'37px'}}>

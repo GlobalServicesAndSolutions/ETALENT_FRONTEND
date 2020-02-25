@@ -10,7 +10,7 @@ const QuickEvents = () => {
       <div className="mb-3">
       <h3 className="card-title mb-2 mb-md-3" style={{color:'gray'}}>Events</h3>
           <EventIcon fontSize='large'/>
-          <Link to='#'>Click here to View events</Link>
+          <Link to='/Events'>Click here to View events</Link>
         </div>
     </Widget>
     </div>

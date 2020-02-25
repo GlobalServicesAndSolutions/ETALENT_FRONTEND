@@ -85,6 +85,32 @@
     margin-bottom: 25px;
   }
 }
+.dot {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.dotRed{
+    background-color: red;
+}
+
+.dotGreen{
+    background-color: green;
+}
+.jr-Dashboardprofile-banner-top {
+  @include display-flex(flex, row, wrap);
+  @include align-items(center);
+    margin: -20px;
+    width: 100%;
+
+  @media (max-width: 575px) {
+    @include display-flex(flex, column, nowrap);
+    margin-bottom: 25px;
+  }
+}
 
 .jr-profile-banner-top-left {
   @include display-flex(flex, row, wrap);
@@ -104,6 +130,28 @@
     margin-right: 0;
   }
 }
+.datePickerWidth{
+  width: 150% !important;
+}
+.dashboardProfileheader{
+  line-height: 40px;
+  margin-left: -110px;
+  margin-top: -132px;
+  @media (max-width: 575px) {
+    margin-left: 0px;
+  margin-top: 0px;
+  }
+}
+.dashboardProfileheaderAfterSwitch{
+  line-height: 40px;
+margin-left: -20px;
+margin-top: -60px;
+  @media (max-width: 575px) {
+    margin-left: 0px;
+  margin-top: 0px;
+  }
+}
+
 
 .jr-profile-banner-top-right {
   text-align: center;

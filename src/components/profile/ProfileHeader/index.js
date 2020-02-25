@@ -12,6 +12,7 @@ import EditIcon from '@material-ui/icons/Edit';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
+import CreateIcon from '@material-ui/icons/Create';
 
 const ProfileHeader = ({ onEducationView,
   onSkillView,
@@ -30,7 +31,9 @@ const ProfileHeader = ({ onEducationView,
   isEditClick,
   openSoftSkillDialogue,
   isEdit,
-  onChangeProfileSwitch
+  onChangeProfileSwitch,
+  switchProfile,
+  openProfileLevelDialogue
 }) => {
   return (
     <div className="jr-profile-banner">
@@ -43,7 +46,10 @@ const ProfileHeader = ({ onEducationView,
             <div className="jr-profile-banner-avatar-info">
               <h2 className="mb-2 jr-mb-sm-3 jr-fs-xxl jr-font-weight-black">Salman Haider</h2>
               <p className="mb-0 jr-fs-lg">Islamabad, Pakistan</p>
+              <div className='row' style={{justifyContent:'space-between'}}>
               <p>Profile Level</p>
+              <CreateIcon onClick={openProfileLevelDialogue} style={{ cursor:'pointer'}}/>
+              </div>
             </div>
           </div>
           <div className="jr-profile-banner-top-right">
@@ -70,7 +76,7 @@ const ProfileHeader = ({ onEducationView,
                 onChange={onChangeProfileSwitch}
               />
             }
-            label="Freelance profile"
+            label={switchProfile?'Click back to basic profile':'Freelance profile'}
           />
         </FormGroup>
         <ExpansionPanel onChange={onParentExpansion} className='candidateProfileSectionPanal'>
@@ -191,6 +197,23 @@ const ProfileHeader = ({ onEducationView,
                 <Typography className='addSection'>
                   Awards
                         <Fab size="small" aria-label="add" onClick={openAwardDialog}>
+                    <AddIcon />
+                  </Fab>
+                </Typography>
+              </ExpansionPanelDetails>
+            </ExpansionPanel>
+            <ExpansionPanel onChange={onExpansionPanelChange('panel6')} expanded={expansionPanelvalue === 'panel6'}>
+              <ExpansionPanelSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="panel1bh-content"
+                id="panel1bh-header"
+              >
+                <Typography >Freelance</Typography>
+              </ExpansionPanelSummary>
+              <ExpansionPanelDetails className='expansionPanel'>
+                <Typography className='addSection'>
+                  Portfolio
+                        <Fab size="small" aria-label="add" >
                     <AddIcon />
                   </Fab>
                 </Typography>
