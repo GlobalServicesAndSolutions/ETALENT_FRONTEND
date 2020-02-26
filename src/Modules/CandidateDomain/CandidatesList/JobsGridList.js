@@ -4,6 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import Tooltip from '@material-ui/core/Tooltip';
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -60,9 +61,9 @@ const JobsGridList = ({makeFaveriot,
                 style={{fill:makeFaveriot?'red':'',cursor:'pointer'}}
                 />
                 </div>
-                <h4 className='allfontCapital'>Front End Developer</h4> 
+                <Link to='/jobDescription' ><h4 className='allfontCapital'>Front End Developer</h4></Link>
                 <h6>Seven Technology</h6>
-                <h7>Islamabad</h7>
+                <h6>Islamabad</h6>
                 <br/>
                 <br/>
                 <p>1 day ago</p>

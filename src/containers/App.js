@@ -26,7 +26,7 @@ import JobsList from 'Modules/CandidateDomain/CandidatesList/JobsList';
 import JobsSearchedList from 'Modules/CandidateDomain/CandidatesList/SearchedJobList';
 import JobDescription from 'Modules/CandidateDomain/CandidatesList/JobDescription';
 import Events from 'Modules/CandidateDomain/CandidatesList/NewEvents';
-import FavoriteJobsAndAlerts from 'Modules/CandidateDomain/CandidatesList/SaveJobsAndAlert';
+import FavoriteJobsAndAlerts from 'Modules/CandidateDomain/CandidatesList/SaveJobsAndAlertView';
 
 const RestrictedRoute = ({component: Component, authUser, ...rest}) =>
   <Route

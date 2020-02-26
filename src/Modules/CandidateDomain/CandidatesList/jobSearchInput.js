@@ -104,7 +104,7 @@ const JobsSearchInput = ({ onToogleSwitchChange,
                 <br />
                 {toogleSwitchValue === 'gridView' &&
                     <div>
-                        <div style={{ display: 'flex', justifyContent: 'center' }}>
+                        <div>
                     <FormControl style={{ width: '10%' }} >
                                 <InputLabel>Sort By</InputLabel>
                                 <Select
@@ -172,12 +172,12 @@ const JobsSearchInput = ({ onToogleSwitchChange,
                         </div>
                         <br/>
                      <br/>
-                    </div>
+                </div>
                 }
 
-                <div style={{ float: 'right', marginTop: (toogleSwitchValue === 'listView' || toogleSwitchValue === '') ? '95px' : '', display: 'flex', justifyContent: 'space-between' }}>
+                <div style={{ float: 'right', marginTop: (toogleSwitchValue === 'listView' || toogleSwitchValue === '') ? '95px' : '' }}>
 
-                    <div>
+                    <div className='gridViewAlign'>
                         <Grid container spacing={2} direction="column" alignItems="center">
                             <Grid item>
                                 <ToggleButtonGroup size="small" value={toogleSwitchValue} exclusive onChange={onToogleSwitchChange}>

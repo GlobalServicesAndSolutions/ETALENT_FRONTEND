@@ -52,7 +52,8 @@ class Profile extends Component {
             expansionPanelvalue: '',
             isEdit: false,
             switchProfile:false,
-            profileLevel:false
+            profileLevel:false,
+            showCommentsBox:false,
         }
     }
     onRatingChange = (event, newValue) => {
@@ -159,9 +160,12 @@ class Profile extends Component {
     onChangeProfileSwitch=()=>{
         this.setState({switchProfile: !this.state.switchProfile});
     }
+    onClickComments=()=>{
+        this.setState({showCommentsBox:!this.state.showCommentsBox});
+    }
     render() {
         return (
-            <div className="app-main-container">
+            <div className="app-main-content-wrapper">
                 <div className="app-header ">
                     <Header />
                 </div>
@@ -195,7 +199,10 @@ class Profile extends Component {
                             isEditClick={this.state.isEdit} />
                             {
                            this.state.switchProfile&& <div>
-                            <Portfolio />
+                            <Portfolio 
+                            showCommentsBox={this.state.showCommentsBox}
+                            onClickComments={this.onClickComments}
+                            />
                         </div>}
                         <div id="educationcard">
                             <Education

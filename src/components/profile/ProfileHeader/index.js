@@ -52,7 +52,8 @@ const ProfileHeader = ({ onEducationView,
               </div>
             </div>
           </div>
-          <div className="jr-profile-banner-top-right">
+          <div className="jr-profile-banner-top-right" >
+          <h5 className='allfontCapital'>E-Talent Id: 123</h5>
             <ul className="jr-follower-list">
               <li>
                 <span className="jr-follower-title jr-fs-lg jr-font-weight-medium">2k+</span>

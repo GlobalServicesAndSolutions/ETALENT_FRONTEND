@@ -14,7 +14,7 @@ class ActiveVendors extends Component {
     }
     render() {
         return (
-            <div className="app-main-container">
+            <div className="app-main-content-wrapper">
                 <div className="app-header ">
                     <Header />
                 </div>

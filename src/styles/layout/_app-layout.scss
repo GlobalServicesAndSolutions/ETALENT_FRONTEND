@@ -22,7 +22,6 @@
 .app-main-container {
   @include display-flex(flex, column, nowrap);
   width: 100%;
-  overflow: scroll;
 }
 
 .app-header {

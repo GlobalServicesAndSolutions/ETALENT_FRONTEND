@@ -65,7 +65,7 @@ class JobsList extends Component {
                 <div className="app-header ">
                     <Header />
                 </div>
-                <div className="app-main-content">
+                <div className="app-main-container">
                     <JobListHeader
                     />
                     <div style={{ padding: '3px' }}>
