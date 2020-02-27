@@ -8,10 +8,8 @@ import QuickProfile from './CandidatesList/CandidateDashboardSidePanel/ProfileLi
 import QuickFreeLanceProfile from './CandidatesList/CandidateDashboardSidePanel/FreeLanceProfileLink';
 import QuickEvents from './CandidatesList/CandidateDashboardSidePanel/EventsDetailLink';
 import QuickSettingsAndEvents from './CandidatesList/CandidateDashboardSidePanel/QuickSettings';
-import Paper from '@material-ui/core/Paper';
-import InputBase from '@material-ui/core/InputBase';
-import IconButton from '@material-ui/core/IconButton';
-import SearchIcon from '@material-ui/icons/Search';
+import Chip from '@material-ui/core/Chip';
+import DoneIcon from '@material-ui/icons/Done';
 
 class CandidateHome extends Component {
   constructor(props)
@@ -43,19 +41,31 @@ class CandidateHome extends Component {
         </div>
         <br/>
         <div style={{display:'flex',justifyContent:'center'}}>
-          <Paper component="form" style={{width:'400px',alignItems:'center',padding:'2px 4px'}}>
-            <IconButton  aria-label="search">
-              <SearchIcon />
-            </IconButton>
-            <InputBase
-              placeholder="Search jobs And Events"
-              inputProps={{ 'aria-label': 'Search-jobs' }}
-            />
-          </Paper>
+        <Chip
+        label="Favorite Jobs"
+        clickable
+        color="primary"
+        deleteIcon={<DoneIcon />}
+        variant="outlined"
+      />
+      <Chip
+        label="Events"
+        clickable
+        color="primary"
+        deleteIcon={<DoneIcon />}
+        variant="outlined"
+      />
+      <Chip
+        label="Job Alterts"
+        clickable
+        color="primary"
+        deleteIcon={<DoneIcon />}
+        variant="outlined"
+      />
         </div>
         <br/>
         <div className='row'>
-          <div className='col-xl-2 col-lg-2 col-md-2 col-12' style={{ marginLeft: '35px' , marginRight:'-35px'}}>
+          <div className='col-xl-2 col-lg-2 col-md-2 col-12' style={{ marginLeft: '70px' , marginRight:'-62px'}}>
             <QuickProfile />
             <QuickFreeLanceProfile />
             <QuickEvents />

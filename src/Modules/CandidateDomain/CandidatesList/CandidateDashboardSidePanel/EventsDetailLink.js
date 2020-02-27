@@ -9,7 +9,7 @@ const QuickEvents = () => {
     <Widget styleName="jr-card-profile dashboardQuicklinkcardsStyle" >
       <div>
       <h3 className="card-title mb-2" style={{color:'gray'}}>Events</h3>
-      <Link to='/Events'><EventIcon className='dashboardQuickLinksFont'/></Link>
+      <Link to='/Events'><EventIcon fontSize='large' className='dashboardQuickLinksFont'/></Link>
         </div>
     </Widget>
     </div>

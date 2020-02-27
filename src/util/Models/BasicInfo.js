@@ -17,7 +17,7 @@ const BasicInfoProfile = ({ open, handleClose }) => {
 
     return (
         <div>
-            <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title" maxWidth="sm" >
+            <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title" maxWidth="xs" >
                 <DialogTitle id="form-dialog-title">My Profile</DialogTitle>
                 <DialogContent>
                     <TextField

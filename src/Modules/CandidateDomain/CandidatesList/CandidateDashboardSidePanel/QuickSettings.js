@@ -10,12 +10,12 @@ const QuickSettingsAndEvents = () => {
     <Widget styleName="jr-card-profile dashboardQuicklinkcardsStyle" >
       <div>
       <h3 className="card-title mb-2" style={{color:'gray'}}>Settings</h3>
-      <Link to='#'><NotificationsNoneIcon className='dashboardQuickLinksFont'/></Link>
+      <Link to='#'><NotificationsNoneIcon fontSize='large' className='dashboardQuickLinksFont'/></Link>
         </div>
         <hr/>
         <div className="mb-3">
         <h3 className="card-title mb-2" style={{color:'gray'}}>Alerts</h3>
-        <Link to='#'><SettingsIcon className='dashboardQuickLinksFont'/></Link>
+        <Link to='#'><SettingsIcon fontSize='large' className='dashboardQuickLinksFont'/></Link>
         </div>
     </Widget>
     </div>

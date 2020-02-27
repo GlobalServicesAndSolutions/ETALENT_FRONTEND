@@ -135,8 +135,8 @@
 }
 .dashboardProfileheader{
   line-height: 40px;
-  margin-left: -110px;
-  margin-top: -85px;
+    margin-left: -234px;
+    margin-top: -30px;
   @media (max-width: 575px) {
     margin-left: 0px;
   margin-top: 0px;
@@ -144,8 +144,8 @@
 }
 .dashboardProfileheaderAfterSwitch{
   line-height: 40px;
-margin-left: -20px;
-margin-top: -13px;
+margin-left: -7px;
+margin-top: -30px;
   @media (max-width: 575px) {
     margin-left: 0px;
   margin-top: 0px;
@@ -192,14 +192,22 @@ margin-top: -13px;
   margin-bottom: 80px;
 }
 .dashboardEmployeeNameColourLink{
-  color: #4341e0 !important;
+  color: black !important;
 }
+.alertListDaily{
+  width: 4.285714em;
+  text-align: center;
+}
+.alertListMonthly{
+  width: 4.285714em;
+  text-align: center;
+}
+
 .dashboardQuicklinkcardsStyle{
   align-items: center !important;
 }
 .dashboardQuickLinksFont{
-  font-size: -webkit-xxx-large !important;
-  color: #4341e0 !important;
+  color: black !important;
 }
 .profileAddEditButton{
   background: #3b7652 !important;

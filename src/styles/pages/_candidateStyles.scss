@@ -17,6 +17,16 @@
         width: 30%;
     }
   }
+  .AlertAndFavoriteJobheaders{
+    height: 9%;
+  }
+  .JobAlertFont{
+    color: #a1a1a1;
+    font-family: none;
+  }
+  .JobAlertCalenderStyle{
+    fill: steelblue !important;
+  }
   .jobsearchHeader{
     height: 170px;
     @media screen and (max-width: 575px) {

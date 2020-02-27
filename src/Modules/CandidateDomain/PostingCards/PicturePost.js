@@ -6,7 +6,7 @@ import ReplyAllIcon from '@material-ui/icons/ReplyAll';
 
 const PicturePost = () => {
   return (
-      <div style={{width: "85%"}} >
+      <div style={{width: "95%"}} >
     <Widget styleName="jr-card-profile" >
       <div className="mb-3">
           <div style={{display:"flex"}}>

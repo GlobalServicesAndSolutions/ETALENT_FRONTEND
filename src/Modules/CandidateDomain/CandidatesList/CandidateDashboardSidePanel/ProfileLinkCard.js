@@ -9,7 +9,7 @@ const QuickProfile = () => {
     <Widget styleName="jr-card-profile dashboardQuicklinkcardsStyle" >
       <div >
       <h3 className="card-title mb-2" style={{color:'gray'}}>Profile</h3>
-      <Link to='/profile'> <PersonIcon className='dashboardQuickLinksFont'/></Link>
+      <Link to='/profile'> <PersonIcon fontSize='large' className='dashboardQuickLinksFont'/></Link>
         </div>
     </Widget>
     </div>
