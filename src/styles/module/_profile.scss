@@ -204,10 +204,20 @@ margin-top: -30px;
 }
 
 .dashboardQuicklinkcardsStyle{
-  align-items: center !important;
+  align-items: baseline !important;
 }
+
 .dashboardQuickLinksFont{
-  color: black !important;
+  color: gray !important;
+}
+
+.dashboardFilterChipsAlign{
+  display: flex;
+  justify-content: left;
+}
+.dashboardFilterChipsStyle{
+    color: #1d1d1d !important;
+    border: 1px solid #a1a1a1 !important;
 }
 .profileAddEditButton{
   background: #3b7652 !important;
@@ -297,6 +307,24 @@ margin-top: -30px;
   overflow-x: scroll;
 }
 
+.dashboardQuickLinksDiv{
+  margin-top: 32px;
+  margin-left: 64px;
+  margin-right: -67px;
+  @media (max-width: 575px) {
+    margin-left: 0;
+  }
+}
+.dashboardPostsDiv{
+  
+}
+.dashboardAltertsAndEventsDiv{
+  margin-top: 32px;
+  margin-left: -22px;
+  @media (max-width: 575px) {
+    margin-left: 0px;
+  }
+}
 .jr-card-profile {
   position: relative;
 

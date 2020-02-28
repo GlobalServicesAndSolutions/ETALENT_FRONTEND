@@ -12,6 +12,7 @@ import {
   KeyboardDatePicker,
 } from '@material-ui/pickers';
 import { Link } from "react-router-dom";
+import Tooltip from '@material-ui/core/Tooltip';
 
 const ProfileCard = ({ onChangeAvailabilitySwitch,
   availabilitySwitch,
@@ -29,6 +30,7 @@ const ProfileCard = ({ onChangeAvailabilitySwitch,
                 <Avatar className="size-120" alt="..." src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Phoenicopterus_ruber_in_S%C3%A3o_Paulo_Zoo.jpg" />
                 <div className='row'>
                   <div>
+                  <Tooltip title={availabilitySwitch?'Profile is unlocked':'Profile is locked'} placement="down" arrow>
                 <FormGroup row>
                   <FormControlLabel
                     control={
@@ -41,6 +43,7 @@ const ProfileCard = ({ onChangeAvailabilitySwitch,
                     label={availabilitySwitch ? "Available : " : "UnAvailable"}
                   />
                 </FormGroup>
+                </Tooltip>
                 </div>
                 <div style={{marginTop:'-20px'}}>
                 {availabilitySwitch && 
@@ -76,14 +79,10 @@ const ProfileCard = ({ onChangeAvailabilitySwitch,
                       </h2>
                     </div>
                   </div>
-                  <div className='row'>
-                  <div>
                   <p className="mb-0 jr-fs-lg">Web Developer</p>
-                  <p className="mb-0 jr-fs-lg">Location, City</p>
-                  </div>
-                  <div>
-                  <i className={`flag flag-24 flag-pk`} />         
-                  </div>
+                  <div className='row'>
+                  <p className="mb-0 jr-fs-lg">Islamabad, Pakistan</p>
+                  <i className={`flag flag-24 flag-pk`} />
                   </div>
                 </div>
                 <div>

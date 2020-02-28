@@ -4,37 +4,37 @@ import { Link } from "react-router-dom";
 
 const JobPost = () => {
   return (
-      <div style={{width: "90%"}} >
-    <Widget styleName="jr-card-profile" >
-      <div className="mb-3">
-      <Link to='/savejobsandalterts'><h3 className="card-title mb-2 mb-md-3" style={{color:'gray'}}>Favorite Jobs</h3></Link>
-          <br/>
-            <div>
-          
-          <h5>Senior Software Engineer</h5>
+    <div style={{ width: "90%" }} >
+      <Widget styleName="jr-card-profile" >
+        <div className="mb-3">
+          <Link to='/savejobsandalterts'><h3 className="card-title mb-2 mb-md-3">Favourites Jobs</h3></Link>
+          <br />
+          <div>
+
+            <h5 style={{ color: 'gray' }}>Senior Software Engineer</h5>
           </div>
-        <div>
-          <ul>
-            <li className="jr-fs-lg">
-              Seven Software Development ltd.<br />
-              Lahore, Pakistan
+          <div style={{ color: 'gray' }}>
+            <ul>
+              <li className="jr-fs-lg">
+                Seven Software Development ltd.<br />
+                Lahore, Pakistan
             </li>
-          </ul>
+            </ul>
           </div>
-          <hr/>
-            <div>
-          <h5>Front End Developer</h5>
+          <hr />
+          <div>
+            <h5 style={{ color: 'gray' }}>Front End Developer</h5>
           </div>
-        <div>
-          <ul>
-            <li className="jr-fs-lg">
-              Global Services and Solutions<br />
-              Islamabad, Pakistan
+          <div style={{ color: 'gray' }}>
+            <ul>
+              <li className="jr-fs-lg">
+                Global Services and Solutions<br />
+                Islamabad, Pakistan
             </li>
-          </ul>
+            </ul>
           </div>
         </div>
-    </Widget>
+      </Widget>
     </div>
   )
 }

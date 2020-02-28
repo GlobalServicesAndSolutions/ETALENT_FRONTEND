@@ -147,27 +147,6 @@ class Header extends React.Component {
             value={this.state.searchText} />
 
           <ul className="header-notifications list-inline ml-auto">
-            <li className="list-inline-item">
-              <Dropdown
-                className="quick-menu app-notification"
-                isOpen={this.state.apps}
-                toggle={this.onAppsSelect.bind(this)}>
-
-                <DropdownToggle
-                  className="d-inline-block"
-                  tag="span"
-                  data-toggle="dropdown">
-                  <span className="app-notification-menu">
-                    <i className="zmdi zmdi-apps zmdi-hc-fw zmdi-hc-lg" />
-                    <span>Apps</span>
-                  </span>
-                </DropdownToggle>
-
-                <DropdownMenu>
-                  {this.Apps()}
-                </DropdownMenu>
-              </Dropdown>
-            </li>
             <Link to="/dashboard">
               <li className="list-inline-item headerLinks">
                 <span className="fontLabelColor" >Home</span>
@@ -178,9 +157,11 @@ class Header extends React.Component {
                 <span className='fontLabelColor' >Jobs</span>
               </li>
             </Link>
-            <li className="list-inline-item app-tour">
-              <SettingsIcon className="fontLabelColor" fontSize='medium' style={{ cursor: 'pointer' }} />
-            </li>
+            <Link to='#'>
+              <li className="list-inline-item headerLinks">
+                <span className='fontLabelColor' >Messaging</span>
+              </li>
+            </Link>
             <li className="list-inline-item app-tour">
               <Dropdown
                 className="quick-menu"
@@ -202,6 +183,30 @@ class Header extends React.Component {
                   <AppNotification />
                 </DropdownMenu>
               </Dropdown>
+            </li>
+            <li className="list-inline-item">
+              <Dropdown
+                className="quick-menu app-notification"
+                isOpen={this.state.apps}
+                toggle={this.onAppsSelect.bind(this)}>
+
+                <DropdownToggle
+                  className="d-inline-block"
+                  tag="span"
+                  data-toggle="dropdown">
+                  <span className="app-notification-menu">
+                    <i className="zmdi zmdi-apps zmdi-hc-fw zmdi-hc-lg" />
+                    <span>Apps</span>
+                  </span>
+                </DropdownToggle>
+
+                <DropdownMenu>
+                  {this.Apps()}
+                </DropdownMenu>
+              </Dropdown>
+            </li>
+            <li className="list-inline-item app-tour">
+              <SettingsIcon className="fontLabelColor" fontSize='medium' style={{ cursor: 'pointer' }} />
             </li>
           </ul>
 

@@ -38,10 +38,10 @@ class JobDescription extends Component {
                 <div className="row">
                     <div className="col-xl-8 col-lg-8 col-md-7 col-12">
                         <div align='right'>
-                            <Link><Button variant="outlined" color="primary" onClick={this.onClickApplyForJob}>
+                            <Link><Button variant="outlined" color="primary" >
                                 Apply Now
                                 </Button></Link>
-                            <Link><Button variant="outlined" color="primary">
+                            <Link><Button variant="outlined" color="primary" onClick={this.onClickApplyForJob}>
                                 Quick Apply
                                 </Button></Link>
                             <Link to='/savejobsandalterts'><Button variant="outlined" color="primary">

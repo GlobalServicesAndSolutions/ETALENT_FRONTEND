@@ -113,7 +113,7 @@ const ApplyForJobDialog = ({ open, handleClose }) => {
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleClose} color="primary">
-                       Submit
+                       Apply
                     </Button>
                     <Button onClick={handleClose} color="primary">
                         Cancel

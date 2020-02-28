@@ -20,16 +20,18 @@ const Contact = () => {
     }
   ]
   return (
-    <Widget title="Contact" styleName="jr-card-profile-sm">
+    <Widget styleName="jr-card-profile">
+      <h3 className="card-title mb-2 mb-md-3">Contact</h3>
       <hr/>
       {contactList.map((data, index) =>
         <div key={index} className="media align-items-center flex-nowrap jr-pro-contact-list">
           <div className="mr-3">
-            <i className={`zmdi zmdi-${data.icon} jr-fs-xxl text-grey`} />
-          </div>
-          <div className="media-body">
-            <span className="mb-0 text-grey jr-fs-sm">{data.title}</span>
-            <p className="mb-0">{data.desc}</p>
+            <ul>
+              <li>
+              {data.title}<br />
+              {data.desc}
+              </li>
+            </ul>
           </div>
         </div>
       )}
