@@ -42,6 +42,7 @@ const ProfileHeader = ({ onEducationView,
           <div className="jr-profile-banner-top-left">
             <div className="jr-profile-banner-avatar">
               <Avatar className="size-90" alt="..." src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Phoenicopterus_ruber_in_S%C3%A3o_Paulo_Zoo.jpg" />
+              <p className="jr-fs-sm" align='right'><strong>E-Talent Id: 123</strong></p>
             </div>
             <div className="jr-profile-banner-avatar-info">
               <h2 className="mb-2 jr-mb-sm-3 jr-fs-xxl jr-font-weight-black">Salman Haider</h2>
@@ -53,7 +54,6 @@ const ProfileHeader = ({ onEducationView,
             </div>
           </div>
           <div className="jr-profile-banner-top-right" >
-          <p className="jr-fs-sm" align='right'><strong>E-Talent Id: 123</strong></p>
             <ul className="jr-follower-list">
               <li>
                 <span className="jr-follower-title jr-fs-lg jr-font-weight-medium">2k+</span>
