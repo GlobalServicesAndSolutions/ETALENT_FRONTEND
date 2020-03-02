@@ -23,8 +23,10 @@ class ForgetPassword extends React.Component {
         className="app-login-container d-flex justify-content-center align-items-center animated slideInUpTiny animation-duration-3">
         <div className="app-login-main-content">
 
-          <div className="app-logo-content d-flex align-items-center justify-content-center">
-            <h3>E-Talent Logo</h3>
+        <div className="app-logo-content d-flex align-items-center justify-content-center">
+            <Link className="logo-lg" to="/" title="Jambo">
+              <img src={require("assets/images/GssLogo.png")} alt="Gss" title="Global Services and Solutions"/>
+            </Link>
           </div>
 
           <div className="app-login-content">

@@ -141,7 +141,9 @@ class Header extends React.Component {
               <span className="menu-icon" />
             </span>
           </div>
-          <p>E-Talent</p>
+          <Link className="app-logo mr-2 d-none d-sm-block" to="/">
+            <img src={require("assets/images/GssLogo.png")} alt="etalent" title="E-talent"/>
+          </Link>
           <SearchBox styleName="d-none d-lg-block" placeholder=""
             onChange={this.updateSearchText.bind(this)}
             value={this.state.searchText} />
