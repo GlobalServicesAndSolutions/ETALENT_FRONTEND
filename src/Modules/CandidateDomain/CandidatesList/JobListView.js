@@ -62,7 +62,7 @@ const JobsListView = ({ makeFaveriot, onFaveriotClick }) => {
                                 <div style={{ lineHeight: '20px' }}>
                                     <div className='row' style={{ display: 'flex', justifyContent: 'space-between' }}>
                                         <p>Full time/ Part time</p><p>days ago</p>
-                                        <FavoriteIcon onClick={onFaveriotClick} style={{ fill: makeFaveriot ? 'red' : '', cursor: 'pointer' }} />
+                                        <FavoriteIcon onClick={onFaveriotClick} style={{ fill: makeFaveriot ? 'lightgreen' : '', cursor: 'pointer' }} />
                                     </div>
                                     <Truncate lines={2}>
                                         <p style={{ overflow: 'hidden' }}>UW Continuum College (UWC ) has an outstanding opportunity for an Assistant Director of Software Engineering

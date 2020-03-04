@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const QuickEvents = () => {
   return (
-      <div style={{width: "65%"}} >
+      <div className='QuickEventsStyle' >
     <Widget styleName='dashboardQuicklinkcardsStyle'>
       <div>
       <h3 className="card-title mb-2" style={{color:'gray'}}>Events</h3>

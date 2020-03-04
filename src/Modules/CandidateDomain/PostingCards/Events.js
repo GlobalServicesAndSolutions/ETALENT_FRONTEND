@@ -3,12 +3,12 @@ import Widget from "components/Widget";
 
 const Events = () => {
   return (
-      <div style={{width: "90%"}} >
+      <div style={{width: "80%"}} >
     <Widget styleName="jr-card-profile" >
       <div className="mb-3">
       <h3 className="card-title mb-2 mb-md-3">Registered Events</h3>
           <br/>
-          <h5  style={{color:'gray'}}>Senior Software Engineer</h5>
+          <h5>Senior Software Engineer</h5>
         <div  style={{color:'gray'}}>
           <ul>
             <li>
@@ -18,7 +18,7 @@ const Events = () => {
           </ul>
           </div>
           <hr/>
-          <h5  style={{color:'gray'}}>Front End Developer</h5>
+          <h5>Front End Developer</h5>
         <div  style={{color:'gray'}}>
           <ul>
             <li>

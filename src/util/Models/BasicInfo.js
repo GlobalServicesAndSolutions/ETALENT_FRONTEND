@@ -73,15 +73,15 @@ const BasicInfoProfile = ({ open,
                                 labelPlacement="end"
                             />
                             <FormControlLabel
-                                value="WhiteColor"
+                                value="Professional"
                                 control={<Radio color="primary" />}
-                                label="White Color"
+                                label="Professional"
                                 labelPlacement="end"
                             />
                             <FormControlLabel
-                                value="BlueColor"
+                                value="NonProfessional"
                                 control={<Radio color="primary" />}
-                                label="Blue Color"
+                                label="NonProfessional"
                                 labelPlacement="end"
                             />
                         </RadioGroup>
@@ -110,10 +110,12 @@ const BasicInfoProfile = ({ open,
                             }}
                         >
                             <option value="" />
-                            <option value={'Pakistan'}>Pakistan</option>
-                            <option value={'USA'}>USA</option>
+                            <option value={"Pakistan"}>Pakistan</option>
+                            <option value={"USA"}>USA</option>
                         </Select>
                     </FormControl>
+                    {employeeWorkCountry==='Pakistan' && 
+                    <div>
                     <TextField
                         margin="dense"
                         name="employeeCnic"
@@ -123,21 +125,23 @@ const BasicInfoProfile = ({ open,
                         className="profileInfoTextField"
                     />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <TextField
+                     <TextField
                         margin="dense"
                         name="employeePassportNumber"
                         label="Passport Number"
                         type="text"
                         className="profileInfoTextField"
                     />
-                    <TextField
+                    </div>
+                    }
+                    {employeeWorkCountry==='USA' && <TextField
                         margin="dense"
                         name="employeeLastDigitsOfSsn"
                         label="Last four Digit of SSN"
                         type="text"
                         placeholder="6789"
                         className="profileInfoTextField"
-                    />
+                    />}
                     <hr />
                     <FormControl component="fieldset">
                         <FormLabel component="legend">Work Authorization</FormLabel>
@@ -172,7 +176,7 @@ const BasicInfoProfile = ({ open,
                         select "Decline to Designated".
                     </p>
                     <FormControl style={{ width: '100%' }}>
-                        <InputLabel htmlFor="age-native-simple">Choose One</InputLabel>
+                        <InputLabel htmlFor="age-native-simple">Race</InputLabel>
                         <Select
                             native
                             inputProps={{
@@ -190,7 +194,7 @@ const BasicInfoProfile = ({ open,
                         </Select>
                     </FormControl>
                     <FormControl style={{ width: '100%' }}>
-                        <InputLabel htmlFor="age-native-simple">Choose One</InputLabel>
+                        <InputLabel htmlFor="age-native-simple">Gender</InputLabel>
                         <Select
                             native
                             inputProps={{
@@ -205,7 +209,7 @@ const BasicInfoProfile = ({ open,
                         </Select>
                     </FormControl>
                     <FormControl style={{ width: '100%' }}>
-                        <InputLabel htmlFor="age-native-simple">Choose One</InputLabel>
+                        <InputLabel htmlFor="age-native-simple">Veteran / Non Veteran</InputLabel>
                         <Select
                             native
                             inputProps={{

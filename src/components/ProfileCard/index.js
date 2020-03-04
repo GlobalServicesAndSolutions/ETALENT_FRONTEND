@@ -21,14 +21,14 @@ const ProfileCard = ({ onChangeAvailabilitySwitch,
   showAvailabilityCalender
 }) => {
   return (
-    <Widget styleName="jr-card-profile">
+    <Widget styleName="jr-card-profile" style={{marginTop:'0px'}}>
       <div >
         <div className="jr-profile-container">
           <div className="jr-Dashboardprofile-banner-top">
             <div className="jr-profile-banner-top-left">
               <div className="jr-profile-banner-avatar-info">
                 <Avatar className="size-120" alt="..." src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Phoenicopterus_ruber_in_S%C3%A3o_Paulo_Zoo.jpg" />
-                <div style={{lineHeight:'0px'}}>
+               
                 <div className='row'>
                   <div>
                   <Tooltip title={availabilitySwitch?'Profile is unlocked':'Profile is locked'} placement="down" arrow>
@@ -67,8 +67,6 @@ const ProfileCard = ({ onChangeAvailabilitySwitch,
                   </MuiPickersUtilsProvider>}
                   </div>
                   </div>
-                  <p className="jr-fs-sm" align='left'><strong>E-Talent Id: 123</strong></p>
-                  </div>
               </div>
               <div className={!availabilitySwitch ? 'jr-profile-banner-avatar-info dashboardProfileheaderAfterSwitch' : 'jr-profile-banner-avatar-info dashboardProfileheader'}  >
                 <div>
@@ -82,7 +80,7 @@ const ProfileCard = ({ onChangeAvailabilitySwitch,
                       </h2>
                     </div>
                   </div>
-                  <p className="mb-0 jr-fs-lg">Web Developer</p>
+                  <p className="mb-0 ">Web Developer</p>
                   <div className='row'>
                   <p className="mb-0 jr-fs-lg">Islamabad, Pakistan</p>
                   <i className={`flag flag-24 flag-pk`} />
@@ -94,13 +92,11 @@ const ProfileCard = ({ onChangeAvailabilitySwitch,
               </div>
             </div>
             <div className="jr-profile-banner-top-right EtalentIdAlign">
+            <p className="jr-fs-sm" align='right' style={{color:"red"}}><strong>E-Talent Id: 123</strong></p>
               <ul className="jr-follower-list">
                 <li>
-                  <span className="jr-follower-title jr-fs-lg jr-font-weight-medium">2k+</span>
-                  <span className="jr-fs-sm">Followers</span></li>
-                <li>
                   <span className="jr-follower-title jr-fs-lg jr-font-weight-medium">847</span>
-                  <span className="jr-fs-sm">Following</span></li>
+                  <span className="jr-fs-sm">Recommendation</span></li>
                 <li>
                   <span className="jr-follower-title jr-fs-lg jr-font-weight-medium">327</span>
                   <span className="jr-fs-sm">Connections</span>

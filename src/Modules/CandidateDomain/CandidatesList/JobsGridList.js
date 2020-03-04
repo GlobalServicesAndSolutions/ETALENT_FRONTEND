@@ -58,7 +58,7 @@ const JobsGridList = ({makeFaveriot,
                 <div style={{display:'flex', justifyContent:'space-between'}}>
                 <img   className={classes.image} src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Phoenicopterus_ruber_in_S%C3%A3o_Paulo_Zoo.jpg" aria-hidden alt='image' />
                 <FavoriteIcon onClick={onFaveriotClick}
-                style={{fill:makeFaveriot?'red':'',cursor:'pointer'}}
+                style={{fill:makeFaveriot?'lightgreen':'',cursor:'pointer'}}
                 />
                 </div>
                 <Link to='/jobDescription' ><h4 className='allfontCapital'>Front End Developer</h4></Link>

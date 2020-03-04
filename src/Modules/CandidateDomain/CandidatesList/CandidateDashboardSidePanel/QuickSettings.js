@@ -5,11 +5,11 @@ import { Link } from "react-router-dom";
 
 const QuickSettingsAndEvents = () => {
   return (
-      <div style={{width: "65%"}} >
+      <div className='QuickSettingsAndEventsStyle' >
     <Widget styleName='dashboardQuicklinkcardsStyle'>
       <div>
       <h3 className="card-title mb-2" style={{color:'gray'}}>Alerts</h3>
-      <Link to='#'><NotificationsNoneIcon fontSize='large' className='dashboardQuickLinksFont'/></Link>
+      <Link to='/savejobsandalterts'><NotificationsNoneIcon fontSize='large' className='dashboardQuickLinksFont'/></Link>
         </div>
     </Widget>
     </div>

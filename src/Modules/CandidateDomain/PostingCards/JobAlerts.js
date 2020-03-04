@@ -1,18 +1,21 @@
 import React from "react";
 import Widget from "components/Widget";
-import { Link } from "react-router-dom";
 
 const AppliedJobs = () => {
   return (
-    <div style={{ width: "90%" }} >
+    <div style={{ width: "80%" }} >
       <Widget styleName="jr-card-profile" >
         <div className="mb-3">
-          <Link to='/savejobsandalterts'><h3 className="card-title mb-2 mb-md-3">Applied Jobs</h3></Link>
+          <h3 className="card-title mb-2 mb-md-3">Applied Jobs
+          &nbsp;
+          <sup style={{color:'red'}}>
+            (2)
+          </sup></h3>
           <br />
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <h5 style={{ color: 'gray' }}>Senior Software Engineer</h5>
+            <h5>Senior Software Engineer</h5>
             <div>
-              <h6 style={{ color: 'gray' }}>Closed</h6>
+              <h6 style={{ color: 'red' }}>Closed</h6>
             </div>
           </div>
           <div style={{ color: 'gray' }}>
@@ -25,9 +28,9 @@ const AppliedJobs = () => {
           </div>
           <hr />
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <h5 style={{ color: 'gray' }}>Front End Developer</h5>
+            <h5>Front End Developer</h5>
             <div>
-              <h6 style={{ color: 'gray' }}>Open</h6>
+              <h6 style={{ color: 'red' }}>Open</h6>
             </div>
           </div>
           <div style={{ color: 'gray' }}>

@@ -3,41 +3,72 @@ import Widget from "components/Widget";
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
 import SearchField from "react-search-field";
 import PageviewRoundedIcon from '@material-ui/icons/PageviewRounded';
 import { Link } from "react-router-dom";
 import CreateIcon from '@material-ui/icons/Create';
+import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import InputBase from '@material-ui/core/InputBase';
+import IconButton from '@material-ui/core/IconButton';
+import SearchIcon from '@material-ui/icons/Search';
+
+const useStyles = makeStyles(theme => ({
+    root: {
+        padding: '2px 4px',
+        display: 'flex',
+        alignItems: 'center',
+        width: 400,
+    },
+    iconButton: {
+        padding: 10,
+    },
+}));
 
 const EmployerDashboardView = ({ onClickFilterOptions, isFilterOptionClick }) => {
+    const classes = useStyles();
     return (
         <Widget styleName="jr-card-profile cardScrolling" >
             <div className="mb-3">
                 <div className='row'>
-                <SearchField
-                            placeholder="Search by Job title"
-                            classNames="test-class"
+                <Paper component="form" className={classes.root}>
+                        <IconButton className={classes.iconButton} aria-label="search">
+                            <SearchIcon />
+                        </IconButton>
+                        <InputBase
+                            className={classes.input}
+                            placeholder="Search By jobs Title"
+                            inputProps={{ 'aria-label': 'Search-jobs' }}
                         />
+                    </Paper>
                         &nbsp;&nbsp;&nbsp;&nbsp;
-                    <FormControl style={{ width: '20%' }}>
-                        <InputLabel style={{ paddingLeft: '5%' }}>Filter Job Requisition</InputLabel>
+                        <FormControl style={{ width: '30%' }}>
+                        <InputLabel htmlFor="age-native-simple">Filter Job Requisition</InputLabel>
                         <Select
-                            value="All"
+                            native
+                            inputProps={{
+                                name: 'workCountry',
+                                id: 'age-native-simple',
+                            }}
                         >
-                            <MenuItem value='all'>All</MenuItem>
-                            <MenuItem value='openJobs'>Open</MenuItem>
-                            <MenuItem value='closedJobs'>Closed</MenuItem>
+                            <option value="" />
+                            <option value={'All'}>All</option>
+                            <option value={'Open'}>Open</option>
+                            <option value={'Closed'}>Closed</option>
                         </Select>
                     </FormControl>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <div className='row'>
+                <div className='row employerProfilefilterOptionsAlign'>
 
-                        <p>Filter Options</p>
+                        <p className='employerProfilefilterOptionsTextAlign'>Filter Options</p>
 
-                        <PageviewRoundedIcon onClick={onClickFilterOptions} color='inherit' fontSize='large' />
+                        <PageviewRoundedIcon style={{cursor:'pointer'}} onClick={onClickFilterOptions} color='inherit' fontSize='large' />
+                        
                     </div>
-                    &nbsp;&nbsp;&nbsp;&nbsp;
-                    {isFilterOptionClick && <div>
+                    
+                    {isFilterOptionClick && 
+                    <div>
+                        <br/>
                         <SearchField
                             placeholder="Search by hiring manager"
                             classNames="test-class"
@@ -70,7 +101,7 @@ const EmployerDashboardView = ({ onClickFilterOptions, isFilterOptionClick }) =>
                     </div>}
                 </div>
                 <hr />
-                <table border='2' className='customers' style={{ width: '115%' }}>
+                <table border='2' className='customers' style={{ width: '100%' }}>
                     <tbody>
                         <tr>
                             <th>Req. ID</th>
@@ -92,7 +123,7 @@ const EmployerDashboardView = ({ onClickFilterOptions, isFilterOptionClick }) =>
                                 <Link to='/jobDetails'>Operational Manager</Link>
                             </td>
                             <td>
-                                03111234567
+                                Arsalan Khan
                         </td>
                             <td>
                                 www.seven.pk
@@ -101,7 +132,7 @@ const EmployerDashboardView = ({ onClickFilterOptions, isFilterOptionClick }) =>
                                 IT
                         </td>
                             <td>
-                                I-9/3 Islamabad
+                                I-9/3 Islamabad,Pakistan
                             </td>
                             <td>
                                 1/13/2020
@@ -131,7 +162,7 @@ const EmployerDashboardView = ({ onClickFilterOptions, isFilterOptionClick }) =>
                                 <Link to='#'> Software Developer</Link>
                             </td>
                             <td>
-                                03111234567
+                                Rehmat Ali
                         </td>
                             <td>
                                 www.seven.pk

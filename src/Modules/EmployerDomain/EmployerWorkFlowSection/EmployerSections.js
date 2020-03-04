@@ -23,6 +23,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import EmployerSectionFiveReview from '../EmployerSectionsCards/SectionFiveCard';
 import EmployerSectionSixReview from '../EmployerSectionsCards/SectionSixCard';
+import EmployerSectionEight from 'util/Models/EmployerSection_8';
 
 class EmployerWorkFlow extends Component {
     constructor(props) {
@@ -122,11 +123,14 @@ class EmployerWorkFlow extends Component {
             openEmployerSection_4: false,
             openEmployerSection_5: false,
             openEmployerSection_6: false,
-            isValueChanges:false
+            openEmployerSection_8: false,
+            isValueChanges: false,
+            isAddQuestion: false,
+            questionTypeValue:''
         }
     }
     onSectionValuesChange = (event, date, name) => {
-        this.setState({isValueChanges:true})
+        this.setState({ isValueChanges: true })
         let sectionInformation = this.state.employerSections;
         if (name) {
             sectionInformation[name] = date;
@@ -148,7 +152,7 @@ class EmployerWorkFlow extends Component {
     }
     onSaveSectionTwo = () => {
         this.props.employerActions.onSaveSectionTwodata(this.state.employerSections);
-        this.setState({ openEmployerSection_2: false, expansionPanelvalue:'' });
+        this.setState({ openEmployerSection_2: false, expansionPanelvalue: '' });
     }
     onDeleteSectionTwo = () => {
         this.props.employerActions.onDeleteSectionTwodata();
@@ -217,13 +221,25 @@ class EmployerWorkFlow extends Component {
     onCloseSection_6 = () => {
         this.setState({ openEmployerSection_6: false });
     }
+    onSection_8Open = () => {
+        this.setState({ openEmployerSection_8: true });
+    }
+    onCloseSection_8 = () => {
+        this.setState({ openEmployerSection_8: false });
+    }
+    onClickAddQuestion = () => {
+        this.setState({ isAddQuestion: true });
+    }
+    onChangeQuestionType=(event)=>{
+        this.setState({questionTypeValue:event.target.value});
+    }
     render() {
         return (
             <div className="app-main-content-wrapper">
                 <div className="app-header ">
                     <Header />
                 </div>
-                <ExpansionPanel  className='workFlowSectionPanal' >
+                <ExpansionPanel className='workFlowSectionPanal' >
                     <ExpansionPanelSummary
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel1bh-content"
@@ -284,7 +300,7 @@ class EmployerWorkFlow extends Component {
                         <hr />
                         <div className='addSection'>
                             <Typography>Requisition Comments BOX (Section 8)</Typography>
-                            <Fab size="small" aria-label="add" >
+                            <Fab size="small" aria-label="add" onClick={this.onSection_8Open}>
                                 <AddIcon />
                             </Fab>
                         </div>
@@ -330,12 +346,12 @@ class EmployerWorkFlow extends Component {
                                 onDeleteSectionFive={this.onDeleteSectionFive}
                             />
                         }
-                        {this.props.sectionSixData && 
-                        <EmployerSectionSixReview 
-                        data ={this.props.sectionSixData}
-                        onEditSectionSix={this.onSection_6Open}
-                        onDeleteSectionSix={this.onDeleteSectionSix}
-                        />
+                        {this.props.sectionSixData &&
+                            <EmployerSectionSixReview
+                                data={this.props.sectionSixData}
+                                onEditSectionSix={this.onSection_6Open}
+                                onDeleteSectionSix={this.onDeleteSectionSix}
+                            />
                         }
                     </div>
                     <div className="col-xl-4 col-lg-4 col-md-5 col-12">
@@ -347,7 +363,7 @@ class EmployerWorkFlow extends Component {
                         onCloseSection_1={this.onCloseSection_1}
                         onSectionValuesChange={this.onSectionValuesChange}
                         onSaveSectionOne={this.onSaveSectionOne}
-                        data={this.props.sectionOneData && !this.state.isValueChanges?this.props.sectionOneData: this.state.employerSections}
+                        data={this.props.sectionOneData && !this.state.isValueChanges ? this.props.sectionOneData : this.state.employerSections}
                     />
                 }
                 {this.state.openEmployerSection_2
@@ -355,7 +371,7 @@ class EmployerWorkFlow extends Component {
                     <EmployerSectionTwo
                         open={this.state.openEmployerSection_2}
                         onCloseSection_2={this.onCloseSection_2}
-                        data={this.props.sectionTwoData && !this.state.isValueChanges?this.props.sectionTwoData: this.state.employerSections}
+                        data={this.props.sectionTwoData && !this.state.isValueChanges ? this.props.sectionTwoData : this.state.employerSections}
                         onSectionValuesChange={this.onSectionValuesChange}
                         onSaveSectionTwo={this.onSaveSectionTwo}
                     />
@@ -366,14 +382,14 @@ class EmployerWorkFlow extends Component {
                         onCloseSection_3={this.onCloseSection_3}
                         onSectionValuesChange={this.onSectionValuesChange}
                         onSaveSectionThree={this.onSaveSectionThree}
-                        data={this.props.sectionThreeData && !this.state.isValueChanges?this.props.sectionThreeData: this.state.employerSections}
+                        data={this.props.sectionThreeData && !this.state.isValueChanges ? this.props.sectionThreeData : this.state.employerSections}
                     />
                 }
                 {this.state.openEmployerSection_4 &&
                     <EmployerSectionFour
                         open={this.state.openEmployerSection_4}
                         onCloseSection_4={this.onCloseSection_4}
-                        data={this.props.sectionFourData && !this.state.isValueChanges?this.props.sectionFourData: this.state.employerSections}
+                        data={this.props.sectionFourData && !this.state.isValueChanges ? this.props.sectionFourData : this.state.employerSections}
                         onSaveSectionFour={this.onSaveSectionFour}
                         onSectionValuesChange={this.onSectionValuesChange}
                     />
@@ -382,7 +398,7 @@ class EmployerWorkFlow extends Component {
                     <EmployerSectionFive
                         open={this.state.openEmployerSection_5}
                         onCloseSection_5={this.onCloseSection_5}
-                        data={this.props.sectionFiveData && !this.state.isValueChanges?this.props.sectionFiveData: this.state.employerSections}
+                        data={this.props.sectionFiveData && !this.state.isValueChanges ? this.props.sectionFiveData : this.state.employerSections}
                         onSectionValuesChange={this.onSectionValuesChange}
                         onSaveSectionFive={this.onSaveSectionFive}
                     />
@@ -393,7 +409,17 @@ class EmployerWorkFlow extends Component {
                         onCloseSection_6={this.onCloseSection_6}
                         onSectionValuesChange={this.onSectionValuesChange}
                         onSaveSectionSix={this.onSaveSectionSix}
-                        data={this.props.sectionSixData && !this.state.isValueChanges?this.props.sectionSixData: this.state.employerSections}
+                        data={this.props.sectionSixData && !this.state.isValueChanges ? this.props.sectionSixData : this.state.employerSections}
+                    />
+                }
+                {this.state.openEmployerSection_8 &&
+                    <EmployerSectionEight
+                        open={this.state.openEmployerSection_8}
+                        onCloseSection_8={this.onCloseSection_8}
+                        onClickAddQuestion={this.onClickAddQuestion}
+                        isAddQuestion={this.state.isAddQuestion}
+                        onChangeQuestionType={this.onChangeQuestionType}
+                        questionTypeValue={this.state.questionTypeValue}
                     />
                 }
             </div>
@@ -403,7 +429,7 @@ class EmployerWorkFlow extends Component {
 const mapStateToProps = ({
     employerSection,
 }) => {
-    const { sectionOneData, sectionTwoData, sectionThreeData, sectionFourData, sectionFiveData,sectionSixData } = employerSection;
+    const { sectionOneData, sectionTwoData, sectionThreeData, sectionFourData, sectionFiveData, sectionSixData } = employerSection;
     return {
         sectionOneData,
         sectionTwoData,
@@ -425,7 +451,7 @@ EmployerWorkFlow.propTypes = {
     sectionThreeData: PropTypes.object,
     sectionFourData: PropTypes.object,
     sectionFiveData: PropTypes.object,
-    sectionSixData:PropTypes.object
+    sectionSixData: PropTypes.object
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(EmployerWorkFlow);

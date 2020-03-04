@@ -1,21 +1,43 @@
-import React from 'react';
-import { Link } from 'react-router-dom'
+import React from "react";
+import Avatar from '@material-ui/core/Avatar';
+import Widget from "components/Widget";
+import { Link } from "react-router-dom";
+import { Button } from "@material-ui/core";
 
-const EmployerProfileCard = () => {
+const ProfileCard = ({onClickAddVendor}) => {
   return (
-    <div className="profile-intro card shadow  border-0 text-left">
-
+    <Widget styleName="jr-card-profile" style={{ marginTop: '0px' }}>
       <div >
-        <img className="avatar-circle" src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Phoenicopterus_ruber_in_S%C3%A3o_Paulo_Zoo.jpg" aria-hidden alt="Profile" />
-
+        <div className="jr-profile-container">
+          <div className="jr-Dashboardprofile-banner-top">
+            <div className="jr-profile-banner-top-left">
+              <div className="jr-profile-banner-avatar-info">
+                <Avatar className="size-120" alt="..." src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Phoenicopterus_ruber_in_S%C3%A3o_Paulo_Zoo.jpg" />
+              </div>
+              <div className='jr-profile-banner-avatar-info employerDashboardProfileheaderAvatarInfo'>
+                <div>
+                  <h2 className="mb-2 jr-mb-sm-3 jr-fs-xxl jr-font-weight-black"><Link to='/employerProfile' className='dashboardEmployeeNameColourLink'>Seven Software Development Pvt Ltd.</Link>
+                  </h2>
+                  <div className='row'>
+                    <p className="mb-0 jr-fs-lg">Islamabad, Pakistan</p>
+                    <i className={`flag flag-24 flag-pk`} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div align='right'>
+            <Link to='/employerWorkflow'>Create Job</Link>
+            &nbsp;&nbsp;&nbsp;
+            <Link to='/activeVendors'>Active Vendors</Link>
+            &nbsp;&nbsp;&nbsp;
+            <Button onClick={onClickAddVendor}>Active Vendors</Button>
+          </div>
+        </div>
       </div>
-      <div className="pi-content">
-        <Link to='/employerProfile'> <h4>Seven Software development Ltd.</h4></Link>
-        <p>Computer Software. Islamabad</p>
-      </div>
-    </div>
+    </Widget>
   )
-};
+}
 
-export default EmployerProfileCard;
+export default ProfileCard;
 

@@ -54,6 +54,7 @@ class Profile extends Component {
             switchProfile:false,
             profileLevel:false,
             showCommentsBox:false,
+            employeeWorkCountry:''
         }
     }
     onRatingChange = (event, newValue) => {
@@ -162,6 +163,9 @@ class Profile extends Component {
     }
     onClickComments=()=>{
         this.setState({showCommentsBox:!this.state.showCommentsBox});
+    }
+    onChangeEmployeeWorkCountry=(event)=>{
+        this.setState({employeeWorkCountry:event.target.value});
     }
     render() {
         return (
@@ -288,6 +292,8 @@ class Profile extends Component {
                     <BasicInfoProfile
                         open={this.state.basicInfoOpen}
                         handleClose={this.closeBasicInfo}
+                        onChangeEmployeeWorkCountry={this.onChangeEmployeeWorkCountry}
+                        employeeWorkCountry={this.state.employeeWorkCountry}
                     />
                     :
                     <span></span>}

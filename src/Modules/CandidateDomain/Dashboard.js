@@ -70,8 +70,7 @@ class CandidateHome extends Component {
                 variant="outlined"
               />
             </div>
-            <PicturePost />
-            <PicturePost />
+            <br/>
             <PicturePost />
             <PicturePost />
           </div>

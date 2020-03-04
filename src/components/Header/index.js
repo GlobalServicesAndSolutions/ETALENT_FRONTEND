@@ -144,7 +144,7 @@ class Header extends React.Component {
           <Link className="app-logo mr-2 d-none d-sm-block" to="/">
             <img src={require("assets/images/GssLogo.png")} alt="etalent" title="E-talent"/>
           </Link>
-          <SearchBox styleName="d-none d-lg-block" placeholder=""
+          <SearchBox styleName="d-none d-lg-block" placeholder="Search..."
             onChange={this.updateSearchText.bind(this)}
             value={this.state.searchText} />
 
@@ -164,6 +164,27 @@ class Header extends React.Component {
                 <span className='fontLabelColor' >Messaging</span>
               </li>
             </Link>
+            <li className="list-inline-item">
+              <Dropdown
+                className="quick-menu app-notification"
+                isOpen={this.state.apps}
+                toggle={this.onAppsSelect.bind(this)}>
+
+                <DropdownToggle
+                  className="d-inline-block"
+                  tag="span"
+                  data-toggle="dropdown">
+                  <span className="app-notification-menu">
+                    <i className="zmdi zmdi-apps zmdi-hc-fw zmdi-hc-lg" />
+                    <span>Apps</span>
+                  </span>
+                </DropdownToggle>
+
+                <DropdownMenu>
+                  {this.Apps()}
+                </DropdownMenu>
+              </Dropdown>
+            </li>
             <li className="list-inline-item app-tour">
               <Dropdown
                 className="quick-menu"
@@ -183,27 +204,6 @@ class Header extends React.Component {
                   <CardHeader styleName="align-items-center"
                     heading={<IntlMessages id="appNotification.title" />} />
                   <AppNotification />
-                </DropdownMenu>
-              </Dropdown>
-            </li>
-            <li className="list-inline-item">
-              <Dropdown
-                className="quick-menu app-notification"
-                isOpen={this.state.apps}
-                toggle={this.onAppsSelect.bind(this)}>
-
-                <DropdownToggle
-                  className="d-inline-block"
-                  tag="span"
-                  data-toggle="dropdown">
-                  <span className="app-notification-menu">
-                    <i className="zmdi zmdi-apps zmdi-hc-fw zmdi-hc-lg" />
-                    <span>Apps</span>
-                  </span>
-                </DropdownToggle>
-
-                <DropdownMenu>
-                  {this.Apps()}
                 </DropdownMenu>
               </Dropdown>
             </li>

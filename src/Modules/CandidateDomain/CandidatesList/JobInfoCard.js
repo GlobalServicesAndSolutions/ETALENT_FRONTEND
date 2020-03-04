@@ -11,7 +11,7 @@ const JobFullInfo = ({onFaveriotClick, makeFaveriot}) => {
       <div className="mb-3">
         <div style={{justifyContent:'space-between', display:'flex'}}>
       <h3 className="card-title mb-2 mb-md-3">OverView</h3>
-      <FavoriteIcon onClick={onFaveriotClick} style={{ fill: makeFaveriot ? 'red' : '', cursor: 'pointer' }}/>
+      <FavoriteIcon onClick={onFaveriotClick} style={{ fill: makeFaveriot ? 'lightgreen' : '', cursor: 'pointer' }}/>
       </div>
       <hr />
       <p>Customer relationship management systems (preferably Salesforce), and business intelligence systems 

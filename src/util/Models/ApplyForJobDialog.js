@@ -10,13 +10,17 @@ import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
+import InputLabel from '@material-ui/core/InputLabel';
+import Select from '@material-ui/core/Select';
+import Widget from "components/Widget";
 
-const ApplyForJobDialog = ({ open, handleClose }) => {
-
+const ApplyForJobDialog = ({ open,
+    handleClose,
+}) => {
     return (
         <div>
             <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title" maxWidth="sm" >
-                <DialogTitle id="form-dialog-title">Apply</DialogTitle>
+                <DialogTitle id="form-dialog-title">Apply For Position</DialogTitle>
                 <DialogContent>
                     <TextField
                         margin="dense"
@@ -54,34 +58,12 @@ const ApplyForJobDialog = ({ open, handleClose }) => {
                         fullWidth
                         placeholder="Ex: xxxx-xxx-xxxx"
                     />
-                    <input
-                        accept="image/*"
-                        id="contained-button-file"
-                        multiple
-                        type="file"
-                        className="inputImage"
-                    />
-                    <label htmlFor="contained-button-file">
-                        <Button variant="contained" color="primary" component="span">
-                            Upload Resume
-                    </Button>
-                    </label>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input
-                        accept="image/*"
-                        id="contained-button-file"
-                        multiple
-                        type="file"
-                        className="inputImage"
-                    />
-                    <label htmlFor="contained-button-file">
-                        <Button variant="contained" color="primary" component="span">
-                            Upload Cover letter
-                    </Button>
-                    </label>
-                    <hr/>
-                    <FormLabel component="legend">Answer the question</FormLabel>
-                    <p>What is your name</p>
+                    <br />
+                    <Widget styleName="jr-card-profile" >
+                        <h6 className="card-title mb-2 mb-md-3" style={{color:'gray'}}>Questionnaire</h6>
+                        <hr/>
+                    <FormLabel component="legend">Free Text</FormLabel>
+                    <p>What is your name ?</p>
                     <TextField
                         margin="dense"
                         id="fieldofstudy"
@@ -91,29 +73,112 @@ const ApplyForJobDialog = ({ open, handleClose }) => {
                         fullWidth
                         placeholder="Ex: Answer"
                     />
+                    <br/>
                     <hr/>
+                    <FormLabel component="legend">Choose Yes or No</FormLabel>
+                    <p>Are you applied for the right job ?</p>
                     <FormControl component="fieldset">
-                        <FormLabel component="legend">Gender</FormLabel>
-                        <RadioGroup aria-label="position" name="jobType"  row>
+                        <RadioGroup aria-label="position" name="jobType" row>
                             <FormControlLabel
-                                value="Male"
+                                value="yes"
                                 control={<Radio color="primary" />}
-                                label="Male"
+                                label="Yes"
                                 labelPlacement="end"
                             />
                             <FormControlLabel
-                                value="Female"
+                                value="no"
                                 control={<Radio color="primary" />}
-                                label="Female"
+                                label="No"
                                 labelPlacement="end"
                             />
-                            <hr/>
                         </RadioGroup>
                     </FormControl>
+                    <hr/>
+                    <FormLabel component="legend">Multiple Chioce</FormLabel>
+                    <p>Relationships section of job description defines whom would you ?</p>
+                    <FormControl component="fieldset">
+                        <RadioGroup aria-label="position" name="jobType" row>
+                            <FormControlLabel
+                                value="supervise"
+                                control={<Radio color="primary" />}
+                                label="Supervise"
+                                labelPlacement="end"
+                            />
+                            <FormControlLabel
+                                value="reporter"
+                                control={<Radio color="primary" />}
+                                label="Reporter"
+                                labelPlacement="end"
+                            />
+                            <FormControlLabel
+                                value="Worker"
+                                control={<Radio color="primary" />}
+                                label="Worker"
+                                labelPlacement="end"
+                            />
+                            <FormControlLabel
+                                value="Developer"
+                                control={<Radio color="primary" />}
+                                label="Developer"
+                                labelPlacement="end"
+                            />
+                        </RadioGroup>
+                    </FormControl>
+                    </Widget>
+                    <Widget styleName="jr-card-profile" >
+                    <FormLabel component="legend">EOC</FormLabel>
+                    <FormControl style={{ width: '100%' }}>
+                        <InputLabel htmlFor="age-native-simple">Race</InputLabel>
+                        <Select
+                            native
+                        >
+                            <option value="" />
+                            <option value={'Decline to Designated'}>Decline to Designated</option>
+                            <option value={'White'}>White</option>
+                            <option value={'Black / African American'}>Black / African American</option>
+                            <option value={'Asian / Pacific Islander'}>Asian / Pacific Islander</option>
+                            <option value={'American Indian / Alaska Native'}>American Indian / Alaska Native</option>
+                            <option value={'Hispanic'}>Hispanic</option>
+                        </Select>
+                    </FormControl>
+                    <FormControl style={{ width: '100%' }}>
+                        <InputLabel htmlFor="age-native-simple">Gender</InputLabel>
+                        <Select
+                            native
+                            inputProps={{
+                                name: 'workCountry',
+                                id: 'age-native-simple',
+                            }}
+                        >
+                            <option value="" />
+                            <option value={'Decline to Designated'}>Decline to Designated</option>
+                            <option value={'Male'}>Male</option>
+                            <option value={'Female'}>Female</option>
+                        </Select>
+                    </FormControl>
+                    <FormControl style={{ width: '100%' }}>
+                        <InputLabel htmlFor="age-native-simple">Veteran / Non Veteran</InputLabel>
+                        <Select
+                            native
+                            inputProps={{
+                                name: 'workCountry',
+                                id: 'age-native-simple',
+                            }}
+                        >
+                            <option value="" />
+                            <option value={'Decline to Designated'}>Decline to Designated</option>
+                            <option value={'I am not a Veteran'}>I am not a Veteran</option>
+                            <option value={'Special Disabled Veteran'}>Special Disabled Veteran</option>
+                            <option value={'Vietnam Era Veteran'}>Vietnam Era Veteran</option>
+                            <option value={'Recently Seperated Veteran'}>Recently Seperated Veteran</option>
+                            <option value={'Other Protected Veteran'}>Other Protected Veteran</option>
+                        </Select>
+                    </FormControl>
+                    </Widget>
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleClose} color="primary">
-                       Apply
+                        Apply
                     </Button>
                     <Button onClick={handleClose} color="primary">
                         Cancel
