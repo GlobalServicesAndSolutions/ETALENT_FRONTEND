@@ -4,7 +4,6 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import InputLabel from '@material-ui/core/InputLabel';
 import SearchField from "react-search-field";
-import PageviewRoundedIcon from '@material-ui/icons/PageviewRounded';
 import { Link } from "react-router-dom";
 import CreateIcon from '@material-ui/icons/Create';
 import { makeStyles } from '@material-ui/core/styles';
@@ -31,7 +30,7 @@ const EmployerDashboardView = ({ onClickFilterOptions, isFilterOptionClick }) =>
         <Widget styleName="jr-card-profile cardScrolling" >
             <div className="mb-3">
                 <div className='row'>
-                <Paper component="form" className={classes.root}>
+                    <Paper component="form" className={classes.root}>
                         <IconButton className={classes.iconButton} aria-label="search">
                             <SearchIcon />
                         </IconButton>
@@ -41,7 +40,7 @@ const EmployerDashboardView = ({ onClickFilterOptions, isFilterOptionClick }) =>
                             inputProps={{ 'aria-label': 'Search-jobs' }}
                         />
                     </Paper>
-                        &nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;
                         <FormControl style={{ width: '30%' }}>
                         <InputLabel htmlFor="age-native-simple">Filter Job Requisition</InputLabel>
                         <Select
@@ -58,48 +57,42 @@ const EmployerDashboardView = ({ onClickFilterOptions, isFilterOptionClick }) =>
                         </Select>
                     </FormControl>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <div className='row employerProfilefilterOptionsAlign'>
-
-                        <p className='employerProfilefilterOptionsTextAlign'>Filter Options</p>
-
-                        <PageviewRoundedIcon style={{cursor:'pointer'}} onClick={onClickFilterOptions} color='inherit' fontSize='large' />
-                        
-                    </div>
-                    
-                    {isFilterOptionClick && 
-                    <div>
-                        <br/>
+                        <SearchIcon align='right' style={{ cursor: 'pointer' }} onClick={onClickFilterOptions} color='primary' fontSize='large' />
+                        </div>          
+                    {isFilterOptionClick &&
+                        <div>
+                            <br />
+                            <SearchField
+                                placeholder="Search by hiring manager"
+                                classNames="test-class"
+                            />
+                            &nbsp;&nbsp;
                         <SearchField
-                            placeholder="Search by hiring manager"
-                            classNames="test-class"
-                        />
-                        &nbsp;&nbsp;
+                                placeholder="Search by Recriuter (R)"
+                                classNames="test-class"
+                            />
+                            &nbsp;&nbsp;
                         <SearchField
-                            placeholder="Search by Recriuter (R)"
-                            classNames="test-class"
-                        />
-                        &nbsp;&nbsp;
+                                placeholder="Search by HR Administrator"
+                                classNames="test-class"
+                            />
+                            &nbsp;&nbsp;
                         <SearchField
-                            placeholder="Search by HR Administrator"
-                            classNames="test-class"
-                        />
-                        &nbsp;&nbsp;
+                                placeholder="Recruiter Collaborator"
+                                classNames="test-class"
+                            />
+                            &nbsp;&nbsp;
                         <SearchField
-                            placeholder="Recruiter Collaborator"
-                            classNames="test-class"
-                        />
-                        &nbsp;&nbsp;
+                                placeholder="Requisition Administrator"
+                                classNames="test-class"
+                            />
+                            &nbsp;&nbsp;
                         <SearchField
-                            placeholder="Requisition Administrator"
-                            classNames="test-class"
-                        />
-                        &nbsp;&nbsp;
-                        <SearchField
-                            placeholder="Search by Recriutment Coordinator"
-                            classNames="test-class"
-                        />
-                    </div>}
-                </div>
+                                placeholder="Search by Recriutment Coordinator"
+                                classNames="test-class"
+                            />
+                        </div>}
+                
                 <hr />
                 <table border='2' className='customers' style={{ width: '100%' }}>
                     <tbody>
@@ -141,15 +134,15 @@ const EmployerDashboardView = ({ onClickFilterOptions, isFilterOptionClick }) =>
                                 0
                         </td>
                             <td>
-                            <div style={{ justifyContent: 'space-between', display: 'flex' }}>
-                                <div>
-                                    Closed
+                                <div style={{ justifyContent: 'space-between', display: 'flex' }}>
+                                    <div>
+                                        Closed
                                 </div>
-                                <div>
-                                    <CreateIcon fontSize='small' className='stages'  />
+                                    <div>
+                                        <CreateIcon fontSize='small' className='stages' />
+                                    </div>
                                 </div>
-                                </div>
-                        </td>
+                            </td>
                             <td>
                                 <Link to='/candidates'> 4</Link>
                             </td>
@@ -171,7 +164,7 @@ const EmployerDashboardView = ({ onClickFilterOptions, isFilterOptionClick }) =>
                                 IT
                         </td>
                             <td>
-                            I-9/3 Islamabad
+                                I-9/3 Islamabad
                         </td>
                             <td>
                                 1/13/2020
@@ -180,15 +173,15 @@ const EmployerDashboardView = ({ onClickFilterOptions, isFilterOptionClick }) =>
                                 0
                         </td>
                             <td>
-                            <div style={{ justifyContent: 'space-between', display: 'flex' }}>
-                                <div>
-                                    Closed
+                                <div style={{ justifyContent: 'space-between', display: 'flex' }}>
+                                    <div>
+                                        Closed
                                 </div>
-                                <div>
-                                    <CreateIcon fontSize='small' className='stages'  />
+                                    <div>
+                                        <CreateIcon fontSize='small' className='stages' />
+                                    </div>
                                 </div>
-                                </div>
-                        </td>
+                            </td>
                             <td>
                                 <Link to='#'> 5</Link>
                             </td>
