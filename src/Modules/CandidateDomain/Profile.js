@@ -3,7 +3,6 @@ import Header from 'components/Header';
 import EducationDialog from '../../util/Models/EducationDialog';
 import LisenceAndCertification from '../../util/Models/LisenceAndCertification';
 import ProfileHeader from '../../../src/components/profile/ProfileHeader/index';
-import Contact from '../../../src/components/profile/Contact/index';
 import Biography from '../../../src/components/profile/Biography/index';
 import Education from '../../../src/components/profile/Education/EducationAndExperience';
 import Skills from '../../../src/components/profile/Skills/Skills';
@@ -19,6 +18,8 @@ import CourseAndTrainings from '../../util/Models/CoursesAndTrainings';
 import SoftSkillsDialogue from 'util/Models/SoftSkills';
 import ProfileLevelEdit from './CandidatesList/ProfileLevelEditDialogue';
 import Portfolio from 'components/profile/Freelance/Portfolio';
+import Experience from 'components/profile/Experience/Experience';
+import ProjectDialog from 'util/Models/ProjectDialog';
 
 class Profile extends Component {
     constructor(props) {
@@ -38,23 +39,26 @@ class Profile extends Component {
                 credentialId: '',
                 credentialUrl: ''
             },
-            skillInfo:{
-                skillName:''
+            skillInfo: {
+                skillName: ''
             },
             educationOpen: false,
             lisenceOpen: false,
             skillOpen: false,
-            softSkillsOpen:false,
+            softSkillsOpen: false,
             awardOpen: false,
             basicInfoOpen: false,
             courseAndtraining: false,
             ratingValue: 0,
             expansionPanelvalue: '',
             isEdit: false,
-            switchProfile:false,
-            profileLevel:false,
-            showCommentsBox:false,
-            employeeWorkCountry:''
+            switchProfile: false,
+            profileLevel: false,
+            showCommentsBox: false,
+            employeeWorkCountry: '',
+            softSkillsSwitch: false,
+            skillsSwitch: false,
+            projectDialog: false
         }
     }
     onRatingChange = (event, newValue) => {
@@ -92,7 +96,7 @@ class Profile extends Component {
     openSkillDialogue = () => {
         this.setState({ skillOpen: true });
     }
-    openSoftSkillDialogue=()=>{
+    openSoftSkillDialogue = () => {
         this.setState({ softSkillsOpen: true });
     }
     closeSkillDialog = () => {
@@ -152,20 +156,32 @@ class Profile extends Component {
         lisenceInfo[field] = event.target.value;
         this.setState({ lisenceInfo });
     }
-    onChangeSkillsInfo=(event)=>{
+    onChangeSkillsInfo = (event) => {
         let skillInfo = this.state.skillInfo;
         let field = event.target.name;
         skillInfo[field] = event.target.value;
         this.setState({ skillInfo });
     }
-    onChangeProfileSwitch=()=>{
-        this.setState({switchProfile: !this.state.switchProfile});
+    onChangeProfileSwitch = () => {
+        this.setState({ switchProfile: !this.state.switchProfile });
     }
-    onClickComments=()=>{
-        this.setState({showCommentsBox:!this.state.showCommentsBox});
+    onClickComments = () => {
+        this.setState({ showCommentsBox: !this.state.showCommentsBox });
     }
-    onChangeEmployeeWorkCountry=(event)=>{
-        this.setState({employeeWorkCountry:event.target.value});
+    onChangeEmployeeWorkCountry = (event) => {
+        this.setState({ employeeWorkCountry: event.target.value });
+    }
+    onChangeSoftSkillsSwitch = () => {
+        this.setState({ softSkillsSwitch: !this.state.softSkillsSwitch });
+    }
+    onChangeSkillsSwitch = () => {
+        this.setState({ skillsSwitch: !this.state.skillsSwitch });
+    }
+    openProjectDialog = () => {
+        this.setState ({ projectDialog: true });
+    }
+    closeProjectDialog = () => {
+        this.setState ({ projectDialog: false });
     }
     render() {
         return (
@@ -201,17 +217,43 @@ class Profile extends Component {
                     <div className="col-xl-7 col-lg-7 col-md-6 col-12">
                         <Biography
                             isEditClick={this.state.isEdit} />
-                            {
-                           this.state.switchProfile&& <div>
-                            <Portfolio 
-                            showCommentsBox={this.state.showCommentsBox}
-                            onClickComments={this.onClickComments}
-                            />
-                        </div>}
+                        {
+                            this.state.switchProfile && <div>
+                                <Portfolio
+                                    showCommentsBox={this.state.showCommentsBox}
+                                    onClickComments={this.onClickComments}
+                                />
+                            </div>}
                         <div id="educationcard">
                             <Education
                                 openEducationDialog={this.openEducationDialog}
                                 isEditClick={this.state.isEdit}
+                            />
+                        </div>
+                        <div>
+                            <Experience
+                                isEditClick={this.state.isEdit}
+                            />
+                        </div>
+                        <Projects
+                            isEditClick={this.state.isEdit}
+                            openProjectDialog={this.openProjectDialog} />
+
+                        <div id="certificationCard">
+                            <Certification
+                                openCertificationDialog={this.openLisenceDialog}
+                                isEditClick={this.state.isEdit} />
+                        </div>
+                    </div>
+                    <div className="col-xl-4 col-lg-4 col-md-5 col-12">
+                        <div id="softskills">
+                            <SoftSkills
+                                ratingValue={this.state.ratingValue}
+                                onRatingChange={this.onRatingChange}
+                                openSoftSkillDialogue={this.openSoftSkillDialogue}
+                                isEditClick={this.state.isEdit}
+                                onChangeSoftSkillsSwitch={this.onChangeSoftSkillsSwitch}
+                                softSkillsSwitch={this.state.softSkillsSwitch}
                             />
                         </div>
                         <div id="skillCard">
@@ -220,30 +262,15 @@ class Profile extends Component {
                                 onRatingChange={this.onRatingChange}
                                 onSkillDialogue={this.openSkillDialogue}
                                 isEditClick={this.state.isEdit}
+                                skillsSwitch={this.state.skillsSwitch}
+                                onChangeSkillsSwitch={this.onChangeSkillsSwitch}
                             />
                         </div>
-                        <div id="softskills">
-                            <SoftSkills
-                                ratingValue={this.state.ratingValue}
-                                onRatingChange={this.onRatingChange}
-                                openSoftSkillDialogue={this.openSoftSkillDialogue}
-                                isEditClick={this.state.isEdit}
-                            />
-                        </div>
-                        <div id="certificationCard">
-                            <Certification
-                                openCertificationDialog={this.openLisenceDialog}
-                                isEditClick={this.state.isEdit} />
-                        </div>
-                    </div>
-                    <div className="col-xl-4 col-lg-4 col-md-5 col-12">
-                        <Contact />
                         <Awards
                             openAwardDialog={this.openAwardDialogue}
                             isEditClick={this.state.isEdit} />
-                        <Projects
-                            isEditClick={this.state.isEdit} />
-                       <Courses
+
+                        <Courses
                             openCourseAndTrainingDialogue={this.openCourseAndTrainingDialogue}
                             isEditClick={this.state.isEdit} />
                     </div>
@@ -275,12 +302,12 @@ class Profile extends Component {
                     />
                     :
                     <span></span>}
-                    {this.state.softSkillsOpen &&
-                    <SoftSkillsDialogue 
-                    open={this.state.softSkillsOpen}
-                    handleClose={this.closeSoftSkillDialog}
+                {this.state.softSkillsOpen &&
+                    <SoftSkillsDialogue
+                        open={this.state.softSkillsOpen}
+                        handleClose={this.closeSoftSkillDialog}
                     />
-                    }
+                }
                 {this.state.awardOpen ?
                     <AwardDialog
                         open={this.state.awardOpen}
@@ -304,12 +331,18 @@ class Profile extends Component {
                     />
                     :
                     <span></span>}
-                    {this.state.profileLevel &&
-                    <ProfileLevelEdit 
-                    open={this.state.profileLevel}
-                    handleClose={this.closeProfileLevelDialog}
+                {this.state.profileLevel &&
+                    <ProfileLevelEdit
+                        open={this.state.profileLevel}
+                        handleClose={this.closeProfileLevelDialog}
                     />
-                    }
+                }
+                {this.state.projectDialog &&
+                    <ProjectDialog
+                        open={this.state.projectDialog}
+                        handleClose={this.closeProjectDialog}
+                    />
+                }
             </div>
         );
     };

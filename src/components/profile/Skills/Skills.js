@@ -9,8 +9,19 @@ import EditIcon from '@material-ui/icons/Edit';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import Rating from '@material-ui/lab/Rating';
 import DeleteIcon from '@material-ui/icons/Delete';
+import FormGroup from '@material-ui/core/FormGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Switch from '@material-ui/core/Switch';
+import Chart from 'components/dashboard/default/Chart'
 
-const Skills = ({ ratingValue, onRatingChange, onSkillDialogue, isEditClick }) => {
+const Skills = ({ ratingValue,
+     onRatingChange,
+      onSkillDialogue,
+       isEditClick,
+       skillsSwitch,
+       onChangeSkillsSwitch
+     }) => {
+        let lableList=['.Net', 'Java Script','React'];
     return (
 
         <Widget styleName="jr-card-profile">
@@ -26,7 +37,32 @@ const Skills = ({ ratingValue, onRatingChange, onSkillDialogue, isEditClick }) =
                     </div>
                 </div>
                 <hr />
-                <List style={{ width: "100%" }}>
+                <FormGroup row>
+                    <FormControlLabel
+                        control={
+                            <Switch
+                                value="checkedB"
+                                color="primary"
+                                onChange={onChangeSkillsSwitch}
+                            />
+                        }
+                        label={skillsSwitch ? 'List View' : 'Graph View'}
+                    />
+                </FormGroup>
+                {!skillsSwitch &&
+                <Chart
+                  borderColor="white"
+                  pointBorderColor='white'
+                  pointBackgroundColor='white'
+                  height={200}
+                  pointHoverBorderColor='blue'
+                  borderWidth={0}
+                  chartdata={[57, 85,90]}
+                  shadowColor='black'
+                  labels={lableList}
+                />}
+                {skillsSwitch &&
+                    <List style={{ width: "100%" }}>
                     <div className="row profileSectionEditAndDelete">
                         <div>
                             <ListItem divider alignItems="center">
@@ -60,7 +96,7 @@ const Skills = ({ ratingValue, onRatingChange, onSkillDialogue, isEditClick }) =
                         }
                     </div>
 
-                </List>
+                </List>}
             </div>
         </Widget>
     )

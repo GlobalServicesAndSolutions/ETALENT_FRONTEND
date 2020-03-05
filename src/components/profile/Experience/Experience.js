@@ -5,13 +5,13 @@ import AddIcon from '@material-ui/icons/Add';
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 
-const Education = ({ openEducationDialog, isEditClick }) => {
+const Experience = ({ openEducationDialog, isEditClick }) => {
   return (
     <Widget styleName="jr-card-profile" >
       <div className="mb-3">
         <div className="cardHeaderAndAddButton" >
           <div>
-            <h3 className="card-title mb-2 mb-md-3">Education</h3>
+            <h3 className="card-title mb-2 mb-md-3">Experience</h3>
           </div>
           <div>
             <Fab onClick={openEducationDialog} size="small" color="primary" aria-label="add" className='profileAddEditButton'>
@@ -24,7 +24,7 @@ const Education = ({ openEducationDialog, isEditClick }) => {
         <div className="row profileSectionEditAndDelete">
           <div className="row">
             <img aria-hidden alt="image" src="example.com" />
-            <h5>Abasyn University Islamabad</h5>
+            <h5>Seven software development ltd.</h5>
           </div>
 
           {isEditClick &&
@@ -35,22 +35,28 @@ const Education = ({ openEducationDialog, isEditClick }) => {
               <Fab onClick={openEducationDialog} size="small" color="primary" aria-label="edit">
                 <EditIcon />
               </Fab>
-            </div>}
+            </div>
+          }
 
         </div>
-        <ul>
-          <li>
-            Bs, Software Enginering<br />
-            2012 - 2017
+        <div>
+          <ul>
+            <li>
+              Software Engineer or title<br />
+              time period<br />
+              Pakistan
             </li>
-
-        </ul>
-      </div>
-
-
+            <li>
+              Test Ui Automation<br />
+              time period<br />
+              Pakistan
+            </li>
+          </ul>
+        </div>
+        </div>
     </Widget>
   )
 }
 
 
-export default Education;
+export default Experience;

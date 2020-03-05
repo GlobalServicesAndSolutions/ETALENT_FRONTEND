@@ -15,6 +15,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 import Select from '@material-ui/core/Select';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import FacebookIcon from '@material-ui/icons/Facebook';
+import Widget from "components/Widget";
 
 const BasicInfoProfile = ({ open,
     handleClose,
@@ -88,14 +89,20 @@ const BasicInfoProfile = ({ open,
                     </FormControl>
                     <hr />
                     <Tooltip title='Country of Citizenship' placement='top'>
-                        <TextField
-                            margin="dense"
-                            name="residenceCountry "
-                            label="Residence Country"
-                            type="text"
-                            placeholder="Country of citizenship"
-                            className="profileInfoTextField"
-                        />
+                    <FormControl style={{ width: '45%' }}>
+                        <InputLabel htmlFor="age-native-simple">Residence Country</InputLabel>
+                        <Select
+                            native
+                            inputProps={{
+                                name: 'workCountry',
+                                id: 'age-native-simple',
+                            }}
+                        >
+                            <option value="" />
+                            <option value={"Pakistan"}>Pakistan</option>
+                            <option value={"USA"}>USA</option>
+                        </Select>
+                    </FormControl>
                     </Tooltip>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <FormControl style={{ width: '45%' }}>
@@ -114,6 +121,8 @@ const BasicInfoProfile = ({ open,
                             <option value={"USA"}>USA</option>
                         </Select>
                     </FormControl>
+                    <br/>
+                    <br/>
                     {employeeWorkCountry==='Pakistan' && 
                     <div>
                     <TextField
@@ -134,16 +143,31 @@ const BasicInfoProfile = ({ open,
                     />
                     </div>
                     }
-                    {employeeWorkCountry==='USA' && <TextField
+                    {employeeWorkCountry==='USA' && 
+                    <TextField
                         margin="dense"
                         name="employeeLastDigitsOfSsn"
                         label="Last four Digit of SSN"
                         type="text"
                         placeholder="6789"
                         className="profileInfoTextField"
-                    />}
-                    <hr />
-                    <FormControl component="fieldset">
+                    />
+                    }
+                    {(employeeWorkCountry!=='USA' && employeeWorkCountry!=='Pakistan'&& employeeWorkCountry!=='') &&
+                    <TextField
+                        margin="dense"
+                        name="employeeLastDigitsOfSsn"
+                        label="Country Id"
+                        type="text"
+                        placeholder="1234567890"
+                        className="profileInfoTextField"
+                    />
+                    }
+                    
+                    {employeeWorkCountry==='USA' &&
+                        <div>
+                        <hr />
+                        <FormControl component="fieldset">
                         <FormLabel component="legend">Work Authorization</FormLabel>
                         <RadioGroup aria-label="position" name="jobType" row>
                             <FormControlLabel
@@ -159,14 +183,32 @@ const BasicInfoProfile = ({ open,
                                 labelPlacement="end"
                             />
                             <FormControlLabel
+                                value="H4"
+                                control={<Radio color="primary" />}
+                                label="H4"
+                                labelPlacement="end"
+                            />
+                            <FormControlLabel
                                 value="TN"
                                 control={<Radio color="primary" />}
                                 label="TN"
                                 labelPlacement="end"
                             />
+                            <FormControlLabel
+                                value="F1"
+                                control={<Radio color="primary" />}
+                                label="F1"
+                                labelPlacement="end"
+                            />
+                            <FormControlLabel
+                                value="Others"
+                                control={<Radio color="primary" />}
+                                label="Others"
+                                labelPlacement="end"
+                            />
                         </RadioGroup>
-                    </FormControl>
-                    <hr />
+                    </FormControl></div>}
+                    <Widget styleName="jr-card-profile" >
                     <FormLabel component="legend">EOC section</FormLabel>
                     <h6>Personal Information</h6>
                     <p>Certain Employes are subject to nondiscrimination and affirmative action record keeping and reporting
@@ -226,7 +268,7 @@ const BasicInfoProfile = ({ open,
                             <option value={'Other Protected Veteran'}>Other Protected Veteran</option>
                         </Select>
                     </FormControl>
-                    <hr />
+                    </Widget>
                     <InputLabel htmlFor="age-native-simple">Upload your Resume</InputLabel>
                     <h6>Profile Upload</h6>
                     <h6>Import profile data</h6>
@@ -252,7 +294,7 @@ const BasicInfoProfile = ({ open,
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleClose} color="primary">
-                        Submit
+                        Create
                     </Button>
                     <Button onClick={handleClose} color="primary">
                         Cancel

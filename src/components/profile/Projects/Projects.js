@@ -5,7 +5,8 @@ import AddIcon from '@material-ui/icons/Add';
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 
-const Projects = ({ isEditClick }) => {
+const Projects = ({ isEditClick,
+  openProjectDialog }) => {
   return (
     <Widget styleName="jr-card-profile">
       <div className="mb-3">
@@ -14,7 +15,7 @@ const Projects = ({ isEditClick }) => {
             <h3 className="card-title mb-2 mb-md-3">Projects</h3>
           </div>
           <div>
-            <Fab size="small" color="primary" aria-label="add" className='profileAddEditButton'>
+            <Fab size="small" onClick={openProjectDialog} color="primary" aria-label="add" className='profileAddEditButton'>
               <AddIcon />
             </Fab>
           </div>
@@ -27,14 +28,15 @@ const Projects = ({ isEditClick }) => {
           <div>
             {isEditClick &&
               <div>
-                <Fab size="small" color="primary" aria-label="delete">
+                <Fab size="small" color="primary" aria-label="delete" onClick={openProjectDialog}>
                   <DeleteIcon />
                 </Fab>
-                <Fab size="small" color="primary" aria-label="edit">
+                <Fab size="small" color="primary" aria-label="edit" onClick={openProjectDialog}>
                   <EditIcon />
                 </Fab>
               </div>}
 
+          </div>
           </div>
           <div>
             <ul>
@@ -44,7 +46,6 @@ const Projects = ({ isEditClick }) => {
               </li>
             </ul>
           </div>
-        </div>
 </div>
 
     </Widget>

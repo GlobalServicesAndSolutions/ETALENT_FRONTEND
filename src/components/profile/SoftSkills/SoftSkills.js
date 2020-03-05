@@ -8,9 +8,20 @@ import AddIcon from '@material-ui/icons/Add';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import Rating from '@material-ui/lab/Rating';
 import EditIcon from '@material-ui/icons/Edit';
-import DeleteIcon from '@material-ui/icons/Delete'; 
+import DeleteIcon from '@material-ui/icons/Delete';
+import FormGroup from '@material-ui/core/FormGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Switch from '@material-ui/core/Switch';
+import Chart from 'components/dashboard/default/Chart'
 
-const SoftSkills = ({ ratingValue, onRatingChange, openSoftSkillDialogue,isEditClick }) => {
+const SoftSkills = ({ ratingValue,
+     onRatingChange,
+      openSoftSkillDialogue,
+       isEditClick,
+       onChangeSoftSkillsSwitch,
+       softSkillsSwitch
+     }) => {
+         let lableList=['communication', 'Humanidity','Code','Style'];
     return (
 
         <Widget styleName="jr-card-profile">
@@ -26,7 +37,32 @@ const SoftSkills = ({ ratingValue, onRatingChange, openSoftSkillDialogue,isEditC
                     </div>
                 </div>
                 <hr />
-                <List style={{ width: "100%" }}>
+                <FormGroup row>
+                    <FormControlLabel
+                        control={
+                            <Switch
+                                value="checkedB"
+                                color="primary"
+                                onChange={onChangeSoftSkillsSwitch}
+                            />
+                        }
+                        label={softSkillsSwitch ? 'List View' : 'Graph View'}
+                    />
+                </FormGroup>
+                {!softSkillsSwitch &&
+                <Chart
+                  borderColor="white"
+                  pointBorderColor='white'
+                  pointBackgroundColor='white'
+                  height={200}
+                  pointHoverBorderColor='blue'
+                  borderWidth={0}
+                  chartdata={[40, 25,20,30]}
+                  shadowColor='black'
+                  labels={lableList}
+                />}
+                 {softSkillsSwitch &&
+                     <List style={{ width: "100%" }}>
                     <div className="row profileSectionEditAndDelete">
                         <div>
                             <ListItem divider alignItems="center">
@@ -50,7 +86,7 @@ const SoftSkills = ({ ratingValue, onRatingChange, openSoftSkillDialogue,isEditC
                         </div>
                         {isEditClick &&
                             <div>
-                                <Fab size="small" color="primary"  aria-label="delete">
+                                <Fab size="small" color="primary" aria-label="delete">
                                     <DeleteIcon />
                                 </Fab>
                                 <Fab size="small" color="primary" onClick={openSoftSkillDialogue} aria-label="edit">
@@ -60,7 +96,7 @@ const SoftSkills = ({ ratingValue, onRatingChange, openSoftSkillDialogue,isEditC
                         }
                     </div>
 
-                </List>
+                </List>}
             </div>
         </Widget>
     )

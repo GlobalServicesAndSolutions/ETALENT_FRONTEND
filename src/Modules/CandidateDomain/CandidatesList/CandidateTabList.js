@@ -14,7 +14,7 @@ import Education from "components/profile/Education/EducationAndExperience";
 import Skills from "components/profile/Skills/Skills";
 import SoftSkills from "components/profile/SoftSkills/SoftSkills";
 import Certification from "components/profile/LisenceAndCertification/Certification";
-import Contact from "components/profile/Contact";
+import Experience from "components/profile/Experience/Experience";
 
 const TabPanel = (props) => {
     const { children, value, index, ...other } = props;
@@ -69,47 +69,42 @@ const CandidateTabList = ({ tabValue, tabHandleChange }) => {
                     <Tab label="Profile" {...a11yProps(0)} />
                     <Tab label="Documents" {...a11yProps(1)} />
                     <Tab label="Activity" {...a11yProps(2)} />
-                    <Tab label="Interview Schedual" {...a11yProps(3)} />
+                    <Tab label="Interview Schedule" {...a11yProps(3)} />
                     <Tab label="Feedback" {...a11yProps(4)} />
                 </Tabs>
             </AppBar>
             <TabPanel value={tabValue} index={0}>
-            <div className="row">
+                <div className="row">
                     <div className="col-xl-8 col-lg-8 col-md-7 col-12">
                         <Biography />
                         <div id="educationcard">
                             <Education />
                         </div>
+                        <Experience />
+                        <Projects />
+                        <div id="certificationCard">
+                            <Certification />
+                        </div>
+                    </div>
+                    <div className="col-xl-4 col-lg-4 col-md-5 col-12">
                         <div id="skillCard">
                             <Skills />
                         </div>
                         <div id="softskills">
                             <SoftSkills />
                         </div>
-                        <div id="certificationCard">
-                            <Certification/>
-                        </div>
-                    </div>
-                    <div className="col-xl-4 col-lg-4 col-md-5 col-12">
-                        <Contact/>
-                        <Awards/>
-                        <Projects/>
-                        <Courses/>
+                        <Awards />
+                        <Courses />
                     </div>
                 </div>
-      </TabPanel>
+            </TabPanel>
             <TabPanel value={tabValue} index={1}>
                 <div className='candidate-details'>
                     <h5>Documents Attached</h5>
-                    <ul>
-                        <li>
-                            <p>Document Name</p>
-                        </li>
-                    </ul>
                 </div>
-      </TabPanel>
+            </TabPanel>
             <TabPanel value={tabValue} index={2}>
-            <div className='candidate-details'>
+                <div className='candidate-details'>
                     <h5>Activities</h5>
                     <ul>
                         <li>
@@ -117,9 +112,9 @@ const CandidateTabList = ({ tabValue, tabHandleChange }) => {
                         </li>
                     </ul>
                 </div>
-      </TabPanel>
+            </TabPanel>
             <TabPanel value={tabValue} index={3}>
-            <div className='candidate-details'>
+                <div className='candidate-details'>
                     <h5>Interview Schedual</h5>
                     <ul>
                         <li>
@@ -127,9 +122,9 @@ const CandidateTabList = ({ tabValue, tabHandleChange }) => {
                         </li>
                     </ul>
                 </div>
-      </TabPanel>
+            </TabPanel>
             <TabPanel value={tabValue} index={4}>
-            <div className='candidate-details'>
+                <div className='candidate-details'>
                     <h5>Feedback</h5>
                     <ul>
                         <li>
@@ -137,7 +132,7 @@ const CandidateTabList = ({ tabValue, tabHandleChange }) => {
                         </li>
                     </ul>
                 </div>
-      </TabPanel>
+            </TabPanel>
         </div>
     );
 }

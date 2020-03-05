@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Line } from 'react-chartjs-2';
+import { Bar } from 'react-chartjs-2';
 
 export default class Chart extends Component {
   render() {
@@ -17,23 +17,24 @@ export default class Chart extends Component {
         ctx.restore();
       };
       return {
-        labels: labels,
+        labels:labels ,
         datasets: [
           {
             label: label,
-            fill: false,
+            fill: true,
             tension: 0.40,
             fillOpacity: 0.3,
             borderColor: borderColor,
-            borderWidth: '4',
+            borderWidth: '2',
             pointBorderColor: pointBorderColor,
-            pointBackgroundColor: pointBackgroundColor,
+            pointBackgroundColor: 'green',
             pointBorderWidth: '3',
             pointHoverBackgroundColor: pointBackgroundColor,
             pointHoverBorderColor: '#4CB050',
             pointHoverBorderWidth: '6',
             pointHoverRadius:'8',
             pointRadius: 3,
+            backgroundColor:'lightblue',
             pointHitRadius: 8,
             data: chartdata,
           }
@@ -48,28 +49,23 @@ export default class Chart extends Component {
       scales: {
         xAxes: [{
           display: true,
-          ticks: {
-            min: 0,
-            display: false,
-          },
           gridLines: {
             display: true,
-            drawBorder: false,
-            lineWidth:10,
+            drawBorder: true,
+            lineWidth:1,
           }
         }],
 
         yAxes: [{
-          display: false,
+          display: true,
           ticks: {
-            suggestedMin: 0,
             beginAtZero: true
           }
         }]
       },
     };
     return (
-      <Line data={data} options={options} height={height} />
+      <Bar data={data} options={options} height={height} />
     );
   }
 }

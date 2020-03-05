@@ -36,7 +36,7 @@ function BootstrapTooltip(props) {
 }
 const JobsListView = ({ makeFaveriot, onFaveriotClick }) => {
     const classes = useStyles();
-    const tooltipTile = 'Here is the description on the job';
+    const tooltipTile = 'Here is the description on the job Here is the description on the jobHere is the description on the jobHere is the description on the jobHere is the description on the jobv';
     return (
         <div>
             <List>
