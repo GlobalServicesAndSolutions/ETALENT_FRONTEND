@@ -220,8 +220,9 @@ margin-top: -30px;
 }
 
 .dashboardFilterChipsAlign{
-  display: flex;
-  justify-content: left;
+    display: flex;
+    justify-content: left;
+    margin-bottom: 10px;
 }
 .dashboardFilterChipsStyle{
     color: #1d1d1d !important;
@@ -312,6 +313,16 @@ margin-top: -30px;
 .profileInfoTextField{
   width:45%
 }
+.alertDialogSize{
+  width: 500px !important;
+}
+.vlineForAppliedJobs {
+  border-left: 2px solid gray;
+  height: 20px;
+}
+.appliedJobsIconColor{
+  fill: orange !important;
+}
 .profileInfoTextFieldInRow{
   width:28%
 }
@@ -326,7 +337,7 @@ margin-top: -30px;
 }
 
 .dashboardQuickLinksDiv{
-  margin-top: 55px;
+  margin-top: 42px;
   margin-left: 69px;
   margin-right: -72px;
   @media (max-width: 575px) {
@@ -334,7 +345,7 @@ margin-top: -30px;
   }
 }
 .dashboardAltertsAndEventsDiv{
-  margin-top: 55px;
+  margin-top: 42px;
   margin-left: 3px;
   @media (max-width: 575px) {
     margin-left: 0px;

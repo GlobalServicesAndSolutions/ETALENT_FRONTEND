@@ -42,6 +42,7 @@ const EmployerSectionOne = ({ open,
                         onChange={onSectionValuesChange}
                         placeholder="Ex: Web Developer"
                         className="profileInfoTextField"
+                        required
                     />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <TextField
@@ -53,6 +54,7 @@ const EmployerSectionOne = ({ open,
                         onChange={onSectionValuesChange}
                         placeholder="Ex: Web Designer"
                         className="profileInfoTextField"
+                        required
                     />
                     <div className='row'>
                         <div>
@@ -93,6 +95,7 @@ const EmployerSectionOne = ({ open,
                                 onChange={onSectionValuesChange}
                                 type="number"
                                 placeholder="Ex: 2"
+                                required
 
                             />
                         </div>
@@ -106,6 +109,7 @@ const EmployerSectionOne = ({ open,
                         multiline
                         rows="5"
                         fullWidth
+                        required
                     />
                     <hr />
                     <FormLabel component="legend"><strong>Job Posting Address</strong></FormLabel>
@@ -118,6 +122,7 @@ const EmployerSectionOne = ({ open,
                         onChange={onSectionValuesChange}
                         placeholder="Ex: A123"
                         className="profileInfoTextField"
+                        required
                     />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <TextField
@@ -129,6 +134,7 @@ const EmployerSectionOne = ({ open,
                         onChange={onSectionValuesChange}
                         placeholder="Ex: 22C"
                         className="profileInfoTextField"
+                        required
                     />
                     <FormControl style={{ width: '45%' }}>
                         <InputLabel>Country</InputLabel>
@@ -152,6 +158,7 @@ const EmployerSectionOne = ({ open,
                         onChange={onSectionValuesChange}
                         placeholder="Ex: Islamabad"
                         className="profileInfoTextField"
+                        required
                     />
                     <TextField
                         margin="dense"
@@ -162,6 +169,7 @@ const EmployerSectionOne = ({ open,
                         onChange={onSectionValuesChange}
                         placeholder="Ex: Federal"
                         className="profileInfoTextField"
+                        required
                     />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <TextField
@@ -173,6 +181,7 @@ const EmployerSectionOne = ({ open,
                         onChange={onSectionValuesChange}
                         placeholder="Ex: 44000"
                         className="profileInfoTextField"
+                        required
                     />
                     <TextField
                         margin="dense"
@@ -183,6 +192,7 @@ const EmployerSectionOne = ({ open,
                         onChange={onSectionValuesChange}
                         placeholder="Ex: Pakistan"
                         fullWidth
+                        required
                     />
                     <hr />
                     <FormLabel component="legend"><strong>Add Skills</strong></FormLabel>
@@ -195,6 +205,7 @@ const EmployerSectionOne = ({ open,
                         onChange={onSectionValuesChange}
                         placeholder="Ex: Javascript"
                         className="profileInfoTextField"
+                        required
                     />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <TextField
@@ -331,6 +342,7 @@ const EmployerSectionOne = ({ open,
                             value={data.createdBy}
                             name='createdBy'
                             onChange={onSectionValuesChange}
+                            required
                         >
                             <MenuItem value='Salman'>Salman</MenuItem>
                         </Select>
@@ -342,6 +354,7 @@ const EmployerSectionOne = ({ open,
                             value={data.changeBy}
                             name='changeBy'
                             onChange={onSectionValuesChange}
+                            required
                         >
                             <MenuItem value='Salman'>Salman</MenuItem>
                         </Select>

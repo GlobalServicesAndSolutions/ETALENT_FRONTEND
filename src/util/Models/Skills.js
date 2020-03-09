@@ -27,6 +27,7 @@ const SkillsDialogue = ({ open,
                         onChange={onChangeSkillsInfo}
                         placeholder="Ex: Web Development"
                         fullWidth
+                        required
                     />
                 </DialogContent>
                 <DialogActions>

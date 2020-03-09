@@ -6,16 +6,25 @@ import Switch from '@material-ui/core/Switch';
 import { Button } from "@material-ui/core";
 import ScheduleIcon from '@material-ui/icons/Schedule';
 import TodayIcon from '@material-ui/icons/Today';
+import CreateIcon from '@material-ui/icons/Create';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 const JobsAlertListView = () => {
     return (
         <div>
-            <List>
-                <ListItem  >
-                    <Widget styleName="jr-card-profile jobList" >
-                        <div className="mb-3" >
+            <Widget styleName="jr-card-profile jobAlertList" >
+                <List>
+                    <ListItem  >
+                        <div className="mb-3 jobList" >
                             <div>
-                                <h3 className='allfontCapital' >Sr.Software Engineer</h3>
+                            <div className='row profileSectionEditAndDelete'>
+                                    <h3 className='allfontCapital' >Sr.Software Engineer</h3>
+                                    <div>
+                                            <DeleteIcon className='AlertEditDeleteColor'/>
+                                            &nbsp;
+                                            <CreateIcon className='AlertEditDeleteColor' />
+                                    </div>
+                                </div>
                                 <hr />
                                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                                     <div>
@@ -24,34 +33,39 @@ const JobsAlertListView = () => {
                                     </div>
                                     <div>
                                         <div>
-                                        <Switch
-                                            value="checkedB"
-                                            color="primary"
-                                            checked={true}
-                                            inputProps={{ 'aria-label': 'primary checkbox' }}
-                                        />
+                                            <Switch
+                                                value="checkedB"
+                                                color="primary"
+                                                checked={true}
+                                                inputProps={{ 'aria-label': 'primary checkbox' }}
+                                            />
                                         </div>
                                         <div className='row' >
-                                    <div className='alertListDaily'>
-                                        <ScheduleIcon className='JobAlertCalenderStyle'/>
-                                        <Button color='primary'>Daily</Button>
-                                    </div>
-                                    <div className='alertListMonthly'>
-                                        <TodayIcon className='JobAlertCalenderStyle'/>
-                                    <Button color='primary'>Weekly</Button>
-                                    </div>
-                                </div>
+                                            <div className='alertListDaily'>
+                                                <ScheduleIcon className='JobAlertCalenderStyle' />
+                                                <Button color='primary'>Daily</Button>
+                                            </div>
+                                            <div className='alertListMonthly'>
+                                                <TodayIcon className='JobAlertCalenderStyle' />
+                                                <Button color='primary'>Weekly</Button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </Widget>
-                </ListItem>
-                <ListItem  >
-                    <Widget styleName="jr-card-profile jobList" >
-                        <div className="mb-3" >
+                    </ListItem>
+                    <ListItem  >
+                        <div className="mb-3 jobList" >
                             <div>
-                                <h3 className='allfontCapital' >Sr.Software Engineer</h3>
+                                <div className='row profileSectionEditAndDelete'>
+                                    <h3 className='allfontCapital' >Sr.Software </h3>
+                                    <div>
+                                            <DeleteIcon className='AlertEditDeleteColor'/>
+                                            &nbsp;
+                                            <CreateIcon className='AlertEditDeleteColor' />
+                                    </div>
+                                </div>
                                 <hr />
                                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                                     <div>
@@ -60,29 +74,30 @@ const JobsAlertListView = () => {
                                     </div>
                                     <div>
                                         <div>
-                                        <Switch
-                                            value="checkedB"
-                                            color="primary"
-                                            inputProps={{ 'aria-label': 'primary checkbox' }}
-                                        />
+                                            <Switch
+                                                value="checkedB"
+                                                color="primary"
+                                                checked={true}
+                                                inputProps={{ 'aria-label': 'primary checkbox' }}
+                                            />
                                         </div>
                                         <div className='row' >
-                                    <div className='alertListDaily'>
-                                        <ScheduleIcon className='JobAlertCalenderStyle'/>
-                                        <Button color='primary'>Daily</Button>
-                                    </div>
-                                    <div className='alertListMonthly'>
-                                        <TodayIcon className='JobAlertCalenderStyle'/>
-                                    <Button color='primary'>Weekly</Button>
-                                    </div>
-                                </div>
+                                            <div className='alertListDaily'>
+                                                <ScheduleIcon className='JobAlertCalenderStyle' />
+                                                <Button color='primary'>Daily</Button>
+                                            </div>
+                                            <div className='alertListMonthly'>
+                                                <TodayIcon className='JobAlertCalenderStyle' />
+                                                <Button color='primary'>Weekly</Button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </Widget>
-                </ListItem>
-            </List>
+                    </ListItem>
+                </List>
+            </Widget>
         </div>
     )
 }

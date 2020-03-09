@@ -45,6 +45,7 @@ const LisenceAndCertification = ({ open,
                         id="standard-select-currency"
                         select
                         label="Issue Month"
+                        required
                         value="1"
                         fullWidth
                     >
@@ -57,6 +58,7 @@ const LisenceAndCertification = ({ open,
                         id="standard-select-currency"
                         select
                         label="Issue Year"
+                        required
                         value="1"
                         fullWidth
                     >
@@ -69,6 +71,7 @@ const LisenceAndCertification = ({ open,
                         id="standard-select-currency"
                         select
                         label="Expire Month"
+                        required
                         value="1"
                         fullWidth
                     >
@@ -80,6 +83,7 @@ const LisenceAndCertification = ({ open,
                         id="standard-select-currency"
                         select
                         label="Expire Year"
+                        required
                         value="1"
                         fullWidth
                     >
@@ -96,6 +100,7 @@ const LisenceAndCertification = ({ open,
                         onChange={onChangeLisenceInfo}
                         fullWidth
                         placeholder="Enter Credential ID"
+                        required
                     />
                     <TextField
                         name="credentialUrl"
@@ -104,6 +109,7 @@ const LisenceAndCertification = ({ open,
                         value={data.credentialUrl}
                         onChange={onChangeLisenceInfo}
                         placeholder="Enter Credential URL"
+                        required
                     />
                 </DialogContent>
                 <DialogActions>
@@ -111,7 +117,7 @@ const LisenceAndCertification = ({ open,
                         Save
                     </Button>
                     <Button onClick={handleClose} color="primary">
-                        Save And Add Another
+                        Cancel 
                     </Button>
                 </DialogActions>
             </Dialog>

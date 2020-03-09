@@ -32,6 +32,7 @@ const EmployerSectionThree = ({ open,
                         onChange={onSectionValuesChange}
                         type="text"
                         className="profileInfoTextField"
+                        required
                     />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <TextField
@@ -43,6 +44,7 @@ const EmployerSectionThree = ({ open,
                         onChange={onSectionValuesChange}
                         placeholder="Ex: Software"
                         className="profileInfoTextField"
+                        required
                     />
                     <TextField
                         margin="dense"
@@ -53,6 +55,7 @@ const EmployerSectionThree = ({ open,
                         onChange={onSectionValuesChange}
                         placeholder="Ex: IT"
                         className="profileInfoTextField"
+                        required
                     />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <TextField
@@ -63,6 +66,7 @@ const EmployerSectionThree = ({ open,
                         value={data.division}
                         onChange={onSectionValuesChange}
                         className="profileInfoTextField"
+                        required
                     />
                     <hr />
                     <FormLabel component="legend"><strong>Organization Address</strong></FormLabel>
@@ -75,6 +79,7 @@ const EmployerSectionThree = ({ open,
                         onChange={onSectionValuesChange}
                         placeholder="Ex: A123"
                         className="profileInfoTextField"
+                        required
                     />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <FormControl style={{ width: '45%' }}>
@@ -83,6 +88,7 @@ const EmployerSectionThree = ({ open,
                             value={data.organizationCountry}
                             name='organizationCountry'
                             onChange={onSectionValuesChange}
+                            required
                         >
                             <MenuItem value='pakistan'>Pakistan</MenuItem>
                             <MenuItem value='usa'>USA</MenuItem>
@@ -98,6 +104,7 @@ const EmployerSectionThree = ({ open,
                         onChange={onSectionValuesChange}
                         placeholder="Ex: Islamabad"
                         className="profileInfoTextField"
+                        required
                     />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <TextField
@@ -109,6 +116,7 @@ const EmployerSectionThree = ({ open,
                         type="text"
                         placeholder="Ex: Federal"
                         className="profileInfoTextField"
+                        required
                     />
                     <TextField
                         margin="dense"
@@ -119,6 +127,7 @@ const EmployerSectionThree = ({ open,
                         onChange={onSectionValuesChange}
                         placeholder="Ex: 44000"
                         className="profileInfoTextField"
+                        required
                     />
                     <hr />
                     <TextField
@@ -129,6 +138,7 @@ const EmployerSectionThree = ({ open,
                         value={data.jobJustification}
                         onChange={onSectionValuesChange}
                         className="profileInfoTextField"
+                        required
                     />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <TextField
@@ -140,6 +150,7 @@ const EmployerSectionThree = ({ open,
                         onChange={onSectionValuesChange}
                         placeholder="Ex: 123"
                         className="profileInfoTextField"
+                        required
                     />
                     <TextField
                         margin="dense"
@@ -149,6 +160,7 @@ const EmployerSectionThree = ({ open,
                         value={data.costCenterId}
                         onChange={onSectionValuesChange}
                         className="profileInfoTextField"
+                        required
                     />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <TextField
@@ -160,6 +172,7 @@ const EmployerSectionThree = ({ open,
                         onChange={onSectionValuesChange}
                         placeholder="Ex: Any Reason"
                         className="profileInfoTextField"
+                        required
                     />
                     <TextField
                         margin="dense"
@@ -169,6 +182,7 @@ const EmployerSectionThree = ({ open,
                         value={data.replacementForWhom}
                         onChange={onSectionValuesChange}
                         className="profileInfoTextField"
+                        required
                     />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <TextField
@@ -179,6 +193,7 @@ const EmployerSectionThree = ({ open,
                         value={data.requirementJustification}
                         onChange={onSectionValuesChange}
                         className="profileInfoTextField"
+                        required
                     />
                 </DialogContent>
                 <DialogActions>

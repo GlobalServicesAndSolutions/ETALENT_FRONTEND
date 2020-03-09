@@ -35,6 +35,7 @@ const QuickApplyForJobDialog = ({ open, handleClose }) => {
                         type="text"
                         placeholder="Optional"
                         className="profileInfoTextField"
+                        required
                     />
                     <TextField
                         margin="dense"
@@ -44,6 +45,7 @@ const QuickApplyForJobDialog = ({ open, handleClose }) => {
                         type="text"
                         fullWidth
                         placeholder="Ex: salmanHaider0006@hotmail.com"
+                        required
                     />
                     <TextField
                         margin="dense"
@@ -53,6 +55,7 @@ const QuickApplyForJobDialog = ({ open, handleClose }) => {
                         type="text"
                         fullWidth
                         placeholder="Ex: xxxx-xxx-xxxx"
+                        required
                     />
                     <input
                         accept="image/*"
@@ -60,6 +63,7 @@ const QuickApplyForJobDialog = ({ open, handleClose }) => {
                         multiple
                         type="file"
                         className="inputImage"
+                        required
                     />
                     <label htmlFor="contained-button-file">
                         <Button variant="contained" color="primary" component="span">
@@ -73,6 +77,7 @@ const QuickApplyForJobDialog = ({ open, handleClose }) => {
                         multiple
                         type="file"
                         className="inputImage"
+                        required
                     />
                     <label htmlFor="contained-button-file">
                         <Button variant="contained" color="primary" component="span">

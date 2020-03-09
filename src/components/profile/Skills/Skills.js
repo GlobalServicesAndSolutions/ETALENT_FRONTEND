@@ -12,7 +12,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
-import Chart from 'components/dashboard/default/Chart'
+import PieChart from "components/dashboard/default/PieChart";
 
 const Skills = ({ ratingValue,
      onRatingChange,
@@ -50,13 +50,8 @@ const Skills = ({ ratingValue,
                     />
                 </FormGroup>
                 {!skillsSwitch &&
-                <Chart
-                  borderColor="white"
-                  pointBorderColor='white'
-                  pointBackgroundColor='white'
+                <PieChart
                   height={200}
-                  pointHoverBorderColor='blue'
-                  borderWidth={0}
                   chartdata={[57, 85,90]}
                   shadowColor='black'
                   labels={lableList}

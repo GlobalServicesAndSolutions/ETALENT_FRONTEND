@@ -28,6 +28,7 @@ const AddVendorDialog = ({ open,
                         type="text"
                         placeholder='Ex: Salman Haider'
                         className="profileInfoTextField"
+                        required
                     />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <TextField
@@ -37,6 +38,7 @@ const AddVendorDialog = ({ open,
                         type="text"
                         placeholder='Ex: Software House / Labs'
                         className="profileInfoTextField"
+                        required
                     />
                     <TextField
                         margin="dense"
@@ -44,6 +46,7 @@ const AddVendorDialog = ({ open,
                         label="Phone Number"
                         type="text"
                         className="profileInfoTextField"
+                        required
                     />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <TextField
@@ -53,6 +56,7 @@ const AddVendorDialog = ({ open,
                         type="email"
                         placeholder='Ex: salmanhaider0006@hotmail.com'
                         className="profileInfoTextField"
+                        required
                     />
                     <TextField
                         margin="dense"
@@ -61,6 +65,7 @@ const AddVendorDialog = ({ open,
                         type="text"
                         placeholder='Ex: www.example.com'
                         className="profileInfoTextField"
+                        required
                     />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <TextField
@@ -70,11 +75,13 @@ const AddVendorDialog = ({ open,
                         type="text"
                         placeholder='Ex: I-9 Islamabad, Pakistan'
                         className="profileInfoTextField"
+                        required
                     />
                     <hr/>
                     <FormControl component="fieldset">
                         <FormLabel component="legend">Status</FormLabel>
-                        <RadioGroup aria-label="position" name="venderStatus"  row>
+                        <RadioGroup aria-label="position" name="venderStatus"  row 
+                        required>
                             <FormControlLabel
                                 value="Active"
                                 control={<Radio color="primary" />}

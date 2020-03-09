@@ -178,10 +178,10 @@ class Profile extends Component {
         this.setState({ skillsSwitch: !this.state.skillsSwitch });
     }
     openProjectDialog = () => {
-        this.setState ({ projectDialog: true });
+        this.setState({ projectDialog: true });
     }
     closeProjectDialog = () => {
-        this.setState ({ projectDialog: false });
+        this.setState({ projectDialog: false });
     }
     render() {
         return (
@@ -224,12 +224,6 @@ class Profile extends Component {
                                     onClickComments={this.onClickComments}
                                 />
                             </div>}
-                        <div id="educationcard">
-                            <Education
-                                openEducationDialog={this.openEducationDialog}
-                                isEditClick={this.state.isEdit}
-                            />
-                        </div>
                         <div>
                             <Experience
                                 isEditClick={this.state.isEdit}
@@ -238,7 +232,12 @@ class Profile extends Component {
                         <Projects
                             isEditClick={this.state.isEdit}
                             openProjectDialog={this.openProjectDialog} />
-
+                        <div id="educationcard">
+                            <Education
+                                openEducationDialog={this.openEducationDialog}
+                                isEditClick={this.state.isEdit}
+                            />
+                        </div>
                         <div id="certificationCard">
                             <Certification
                                 openCertificationDialog={this.openLisenceDialog}

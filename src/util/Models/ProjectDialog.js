@@ -29,6 +29,7 @@ const ProjectDialog = ({ open,
                         type="text"
                         placeholder="Ex: Web App"
                         fullWidth
+                        required
                     />
                     <FormGroup row>
                         <FormControlLabel
@@ -91,6 +92,7 @@ const ProjectDialog = ({ open,
                         type="text"
                         placeholder="Ex: www.example.com"
                         fullWidth
+                        required
                     />
                     <TextField
                         margin="dense"
@@ -100,6 +102,7 @@ const ProjectDialog = ({ open,
                         rows='3'
                         placeholder="Ex: www.example.com"
                         fullWidth
+                        required
                     />
                 </DialogContent>
                 <DialogActions>

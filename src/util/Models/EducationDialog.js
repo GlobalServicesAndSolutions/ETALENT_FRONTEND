@@ -28,6 +28,7 @@ const EducationDialog = ({ open,
                         onChange={onChangeEducationInfo}
                         placeholder="Ex: Abasyn University"
                         fullWidth
+                        required
                     />
                     <TextField
                         margin="dense"
@@ -38,6 +39,7 @@ const EducationDialog = ({ open,
                         onChange={onChangeEducationInfo}
                         fullWidth
                         placeholder="Ex: BSSE"
+                        required
                     />
                     <TextField
                         margin="dense"
@@ -48,6 +50,7 @@ const EducationDialog = ({ open,
                         onChange={onChangeEducationInfo}
                         fullWidth
                         placeholder="Ex: Computer Science or IT"
+                        required
                     />
                     <TextField
                         id="standard-select-currency"
@@ -55,6 +58,7 @@ const EducationDialog = ({ open,
                         label="Start Year"
                         value="1"
                         helperText="Please Select Your Degree Starting Year"
+                        required
                     >
                         <MenuItem key={1} >
                             1
@@ -67,6 +71,7 @@ const EducationDialog = ({ open,
                         label="End Year (or expected)"
                         value="1"
                         helperText="Please Select Degree Ending Year or expected"
+                        required
                     >
                         <MenuItem  >
                             1
@@ -81,6 +86,7 @@ const EducationDialog = ({ open,
                         onChange={onChangeEducationInfo}
                         fullWidth
                         placeholder="Enter your Grade"
+                        required
                     />
                     <TextField
                         name="activitiesAndSocieties"
@@ -90,6 +96,7 @@ const EducationDialog = ({ open,
                         fullWidth
                         value={data.activitiesAndSocieties}
                         onChange={onChangeEducationInfo}
+                        required
                     />
                     <TextField
                         name="description"
@@ -99,6 +106,7 @@ const EducationDialog = ({ open,
                         multiline
                         rows="5"
                         fullWidth
+                        required
                     />
                     <br />
                     <br />
@@ -112,6 +120,7 @@ const EducationDialog = ({ open,
                         multiple
                         type="file"
                         className="inputImage"
+                        required
                     />
                     <label htmlFor="contained-button-file">
                         <Button variant="contained" color="primary" component="span">
@@ -129,6 +138,7 @@ const EducationDialog = ({ open,
                         type="text"
                         fullWidth
                         placeholder="Post or type a link to a file or vedio"
+                        required
                     />
                 </DialogContent>
                 <DialogActions>

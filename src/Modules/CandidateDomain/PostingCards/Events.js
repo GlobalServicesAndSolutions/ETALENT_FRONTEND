@@ -4,7 +4,7 @@ import Widget from "components/Widget";
 const Events = () => {
   return (
       <div style={{width: "80%"}} >
-    <Widget styleName="jr-card-profile" >
+    <Widget styleName="jr-card-profile dashboardCardsMaxHeight" >
       <div className="mb-3">
       <h3 className="card-title mb-2 mb-md-3">Registered Events</h3>
           <br/>

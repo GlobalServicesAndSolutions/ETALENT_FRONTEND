@@ -44,6 +44,7 @@ const EmployerSectionTwo = ({ open,
                         onChange={onSectionValuesChange}
                         placeholder="Ex: D4DF"
                         className="profileInfoTextField"
+                        required
                     />
                     <div>
                     <MuiPickersUtilsProvider utils={DateFnsUtils}>
@@ -99,6 +100,7 @@ const EmployerSectionTwo = ({ open,
                         onChange={onSectionValuesChange}
                         placeholder="Ex: Developer"
                         className="profileInfoTextField"
+                        required
                     />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <TextField
@@ -110,6 +112,7 @@ const EmployerSectionTwo = ({ open,
                         onChange={onSectionValuesChange}
                         placeholder="Ex: Engineer II"
                         className="profileInfoTextField"
+                        required
                     />
                     <FormControl component="fieldset">
                         <FormLabel component="legend"><strong>Job Status</strong></FormLabel>
@@ -176,6 +179,7 @@ const EmployerSectionTwo = ({ open,
                             value={data.travelRequiredValue}
                             name='travelRequiredValue'
                             onChange={onSectionValuesChange}
+                            required
                         >
                             <MenuItem value='Yes'>Yes</MenuItem>
                             <MenuItem value='No'>No</MenuItem>
@@ -191,6 +195,7 @@ const EmployerSectionTwo = ({ open,
                         onChange={onSectionValuesChange}      
                         placeholder="Ex: 5 Year"
                         className="profileInfoTextField"
+                        required
                     />
                     <TextField
                         margin="dense"
@@ -201,6 +206,7 @@ const EmployerSectionTwo = ({ open,
                         onChange={onSectionValuesChange}
                         placeholder="Ex: BS"
                         fullWidth
+                        required
                     />
                     
                 </DialogContent>

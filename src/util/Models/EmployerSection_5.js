@@ -32,6 +32,7 @@ const EmployerSectionFive = ({ open,
                             value={data.budgetedPositionValue}
                             name='budgetedPositionValue'
                             onChange={onSectionValuesChange}
+                            required
                         >
                             <MenuItem value='yes'>Yes</MenuItem>
                             <MenuItem value='no'>No</MenuItem>
@@ -48,6 +49,7 @@ const EmployerSectionFive = ({ open,
                         onChange={onSectionValuesChange}
                         placeholder="Ex: USD"
                         className="profileInfoTextField"
+                        required
                     />
                     <TextField
                         margin="dense"
@@ -57,6 +59,7 @@ const EmployerSectionFive = ({ open,
                         value={data.baseSalary}
                         onChange={onSectionValuesChange}
                         className="profileInfoTextField"
+                        required
                     />
                     
                     <hr/>
@@ -95,6 +98,7 @@ const EmployerSectionFive = ({ open,
                         value={data.employmentType}
                         onChange={onSectionValuesChange}
                         className="profileInfoTextField"
+                        required
                     />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <TextField
@@ -105,6 +109,7 @@ const EmployerSectionFive = ({ open,
                         value={data.jobPayGrade}
                         onChange={onSectionValuesChange}
                         className="profileInfoTextField"
+                        required
                     />
                     <TextField
                         margin="dense"
@@ -114,6 +119,7 @@ const EmployerSectionFive = ({ open,
                         value={data.payType}
                         onChange={onSectionValuesChange}
                         className="profileInfoTextField"
+                        required
                     />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <TextField
@@ -124,6 +130,7 @@ const EmployerSectionFive = ({ open,
                         value={data.targetBonusAmount}
                         onChange={onSectionValuesChange}
                         className="profileInfoTextField"
+                        required
                     />
                     <TextField
                         margin="dense"
@@ -133,6 +140,7 @@ const EmployerSectionFive = ({ open,
                         value={data.stokePakage}
                         onChange={onSectionValuesChange}
                         className="profileInfoTextField"
+                        required
                     />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <FormControl style={{ width: '45%' }}>
@@ -141,6 +149,7 @@ const EmployerSectionFive = ({ open,
                             value={data.commissionValue}
                             name='commissionValue'
                             onChange={onSectionValuesChange}
+                            required
                         >
                             <MenuItem value='yes'>Yes</MenuItem>
                             <MenuItem value='no'>No</MenuItem>
@@ -152,6 +161,7 @@ const EmployerSectionFive = ({ open,
                             value={data.motorVehicleValue}
                             name='motorVehicleValue'
                             onChange={onSectionValuesChange}
+                            required
                         >
                             <MenuItem value='yes'>Yes</MenuItem>
                             <MenuItem value='no'>No</MenuItem>
@@ -164,6 +174,7 @@ const EmployerSectionFive = ({ open,
                             value={data.accomodationValue}
                             name='accomodationValue'
                             onChange={onSectionValuesChange}
+                            required
                         >
                             <MenuItem value='yes'>Yes</MenuItem>
                             <MenuItem value='no'>No</MenuItem>
@@ -175,6 +186,7 @@ const EmployerSectionFive = ({ open,
                             value={data.relocationPackValue}
                             name='relocationPackValue'
                             onChange={onSectionValuesChange}
+                            required
                         >
                             <MenuItem value='yes'>Yes</MenuItem>
                             <MenuItem value='no'>No</MenuItem>
@@ -189,6 +201,7 @@ const EmployerSectionFive = ({ open,
                         value={data.comments}
                         onChange={onSectionValuesChange}
                         fullWidth
+                        required
                     />
                 </DialogContent>
                 <DialogActions>

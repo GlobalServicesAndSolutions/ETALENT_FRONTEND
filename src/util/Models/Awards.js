@@ -22,6 +22,7 @@ const AwardDialog = ({ open, handleClose }) => {
                         type="text"
                         placeholder="Ex: Employee of the Year"
                         fullWidth
+                        required
                     />
                    <TextField
                         id="standard-multiline-static"
@@ -30,6 +31,7 @@ const AwardDialog = ({ open, handleClose }) => {
                         multiline
                         rows="5"
                         fullWidth
+                        required
                     />
                     <TextField
                         margin="dense"
@@ -39,6 +41,7 @@ const AwardDialog = ({ open, handleClose }) => {
                         type="text"
                         fullWidth
                         placeholder="Ex: Seven Software"
+                        required
                     />
                     <TextField
                         id="standard-multiline-static"
@@ -46,6 +49,7 @@ const AwardDialog = ({ open, handleClose }) => {
                         label="Url"
                         type="text"
                         fullWidth
+                        required
                     />
                     <TextField
                         id="standard-multiline-static"
@@ -54,6 +58,7 @@ const AwardDialog = ({ open, handleClose }) => {
                         type="text"
                         fullWidth
                         placeholder="Ex: DD/MM/YYYY"
+                        required
                     />
                 </DialogContent>
                 <DialogActions>

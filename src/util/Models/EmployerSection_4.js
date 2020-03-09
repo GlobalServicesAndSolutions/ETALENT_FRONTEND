@@ -33,6 +33,7 @@ const EmployerSectionFour = ({ open,
                             value={data.contractYears}
                             name='contractYears'
                             onChange={onSectionValuesChange}
+                            required
                         >
                             <MenuItem value='1'>1</MenuItem>
                             <MenuItem value='2'>2</MenuItem>
@@ -46,6 +47,7 @@ const EmployerSectionFour = ({ open,
                             value={data.contractMonth}
                             name='contractMonth'
                             onChange={onSectionValuesChange}
+                            required
                         >
                             <MenuItem value={1}>1</MenuItem>
                             <MenuItem value={2}>2</MenuItem>
@@ -67,6 +69,7 @@ const EmployerSectionFour = ({ open,
                             value={data.contractDays}
                             name='contractDays'
                             onChange={onSectionValuesChange}
+                            required
                         >
                             <MenuItem value={1}>1</MenuItem>
                             <MenuItem value={2}>2</MenuItem>
@@ -153,6 +156,7 @@ const EmployerSectionFour = ({ open,
                         onChange={onSectionValuesChange}
                         placeholder="Ex: USD"
                         className="profileInfoTextField"
+                        required
                     />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <TextField
@@ -164,6 +168,7 @@ const EmployerSectionFour = ({ open,
                         onChange={onSectionValuesChange}
                         placeholder="Ex: 1"
                         className="profileInfoTextField"
+                        required
                     />
                     <hr />
                     <FormLabel component="legend"><strong>Commute</strong></FormLabel>
@@ -173,6 +178,7 @@ const EmployerSectionFour = ({ open,
                             value={data.commuteCurrencyValue}
                             name='commuteCurrencyValue'
                             onChange={onSectionValuesChange}
+                            required
                         >
                             <MenuItem value='Yes'>Yes</MenuItem>
                             <MenuItem value='No'>No</MenuItem>
@@ -185,6 +191,7 @@ const EmployerSectionFour = ({ open,
                             value={data.commuteAmountValue}
                             name='commuteAmountValue'
                             onChange={onSectionValuesChange}
+                            required
                         >
                             <MenuItem value='Yes'>Yes</MenuItem>
                             <MenuItem value='No'>No</MenuItem>

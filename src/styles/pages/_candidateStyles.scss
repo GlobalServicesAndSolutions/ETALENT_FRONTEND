@@ -20,6 +20,10 @@
   .AlertAndFavoriteJobheaders{
     height: 9%;
   }
+  .dashboardCardsMaxHeight{
+    max-height: 400px;
+    overflow-y: auto;
+  }
   .JobAlertFont{
     color: #a1a1a1;
     font-family: none;
@@ -45,8 +49,16 @@
     color: cadetblue;
   }
   .jobList{
-    width:60%;
+    width:100%;
     padding-bottom: 0px;
+  }
+  .jobAlertList{
+    width:60%;
+  }
+  .AlertEditDeleteColor{
+    background: white !important;
+    color: cadetblue !important;
+    cursor: pointer;
   }
   .candidatedetailheader{
       padding: 35px 50px 0px;

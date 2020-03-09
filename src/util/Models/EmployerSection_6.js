@@ -27,6 +27,7 @@ const EmployerSectionSix = ({ open,
                         onChange={onSectionValuesChange}
                         value={data.hiringManager}
                         className="profileInfoTextField"
+                        required
                     />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <TextField
@@ -37,6 +38,7 @@ const EmployerSectionSix = ({ open,
                         onChange={onSectionValuesChange}
                         value={data.recruiter}
                         className="profileInfoTextField"
+                        required
                     />
                     <TextField
                         margin="dense"
@@ -46,6 +48,7 @@ const EmployerSectionSix = ({ open,
                         onChange={onSectionValuesChange}
                         value={data.targetRecruiters}
                         className="profileInfoTextField"
+                        required
                     />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <TextField
@@ -56,6 +59,7 @@ const EmployerSectionSix = ({ open,
                         onChange={onSectionValuesChange}
                         value={data.recruitementCoordinator}
                         className="profileInfoTextField"
+                        required
                     />
                     <TextField
                         margin="dense"
@@ -65,6 +69,7 @@ const EmployerSectionSix = ({ open,
                         onChange={onSectionValuesChange}
                         value={data.humanResourceAdministrator}
                         className="profileInfoTextField"
+                        required
                     />
                     
                 </DialogContent>

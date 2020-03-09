@@ -39,6 +39,7 @@ const ApplyForJobDialog = ({ open,
                         type="text"
                         placeholder="Optional"
                         className="profileInfoTextField"
+                        required
                     />
                     <TextField
                         margin="dense"
@@ -48,6 +49,7 @@ const ApplyForJobDialog = ({ open,
                         type="text"
                         fullWidth
                         placeholder="Ex: salmanHaider0006@hotmail.com"
+                        required
                     />
                     <TextField
                         margin="dense"
@@ -57,6 +59,7 @@ const ApplyForJobDialog = ({ open,
                         type="text"
                         fullWidth
                         placeholder="Ex: xxxx-xxx-xxxx"
+                        required
                     />
                     <br />
                     <Widget styleName="jr-card-profile" >

@@ -23,6 +23,7 @@ const SoftSkillsDialogue = ({ open,
                         <Select
                             labelId="demo-simple-select-label"
                             id="demo-simple-select"
+                            required
                         >
                             <MenuItem value='Communication'>Communication</MenuItem>
                         </Select>

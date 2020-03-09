@@ -132,8 +132,15 @@ const ProfileHeader = ({ onEducationView,
               </ExpansionPanelSummary>
               <ExpansionPanelDetails className='expansionPanel'>
                 <Typography className='addSection'>
-                  Education And Work Experience
+                  Education
                         <Fab size="small" aria-label="add" onClick={openEducationDialog}>
+                    <AddIcon />
+                  </Fab>
+                </Typography>
+                <hr />
+                <Typography className='addSection'>
+                  Experience
+                        <Fab size="small" aria-label="add" >
                     <AddIcon />
                   </Fab>
                 </Typography>

@@ -22,6 +22,7 @@ const CourseAndTrainings = ({ open, handleClose }) => {
                         type="text"
                         placeholder="Ex: Web Development"
                         fullWidth
+                        required
                     />
                    <TextField
                         id="standard-multiline-static"
@@ -30,6 +31,7 @@ const CourseAndTrainings = ({ open, handleClose }) => {
                         multiline
                         rows="5"
                         fullWidth
+                        required
                     />
                     <TextField
                         margin="dense"
@@ -38,12 +40,14 @@ const CourseAndTrainings = ({ open, handleClose }) => {
                         type="text"
                         fullWidth
                         placeholder="Ex: Seven Software"
+                        required
                     />
                     <TextField
                         name="coursedate"
                         label="Course Date"
                         type="text"
                         fullWidth
+                        required
                     />
                 </DialogContent>
                 <DialogActions>
