@@ -1,0 +1,8 @@
+{
+    "data":{
+        "LocationDropDown":["Islamabad", "Karachi","Lahore"],
+        "Frequency":["Monthly","Weekly","Hourly"],
+        "JobType":["Contract","Permanent"]
+
+    }
+}
