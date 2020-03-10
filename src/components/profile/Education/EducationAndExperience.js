@@ -22,11 +22,7 @@ const Education = ({ openEducationDialog, isEditClick }) => {
         <hr />
         <br />
         <div className="row profileSectionEditAndDelete">
-          <div className="row">
-            <img aria-hidden alt="image" src="example.com" />
             <h5>Abasyn University Islamabad</h5>
-          </div>
-
           {isEditClick &&
             <div>
               <Fab onClick={openEducationDialog} size="small" color="primary" aria-label="delete">

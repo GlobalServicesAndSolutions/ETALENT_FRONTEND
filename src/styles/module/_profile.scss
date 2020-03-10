@@ -313,6 +313,21 @@ margin-top: -30px;
 .profileInfoTextField{
   width:45%
 }
+.styleFlexAndSpaceBetween{
+  display: flex;
+  justify-content: space-between;
+}
+.educationDatePickerFiled{
+  width: 40%;
+}
+.LikeThumbColorUserDefine{
+  color: lightgreen;
+  cursor: pointer;
+}
+.currentlyEnrolledMargin{
+  margin-top: 30px;
+  margin-bottom: -10px;
+}
 .alertDialogSize{
   width: 500px !important;
 }

@@ -16,13 +16,49 @@ import Select from '@material-ui/core/Select';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import Widget from "components/Widget";
+import ListItemText from '@material-ui/core/ListItemText';
+import Checkbox from '@material-ui/core/Checkbox';
+import { makeStyles } from '@material-ui/core/styles';
+import Input from '@material-ui/core/Input';
+import MenuItem from '@material-ui/core/MenuItem';
+
+const useStyles = makeStyles(theme => ({
+    formControl: {
+        minWidth: '100%',
+        maxWidth: 300,
+    },
+}));
+
+const ITEM_HEIGHT = 48;
+const ITEM_PADDING_TOP = 8;
+const MenuProps = {
+  PaperProps: {
+    style: {
+      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+      width: 250,
+    },
+  },
+};
+const names = [
+    'Corp-Corp',
+    'W2-Contract',
+    'W2-Permanent',
+    '1099-Contract',
+    'H1B Transfer',
+    'Need H1B',
+];
 
 const BasicInfoProfile = ({ open,
     handleClose,
     onChangeEmployeeWorkCountry,
     employeeWorkCountry
 }) => {
+    const classes = useStyles();
+    const [availableFor, setavailableFor] = React.useState([]);
 
+    const handleChange = event => {
+        setavailableFor(event.target.value);
+    };
     return (
         <div>
             <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title" maxWidth="sm" >
@@ -185,49 +221,49 @@ const BasicInfoProfile = ({ open,
                             required
                         />
                     }
-                    <hr/>
+                    <hr />
                     <FormLabel component="legend">Address</FormLabel>
+                    <TextField
+                        margin="dense"
+                        name="employeeAddress1"
+                        label="Address Line 1"
+                        type="text"
+                        className="profileInfoTextField"
+                        required
+                    />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <TextField
-                                margin="dense"
-                                name="employeeAddress1"
-                                label="Address Line 1"
-                                type="text"
-                                className="profileInfoTextField"
-                                required
-                            />
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        margin="dense"
+                        name="employeeAddress2"
+                        label="Address Line 2"
+                        type="text"
+                        className="profileInfoTextField"
+                    />
+                    <TextField
+                        margin="dense"
+                        name="employeecity"
+                        label="City"
+                        type="text"
+                        className="profileInfoTextField"
+                        required
+                    />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <TextField
-                                margin="dense"
-                                name="employeeAddress2"
-                                label="Address Line 2"
-                                type="text"
-                                className="profileInfoTextField"
-                            />
-                            <TextField
-                                margin="dense"
-                                name="employeecity"
-                                label="City"
-                                type="text"
-                                className="profileInfoTextField"
-                                required
-                            />
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <TextField
-                                margin="dense"
-                                name="employeestate"
-                                label="State"
-                                type="text"
-                                className="profileInfoTextField"
-                                required
-                            />
-                            <TextField
-                                margin="dense"
-                                name="employeePostalCode"
-                                label="Postal Code"
-                                type="text"
-                                className="profileInfoTextField"
-                                required
-                            />
+                        margin="dense"
+                        name="employeestate"
+                        label="State"
+                        type="text"
+                        className="profileInfoTextField"
+                        required
+                    />
+                    <TextField
+                        margin="dense"
+                        name="employeePostalCode"
+                        label="Postal Code"
+                        type="text"
+                        className="profileInfoTextField"
+                        required
+                    />
                     {employeeWorkCountry === 'USA' &&
                         <div>
                             <hr />
@@ -272,6 +308,32 @@ const BasicInfoProfile = ({ open,
                                     />
                                 </RadioGroup>
                             </FormControl></div>}
+                    {employeeWorkCountry === 'USA' &&
+                    <div>
+                     <FormControl className={classes.formControl}>
+                        <InputLabel id="demo-mutiple-checkbox-label">Available For</InputLabel>
+                        <Select
+                            labelId="demo-mutiple-checkbox-label"
+                            id="demo-mutiple-checkbox"
+                            multiple
+                            value={availableFor}
+                            onChange={handleChange}
+                            input={<Input />}
+                            renderValue={selected => selected.join(', ')}
+                            MenuProps={MenuProps}
+                        >
+                            {names.map(name => (
+                                <MenuItem key={name} value={name}>
+                                    <Checkbox checked={availableFor.indexOf(name) > -1} />
+                                    <ListItemText primary={name} />
+                                </MenuItem>
+                            ))}
+                        </Select>
+                    </FormControl>
+                    <br/>
+                    <br/>
+                    </div>
+                    }
                     <Widget styleName="jr-card-profile" >
                         <FormLabel component="legend">EOC section</FormLabel>
                         <h6>Personal Information</h6>

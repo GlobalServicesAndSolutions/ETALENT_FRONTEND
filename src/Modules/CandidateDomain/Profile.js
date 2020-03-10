@@ -20,6 +20,12 @@ import ProfileLevelEdit from './CandidatesList/ProfileLevelEditDialogue';
 import Portfolio from 'components/profile/Freelance/Portfolio';
 import Experience from 'components/profile/Experience/Experience';
 import ProjectDialog from 'util/Models/ProjectDialog';
+import Presentation from 'components/profile/Presentation/Presentation';
+import PresentationDialog from 'util/Models/PresentationDialog';
+import ExperienceDialog from 'util/Models/ExperienceDialog';
+import PortfolioDialog from 'util/Models/PortFolioDialog';
+import Publications from 'components/profile/Publications/Publications';
+import PublicationDialog from 'util/Models/PublicationDialog';
 
 class Profile extends Component {
     constructor(props) {
@@ -27,20 +33,64 @@ class Profile extends Component {
         this.state = {
             educationInfo: {
                 school: '',
+                schoolUrl: '',
                 degree: '',
                 fieldofstudy: '',
                 grade: '',
-                activitiesAndSocieties: '',
-                description: ''
+                certificationIssueDate: new Date().toLocaleDateString(),
+                educationEndDate: new Date().toLocaleDateString(),
+                educationCity: '',
+                educationState: ''
             },
             lisenceAndCertificationinfo: {
-                lisenceName: '',
+                certificationName: '',
                 organization: '',
                 credentialId: '',
-                credentialUrl: ''
+                credentialUrl: '',
+                certificationStartDate: new Date().toLocaleDateString(),
+                certificationEndDate: new Date().toLocaleDateString(),
+                score: ''
             },
-            skillInfo: {
-                skillName: ''
+            technicalSkillInfo: {
+                skillName: '',
+                skillExperience: ''
+            },
+            softSkillInfo: {
+                skillName: '',
+                skillExperience: ''
+            },
+            projectInfo: {
+                projectName: '',
+                projectStartDate: new Date().toLocaleDateString(),
+                projectEndDate: new Date().toLocaleDateString(),
+                projectUrl: '',
+                projectDescription: '',
+            },
+            presentationInfo: {
+                presentationName: '',
+                presentationDescription: '',
+                attachment: ''
+            },
+            experienceInfo: {
+                experienceTitle: '',
+                experienceEmploymentType: '',
+                experienceCompany: '',
+                experienceIndustry: '',
+                experienceCity: '',
+                experienceStartDate: new Date().toLocaleDateString(),
+                experienceEndDate: new Date().toLocaleDateString(),
+                experienceDescription: ''
+            },
+            portfolioInfo: {
+                portfolioInfo: ''
+            },
+            publicationInfo: {
+                publicationAuthorName: '',
+                publicationTitle: '',
+                publicationPublisherName: '',
+                publishDate: new Date().toLocaleDateString(),
+                publicationUrl: '',
+                publicationDescription: ''
             },
             educationOpen: false,
             lisenceOpen: false,
@@ -58,7 +108,11 @@ class Profile extends Component {
             employeeWorkCountry: '',
             softSkillsSwitch: false,
             skillsSwitch: false,
-            projectDialog: false
+            projectDialog: false,
+            presentationDialog: false,
+            experienceDialog: false,
+            portfolioDialog: false,
+            publicationDialog: false
         }
     }
     onRatingChange = (event, newValue) => {
@@ -144,23 +198,89 @@ class Profile extends Component {
     isEditCancel = () => {
         this.setState({ isEdit: false });
     }
-    onChangeEducationInfo = (event) => {
+    onChangeEducationInfo = (event, date, name) => {
         let educationInfo = this.state.educationInfo;
-        let field = event.target.name;
-        educationInfo[field] = event.target.value;
-        this.setState({ educationInfo });
+        if (name) {
+            educationInfo[name] = date;
+            this.setState({ educationInfo });
+        }
+        else {
+            let field = event.target.name;
+            educationInfo[field] = event.target.value;
+            this.setState({ educationInfo });
+        }
     }
-    onChangeLisenceInfo = (event) => {
+    onChangeProjectInfo = (event, date, name) => {
+        let projectInfo = this.state.projectInfo;
+        if (name) {
+            projectInfo[name] = date;
+            this.setState({ projectInfo });
+        }
+        else {
+            let field = event.target.name;
+            projectInfo[field] = event.target.value;
+            this.setState({ projectInfo });
+        }
+    }
+    onChangeLisenceInfo = (event, date, name) => {
         let lisenceInfo = this.state.lisenceAndCertificationinfo;
-        let field = event.target.name;
-        lisenceInfo[field] = event.target.value;
-        this.setState({ lisenceInfo });
+        if (name) {
+            lisenceInfo[name] = date;
+            this.setState({ lisenceInfo });
+        }
+        else {
+            let field = event.target.name;
+            lisenceInfo[field] = event.target.value;
+            this.setState({ lisenceInfo });
+        }
     }
     onChangeSkillsInfo = (event) => {
-        let skillInfo = this.state.skillInfo;
+        let skillsInfo = this.state.technicalSkillInfo;
         let field = event.target.name;
-        skillInfo[field] = event.target.value;
-        this.setState({ skillInfo });
+        skillsInfo[field] = event.target.value;
+        this.setState({ skillsInfo });
+    }
+    onChangeSoftSkillsInfo = (event) => {
+        let softSkillsInfo = this.state.softSkillInfo;
+        let field = event.target.name;
+        softSkillsInfo[field] = event.target.value;
+        this.setState({ softSkillsInfo });
+    }
+    onChangePresentationInfo = (event) => {
+        let presentationInfo = this.state.presentationInfo;
+        let field = event.target.name;
+        presentationInfo[field] = event.target.value;
+        this.setState({ presentationInfo });
+    }
+    onChangeExperienceInfo = (event, date, name) => {
+        let experienceInfo = this.state.experienceInfo;
+        if (name) {
+            experienceInfo[name] = date;
+            this.setState({ experienceInfo });
+        }
+        else {
+            let field = event.target.name;
+            experienceInfo[field] = event.target.value;
+            this.setState({ experienceInfo });
+        }
+    }
+    onChangePortfolioInfo = (event) => {
+        let portfolioInfo = this.state.portfolioInfo;
+        let field = event.target.name;
+        portfolioInfo[field] = event.target.value;
+        this.setState({ portfolioInfo });
+    }
+    onChangePublicationInfo = (event, date, name) => {
+        let publicationInfo = this.state.publicationInfo;
+        if (name) {
+            publicationInfo[name] = date;
+            this.setState({ publicationInfo });
+        }
+        else {
+            let field = event.target.name;
+            publicationInfo[field] = event.target.value;
+            this.setState({ publicationInfo });
+        }
     }
     onChangeProfileSwitch = () => {
         this.setState({ switchProfile: !this.state.switchProfile });
@@ -182,6 +302,30 @@ class Profile extends Component {
     }
     closeProjectDialog = () => {
         this.setState({ projectDialog: false });
+    }
+    openPresentationDialog = () => {
+        this.setState({ presentationDialog: true });
+    }
+    closePresentationDialog = () => {
+        this.setState({ presentationDialog: false });
+    }
+    openExperienceDialog = () => {
+        this.setState({ experienceDialog: true });
+    }
+    closeExperienceDialog = () => {
+        this.setState({ experienceDialog: false });
+    }
+    openPortfloioDialog = () => {
+        this.setState({ portfolioDialog: true });
+    }
+    closePortfloioDialog = () => {
+        this.setState({ portfolioDialog: false });
+    }
+    openPublicationDialog = () => {
+        this.setState({ publicationDialog: true });
+    }
+    closePublicationDialog = () => {
+        this.setState({ publicationDialog: false });
     }
     render() {
         return (
@@ -211,7 +355,11 @@ class Profile extends Component {
                     onChangeProfileSwitch={this.onChangeProfileSwitch}
                     switchProfile={this.state.switchProfile}
                     openProfileLevelDialogue={this.openProfileLevelDialogue}
-
+                    openProjectDialog={this.openProjectDialog}
+                    openExperienceDialog={this.openExperienceDialog}
+                    openPresentationDialog={this.openPresentationDialog}
+                    openPortfloioDialog={this.openPortfloioDialog}
+                    openPublicationDialog={this.openPublicationDialog}
                 />
                 <div className="row">
                     <div className="col-xl-7 col-lg-7 col-md-6 col-12">
@@ -222,10 +370,12 @@ class Profile extends Component {
                                 <Portfolio
                                     showCommentsBox={this.state.showCommentsBox}
                                     onClickComments={this.onClickComments}
+                                    openPortfloioDialog={this.openPortfloioDialog}
                                 />
                             </div>}
                         <div>
                             <Experience
+                                openExperienceDialog={this.openExperienceDialog}
                                 isEditClick={this.state.isEdit}
                             />
                         </div>
@@ -242,6 +392,12 @@ class Profile extends Component {
                             <Certification
                                 openCertificationDialog={this.openLisenceDialog}
                                 isEditClick={this.state.isEdit} />
+                        </div>
+                        <div>
+                            <Publications
+                                isEditClick={this.state.isEdit}
+                                openPublicationtDialog={this.openPublicationDialog}
+                            />
                         </div>
                     </div>
                     <div className="col-xl-4 col-lg-4 col-md-5 col-12">
@@ -272,6 +428,10 @@ class Profile extends Component {
                         <Courses
                             openCourseAndTrainingDialogue={this.openCourseAndTrainingDialogue}
                             isEditClick={this.state.isEdit} />
+                        <Presentation
+                            openPresentationDialog={this.openPresentationDialog}
+                            isEditClick={this.state.isEdit}
+                        />
                     </div>
                 </div>
                 {this.state.educationOpen ?
@@ -297,7 +457,7 @@ class Profile extends Component {
                         open={this.state.skillOpen}
                         handleClose={this.closeSkillDialog}
                         onChangeSkillsInfo={this.onChangeSkillsInfo}
-                        data={this.state.skillInfo}
+                        data={this.state.technicalSkillInfo}
                     />
                     :
                     <span></span>}
@@ -305,6 +465,8 @@ class Profile extends Component {
                     <SoftSkillsDialogue
                         open={this.state.softSkillsOpen}
                         handleClose={this.closeSoftSkillDialog}
+                        onChangeSoftSkillsInfo={this.onChangeSoftSkillsInfo}
+                        data={this.state.softSkillInfo}
                     />
                 }
                 {this.state.awardOpen ?
@@ -340,7 +502,41 @@ class Profile extends Component {
                     <ProjectDialog
                         open={this.state.projectDialog}
                         handleClose={this.closeProjectDialog}
+                        onChangeProjectInfo={this.onChangeProjectInfo}
+                        data={this.state.projectInfo}
                     />
+                }
+                {this.state.presentationDialog &&
+                    <PresentationDialog
+                        open={this.state.presentationDialog}
+                        handleClose={this.closePresentationDialog}
+                        onChangePresentationInfo={this.onChangePresentationInfo}
+                        data={this.state.presentationInfo}
+                    />
+                }
+                {this.state.experienceDialog &&
+                    <ExperienceDialog
+                        open={this.state.experienceDialog}
+                        handleClose={this.closeExperienceDialog}
+                        onChangeExperienceInfo={this.onChangeExperienceInfo}
+                        data={this.state.experienceInfo}
+                    />
+                }
+                {this.state.portfolioDialog &&
+                    <PortfolioDialog
+                        open={this.state.portfolioDialog}
+                        handleClose={this.closePortfloioDialog}
+                        onChangePortfolioInfo={this.onChangePortfolioInfo}
+                        data={this.state.portfolioInfo}
+                    />
+                }
+                {this.state.publicationDialog &&
+                <PublicationDialog 
+                open={this.state.publicationDialog}
+                handleClose={this.closePublicationDialog}
+                data={this.state.publicationInfo}
+                onChangePublicationInfo={this.onChangePublicationInfo}
+                />
                 }
             </div>
         );

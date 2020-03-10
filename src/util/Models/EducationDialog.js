@@ -4,10 +4,19 @@ import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
-import MenuItem from '@material-ui/core/MenuItem';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import 'date-fns';
+import Grid from '@material-ui/core/Grid';
+import DateFnsUtils from '@date-io/date-fns';
+import {
+    MuiPickersUtilsProvider,
+    KeyboardDatePicker,
+} from '@material-ui/pickers';
+import FormGroup from '@material-ui/core/FormGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
 
-const EducationDialog = ({ open, 
+const EducationDialog = ({ open,
     handleClose,
     onChangeEducationInfo,
     data
@@ -32,8 +41,19 @@ const EducationDialog = ({ open,
                     />
                     <TextField
                         margin="dense"
+                        name="schoolUrl"
+                        label="School Url"
+                        type="text"
+                        value={data.schoolUrl}
+                        onChange={onChangeEducationInfo}
+                        placeholder="Ex: Abasyn University"
+                        fullWidth
+                        required
+                    />
+                    <TextField
+                        margin="dense"
                         name="degree"
-                        label="Degree"
+                        label="Degree / Level of Education"
                         type="text"
                         value={data.degree}
                         onChange={onChangeEducationInfo}
@@ -52,31 +72,84 @@ const EducationDialog = ({ open,
                         placeholder="Ex: Computer Science or IT"
                         required
                     />
+                    <div className='row'>
+                        <div style={{width:'68%'}}>
+                    <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                        <Grid >
+                            <KeyboardDatePicker
+                                className="educationDatePickerFiled"
+                                margin="normal"
+                                id='educationStartDate'
+                                label="Start Date"
+                                format="MM/dd/yyyy"
+                                value={data.educationStartDate}
+                                name='educationStartDate'
+                                onChange={(e, date, name) => onChangeEducationInfo(e, date, 'educationStartDate')}
+                                KeyboardButtonProps={{
+                                    'aria-label': 'change date',
+                                }}
+                                InputProps={{
+                                    readOnly: true,
+                                  }}
+                                required
+                            />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <KeyboardDatePicker
+                                className="educationDatePickerFiled"
+                                margin="normal"
+                                label="End Date"
+                                format="MM/dd/yyyy"
+                                value={data.educationEndDate}
+                                name='educationEndDate'
+                                onChange={(e, date, name) => onChangeEducationInfo(e, date, 'educationEndDate')}
+                                KeyboardButtonProps={{
+                                    'aria-label': 'change date',
+                                }}
+                                InputProps={{
+                                    readOnly: true,
+                                  }}
+                                required
+                            />
+                        </Grid>
+                    </MuiPickersUtilsProvider>
+                    </div>
+                    <div className='currentlyEnrolledMargin'>
+                    <FormGroup row>
+                        <FormControlLabel
+                            control={
+                                <Checkbox
+                                    value="checkedB"
+                                    color="primary"
+                                />
+                            }
+                            label="Currently Enrolled"
+                        />
+                    </FormGroup>
+                    </div>
+                    </div>
                     <TextField
-                        id="standard-select-currency"
-                        select
-                        label="Start Year"
-                        value="1"
-                        helperText="Please Select Your Degree Starting Year"
+                        margin="dense"
+                        name="educationCity"
+                        label="City"
+                        type="text"
+                        value={data.educationCity}
+                        onChange={onChangeEducationInfo}
+                        placeholder="Enter your Grade"
+                        className='profileInfoTextField'
                         required
-                    >
-                        <MenuItem key={1} >
-                            1
-                        </MenuItem>
-                    </TextField>
+                    />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <TextField
-                        id="standard-select-currency"
-                        select
-                        label="End Year (or expected)"
-                        value="1"
-                        helperText="Please Select Degree Ending Year or expected"
+                        margin="dense"
+                        name="educationState"
+                        label="State"
+                        type="text"
+                        value={data.educationState}
+                        onChange={onChangeEducationInfo}
+                        placeholder="Enter your Grade"
+                        className='profileInfoTextField'
                         required
-                    >
-                        <MenuItem  >
-                            1
-                        </MenuItem>
-                    </TextField>
+                    />
                     <TextField
                         margin="dense"
                         name="grade"
@@ -84,60 +157,8 @@ const EducationDialog = ({ open,
                         type="text"
                         value={data.grade}
                         onChange={onChangeEducationInfo}
-                        fullWidth
                         placeholder="Enter your Grade"
-                        required
-                    />
-                    <TextField
-                        name="activitiesAndSocieties"
-                        label="Activities and societies"
-                        multiline
-                        rows="5"
-                        fullWidth
-                        value={data.activitiesAndSocieties}
-                        onChange={onChangeEducationInfo}
-                        required
-                    />
-                    <TextField
-                        name="description"
-                        label="Description"
-                        value={data.description}
-                        onChange={onChangeEducationInfo}
-                        multiline
-                        rows="5"
-                        fullWidth
-                        required
-                    />
-                    <br />
-                    <br />
-                    <br />
-                    <p>Media<br />
-                        Add or link to external documents, photos, sites, videos, and presentations.</p>
-
-                    <input
-                        accept="image/*"
-                        id="contained-button-file"
-                        multiple
-                        type="file"
-                        className="inputImage"
-                        required
-                    />
-                    <label htmlFor="contained-button-file">
-                        <Button variant="contained" color="primary" component="span">
-                            Upload
-                    </Button>
-                    </label>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <Button variant="outlined" component="span">
-                        Link
-                    </Button>
-                    <TextField
-                        margin="dense"
-                        name="link"
-                        label="Link"
-                        type="text"
-                        fullWidth
-                        placeholder="Post or type a link to a file or vedio"
+                        className='profileInfoTextField'
                         required
                     />
                 </DialogContent>

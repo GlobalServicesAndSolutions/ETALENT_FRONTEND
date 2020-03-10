@@ -20,13 +20,14 @@ const useStyles = makeStyles({
   media: {
     height: 140,
   },
-  grid:{
-    flexGrow:1,
+  grid: {
+    flexGrow: 1,
   },
 });
 
-const Portfolio = ({showCommentsBox,
-  onClickComments
+const Portfolio = ({ showCommentsBox,
+  onClickComments,
+  openPortfloioDialog
 }) => {
   const classes = useStyles();
 
@@ -35,16 +36,16 @@ const Portfolio = ({showCommentsBox,
       <div className="mb-3">
         <div className="cardHeaderAndAddButton" >
           <div>
-          <div className="cardHeaderAndAddButton" >
-          <div>
-            <h3 className="card-title mb-2 mb-md-3">Portfolio</h3>
-          </div>
-          <div>
-            <Fab  size="small" color="primary" aria-label="add" className='profileAddEditButton'>
-              <AddIcon />
-            </Fab>
-          </div>
-        </div>
+            <div className="cardHeaderAndAddButton" >
+              <div>
+                <h3 className="card-title mb-2 mb-md-3">Portfolio</h3>
+              </div>
+              <div>
+                <Fab size="small" color="primary" aria-label="add" className='profileAddEditButton' onClick={openPortfloioDialog}>
+                  <AddIcon />
+                </Fab>
+              </div>
+            </div>
             <hr />
             <Grid container className={classes.grid} spacing={2} >
               <Grid item xs={12}>
@@ -72,11 +73,11 @@ const Portfolio = ({showCommentsBox,
                     </CardActions>
                     {showCommentsBox &&
                       <TextField
-                      id="standard-multiline-static"
-                      label="Comments"
-                      multiline
-                      rows="2"
-                    />}
+                        id="standard-multiline-static"
+                        label="Comments"
+                        multiline
+                        rows="2"
+                      />}
                   </Card>
                   <Card className={classes.root}>
                     <CardActionArea>
@@ -88,10 +89,10 @@ const Portfolio = ({showCommentsBox,
                       <CardContent>
                         <Typography gutterBottom variant="h5" component="h2">
                           Portfolio Title
-          </Typography>
+                      </Typography>
                         <Typography variant="body2" color="textSecondary" component="p">
                           Portfolio Discription
-          </Typography>
+                      </Typography>
                       </CardContent>
                     </CardActionArea>
                     <CardActions>
@@ -167,16 +168,16 @@ const Portfolio = ({showCommentsBox,
                     </CardActions>
                   </Card>
                 </Grid>
-                </Grid>
-                </Grid>
+              </Grid>
+            </Grid>
           </div>
         </div>
-          </div>
+      </div>
 
 
     </Widget>
-        )
-      }
-      
-      
-      export default Portfolio;
+  )
+}
+
+
+export default Portfolio;

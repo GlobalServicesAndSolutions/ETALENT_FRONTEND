@@ -28,7 +28,7 @@ const Skills = ({ ratingValue,
             <div >
                 <div className="cardHeaderAndAddButton">
                     <div>
-                        <h3 className="card-title mb-2 mb-md-3">Skills</h3>
+                        <h3 className="card-title mb-2 mb-md-3">Technical Skills</h3>
                     </div>
                     <div>
                         <Fab size="small" color="primary" aria-label="add" onClick={onSkillDialogue} className='profileAddEditButton'>
@@ -61,22 +61,25 @@ const Skills = ({ ratingValue,
                     <div className="row profileSectionEditAndDelete">
                         <div>
                             <ListItem divider alignItems="center">
-                                <div >
+                                <div className='row'>
                                     <div>
                                         <ListItemText
                                             primary="Java Script"
                                         />
                                     </div>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     <div>
-                                        <ThumbUpIcon color="primary" style={{ cursor: "pointer" }}>Likes</ThumbUpIcon>
+                                        <ThumbUpIcon className='LikeThumbColorUserDefine'/>
+                                        </div>
+                                        </div>
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <div>
                                         <Rating
                                             name="simple-controlled"
                                             value={ratingValue}
                                             onChange={onRatingChange}
                                         />
-                                    </div>
-                                </div>
+                                        </div>
                             </ListItem>
                         </div>
                         {isEditClick &&

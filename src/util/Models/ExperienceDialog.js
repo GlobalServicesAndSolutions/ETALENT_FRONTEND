@@ -15,26 +15,30 @@ import {
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
+import { FormLabel } from '@material-ui/core';
+import FormControl from '@material-ui/core/FormControl';
+import InputLabel from '@material-ui/core/InputLabel';
+import Select from '@material-ui/core/Select';
 
-const LisenceAndCertification = ({ open,
+const ExperienceDialog = ({ open,
     handleClose,
-    onChangeLisenceInfo,
+    onChangeExperienceInfo,
     data
 }) => {
 
     return (
         <div>
             <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title" maxWidth="sm" >
-                <DialogTitle id="form-dialog-title">Add Certification And Trainings</DialogTitle>
+                <DialogTitle id="form-dialog-title">Add Experience</DialogTitle>
                 <DialogContent>
                     <TextField
                         autoFocus
                         margin="dense"
-                        name="certificationName"
-                        label="Name"
+                        name="experienceTitle"
+                        label="Title"
                         type="text"
-                        value={data.certificationName}
-                        onChange={onChangeLisenceInfo}
+                        value={data.experienceTitle}
+                        onChange={onChangeExperienceInfo}
                         placeholder="Ex: CCNA"
                         fullWidth
                         required
@@ -42,26 +46,68 @@ const LisenceAndCertification = ({ open,
                     
                     <TextField
                         margin="dense"
-                        name="credentialId"
-                        label="Credential ID"
+                        name="experienceEmploymentType"
+                        label="EmploymentType"
                         type="text"
-                        value={data.credentialId}
-                        onChange={onChangeLisenceInfo}
+                        value={data.experienceEmploymentType}
+                        onChange={onChangeExperienceInfo}
                         fullWidth
-                        placeholder="Enter Credential ID"
+                        placeholder="Employment Type"
+                        required
+                    />
+                    <TextField
+                        autoFocus
+                        margin="dense"
+                        name="experienceCompany"
+                        label="Company"
+                        type="text"
+                        value={data.experienceCompany}
+                        onChange={onChangeExperienceInfo}
+                        placeholder="Ex: CCNA"
+                        fullWidth
                         required
                     />
                     <TextField
                         margin="dense"
-                        name="organization"
-                        label="Issuing Organization"
+                        name="experienceIndustry"
+                        label="Industry"
                         type="text"
-                        value={data.organization}
-                        onChange={onChangeLisenceInfo}
+                        value={data.experienceIndustry}
+                        onChange={onChangeExperienceInfo}
                         fullWidth
-                        placeholder="Ex: Cisco"
+                        placeholder="Ex: Software House/ IT"
                         required
                     />
+                    <hr/>
+                    <FormLabel component="legend">Location</FormLabel>
+                    <FormControl style={{ width: '45%', marginTop: '5px' }}>
+                        <InputLabel htmlFor="age-native-simple">Country</InputLabel>
+                        <Select
+                            native
+                            required
+                            inputProps={{
+                                name: 'workCountry',
+                                id: 'age-native-simple',
+                            }}
+                        >
+                            <option value="" />
+                            <option value={'+1'}>USA</option>
+                            <option value={'+92'}>Pakistan</option>
+                        </Select>
+                    </FormControl>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <TextField
+                        margin="dense"
+                        name="experienceCity"
+                        label="City"
+                        type="text"
+                        value={data.experienceCity}
+                        onChange={onChangeExperienceInfo}
+                        className='profileInfoTextField'
+                        placeholder="Ex: Islamabad"
+                        required
+                    />
+                    <hr/>
                     <div className='row'>
                         <div style={{ width: '68%' }}>
                             <MuiPickersUtilsProvider utils={DateFnsUtils}>
@@ -69,12 +115,12 @@ const LisenceAndCertification = ({ open,
                                     <KeyboardDatePicker
                                         className="educationDatePickerFiled"
                                         margin="normal"
-                                        id='certificationStartDate'
-                                        label="Issue Date"
+                                        id='experienceStartDate'
+                                        label="Start Date"
                                         format="MM/dd/yyyy"
                                         value={data.certificationIssueDate}
-                                        name='educationStartDate'
-                                        onChange={(e, date, name) => onChangeLisenceInfo(e, date, 'certificationIssueDate')}
+                                        name='experienceStartDate'
+                                        onChange={(e, date, name) => onChangeExperienceInfo(e, date, 'experienceStartDate')}
                                         KeyboardButtonProps={{
                                             'aria-label': 'change date',
                                         }}
@@ -84,14 +130,14 @@ const LisenceAndCertification = ({ open,
                                         required
                                     />
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <KeyboardDatePicker
+                                    <KeyboardDatePicker
                                         className="educationDatePickerFiled"
                                         margin="normal"
                                         label="End Date"
                                         format="MM/dd/yyyy"
-                                        value={data.certificationEndDate}
-                                        name='certificationEndDate'
-                                        onChange={(e, date, name) => onChangeLisenceInfo(e, date, 'certificationEndDate')}
+                                        value={data.experienceEndDate}
+                                        name='experienceEndDate'
+                                        onChange={(e, date, name) => onChangeExperienceInfo(e, date, 'experienceEndDate')}
                                         KeyboardButtonProps={{
                                             'aria-label': 'change date',
                                         }}
@@ -103,7 +149,7 @@ const LisenceAndCertification = ({ open,
                                 </Grid>
                             </MuiPickersUtilsProvider>
                         </div>
-                        <div >
+                        <div className='currentlyEnrolledMargin'>
                             <FormGroup row>
                                 <FormControlLabel
                                     control={
@@ -112,27 +158,20 @@ const LisenceAndCertification = ({ open,
                                             color="primary"
                                         />
                                     }
-                                    label="This credential does not expire"
+                                    label="Currently Working"
                                 />
                             </FormGroup>
                         </div>
                     </div>
                     <TextField
-                        name="score"
-                        label="Score"
+                        margin="dense"
+                        name="experienceDescription"
+                        label="Description"
+                        multiline
+                        rows='3'
+                        onChange={onChangeExperienceInfo}
+                        value={data.experienceDescription}
                         fullWidth
-                        value={data.score}
-                        onChange={onChangeLisenceInfo}
-                        placeholder="Enter Credential URL"
-                        required
-                    />
-                    <TextField
-                        name="credentialUrl"
-                        label="Credential URL"
-                        fullWidth
-                        value={data.credentialUrl}
-                        onChange={onChangeLisenceInfo}
-                        placeholder="Enter Credential URL"
                         required
                     />
                 </DialogContent>
@@ -148,4 +187,4 @@ const LisenceAndCertification = ({ open,
         </div>
     );
 };
-export default LisenceAndCertification; 
+export default ExperienceDialog; 

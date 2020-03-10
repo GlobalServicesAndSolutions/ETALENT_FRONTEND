@@ -4,6 +4,7 @@ import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
+import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 
 const Courses = ({ openCourseAndTrainingDialogue, isEditClick }) => {
   return (
@@ -11,7 +12,7 @@ const Courses = ({ openCourseAndTrainingDialogue, isEditClick }) => {
       <div className="mb-3">
         <div className="cardHeaderAndAddButton">
           <div>
-            <h3 className="card-title mb-2 mb-md-3">Courses And Trainings</h3>
+            <h3 className="card-title mb-2 mb-md-3">Courses</h3>
           </div>
           <div>
             <Fab size="small" color="primary" aria-label="cross" onClick={openCourseAndTrainingDialogue} className='profileAddEditButton'>
@@ -21,8 +22,17 @@ const Courses = ({ openCourseAndTrainingDialogue, isEditClick }) => {
         </div>
         <hr />
         <div className="row profileSectionEditAndDelete">
-          <div>
-            <h4>Web Development Workshop</h4>
+          <div className='row'>
+            <div>
+            <h5>Web Development Workshop</h5>
+            </div>
+            &nbsp;&nbsp;&nbsp;
+            <div>
+              <div className='row'>
+            <ThumbUpIcon className='LikeThumbColorUserDefine' />
+            <p>2 Likes</p>
+            </div>
+            </div>
           </div>
 
           {isEditClick &&

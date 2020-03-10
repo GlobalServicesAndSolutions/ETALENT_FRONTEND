@@ -5,13 +5,16 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import FormControl from '@material-ui/core/FormControl';
+import InputLabel from '@material-ui/core/InputLabel';
+import Select from '@material-ui/core/Select';
 
 const CourseAndTrainings = ({ open, handleClose }) => {
 
     return (
         <div>
             <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title" maxWidth="sm" >
-                <DialogTitle id="form-dialog-title">New Course/Training</DialogTitle>
+                <DialogTitle id="form-dialog-title">New Course</DialogTitle>
                 <DialogContent>
                     <TextField
                         autoFocus
@@ -24,31 +27,20 @@ const CourseAndTrainings = ({ open, handleClose }) => {
                         fullWidth
                         required
                     />
-                   <TextField
-                        id="standard-multiline-static"
-                        name="courseDescription"
-                        label="Course Description"
-                        multiline
-                        rows="5"
-                        fullWidth
-                        required
-                    />
-                    <TextField
-                        margin="dense"
-                        name="institute"
-                        label="Institute"
-                        type="text"
-                        fullWidth
-                        placeholder="Ex: Seven Software"
-                        required
-                    />
-                    <TextField
-                        name="coursedate"
-                        label="Course Date"
-                        type="text"
-                        fullWidth
-                        required
-                    />
+                    <FormControl style={{width:'100%'}}>
+                        <InputLabel htmlFor="age-native-simple">Associated With Education </InputLabel>
+                        <Select
+                            native
+                            inputProps={{
+                                name: 'workCountry',
+                                id: 'age-native-simple',
+                            }}
+                        >
+                            <option value="" />
+                            <option value={'Seven Tech'}>Abasy University</option>
+                            <option value={'Vision X'}>Vision X</option>
+                        </Select>
+                        </FormControl>
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleClose} color="primary">

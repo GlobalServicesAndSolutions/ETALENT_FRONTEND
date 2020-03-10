@@ -5,7 +5,9 @@ import AddIcon from '@material-ui/icons/Add';
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 
-const Experience = ({ openEducationDialog, isEditClick }) => {
+const Experience = ({ openExperienceDialog,
+   isEditClick
+   }) => {
   return (
     <Widget styleName="jr-card-profile" >
       <div className="mb-3">
@@ -14,7 +16,7 @@ const Experience = ({ openEducationDialog, isEditClick }) => {
             <h3 className="card-title mb-2 mb-md-3">Experience</h3>
           </div>
           <div>
-            <Fab onClick={openEducationDialog} size="small" color="primary" aria-label="add" className='profileAddEditButton'>
+            <Fab onClick={openExperienceDialog} size="small" color="primary" aria-label="add" className='profileAddEditButton'>
               <AddIcon />
             </Fab>
           </div>
@@ -29,10 +31,10 @@ const Experience = ({ openEducationDialog, isEditClick }) => {
 
           {isEditClick &&
             <div>
-              <Fab onClick={openEducationDialog} size="small" color="primary" aria-label="delete">
+              <Fab  size="small" color="primary" aria-label="delete">
                 <DeleteIcon />
               </Fab>
-              <Fab onClick={openEducationDialog} size="small" color="primary" aria-label="edit">
+              <Fab onClick={openExperienceDialog} size="small" color="primary" aria-label="edit">
                 <EditIcon />
               </Fab>
             </div>

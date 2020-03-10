@@ -11,9 +11,18 @@ import Checkbox from '@material-ui/core/Checkbox';
 import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
 import Select from '@material-ui/core/Select';
+import 'date-fns';
+import Grid from '@material-ui/core/Grid';
+import DateFnsUtils from '@date-io/date-fns';
+import {
+    MuiPickersUtilsProvider,
+    KeyboardDatePicker,
+} from '@material-ui/pickers';
 
 const ProjectDialog = ({ open,
     handleClose,
+    onChangeProjectInfo,
+    data
 }) => {
 
     return (
@@ -24,56 +33,75 @@ const ProjectDialog = ({ open,
                     <TextField
                         autoFocus
                         margin="dense"
-                        name="projectname"
+                        name="projectName"
                         label="Project Name"
                         type="text"
+                        onChange={onChangeProjectInfo}
+                        value={data.projectName}
                         placeholder="Ex: Web App"
                         fullWidth
                         required
                     />
-                    <FormGroup row>
-                        <FormControlLabel
-                            control={
-                                <Checkbox
-                                    value="checkedB"
-                                    color="primary"
+                    <div className='row'>
+                        <div style={{ width: '68%' }}>
+                            <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                                <Grid >
+                                    <KeyboardDatePicker
+                                        className="educationDatePickerFiled"
+                                        margin="normal"
+                                        id='projectStartDate'
+                                        label="Start Date"
+                                        format="MM/dd/yyyy"
+                                        value={data.projectStartDate}
+                                        name='projectStartDate'
+                                        onChange={(e, date, name) => onChangeProjectInfo(e, date, 'projectStartDate')}
+                                        KeyboardButtonProps={{
+                                            'aria-label': 'change date',
+                                        }}
+                                        InputProps={{
+                                            readOnly: true,
+                                        }}
+                                        required
+                                    />
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <KeyboardDatePicker
+                                        className="educationDatePickerFiled"
+                                        margin="normal"
+                                        label="End Date"
+                                        format="MM/dd/yyyy"
+                                        value={data.projectEndDate}
+                                        name='projectEndDate'
+                                        onChange={(e, date, name) => onChangeProjectInfo(e, date, 'projectEndDate')}
+                                        KeyboardButtonProps={{
+                                            'aria-label': 'change date',
+                                        }}
+                                        InputProps={{
+                                            readOnly: true,
+                                        }}
+                                        required
+                                    />
+                                </Grid>
+                            </MuiPickersUtilsProvider>
+                        </div>
+                        <div className='currentlyEnrolledMargin'>
+                            <FormGroup row>
+                                <FormControlLabel
+                                    control={
+                                        <Checkbox
+                                            value="checkedB"
+                                            color="primary"
+                                        />
+                                    }
+                                    label="Currently working"
                                 />
-                            }
-                            label="I am currently working on this project"
-                        />
-                    </FormGroup>
-                    <FormControl style={{ width: '100%' }}>
-                        <InputLabel htmlFor="age-native-simple">Start Year </InputLabel>
+                            </FormGroup>
+                        </div>
+                    </div>
+                    <FormControl style={{width:'100%'}}>
+                        <InputLabel htmlFor="age-native-simple">Associated With Experience </InputLabel>
                         <Select
                             native
-                            inputProps={{
-                                name: 'workCountry',
-                                id: 'age-native-simple',
-                            }}
-                        >
-                            <option value="" />
-                            <option value={2015}>2015</option>
-                            <option value={2016}>2016</option>
-                        </Select>
-                    </FormControl>
-                    <FormControl style={{ width: '100%' }}>
-                        <InputLabel htmlFor="age-native-simple">End Year </InputLabel>
-                        <Select
-                            native
-                            inputProps={{
-                                name: 'workCountry',
-                                id: 'age-native-simple',
-                            }}
-                        >
-                            <option value="" />
-                            <option value={2017}>2017</option>
-                            <option value={2018}>2018</option>
-                        </Select>
-                    </FormControl>
-                    <FormControl style={{ width: '100%' }}>
-                        <InputLabel htmlFor="age-native-simple">Associated With: </InputLabel>
-                        <Select
-                            native
+                            className="educationDatePickerFiled"
                             inputProps={{
                                 name: 'workCountry',
                                 id: 'age-native-simple',
@@ -84,12 +112,29 @@ const ProjectDialog = ({ open,
                             <option value={'Vision X'}>Vision X</option>
                         </Select>
                     </FormControl>
+                    <FormControl style={{width:'100%'}}>
+                        <InputLabel htmlFor="age-native-simple">Associated With Education </InputLabel>
+                        <Select
+                            native
+                            className="educationDatePickerFiled"
+                            inputProps={{
+                                name: 'workCountry',
+                                id: 'age-native-simple',
+                            }}
+                        >
+                            <option value="" />
+                            <option value={'Seven Tech'}>Abasy University</option>
+                            <option value={'Vision X'}>Vision X</option>
+                        </Select>
+                    </FormControl>
                     <TextField
                         autoFocus
                         margin="dense"
-                        name="projecturl"
+                        name="projectUrl"
                         label="Project Url"
                         type="text"
+                        onChange={onChangeProjectInfo}
+                        value={data.projectUrl}
                         placeholder="Ex: www.example.com"
                         fullWidth
                         required
@@ -100,7 +145,8 @@ const ProjectDialog = ({ open,
                         label="Description"
                         multiline
                         rows='3'
-                        placeholder="Ex: www.example.com"
+                        onChange={onChangeProjectInfo}
+                        value={data.projectDescription}
                         fullWidth
                         required
                     />

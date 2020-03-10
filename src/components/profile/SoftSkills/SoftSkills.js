@@ -66,22 +66,25 @@ const SoftSkills = ({ ratingValue,
                     <div className="row profileSectionEditAndDelete">
                         <div>
                             <ListItem divider alignItems="center">
-                                <div >
+                                <div className='row'>
                                     <div>
                                         <ListItemText
                                             primary="Communication"
                                         />
                                     </div>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     <div>
-                                        <ThumbUpIcon color="primary" style={{ cursor: "pointer" }}>Likes</ThumbUpIcon>
+                                        <ThumbUpIcon className='LikeThumbColorUserDefine' />
+                                        </div>
+                                        </div>
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         <Rating
                                             name="simple-controlled"
                                             value={ratingValue}
                                             onChange={onRatingChange}
                                         />
-                                    </div>
-                                </div>
+                                    
+                                
                             </ListItem>
                         </div>
                         {isEditClick &&

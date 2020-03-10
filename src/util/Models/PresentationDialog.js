@@ -6,40 +6,53 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
-const SkillsDialogue = ({ open,
-     handleClose,
-     onChangeSkillsInfo,
-     data 
-    }) => {
+const PresentationDialog = ({ open,
+    handleClose,
+    onChangePresentationInfo,
+    data
+}) => {
 
     return (
         <div>
             <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title" maxWidth="sm" >
-                <DialogTitle id="form-dialog-title">Add Skill</DialogTitle>
+                <DialogTitle id="form-dialog-title">Add Project</DialogTitle>
                 <DialogContent>
                     <TextField
                         autoFocus
                         margin="dense"
-                        name="skillName"
-                        label="Skill Name"
+                        name="presentationName"
+                        label="Presentation Name"
                         type="text"
-                        value={data.skillName}
-                        onChange={onChangeSkillsInfo}
-                        placeholder="Ex: Web Development"
+                        onChange={onChangePresentationInfo}
+                        value={data.presentationName}
+                        placeholder="Ex: Cyber Security"
                         fullWidth
                         required
                     />
                     <TextField
                         margin="dense"
-                        name="skillExperience"
-                        label="Experience"
-                        type="number"
-                        value={data.skillExperience}
-                        onChange={onChangeSkillsInfo}
-                        placeholder="Ex: 5"
+                        name="presentationDescription"
+                        label="Description"
+                        multiline
+                        rows='3'
+                        onChange={onChangePresentationInfo}
+                        value={data.presentationDescription}
                         fullWidth
                         required
                     />
+                    <input
+                        accept="image/*"
+                        id="contained-button-file"
+                        multiple
+                        type="file"
+                        className="inputImage"
+                        required
+                    />
+                    <label htmlFor="contained-button-file">
+                        <Button variant="contained" color="primary" component="span">
+                            Attach File
+                    </Button>
+                    </label>
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleClose} color="primary">
@@ -53,4 +66,4 @@ const SkillsDialogue = ({ open,
         </div>
     );
 };
-export default SkillsDialogue; 
+export default PresentationDialog; 

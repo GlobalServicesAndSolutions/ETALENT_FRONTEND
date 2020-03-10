@@ -4,13 +4,12 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
+import TextField from '@material-ui/core/TextField';
 
 const SoftSkillsDialogue = ({ open,
-    handleClose
+    handleClose,
+    onChangeSoftSkillsInfo,
+    data
 }) => {
 
     return (
@@ -18,16 +17,29 @@ const SoftSkillsDialogue = ({ open,
             <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title" maxWidth="xl" >
                 <DialogTitle id="form-dialog-title">Add Soft Skill</DialogTitle>
                 <DialogContent>
-                    <FormControl style={{width:'80%'}}>
-                        <InputLabel id="demo-simple-select-label">Soft Skills</InputLabel>
-                        <Select
-                            labelId="demo-simple-select-label"
-                            id="demo-simple-select"
-                            required
-                        >
-                            <MenuItem value='Communication'>Communication</MenuItem>
-                        </Select>
-                    </FormControl>
+                <TextField
+                        autoFocus
+                        margin="dense"
+                        name="skillName"
+                        label="Skill Name"
+                        type="text"
+                        value={data.skillName}
+                        onChange={onChangeSoftSkillsInfo}
+                        placeholder="Ex: Web Development"
+                        fullWidth
+                        required
+                    />
+                    <TextField
+                        margin="dense"
+                        name="skillExperience"
+                        label="Experience"
+                        type="number"
+                        value={data.skillExperience}
+                        onChange={onChangeSoftSkillsInfo}
+                        placeholder="Ex: 5"
+                        fullWidth
+                        required
+                    />
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleClose} color="primary">

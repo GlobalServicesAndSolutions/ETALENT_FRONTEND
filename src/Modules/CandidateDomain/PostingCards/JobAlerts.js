@@ -1,6 +1,5 @@
 import React from "react";
 import Widget from "components/Widget";
-import { Link } from "react-router-dom";
 
 const AppliedJobs = () => {
   return (
@@ -12,15 +11,14 @@ const AppliedJobs = () => {
             (2)
           </sup></h3>
           <br />
-           <Link to='/jobDescription'><h5>Senior Software Engineer</h5></Link>
-          <div className='row'>
-          <p style={{color:'gray'}}>Applied 20 days ago</p>
-          &nbsp;
-          <div className='vlineForAppliedJobs'></div>
-          &nbsp;
-          <p style={{color:'gray'}}>Status: In Progress</p>
+          <div>
+          <div style={{display:'flex', justifyContent:'space-between'}}>
+          <h5>Senior Software Engineer</h5>
+          <p style={{color:'red'}}><strong>In Progress</strong></p>
           </div>
-        </div>
+          <p style={{color:'gray'}}>Applied 20 days ago</p>
+          </div>
+          </div>
       </Widget>
     </div>
   )

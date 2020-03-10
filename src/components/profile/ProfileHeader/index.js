@@ -33,7 +33,12 @@ const ProfileHeader = ({ onEducationView,
   isEdit,
   onChangeProfileSwitch,
   switchProfile,
-  openProfileLevelDialogue
+  openProfileLevelDialogue,
+  openProjectDialog,
+  openExperienceDialog,
+  openPresentationDialog,
+  openPortfloioDialog,
+  openPublicationDialog
 }) => {
   return (
     <div className="jr-profile-banner">
@@ -140,13 +145,13 @@ const ProfileHeader = ({ onEducationView,
                 <hr />
                 <Typography className='addSection'>
                   Experience
-                        <Fab size="small" aria-label="add" >
+                        <Fab size="small" aria-label="add" onClick={openExperienceDialog}>
                     <AddIcon />
                   </Fab>
                 </Typography>
                 <hr />
                 <Typography className='addSection'>
-                  Lisence And Certification
+                Certifications and Trainings
                         <Fab size="small" aria-label="add" onClick={openCertificationDialog}>
                     <AddIcon />
                   </Fab>
@@ -163,7 +168,7 @@ const ProfileHeader = ({ onEducationView,
               </ExpansionPanelSummary>
               <ExpansionPanelDetails className='expansionPanel'>
                 <Typography className='addSection'>
-                  Skills
+                  Technical Skills
                         <Fab size="small" aria-label="add" onClick={onSkillDialogue}>
                     <AddIcon />
                   </Fab>
@@ -188,14 +193,28 @@ const ProfileHeader = ({ onEducationView,
               <ExpansionPanelDetails className='expansionPanel'>
                 <Typography className='addSection'>
                   Projects
-                        <Fab size="small" aria-label="add">
+                        <Fab size="small" aria-label="add" onClick={openProjectDialog}>
                     <AddIcon />
                   </Fab>
                 </Typography>
                 <hr />
                 <Typography className='addSection'>
-                  Courses/Trainings
+                  Courses
                         <Fab size="small" aria-label="add" onClick={openCourseAndTrainingDialogue}>
+                    <AddIcon />
+                  </Fab>
+                </Typography>
+                <hr />
+                <Typography className='addSection'>
+                  Presentations
+                        <Fab size="small" aria-label="add" onClick={openPresentationDialog}>
+                    <AddIcon />
+                  </Fab>
+                </Typography>
+                <hr />
+                <Typography className='addSection'>
+                  Publications
+                        <Fab size="small" aria-label="add" onClick={openPublicationDialog}>
                     <AddIcon />
                   </Fab>
                 </Typography>
@@ -219,7 +238,7 @@ const ProfileHeader = ({ onEducationView,
               <ExpansionPanelDetails className='expansionPanel'>
                 <Typography className='addSection'>
                   Portfolio
-                        <Fab size="small" aria-label="add" >
+                        <Fab size="small" aria-label="add" onClick={openPortfloioDialog}>
                     <AddIcon />
                   </Fab>
                 </Typography>

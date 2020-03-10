@@ -6,40 +6,41 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
-const SkillsDialogue = ({ open,
-     handleClose,
-     onChangeSkillsInfo,
-     data 
-    }) => {
+const PortfolioDialog = ({ open,
+    handleClose,
+    onChangePortfolioInfo,
+    data
+}) => {
 
     return (
         <div>
             <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title" maxWidth="sm" >
-                <DialogTitle id="form-dialog-title">Add Skill</DialogTitle>
+                <DialogTitle id="form-dialog-title">Add Project</DialogTitle>
                 <DialogContent>
                     <TextField
-                        autoFocus
                         margin="dense"
-                        name="skillName"
-                        label="Skill Name"
-                        type="text"
-                        value={data.skillName}
-                        onChange={onChangeSkillsInfo}
-                        placeholder="Ex: Web Development"
+                        name="portfolioInfo"
+                        label="Profile Information"
+                        multiline
+                        rows='3'
+                        onChange={onChangePortfolioInfo}
+                        value={data.portfolioInfo}
                         fullWidth
                         required
                     />
-                    <TextField
-                        margin="dense"
-                        name="skillExperience"
-                        label="Experience"
-                        type="number"
-                        value={data.skillExperience}
-                        onChange={onChangeSkillsInfo}
-                        placeholder="Ex: 5"
-                        fullWidth
+                    <input
+                        accept="image/*"
+                        id="contained-button-file"
+                        multiple
+                        type="file"
+                        className="inputImage"
                         required
                     />
+                    <label htmlFor="contained-button-file">
+                        <Button variant="contained" color="primary" component="span">
+                            Attach File
+                    </Button>
+                    </label>
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleClose} color="primary">
@@ -53,4 +54,4 @@ const SkillsDialogue = ({ open,
         </div>
     );
 };
-export default SkillsDialogue; 
+export default PortfolioDialog; 
