@@ -6,12 +6,12 @@ import { Link } from "react-router-dom";
 const QuickEvents = () => {
   return (
       <div className='QuickEventsStyle' >
-    <Widget styleName='dashboardQuicklinkcardsStyle'>
+    <Link to='/Events'><Widget styleName='dashboardQuicklinkcardsStyle'>
       <div>
       <h3 className="card-title mb-2" style={{color:'gray'}}>Events</h3>
       <Link to='/Events'><EventIcon fontSize='large' className='dashboardQuickLinksFont'/></Link>
         </div>
-    </Widget>
+    </Widget></Link>
     </div>
   )
 }

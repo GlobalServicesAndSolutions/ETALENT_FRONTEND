@@ -400,6 +400,12 @@ class Profile extends Component {
                                 openPublicationtDialog={this.openPublicationDialog}
                             />
                         </div>
+                        <div>
+                        <Presentation
+                            openPresentationDialog={this.openPresentationDialog}
+                            isEditClick={this.state.isEdit}
+                        />
+                        </div>
                     </div>
                     <div className="col-xl-4 col-lg-4 col-md-5 col-12">
                         <div id="softskills">
@@ -429,10 +435,7 @@ class Profile extends Component {
                         <Courses
                             openCourseAndTrainingDialogue={this.openCourseAndTrainingDialogue}
                             isEditClick={this.state.isEdit} />
-                        <Presentation
-                            openPresentationDialog={this.openPresentationDialog}
-                            isEditClick={this.state.isEdit}
-                        />
+                        
                     </div>
                 </div>
                 {this.state.educationOpen ?

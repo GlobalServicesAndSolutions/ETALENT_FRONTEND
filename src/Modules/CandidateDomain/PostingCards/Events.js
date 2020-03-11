@@ -8,22 +8,22 @@ const Events = () => {
       <div className="mb-3">
       <h3 className="card-title mb-2 mb-md-3">Registered Events</h3>
           <br/>
-          <h5>Senior Software Engineer</h5>
+          <h6>Senior Software Engineer</h6>
         <div  style={{color:'gray'}}>
           <ul>
             <li>
-              Seven Software Development ltd.<br />
-              Lahore, Pakistan
+              <p>Seven Software Development ltd.<br />
+              Lahore, Pakistan</p>
             </li>
           </ul>
           </div>
           <hr/>
-          <h5>Front End Developer</h5>
+          <h6>Front End Developer</h6>
         <div  style={{color:'gray'}}>
           <ul>
             <li>
-              Global Services and Solutions<br />
-              Islamabad, Pakistan
+            <p>Global Services and Solutions<br />
+              Islamabad, Pakistan</p>
             </li>
           </ul>
           </div>

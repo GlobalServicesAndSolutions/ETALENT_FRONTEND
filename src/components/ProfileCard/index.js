@@ -21,7 +21,7 @@ const ProfileCard = ({ onChangeAvailabilitySwitch,
   showAvailabilityCalender
 }) => {
   return (
-    <Widget styleName="jr-card-profile" style={{marginTop:'0px'}}>
+    <Widget styleName="jr-card-profile dashboardHeaderPadding">
       <div >
         <div className="jr-profile-container">
           <div className="jr-Dashboardprofile-banner-top">
@@ -72,12 +72,12 @@ const ProfileCard = ({ onChangeAvailabilitySwitch,
                 <div>
                   <div className='row'>
                     <div>
-                      <h2 className="mb-2 jr-mb-sm-3 jr-fs-xxl jr-font-weight-black"><Link to='/profile' className='dashboardEmployeeNameColourLink'>Salman Haider</Link>
+                      <h3 className="mb-2 jr-mb-sm-3 jr-fs-xxl jr-font-weight-black"><Link to='/profile' className='dashboardEmployeeNameColourLink'>Salman Haider</Link>
                       &nbsp;
                         <sup>
                           <span className='dot dotGreen'></span>
                         </sup>
-                      </h2>
+                      </h3>
                     </div>
                   </div>
                   <p className="mb-0 ">Web Developer</p>

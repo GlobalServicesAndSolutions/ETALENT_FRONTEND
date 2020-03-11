@@ -34,7 +34,7 @@ const toogleOptions = [
         <ToggleButton key={3} value="mapView">
             <RoomIcon id='mapView' />
         </ToggleButton>
-    </Tooltip>,
+    </Tooltip>
 ];
 
 const useStyles = makeStyles(theme => ({
@@ -77,6 +77,7 @@ const JobsSearchInput = ({ onToogleSwitchChange,
     return (
         <Widget styleName="jr-card-profile jobsearchHeader">
             <div className="mb-3" >
+                <h3 className="card-title mb-2 mb-md-3">Latest Jobs</h3>
                 <div style={{ display: 'flex', justifyContent: 'center' }} >
                     <Paper component="form" className={classes.root}>
                         <IconButton className={classes.iconButton} aria-label="search">
@@ -99,83 +100,118 @@ const JobsSearchInput = ({ onToogleSwitchChange,
                         />
                     </Paper>
                     &nbsp;&nbsp;&nbsp;
-                <Button  color="primary">Search</Button>
+                <Button color="primary">Search</Button>
                 </div>
                 <br />
                 {toogleSwitchValue === 'gridView' &&
                     <div>
                         <div>
-                    <FormControl style={{ width: '10%' }} >
-                                <InputLabel>Sort By</InputLabel>
-                                <Select
-                                    name='sortByFilter'
-                                    value={sortByFilter}
-                                    onChange={onChangeSortByFilter}
-                                >
-                                    <MenuItem value='Most relevent'>Most relevent</MenuItem>
-                                    <MenuItem value='Most Recent'>Most Recent</MenuItem>
-                                </Select>
-                            </FormControl>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <FormControl style={{ width: '10%' }}  >
+                            <FormControl className='gridListFilterwidth'>
                                 <InputLabel>Date Posted</InputLabel>
                                 <Select
-                                    name='datePostedFilter'
+                                    native
                                     value={datePostedFilter}
                                     onChange={onChangeDatePostedFilter}
+                                    inputProps={{
+                                        name: 'datePostedFilter',
+                                    }}
                                 >
-                                    <MenuItem value='Past 24 Hours'>Past 24 Hours</MenuItem>
-                                    <MenuItem value='Past Week'>Past Week</MenuItem>
-                                    <MenuItem value='Past Month'>Past Month</MenuItem>
-                                    <MenuItem value='All Time'>All Time</MenuItem>
+                                    <option value="" />
+                                    <option value='Today'>Today</option>
+                                    <option value='Last 7 Days'>Last 7 Days</option>
+                                    <option value='Last 15 Days'>Last 15 Days</option>
+                                    <option value='Last 30 Days'>Last 30 Days</option>
                                 </Select>
                             </FormControl>
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <FormControl style={{ width: '15%' }} >
-                                <InputLabel>E-Talent Features</InputLabel>
+                            <FormControl className='gridListFilterwidth'>
+                                <InputLabel>Employment Type</InputLabel>
                                 <Select
-                                    name='eTalentFeatureFilter'
+                                    native
+                                    value={sortByFilter}
+                                    onChange={onChangeSortByFilter}
+                                    inputProps={{
+                                        name: 'employmentTypeFilter',
+                                    }}
+                                >
+                                    <option value="" />
+                                    <option value='Contract'>Contract</option>
+                                    <option value='Full Time'>Full Time</option>
+                                    <option value='Part Time'>Part Time</option>
+                                </Select>
+                            </FormControl>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <FormControl className='gridListFilterwidth'>
+                                <InputLabel>Employer Type</InputLabel>
+                                <Select
+                                    native
                                     value={eTalentFeatureFilter}
                                     onChange={onChangeEtalentFeatureFilter}
+                                    inputProps={{
+                                        name: 'eTalentFeatureFilter',
+                                    }}
                                 >
-                                    <MenuItem value='Apply Easy'>Apply Easy</MenuItem>
-                                    <MenuItem value='In Networks'>In Networks</MenuItem>
+                                    <option value="" />
+                                    <option value='Recruiter'>Recruiter</option>
+                                    <option value='Direct Hire'>Direct Hire</option>
                                 </Select>
                             </FormControl>
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <FormControl style={{ width: '10%' }} >
+                            <FormControl className='gridListFilterwidth'>
                                 <InputLabel>Company</InputLabel>
                                 <Select
-                                    name='companyFilter'
+                                    native
                                     value={companyFilter}
                                     onChange={onChangeCompanyFilter}
+                                    inputProps={{
+                                        name: 'companyFilter',
+                                    }}
                                 >
-                                    <MenuItem value='Seven Technology'>Seven Technology</MenuItem>
-                                    <MenuItem value='VisionX'>VisionX</MenuItem>
-                                    <MenuItem value='Careem'>Careem</MenuItem>
+                                    <option value="" />
+                                    <option value='Seven Technology'>Seven Technology</option>
+                                    <option value='VisionX'>VisionX</option>
+                                    <option value='Careem'>Careem</option>
                                 </Select>
                             </FormControl>
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <FormControl style={{ width: '15%' }} >
-                                <InputLabel>Experience Level</InputLabel>
+                            <FormControl className='gridListFilterwidth'>
+                                <InputLabel>Commmute</InputLabel>
                                 <Select
-                                    name='experienceLevelFilter'
-                                    value={experienceLevelFilter}
-                                    onChange={onChangeExperienceLevelFilter}
+                                    native
+                                    value={companyFilter}
+                                    onChange={onChangeCompanyFilter}
+                                    inputProps={{
+                                        name: 'companyFilter',
+                                    }}
                                 >
-                                    <MenuItem value='InternShip'>InternShip</MenuItem>
-                                    <MenuItem value='Mid Level'>Mid Level</MenuItem>
-                                    <MenuItem value='Senior Level'>Senior Level</MenuItem>
-                                    <MenuItem value='Director'>Director</MenuItem>
+                                    <option value="" />
+                                    <option value='Yes'>Yes</option>
+                                    <option value='No'>No</option>
+                                </Select>
+                            </FormControl>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <FormControl className='gridListFilterwidth'>
+                                <InputLabel>Easy Apply</InputLabel>
+                                <Select
+                                    native
+                                    value={companyFilter}
+                                    onChange={onChangeCompanyFilter}
+                                    inputProps={{
+                                        name: 'companyFilter',
+                                    }}
+                                >
+                                    <option value="" />
+                                    <option value='Yes'>Yes</option>
+                                    <option value='No'>No</option>
                                 </Select>
                             </FormControl>
                         </div>
-                        <br/>
-                     <br/>
-                </div>
+                        <br />
+                        <br />
+                    </div>
                 }
 
-                <div style={{ float: 'right', marginTop: (toogleSwitchValue === 'listView' || toogleSwitchValue === '') ? '95px' : '' }}>
+                <div style={{ float: 'right', marginTop: (toogleSwitchValue === 'listView' || toogleSwitchValue === '') ? '96px' : '' }}>
 
                     <div className='gridViewAlign'>
                         <Grid container spacing={2} direction="column" alignItems="center">

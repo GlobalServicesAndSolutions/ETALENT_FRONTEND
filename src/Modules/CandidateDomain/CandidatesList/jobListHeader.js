@@ -7,7 +7,7 @@ const JobListHeader = () => {
             <div className="jr-profile-banner-top">
               <div className="jr-profile-banner-top-left">
                 <div className="jr-profile-banner-avatar-info">
-                  <h2 className="mb-2 jr-mb-sm-3 jr-fs-xxl jr-font-weight-black">Latest Jobs</h2>
+                  <h3 className="mb-2 jr-mb-sm-3 jr-fs-xxl jr-font-weight-black">Latest Jobs</h3>
                   <p className="mb-0 jr-fs-lg"></p>
                 </div>
               </div>

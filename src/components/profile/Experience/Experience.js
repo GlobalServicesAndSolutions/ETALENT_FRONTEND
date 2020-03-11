@@ -25,7 +25,6 @@ const Experience = ({ openExperienceDialog,
         <br />
         <div className="row profileSectionEditAndDelete">
           <div className="row">
-            <img aria-hidden alt="image" src="example.com" />
             <h5>Seven software development ltd.</h5>
           </div>
 

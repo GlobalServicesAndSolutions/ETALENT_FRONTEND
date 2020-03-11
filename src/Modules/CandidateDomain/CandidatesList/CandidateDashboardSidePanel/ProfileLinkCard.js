@@ -6,12 +6,12 @@ import { Link } from "react-router-dom";
 const QuickProfile = () => {
   return (
       <div className='QuickProfileStyle'>
-    <Widget styleName='dashboardQuicklinkcardsStyle'>
+   <Link to='/profile'> <Widget styleName='dashboardQuicklinkcardsStyle'>
       <div >
       <h3 className="card-title mb-2" style={{color:'gray'}}>Profile</h3>
       <Link to='/profile'> <PersonIcon fontSize='large' className='dashboardQuickLinksFont'/></Link>
         </div>
-    </Widget>
+    </Widget></Link>
     </div>
   )
 }

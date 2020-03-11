@@ -7,7 +7,6 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
 import { makeStyles } from '@material-ui/core/styles';
 import Truncate from 'react-truncate';
-import ReactTooltip from 'react-tooltip';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import Tooltip from '@material-ui/core/Tooltip';
 
@@ -49,10 +48,13 @@ const JobsListView = ({ makeFaveriot, onFaveriotClick }) => {
                                         <Link to='/jobDescription' >
                                             <h3 className='allfontCapital' >Sr.Software Engineer</h3>
                                         </Link>
-                                        <h6>Employer Name</h6>
-                                        <h6>Location, City</h6>
+                                        <div className='pLineHeight'>
+                                        <p>Employer Name</p>
+                                        <p>Location, City</p>
+                                        </div>
                                     </div>
-                                    <div>
+                                    <div className='pLineHeight'style={{marginTop:'-20px'}}>
+                                    <p >Employer Name</p>
                                         <ListItemAvatar>
                                             <Avatar alt="Remy Sharp" className={classes.image} src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Phoenicopterus_ruber_in_S%C3%A3o_Paulo_Zoo.jpg" variant='square' />
                                         </ListItemAvatar>
@@ -61,13 +63,13 @@ const JobsListView = ({ makeFaveriot, onFaveriotClick }) => {
                                 <hr />
                                 <div style={{ lineHeight: '20px' }}>
                                     <div className='row' style={{ display: 'flex', justifyContent: 'space-between' }}>
-                                        <p>Full time/ Part time</p><p>days ago</p>
+                                        <p>Full time/ Part time</p><p>Salary: 51,000</p><p>2 days ago</p>
                                         <FavoriteIcon onClick={onFaveriotClick} style={{ fill: makeFaveriot ? 'lightgreen' : '', cursor: 'pointer' }} />
                                     </div>
-                                    <Truncate lines={2}>
-                                        <p style={{ overflow: 'hidden' }}>UW Continuum College (UWC ) has an outstanding opportunity for an Assistant Director of Software Engineering
-                            to lead our software development team. The Assistant Director of Software Engineering is </p>
-                                    </Truncate>
+                                    <p> <Truncate lines={2}>
+                                        UW Continuum College (UWC ) has an outstanding opportunity for an Assistant Director of Software Engineering
+                                        to lead our software development team. The Assistant Director of Software Engineering is 
+                                    </Truncate></p>
                                 </div>
                             </div>
                         </BootstrapTooltip>
@@ -116,8 +118,6 @@ const JobsListView = ({ makeFaveriot, onFaveriotClick }) => {
                     </Widget>
                 </ListItem>
             </List>
-            <ReactTooltip
-                effect='solid' />
         </div>
     )
 }

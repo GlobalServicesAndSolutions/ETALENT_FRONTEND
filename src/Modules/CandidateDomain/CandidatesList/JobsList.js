@@ -5,9 +5,9 @@ import JobsGridList from './JobsGridList';
 import JobsSearchInput from './jobSearchInput';
 import JobsListView from './JobListView';
 import JobFilters from './FilterJobsInListView';
-import JobMapView from './JobMapView';
 import CancelIcon from '@material-ui/icons/Cancel';
 import ReactTooltip from 'react-tooltip';
+import MapView from './JobMapView';
 
 class JobsList extends Component {
     constructor(props) {
@@ -66,8 +66,6 @@ class JobsList extends Component {
                     <Header />
                 </div>
                 <div className="app-main-container">
-                    <JobListHeader
-                    />
                     <div style={{ padding: '3px' }}>
                         <JobsSearchInput
                             onToogleSwitchChange={this.onToogleSwitchChange}
@@ -86,7 +84,7 @@ class JobsList extends Component {
                     </div>
                     {this.state.toogleSwitchValue === 'gridView' &&
                         <div>
-                            <div style={{ display: 'flex', marginLeft: '15px' }}>
+                            <div style={{ display: 'flex', marginLeft: '50px' }}>
                                 <h5 style={{ color: 'gray' }}>{this.state.sortByFilter?this.state.sortByFilter:
                                 this.state.datePostedFilter?this.state.datePostedFilter:
                                 this.state.eTalentFeatureFilter?this.state.eTalentFeatureFilter:
@@ -134,7 +132,7 @@ class JobsList extends Component {
                     }
                     {this.state.toogleSwitchValue === 'mapView' &&
                         <div>
-                            <JobMapView />
+                            <MapView />
                         </div>
                     }
                 </div>

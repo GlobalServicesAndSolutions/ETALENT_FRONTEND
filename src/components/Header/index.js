@@ -208,7 +208,7 @@ class Header extends React.Component {
               </Dropdown>
             </li>
             <li className="list-inline-item app-tour">
-              <SettingsIcon className="fontLabelColor" fontSize='medium' style={{ cursor: 'pointer' }} />
+              <SettingsIcon className="fontLabelColor" fontSize='small' style={{ cursor: 'pointer' }} />
             </li>
           </ul>
 

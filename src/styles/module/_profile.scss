@@ -31,7 +31,7 @@
 
   h1, h2, h3, h4, h5, h6,
   .h1, .h2, .h3, .h4, .h5, .h6 {
-    color: black;
+    color: rgb(65, 64, 64);
   }
 
   & .jr-link {
@@ -52,6 +52,12 @@
     width: 80%;
     position:absolute;
   }
+}
+.jobGridListWidth{
+  width: 90%;
+}
+.pLineHeight{
+  line-height: 5px;
 }
 .expansionPanel{
   display: block !important;
@@ -323,6 +329,12 @@ margin-top: -30px;
 .LikeThumbColorUserDefine{
   color: lightgreen;
   cursor: pointer;
+}
+p {
+  font-size: 14px;
+}
+.dashboardHeaderPadding{
+  padding-bottom: 6px;
 }
 .currentlyEnrolledMargin{
   margin-top: 30px;

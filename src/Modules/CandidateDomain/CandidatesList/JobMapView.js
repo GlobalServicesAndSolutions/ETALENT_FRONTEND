@@ -1,27 +1,35 @@
-import React from "react";
-import { Map, GoogleApiWrapper } from 'google-maps-react';
-
-const mapStyles = {
-    width: '100%',
-    height: '100%'
-};
-const JobsMapView = () => {
+import React, { Component } from 'react';
+import GoogleMapReact from 'google-map-react';
+ 
+const AnyReactComponent = ({ text }) => <div>{text}</div>;
+ 
+class MapView extends Component {
+  static defaultProps = {
+    center: {
+      lat: 59.95,
+      lng: 30.33
+    },
+    zoom: 11
+  };
+ 
+  render() {
     return (
-        <div>
-            <Map
-                google='here'
-                zoom={14}
-                style={mapStyles}
-                initialCenter={{
-                    lat: -1.2884,
-                    lng: 36.8233
-                }}
-            />
-        </div>
-    )
+      // Important! Always set the container height explicitly
+      <div style={{ height: '100vh', width: '100%' }}>
+        <GoogleMapReact
+        bootstrapURLKeys={{ key: 'AIzaSyBxoObEylNcodiH2mrGysayJesUFPq2bek'}}
+          defaultCenter={this.props.center}
+          defaultZoom={this.props.zoom}
+        >
+          <AnyReactComponent
+            lat={59.955413}
+            lng={30.337844}
+            text="Institute"
+          />
+        </GoogleMapReact>
+      </div>
+    );
+  }
 }
-
-export default GoogleApiWrapper({
-    apiKey: 'YOUR_GOOGLE_API_KEY_GOES_HERE'
-  })(JobsMapView);
-
+ 
+export default MapView;

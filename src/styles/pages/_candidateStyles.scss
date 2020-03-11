@@ -32,9 +32,9 @@
     fill: steelblue !important;
   }
   .jobsearchHeader{
-    height: 170px;
+    height: 196px;
     @media screen and (max-width: 575px) {
-      height: 208px;
+      height: 338px;
   }
   }
   .gridViewAlign{
@@ -43,13 +43,19 @@
       margin-top: -36px;
   }
   }
+  .gridListFilterwidth{
+    width: 10%;
+    @media screen and (max-width: 575px) {
+      width: 40%;
+  }
+  }
   .allfontCapital{
     font-variant-caps: all-petite-caps;
     font-family: serif;
     color: cadetblue;
   }
   .jobList{
-    width:100%;
+    width:80%;
     padding-bottom: 0px;
   }
   .jobAlertList{

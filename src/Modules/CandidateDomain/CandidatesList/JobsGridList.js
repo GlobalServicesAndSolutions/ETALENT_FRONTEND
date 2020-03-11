@@ -5,6 +5,7 @@ import Paper from '@material-ui/core/Paper';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import Tooltip from '@material-ui/core/Tooltip';
 import { Link } from "react-router-dom";
+import Widget from "components/Widget";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -47,8 +48,8 @@ const JobsGridList = ({makeFaveriot,
   const classes = useStyles();
   return (
     <div>
-    <div style={{ marginLeft: '10px'}}>
-      <Grid container className={classes.root} spacing={2} >
+    <div style={{ marginLeft: '50px'}}>
+    <Widget styleName="jr-card-profile jobGridListWidth"> <Grid container className={classes.root} spacing={2} >
       <Grid item xs={12}>
         <Grid container  spacing={2} >
           {[0, 1, 2,3,4,5,6,7,8,9,10].map(value => (
@@ -62,18 +63,18 @@ const JobsGridList = ({makeFaveriot,
                 />
                 </div>
                 <Link to='/jobDescription' ><h4 className='allfontCapital'>Front End Developer</h4></Link>
-                <h6>Seven Technology</h6>
-                <h6>Islamabad</h6>
-                <br/>
-                <br/>
+                <div style={{lineHeight:'6px'}}>
+                <p>Seven Technology</p>
+                <p>Islamabad</p>
                 <p>1 day ago</p>
+                </div>
                 </Paper>
                 </BootstrapTooltip >
             </Grid>
           ))}
         </Grid>
       </Grid>
-    </Grid>
+    </Grid></Widget>
     </div>
      </div>
   )
