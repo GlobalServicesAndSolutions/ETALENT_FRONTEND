@@ -21,13 +21,13 @@ const JobFilters = ({ onFilterOptionClick }) => {
                     <Typography >Posted Date</Typography>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails className='expansionPanel'>
-                    <Typography style={{ cursor: 'pointer' }} onClick={onFilterOptionClick}>Today</Typography>
+                    <Typography id='today' style={{ cursor: 'pointer' }} onClick={onFilterOptionClick}>Today</Typography>
                     <hr />
-                    <Typography style={{ cursor: 'pointer' }} onClick={onFilterOptionClick}>Last 7 days</Typography>
+                    <Typography id='sevenDay' style={{ cursor: 'pointer' }} onClick={onFilterOptionClick}>Last 7 days</Typography>
                     <hr />
-                    <Typography style={{ cursor: 'pointer' }} onClick={onFilterOptionClick}>Last 15 days</Typography>
+                    <Typography id='fifteenDays' style={{ cursor: 'pointer' }} onClick={onFilterOptionClick}>Last 15 days</Typography>
                     <hr />
-                    <Typography style={{ cursor: 'pointer' }} onClick={onFilterOptionClick}>Last 30 days</Typography>
+                    <Typography id='thirtyDays' style={{ cursor: 'pointer' }} onClick={onFilterOptionClick}>Last 30 days</Typography>
                 </ExpansionPanelDetails>
             </ExpansionPanel>
             <ExpansionPanel  >
@@ -39,11 +39,11 @@ const JobFilters = ({ onFilterOptionClick }) => {
                     <Typography >Employment Type</Typography>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails className='expansionPanel'>
-                    <Typography style={{ cursor: 'pointer' }} onClick={onFilterOptionClick}>Contract</Typography>
+                    <Typography id='contract' style={{ cursor: 'pointer' }} onClick={onFilterOptionClick}>Contract</Typography>
                     <hr />
-                    <Typography style={{ cursor: 'pointer' }} onClick={onFilterOptionClick}>Permanent</Typography>
+                    <Typography id='permanent' style={{ cursor: 'pointer' }} onClick={onFilterOptionClick}>Permanent</Typography>
                     <hr />
-                    <Typography style={{ cursor: 'pointer' }} onClick={onFilterOptionClick}>Part Time</Typography>
+                    <Typography id='partTime' style={{ cursor: 'pointer' }} onClick={onFilterOptionClick}>Part Time</Typography>
                 </ExpansionPanelDetails>
             </ExpansionPanel>
             <ExpansionPanel  >
@@ -83,9 +83,9 @@ const JobFilters = ({ onFilterOptionClick }) => {
                     <Typography >Employer Type</Typography>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails className='expansionPanel'>
-                    <Typography style={{ cursor: 'pointer' }} onClick={onFilterOptionClick}>Recruiter</Typography>
+                    <Typography id='recruiter' style={{ cursor: 'pointer' }} onClick={onFilterOptionClick}>Recruiter</Typography>
                     <hr />
-                    <Typography style={{ cursor: 'pointer' }} onClick={onFilterOptionClick}>Direct Hire</Typography>
+                    <Typography id='directHire' style={{ cursor: 'pointer' }} onClick={onFilterOptionClick}>Direct Hire</Typography>
                 </ExpansionPanelDetails>
             </ExpansionPanel>
             <ExpansionPanel  >
@@ -97,9 +97,9 @@ const JobFilters = ({ onFilterOptionClick }) => {
                     <Typography >Sort By</Typography>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails className='expansionPanel'>
-                    <Typography style={{ cursor: 'pointer' }} onClick={onFilterOptionClick}>Most Relevent</Typography>
+                    <Typography id='mostRevelent' style={{ cursor: 'pointer' }} onClick={onFilterOptionClick}>Most Relevent</Typography>
                     <hr />
-                    <Typography style={{ cursor: 'pointer' }} onClick={onFilterOptionClick}>Most Recent</Typography>
+                    <Typography id='mostRecent' style={{ cursor: 'pointer' }} onClick={onFilterOptionClick}>Most Recent</Typography>
                 </ExpansionPanelDetails>
             </ExpansionPanel>
             <ExpansionPanel  >
@@ -111,11 +111,11 @@ const JobFilters = ({ onFilterOptionClick }) => {
                     <Typography >Company</Typography>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails className='expansionPanel'>
-                    <Typography style={{ cursor: 'pointer' }} onClick={onFilterOptionClick}>Seven Technology</Typography>
+                    <Typography id='seven' style={{ cursor: 'pointer' }} onClick={onFilterOptionClick}>Seven Technology</Typography>
                     <hr />
-                    <Typography style={{ cursor: 'pointer' }} onClick={onFilterOptionClick}>VisionX</Typography>
+                    <Typography id='vision' style={{ cursor: 'pointer' }} onClick={onFilterOptionClick}>VisionX</Typography>
                     <hr />
-                    <Typography style={{ cursor: 'pointer' }} onClick={onFilterOptionClick}>Careem</Typography>
+                    <Typography id='careem' style={{ cursor: 'pointer' }} onClick={onFilterOptionClick}>Careem</Typography>
                 </ExpansionPanelDetails>
             </ExpansionPanel>
             <ExpansionPanel  >

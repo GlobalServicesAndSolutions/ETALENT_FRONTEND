@@ -6,7 +6,7 @@ import { Button } from "@material-ui/core";
 
 const ProfileCard = ({onClickAddVendor}) => {
   return (
-    <Widget styleName="jr-card-profile" style={{ marginTop: '0px' }}>
+    <Widget styleName="jr-card-profile employerProfileHeader">
       <div >
         <div className="jr-profile-container">
           <div className="jr-Dashboardprofile-banner-top">
@@ -31,7 +31,7 @@ const ProfileCard = ({onClickAddVendor}) => {
             &nbsp;&nbsp;&nbsp;
             <Link to='/activeVendors'>Active Vendors</Link>
             &nbsp;&nbsp;&nbsp;
-            <Button onClick={onClickAddVendor}>Active Vendors</Button>
+            <Button color='primary' onClick={onClickAddVendor}>Add Vendors</Button>
           </div>
         </div>
       </div>

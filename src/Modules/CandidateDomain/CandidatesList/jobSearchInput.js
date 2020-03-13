@@ -62,16 +62,8 @@ const useStyles = makeStyles(theme => ({
 }));
 const JobsSearchInput = ({ onToogleSwitchChange,
     toogleSwitchValue,
-    onChangeSortByFilter,
-    sortByFilter,
-    onChangeDatePostedFilter,
-    datePostedFilter,
-    onChangeEtalentFeatureFilter,
-    eTalentFeatureFilter,
-    onChangeCompanyFilter,
-    companyFilter,
-    onChangeExperienceLevelFilter,
-    experienceLevelFilter
+    onSelectGridListFilter,
+    data
 }) => {
     const classes = useStyles();
     return (
@@ -110,8 +102,8 @@ const JobsSearchInput = ({ onToogleSwitchChange,
                                 <InputLabel>Date Posted</InputLabel>
                                 <Select
                                     native
-                                    value={datePostedFilter}
-                                    onChange={onChangeDatePostedFilter}
+                                     value={data.datePostedFilter}
+                                    onChange={onSelectGridListFilter}
                                     inputProps={{
                                         name: 'datePostedFilter',
                                     }}
@@ -128,8 +120,8 @@ const JobsSearchInput = ({ onToogleSwitchChange,
                                 <InputLabel>Employment Type</InputLabel>
                                 <Select
                                     native
-                                    value={sortByFilter}
-                                    onChange={onChangeSortByFilter}
+                                    value={data.employmentTypeFilter}
+                                    onChange={onSelectGridListFilter}
                                     inputProps={{
                                         name: 'employmentTypeFilter',
                                     }}
@@ -145,10 +137,10 @@ const JobsSearchInput = ({ onToogleSwitchChange,
                                 <InputLabel>Employer Type</InputLabel>
                                 <Select
                                     native
-                                    value={eTalentFeatureFilter}
-                                    onChange={onChangeEtalentFeatureFilter}
+                                    value={data.employerTypeFilter}
+                                    onChange={onSelectGridListFilter}
                                     inputProps={{
-                                        name: 'eTalentFeatureFilter',
+                                        name: 'employerTypeFilter',
                                     }}
                                 >
                                     <option value="" />
@@ -161,8 +153,8 @@ const JobsSearchInput = ({ onToogleSwitchChange,
                                 <InputLabel>Company</InputLabel>
                                 <Select
                                     native
-                                    value={companyFilter}
-                                    onChange={onChangeCompanyFilter}
+                                   value={data.companyFilter}
+                                    onChange={onSelectGridListFilter}
                                     inputProps={{
                                         name: 'companyFilter',
                                     }}
@@ -178,10 +170,10 @@ const JobsSearchInput = ({ onToogleSwitchChange,
                                 <InputLabel>Commmute</InputLabel>
                                 <Select
                                     native
-                                    value={companyFilter}
-                                    onChange={onChangeCompanyFilter}
+                                   value={data.commuteFilter}
+                                    onChange={onSelectGridListFilter}
                                     inputProps={{
-                                        name: 'companyFilter',
+                                        name: 'commuteFilter',
                                     }}
                                 >
                                     <option value="" />
@@ -194,10 +186,10 @@ const JobsSearchInput = ({ onToogleSwitchChange,
                                 <InputLabel>Easy Apply</InputLabel>
                                 <Select
                                     native
-                                    value={companyFilter}
-                                    onChange={onChangeCompanyFilter}
+                                   value={data.easyApplyFilter}
+                                    onChange={onSelectGridListFilter}
                                     inputProps={{
-                                        name: 'companyFilter',
+                                        name: 'easyApplyFilter',
                                     }}
                                 >
                                     <option value="" />
@@ -211,7 +203,7 @@ const JobsSearchInput = ({ onToogleSwitchChange,
                     </div>
                 }
 
-                <div style={{ float: 'right', marginTop: (toogleSwitchValue === 'listView' || toogleSwitchValue === '') ? '96px' : '' }}>
+                <div style={{ float: 'right', marginTop: (toogleSwitchValue === 'listView' || toogleSwitchValue === ''||toogleSwitchValue === 'mapView') ? '95px' : '' }}>
 
                     <div className='gridViewAlign'>
                         <Grid container spacing={2} direction="column" alignItems="center">

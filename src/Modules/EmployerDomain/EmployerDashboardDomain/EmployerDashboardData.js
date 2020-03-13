@@ -57,7 +57,7 @@ const EmployerDashboardView = ({ onClickFilterOptions, isFilterOptionClick }) =>
                         </Select>
                     </FormControl>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <SearchIcon align='right' style={{ cursor: 'pointer' }} onClick={onClickFilterOptions} color='primary' fontSize='large' />
+                        <SearchIcon  style={{ cursor: 'pointer' }} onClick={onClickFilterOptions} color='primary' fontSize='small' />
                         </div>          
                     {isFilterOptionClick &&
                         <div>

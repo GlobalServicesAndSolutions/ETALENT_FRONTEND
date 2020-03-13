@@ -20,6 +20,7 @@ class MapView extends Component {
         bootstrapURLKeys={{ key: 'AIzaSyBxoObEylNcodiH2mrGysayJesUFPq2bek'}}
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
+          yesIWantToUseGoogleMapApiInternals
         >
           <AnyReactComponent
             lat={59.955413}

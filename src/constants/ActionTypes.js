@@ -89,3 +89,9 @@ export const SHOW_SECTION_FIVE_DATA = 'show_section_five-data';
 export const DELETE_SECTION_FIVE_DATA = 'delete_section_five-data';
 export const SHOW_SECTION_SIX_DATA = 'show_section_six-data';
 export const DELETE_SECTION_SIX_DATA = 'delete_section_six-data';
+
+// Job Action Types
+export const JOB_FILTERS_SEARCH = 'job_filter_search';
+export const JOB_FILTERS_CANCEL = 'job_filter_cancel';
+
+
