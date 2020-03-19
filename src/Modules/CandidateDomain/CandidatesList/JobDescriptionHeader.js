@@ -9,8 +9,6 @@ const JobDescriptionHeader = () => {
                         <h3 className="mb-2 jr-mb-sm-3 jr-fs-xxl jr-font-weight-black allfontCapital">Sr.Software Engineer</h3>
                         <div>
                         <p className="mb-0 jr-fs-lg jobDetailsHeaderLineHeight">I-9/3 Islamabad, Pakistan</p>
-                        <p className="mb-0 jr-fs-lg jobDetailsHeaderLineHeight">Hiring Manager</p>
-                        <p className="mb-0 jr-fs-lg jobDetailsHeaderLineHeight">Req Id</p>
                         <p className="mb-0 jr-fs-lg jobDetailsHeaderLineHeight">Days ago</p>
                         </div>
                     </div>

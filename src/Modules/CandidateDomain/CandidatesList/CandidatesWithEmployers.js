@@ -3,6 +3,7 @@ import Header from 'components/Header';
 import CandidateListHeader from './CandidateListHeader';
 import CandidatesTable from './CandidatesList';
 import CandidatesPopUpInfo from './CandidatePopUp';
+import AddNewUserByEtalentIdDialog from 'util/Models/AddNewUserByEtalentIdDialog';
 
 class Candidates extends Component {
     constructor(props) {
@@ -13,7 +14,8 @@ class Candidates extends Component {
             candidatesData:[],
             selecteCandidate:{},
             candidateStatus:'',
-            candidateStagefilter:''
+            candidateStagefilter:'',
+            addNewUserByEtalentId: false,
         }
     }
     componentWillMount()
@@ -59,6 +61,12 @@ class Candidates extends Component {
         alert(res +' is Clicked');
         this.setState({candidateStagefilter:res});
     }
+    onClickAddNewUserById = () => {
+        this.setState({ addNewUserByEtalentId: true });
+    }
+    onCloseAddNewUserById = () => {
+        this.setState({ addNewUserByEtalentId: false });
+    }
     render() {
         return (
             <div className="app-main-container">
@@ -69,6 +77,7 @@ class Candidates extends Component {
                 onClickStage={this.onClickStage}
                 jobStatus={this.state.candidateStatus ?this.state.candidateStatus:'All' }
                 candidateStagefilter={this.state.candidateStagefilter}
+                onClickAddNewUserById={this.onClickAddNewUserById}
                 />
                 <div style={{width:'100%'}} >
                     <CandidatesTable
@@ -91,6 +100,12 @@ class Candidates extends Component {
                     />
                     :
                     <span></span>
+                }
+                {this.state.addNewUserByEtalentId &&
+                    <AddNewUserByEtalentIdDialog
+                        open={this.state.addNewUserByEtalentId}
+                        handleClose={this.onCloseAddNewUserById}
+                    />
                 }
             </div>
         );

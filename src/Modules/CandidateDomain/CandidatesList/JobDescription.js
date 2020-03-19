@@ -19,7 +19,6 @@ class JobDescription extends Component {
             makeFaveriot: false,
             openQuickApplyforJob: false,
             openApplyforJob: false,
-            addNewUserByEtalentId: false,
         }
     }
     onFaveriotClick = () => {
@@ -36,12 +35,6 @@ class JobDescription extends Component {
     }
     closeApplyForJobDialog = () => {
         this.setState({ openApplyforJob: false });
-    }
-    onClickAddNewUserById = () => {
-        this.setState({ addNewUserByEtalentId: true });
-    }
-    onCloseAddNewUserById = () => {
-        this.setState({ addNewUserByEtalentId: false });
     }
     render() {
         return (
@@ -66,9 +59,6 @@ class JobDescription extends Component {
                                 </Button></Link>
                             <Link><Button variant="outlined" color="primary">
                                 Print
-                                </Button></Link>
-                            <Link><Button variant="outlined" color="primary" onClick={this.onClickAddNewUserById}>
-                                Add New User By E-Talent Id
                                 </Button></Link>
                         </div>
                         <JobFullInfo
@@ -107,12 +97,6 @@ class JobDescription extends Component {
                     <ApplyForJobDialog
                         open={this.state.openApplyforJob}
                         handleClose={this.closeApplyForJobDialog}
-                    />
-                }
-                {this.state.addNewUserByEtalentId &&
-                    <AddNewUserByEtalentIdDialog
-                        open={this.state.addNewUserByEtalentId}
-                        handleClose={this.onCloseAddNewUserById}
                     />
                 }
             </div>
