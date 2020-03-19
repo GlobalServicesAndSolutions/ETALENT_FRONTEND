@@ -8,6 +8,8 @@ import Widget from "components/Widget";
 import { Button } from "@material-ui/core";
 import QuickApplyForJobDialog from 'util/Models/QuickApplyForJobDialog';
 import ApplyForJobDialog from 'util/Models/ApplyForJobDialog';
+import AddNewUserDialog from 'util/Models/AddNewUserDialog';
+import AddNewUserByEtalentIdDialog from 'util/Models/AddNewUserByEtalentIdDialog';
 
 class JobDescription extends Component {
     constructor(props) {
@@ -15,24 +17,31 @@ class JobDescription extends Component {
         this.state = {
             tabValue: 0,
             makeFaveriot: false,
-            openQuickApplyforJob:false,
-            openApplyforJob:false
+            openQuickApplyforJob: false,
+            openApplyforJob: false,
+            addNewUserByEtalentId: false,
         }
     }
     onFaveriotClick = () => {
         this.setState({ makeFaveriot: !this.state.makeFaveriot });
     }
-    onClickQuickApplyForJob=()=>{
-        this.setState({openQuickApplyforJob:true});
+    onClickQuickApplyForJob = () => {
+        this.setState({ openQuickApplyforJob: true });
     }
-    closeQuickApplyForJobDialog=()=>{
-        this.setState({openQuickApplyforJob:false});
+    closeQuickApplyForJobDialog = () => {
+        this.setState({ openQuickApplyforJob: false });
     }
-    onClickApplyForJob=()=>{
-        this.setState({openApplyforJob:true});
+    onClickApplyForJob = () => {
+        this.setState({ openApplyforJob: true });
     }
-    closeApplyForJobDialog=()=>{
-        this.setState({openApplyforJob:false});
+    closeApplyForJobDialog = () => {
+        this.setState({ openApplyforJob: false });
+    }
+    onClickAddNewUserById = () => {
+        this.setState({ addNewUserByEtalentId: true });
+    }
+    onCloseAddNewUserById = () => {
+        this.setState({ addNewUserByEtalentId: false });
     }
     render() {
         return (
@@ -57,6 +66,9 @@ class JobDescription extends Component {
                                 </Button></Link>
                             <Link><Button variant="outlined" color="primary">
                                 Print
+                                </Button></Link>
+                            <Link><Button variant="outlined" color="primary" onClick={this.onClickAddNewUserById}>
+                                Add New User By E-Talent Id
                                 </Button></Link>
                         </div>
                         <JobFullInfo
@@ -86,16 +98,22 @@ class JobDescription extends Component {
                     </div>
                 </div>
                 {this.state.openQuickApplyforJob &&
-                <QuickApplyForJobDialog 
-                open={this.state.openQuickApplyforJob}
-                handleClose={this.closeQuickApplyForJobDialog}
-                />
+                    <QuickApplyForJobDialog
+                        open={this.state.openQuickApplyforJob}
+                        handleClose={this.closeQuickApplyForJobDialog}
+                    />
                 }
                 {this.state.openApplyforJob &&
-                <ApplyForJobDialog 
-                open={this.state.openApplyforJob}
-                handleClose={this.closeApplyForJobDialog}
-                />
+                    <ApplyForJobDialog
+                        open={this.state.openApplyforJob}
+                        handleClose={this.closeApplyForJobDialog}
+                    />
+                }
+                {this.state.addNewUserByEtalentId &&
+                    <AddNewUserByEtalentIdDialog
+                        open={this.state.addNewUserByEtalentId}
+                        handleClose={this.onCloseAddNewUserById}
+                    />
                 }
             </div>
         );
