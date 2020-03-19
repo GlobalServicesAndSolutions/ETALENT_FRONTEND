@@ -149,6 +149,11 @@ class Header extends React.Component {
             value={this.state.searchText} />
 
           <ul className="header-notifications list-inline ml-auto">
+          <Link to="/employerHome">
+              <li className="list-inline-item headerLinks">
+                <span className="fontLabelColor" >EmployerHome</span>
+              </li>
+            </Link>
             <Link to="/dashboard">
               <li className="list-inline-item headerLinks">
                 <span className="fontLabelColor" >Home</span>

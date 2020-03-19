@@ -18,6 +18,20 @@ const JobFilters = ({ onFilterOptionClick }) => {
                     aria-controls="panel1bh-content"
                     id="panel1bh-header"
                 >
+                    <Typography >Sort By</Typography>
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails className='expansionPanel'>
+                    <Typography id='mostRevelent' style={{ cursor: 'pointer' }} onClick={onFilterOptionClick}>Most Relevent</Typography>
+                    <hr />
+                    <Typography id='mostRecent' style={{ cursor: 'pointer' }} onClick={onFilterOptionClick}>Most Recent</Typography>
+                </ExpansionPanelDetails>
+            </ExpansionPanel>
+            <ExpansionPanel  >
+                <ExpansionPanelSummary
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls="panel1bh-content"
+                    id="panel1bh-header"
+                >
                     <Typography >Posted Date</Typography>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails className='expansionPanel'>
@@ -86,20 +100,6 @@ const JobFilters = ({ onFilterOptionClick }) => {
                     <Typography id='recruiter' style={{ cursor: 'pointer' }} onClick={onFilterOptionClick}>Recruiter</Typography>
                     <hr />
                     <Typography id='directHire' style={{ cursor: 'pointer' }} onClick={onFilterOptionClick}>Direct Hire</Typography>
-                </ExpansionPanelDetails>
-            </ExpansionPanel>
-            <ExpansionPanel  >
-                <ExpansionPanelSummary
-                    expandIcon={<ExpandMoreIcon />}
-                    aria-controls="panel1bh-content"
-                    id="panel1bh-header"
-                >
-                    <Typography >Sort By</Typography>
-                </ExpansionPanelSummary>
-                <ExpansionPanelDetails className='expansionPanel'>
-                    <Typography id='mostRevelent' style={{ cursor: 'pointer' }} onClick={onFilterOptionClick}>Most Relevent</Typography>
-                    <hr />
-                    <Typography id='mostRecent' style={{ cursor: 'pointer' }} onClick={onFilterOptionClick}>Most Recent</Typography>
                 </ExpansionPanelDetails>
             </ExpansionPanel>
             <ExpansionPanel  >

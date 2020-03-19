@@ -9,6 +9,7 @@ import QuickEvents from './CandidatesList/CandidateDashboardSidePanel/EventsDeta
 import QuickSettingsAndEvents from './CandidatesList/CandidateDashboardSidePanel/QuickSettings';
 import Chip from '@material-ui/core/Chip';
 import DoneIcon from '@material-ui/icons/Done';
+import Header from 'components/Header';
 
 class CandidateHome extends Component {
   constructor(props) {
@@ -27,7 +28,10 @@ class CandidateHome extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="app-main-content-wrapper">
+        <div className="app-header ">
+                    <Header />
+                </div>
         <div >
           <ProfileCard
             onChangeAvailabilitySwitch={this.onChangeAvailabilitySwitch}

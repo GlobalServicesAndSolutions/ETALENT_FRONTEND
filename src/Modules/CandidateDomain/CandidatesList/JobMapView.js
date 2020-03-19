@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
  
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
- 
 class MapView extends Component {
   static defaultProps = {
     center: {
@@ -11,7 +9,26 @@ class MapView extends Component {
     },
     zoom: 11
   };
- 
+  renderMarker = (map, maps) => {
+    new maps.Marker({
+      map: map,
+      position: new maps.LatLng(59.95, 30.33),
+      label: 'Seven Technology',
+      title:'Jobs'
+    });
+    new maps.Marker({
+      map: map,
+      position: new maps.LatLng(80.63, 30.33),
+      label: 'Visionx',
+      title:'Jobs'
+    });
+    new maps.Marker({
+      map: map,
+      position: new maps.LatLng(35.21, 30.33),
+      label: 'IBM',
+      title:'Jobs'
+    });
+  };
   render() {
     return (
       // Important! Always set the container height explicitly
@@ -21,12 +38,8 @@ class MapView extends Component {
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
           yesIWantToUseGoogleMapApiInternals
+          onGoogleApiLoaded={({ map, maps }) => this.renderMarker(map, maps)}
         >
-          <AnyReactComponent
-            lat={59.955413}
-            lng={30.337844}
-            text="Institute"
-          />
         </GoogleMapReact>
       </div>
     );

@@ -17,7 +17,7 @@ import TopNav from 'components/TopNav';
 class App extends React.Component {
 
   render() {
-    const { drawerType, navigationStyle, horizontalNavPosition } = this.props;
+    const { drawerType, navigationStyle, horizontalNavPosition,isAdmin } = this.props;
     const drawerStyle = drawerType.includes(FIXED_DRAWER) ? 'fixed-drawer' : drawerType.includes(COLLAPSED_DRAWER) ? 'collapsible-drawer' : 'mini-drawer';
 
     //set default height and overflow for iOS mobile Safari 10+ support.
@@ -44,8 +44,6 @@ class App extends React.Component {
           <main className="app-main-content-wrapper">
             <div className="app-main-content">
               <Switch>
-                <Route path="/dashboard"
-                  component={asyncComponent(() => import('../Modules/CandidateDomain/Dashboard'))} />
                 <Route path="/employerHome"
                   component={asyncComponent(() => import('../Modules/EmployerDomain/EmployerDashboardDomain/Dashboard'))} />
                 <Route path="/employerProfile"
@@ -61,8 +59,9 @@ class App extends React.Component {
 }
 
 
-const mapStateToProps = ({ settings }) => {
+const mapStateToProps = ({ settings,loginReducer }) => {
   const { drawerType, navigationStyle, horizontalNavPosition } = settings;
-  return { drawerType, navigationStyle, horizontalNavPosition }
+  const { isAdmin } = loginReducer;
+  return { drawerType, navigationStyle, horizontalNavPosition,isAdmin }
 };
 export default withRouter(connect(mapStateToProps)(App));

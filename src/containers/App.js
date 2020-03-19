@@ -4,8 +4,8 @@ import MomentUtils from '@date-io/moment';
 import {MuiPickersUtilsProvider} from 'material-ui-pickers';
 import {Redirect, Route, Switch} from 'react-router-dom';
 import {connect} from 'react-redux';
-import {IntlProvider} from 'react-intl'
-import "assets/vendors/style"
+import {IntlProvider} from 'react-intl';
+import "assets/vendors/style";
 import defaultTheme from './themes/defaultTheme';
 import AppLocale from '../lngProvider';
 import MainApp from 'app/index';
@@ -16,7 +16,6 @@ import RTL from 'util/RTL';
 import ForgetPassword from '../Modules/LoginDomain/ForgetPassword/ForgetPassword';
 import asyncComponent from 'util/asyncComponent';
 import Profile from '../Modules/CandidateDomain/Profile';
-import { ValidatorForm } from "react-material-ui-form-validator";
 import EmployerWorkFlow from '../Modules/EmployerDomain/EmployerWorkFlowSection/EmployerSections';
 import Candidates from '../Modules/CandidateDomain/CandidatesList/CandidatesWithEmployers';
 import ActiveVendors from 'Modules/VendorDomain/ActiveVendors';
@@ -27,6 +26,8 @@ import JobsSearchedList from 'Modules/CandidateDomain/CandidatesList/SearchedJob
 import JobDescription from 'Modules/CandidateDomain/CandidatesList/JobDescription';
 import Events from 'Modules/CandidateDomain/CandidatesList/NewEvents';
 import FavoriteJobsAndAlerts from 'Modules/CandidateDomain/CandidatesList/SaveJobsAndAlertView';
+import AdminSignUp from 'Modules/LoginDomain/SignUp/AdminSignUp';
+import CandidateHome from 'Modules/CandidateDomain/Dashboard';
 
 const RestrictedRoute = ({component: Component, authUser, ...rest}) =>
   <Route
@@ -44,21 +45,10 @@ const RestrictedRoute = ({component: Component, authUser, ...rest}) =>
 
 class App extends Component {
 
-  componentWillMount() {
-    window.__MUI_USE_NEXT_TYPOGRAPHY_VARIANTS__ = true;
-    if (this.props.initURL === '') {
-      this.props.setInitUrl(this.props.history.location.pathname);
-    }
-    ValidatorForm.addValidationRule("isValidEmail", value => {
-      let pattern =
-        "^([A-zÀ-úA-zÀ-ÿ0-9]+)([\\-+.\\'][A-zÀ-úA-zÀ-ÿ0-9]+)*@(([a-zA-Z0-9]+)([\\-][a-zA-Z0-9]+)*\\.){1,5}([A-Za-z]){2,6}$";
-      let regex = new RegExp(pattern);
-      return regex.test(value);
-    });
-  }
+
 
   render() {
-    const {location, locale, authUser, initURL, isDirectionRTL} = this.props;
+    const {location, locale, authUser, initURL, isDirectionRTL, isAdmin} = this.props;
     if (location.pathname === '/') {
       if (authUser === null) {
         return ( <Redirect to={'/signin'}/> );
@@ -89,10 +79,11 @@ class App extends Component {
               <div className="app-main">
                 <Switch>
                   <RestrictedRoute path="/dashboard" authUser={authUser}
-                                   component={MainApp}/>
+                                   component={CandidateHome}/>
                   <Route path="/forgetPassword"  component={ForgetPassword}/>
                   <Route path='/signin' component={SignIn}/>
                   <Route path='/signup' component={SignUp}/>
+                  <Route path='/adminSignUp' component={AdminSignUp}/>
                   {/* <Route path='/profile' component={Profile} /> */}
                   <RestrictedRoute path='/profile' authUser={authUser} component={Profile} />
                   <RestrictedRoute path='/employerHome' authUser={authUser} component={MainApp} />
@@ -106,8 +97,8 @@ class App extends Component {
                   <RestrictedRoute path='/jobsearch' authUser={authUser} component={JobsSearchedList}/>  
                   <RestrictedRoute path='/jobDescription' authUser={authUser} component={JobDescription} />   
                   <RestrictedRoute path='/Events' authUser={authUser} component={Events}/>  
-                  <RestrictedRoute path='/savejobsandalterts' authUser={authUser} component={FavoriteJobsAndAlerts} />           <Route
-                    component={asyncComponent(() => import('components/Error404'))}/>
+                  <RestrictedRoute path='/savejobsandalterts' authUser={authUser} component={FavoriteJobsAndAlerts} />           
+                  <Route component={asyncComponent(() => import('components/Error404'))}/>
                 </Switch>
               </div>
             </RTL>

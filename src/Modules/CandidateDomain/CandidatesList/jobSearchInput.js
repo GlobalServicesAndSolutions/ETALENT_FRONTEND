@@ -98,6 +98,22 @@ const JobsSearchInput = ({ onToogleSwitchChange,
                 {toogleSwitchValue === 'gridView' &&
                     <div>
                         <div>
+                        <FormControl className='gridListFilterwidth'>
+                                <InputLabel>Sort By</InputLabel>
+                                <Select
+                                    native
+                                    value={data.sortByFilter}
+                                    onChange={onSelectGridListFilter}
+                                    inputProps={{
+                                        name: 'sortByFilter',
+                                    }}
+                                >
+                                    <option value="" />
+                                    <option value='Most Relevent'>Most Relevent</option>
+                                    <option value='Most Recent'>Most Recent</option>
+                                </Select>
+                            </FormControl>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <FormControl className='gridListFilterwidth'>
                                 <InputLabel>Date Posted</InputLabel>
                                 <Select

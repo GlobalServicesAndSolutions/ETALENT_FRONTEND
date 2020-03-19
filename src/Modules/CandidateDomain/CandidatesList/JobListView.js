@@ -40,7 +40,7 @@ const JobsListView = ({ makeFaveriot, onFaveriotClick }) => {
         <div>
             <List>
                 <ListItem  >
-                    <Widget styleName="jr-card-profile jobList" >
+                    <Widget styleName="jr-card-profile jobList"  >
                         <BootstrapTooltip title={tooltipTile} >
                             <div className="mb-3" >
                                 <div className="cardHeaderAndAddButton" >

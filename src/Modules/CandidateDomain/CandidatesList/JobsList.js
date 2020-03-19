@@ -19,6 +19,7 @@ class JobsList extends Component {
             toogleSwitchValue: '',
             makeFaveriot: false,
             filterGridListDropdown: {
+                sortByFilter:'',
                 datePostedFilter: '',
                 employmentTypeFilter: '',
                 employerTypeFilter: '',
@@ -51,6 +52,7 @@ class JobsList extends Component {
     }
     onSelectGridListFilter=(event)=>{
         let filterObj={
+            id:event.target.name,
             name:event.target.value,
         };
         let filterdata= this.state.filterGridListDropdown;
@@ -61,6 +63,10 @@ class JobsList extends Component {
     }
     onCancelFilterClickGrid = (filter) => {
         this.props.jobActions.onCancelFilter(filter);
+        let cancelFilter=this.state.filterGridListDropdown;
+        let field=filter.id;
+        cancelFilter[field]='';
+        this.setState({cancelFilter});
     }
     render() {
         const { filterArray } = this.props;

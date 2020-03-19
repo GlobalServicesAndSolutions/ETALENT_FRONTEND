@@ -136,6 +136,10 @@ class SignIn extends React.Component {
                     <Link to="/signup">
                       <IntlMessages id="signIn.signUp" />
                     </Link>
+                    <br/>
+                    <Link to="/adminSignUp">
+                      Create an Admin Account
+                    </Link>
                     </div>
                     &nbsp;&nbsp;&nbsp;&nbsp;
                   <div>

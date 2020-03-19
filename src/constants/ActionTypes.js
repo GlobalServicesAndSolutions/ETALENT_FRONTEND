@@ -94,4 +94,6 @@ export const DELETE_SECTION_SIX_DATA = 'delete_section_six-data';
 export const JOB_FILTERS_SEARCH = 'job_filter_search';
 export const JOB_FILTERS_CANCEL = 'job_filter_cancel';
 
+// Login Action Types
+export const ADMIN_SIGNUP_SUCCESS = 'admin_signUp_success';
 
