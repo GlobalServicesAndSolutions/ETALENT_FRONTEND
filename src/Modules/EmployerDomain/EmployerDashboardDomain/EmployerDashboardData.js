@@ -27,7 +27,8 @@ const useStyles = makeStyles(theme => ({
 const EmployerDashboardView = ({ onClickFilterOptions, isFilterOptionClick }) => {
     const classes = useStyles();
     return (
-        <Widget styleName="jr-card-profile cardScrolling" >
+        <div className='employerDashboardStyle'>
+        <Widget styleName="jr-card-profile cardScrolling col-xl-12 col-lg-12 col-md-12" >
             <div className="mb-3">
                 <div className='row'>
                     <Paper component="form" className={classes.root}>
@@ -190,6 +191,7 @@ const EmployerDashboardView = ({ onClickFilterOptions, isFilterOptionClick }) =>
                 </table>
             </div>
         </Widget>
+        </div>
     )
 }
 

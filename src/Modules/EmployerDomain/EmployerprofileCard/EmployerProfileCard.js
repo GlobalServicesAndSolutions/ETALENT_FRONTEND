@@ -4,7 +4,7 @@ import Widget from "components/Widget";
 import { Link } from "react-router-dom";
 import { Button } from "@material-ui/core";
 
-const ProfileCard = ({onClickAddVendor}) => {
+const ProfileCard = ({onClickAddVendor,onClickAddNewUser}) => {
   return (
     <Widget styleName="jr-card-profile employerProfileHeader">
       <div >
@@ -32,6 +32,8 @@ const ProfileCard = ({onClickAddVendor}) => {
             <Link to='/activeVendors'>Active Vendors</Link>
             &nbsp;&nbsp;&nbsp;
             <Button color='primary' onClick={onClickAddVendor}>Add Vendors</Button>
+            &nbsp;&nbsp;&nbsp;
+            <Button color='primary' onClick={onClickAddNewUser}>Create User</Button>
           </div>
         </div>
       </div>

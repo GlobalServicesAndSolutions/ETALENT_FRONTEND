@@ -7,7 +7,7 @@ import {
   SWITCH_LANGUAGE,
   TOGGLE_COLLAPSED_NAV,
   VERTICAL_NAVIGATION,
-  WINDOW_WIDTH
+  WINDOW_WIDTH,
 } from 'constants/ActionTypes';
 
 const rltLocale = ['ar'];

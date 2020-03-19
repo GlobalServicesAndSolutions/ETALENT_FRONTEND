@@ -58,6 +58,9 @@
 }
 .employerProfileHeader{
   height: 145px;
+  @media screen and (max-width: 575px) {
+    height: 293px; 
+  }
 }
 .pLineHeight{
   line-height: 5px;
@@ -224,6 +227,12 @@ margin-top: -30px;
 .dashboardQuicklinkcardsStyle{
   align-items: center !important;
 }
+.employerDashboardQuickCards{
+  padding-top: 15px;
+    min-height: 80px;
+    display: block;
+    text-align: center;
+}
 .dashboardQuickLinksFont{
   color: gray !important;
 }
@@ -275,9 +284,20 @@ margin-top: -30px;
 .customers td {
   padding: 7px;
 }
-
+.employerDashboardStyle{
+  width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 15px;
+}
 .customers tr:hover {
   background-color: #ddd;
+}
+.rowMarginRight{
+  margin-right: 0px !important;
+  margin-top: 30px;
 }
 .stages:hover{
   color: gray;
@@ -390,14 +410,192 @@ p {
 .QuickEventsStyle{
   width: 65%;
 }
+/////////////////////// Epmloyer Card Ribbon
+.box {
+  position: relative;
+  max-width: 600px;
+  width: 90%;
+  height: 400px;
+  background: #fff;
+  box-shadow: 0 0 15px rgba(0,0,0,.1);
+}
+
+/* common */
+.ribbon {
+  width: 103px;
+  height: 78px;
+  overflow: hidden;
+  position: absolute;
+}
+.ribbon::before,
+.ribbon::after {
+  position: absolute;
+  z-index: -1;
+  content: '';
+  display: block;
+  border: 5px solid #2980b9;
+}
+.ribbon span {
+  position: absolute;
+  display: block;
+  width: 215px;
+  padding: 15px 0;
+  background-color: #68896f;;
+  box-shadow: 0 5px 10px rgba(0,0,0,.1);
+  color: #fff;
+  font: 600 14px/0 'Lato', sans-serif;
+  text-shadow: 0 1px 1px rgba(0,0,0,.2);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* top left*/
+.ribbon-top-left {
+  top: -10px;
+  left: -10px;
+}
+.ribbon-top-left::before,
+.ribbon-top-left::after {
+  border-top-color: transparent;
+  border-left-color: transparent;
+}
+.ribbon-top-left::before {
+  top: 0;
+  right: 0;
+}
+.ribbon-top-left::after {
+  bottom: 0;
+  left: 0;
+}
+.ribbon-top-left span {
+  right: -25px;
+  top: 30px;
+  transform: rotate(-45deg);
+}
+
+/* top right*/
+.ribbon-top-right {
+  top: -1px;
+    right: 13px;
+}
+.ribbon-top-right::before,
+.ribbon-top-right::after {
+  border-top-color: transparent;
+  border-right-color: transparent;
+}
+.ribbon-top-right::before {
+  top: 0;
+  left: 0;
+}
+.ribbon-top-right::after {
+  bottom: 0;
+  right: 0;
+}
+.ribbon-top-right span {
+    left: -46px;
+    top: 12px;
+    transform: rotate(38deg);
+}
+
+/* bottom left*/
+.ribbon-bottom-left {
+  bottom: -10px;
+  left: -10px;
+}
+.ribbon-bottom-left::before,
+.ribbon-bottom-left::after {
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+}
+.ribbon-bottom-left::before {
+  bottom: 0;
+  right: 0;
+}
+.ribbon-bottom-left::after {
+  top: 0;
+  left: 0;
+}
+.ribbon-bottom-left span {
+  right: -25px;
+  bottom: 30px;
+  transform: rotate(225deg);
+}
+
+/* bottom right*/
+.ribbon-bottom-right {
+  bottom: -10px;
+  right: -10px;
+}
+.ribbon-bottom-right::before,
+.ribbon-bottom-right::after {
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+}
+.ribbon-bottom-right::before {
+  bottom: 0;
+  left: 0;
+}
+.ribbon-bottom-right::after {
+  top: 0;
+  right: 0;
+}
+.ribbon-bottom-right span {
+  left: -25px;
+  bottom: 30px;
+  transform: rotate(-225deg);
+}
+////////////////////
 .QuickEventsStyle :hover{
   background: rgb(245, 225, 211);
+}
+.employerDashboardRequsitionStyle{
+  background:white;
+  border-radius: 10px;
+}
+.employerDashboardRequsitionStyle :hover{
+  background:wheat;
+  zoom: 1.05
+}
+.employerDashboardAppliedCandidates{
+  background: white;
+  border-radius: 10px;
+}
+.employerDashboardAppliedCandidates :hover{
+  background: rgb(176, 206, 203);
+  zoom: 1.05;
+}
+.employerDashboardRejectedcandidates{
+  background: white;
+  border-radius: 10px;
+}
+.employerDashboardRejectedcandidates :hover{
+  background: rgb(191, 241, 189);
+  zoom: 1.05;
+}
+.employerDashboardOfferLatter{
+  background: white;
+  border-radius: 10px;
+}
+.employerDashboardOfferLatter :hover{
+  background: yellowgreen;
+  zoom: 1.05;
+}
+.employerDashboardHiredCandidates{
+  background: white;
+  border-radius: 10px;
+}
+.employerDashboardHiredCandidates :hover{
+  background: violet;
+  zoom: 1.05;
 }
 .QuickSettingsAndEventsStyle{
   width: 65%;
 }
 .QuickSettingsAndEventsStyle :hover{
   background: rgb(191, 241, 189);
+}
+.employerDashboardCardsBorder{
+  border-radius: 10px !important;
 }
 .jr-card-profile {
   position: relative;

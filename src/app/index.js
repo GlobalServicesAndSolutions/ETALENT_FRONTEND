@@ -13,7 +13,6 @@ import {
 import { isIOS, isMobile } from 'react-device-detect';
 import asyncComponent from '../util/asyncComponent';
 import TopNav from 'components/TopNav';
-
 class App extends React.Component {
 
   render() {

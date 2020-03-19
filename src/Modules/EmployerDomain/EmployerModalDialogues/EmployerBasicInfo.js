@@ -51,7 +51,7 @@ const EmployerProfileInfo = ({ open,
                             />
                         </RadioGroup>
                     </FormControl>
-                    {employerTypeValue === 'Others' &&
+                    {data.employerTypeValue === 'Others' &&
                     <TextField
                         autoFocus
                         margin="dense"
