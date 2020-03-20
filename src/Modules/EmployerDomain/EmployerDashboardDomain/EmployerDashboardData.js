@@ -28,7 +28,7 @@ const EmployerDashboardView = ({ onClickFilterOptions, isFilterOptionClick }) =>
     const classes = useStyles();
     return (
         <div className='employerDashboardStyle'>
-        <Widget styleName="jr-card-profile cardScrolling col-xl-12 col-lg-12 col-md-12" >
+        <Widget styleName="jr-card-profile cardScrolling col-xl-12 col-lg-12 col-md-12 overFlow" >
             <div className="mb-3">
                 <div className='row'>
                     <Paper component="form" className={classes.root}>
@@ -98,14 +98,13 @@ const EmployerDashboardView = ({ onClickFilterOptions, isFilterOptionClick }) =>
                 <table border='2' className='customers' style={{ width: '100%' }}>
                     <tbody>
                         <tr>
-                            <th>Req. ID</th>
+                            <th>Req. #</th>
                             <th >Job Title</th>
                             <th >Hiring Manager</th>
                             <th >Division</th>
                             <th >Department</th>
                             <th>Location</th>
                             <th >End Date</th>
-                            <th >Days Left</th>
                             <th >Job Status</th>
                             <th>Candidates </th>
                         </tr>
@@ -130,9 +129,6 @@ const EmployerDashboardView = ({ onClickFilterOptions, isFilterOptionClick }) =>
                             </td>
                             <td>
                                 1/13/2020
-                        </td>
-                            <td>
-                                0
                         </td>
                             <td>
                                 <div style={{ justifyContent: 'space-between', display: 'flex' }}>
@@ -169,9 +165,6 @@ const EmployerDashboardView = ({ onClickFilterOptions, isFilterOptionClick }) =>
                         </td>
                             <td>
                                 1/13/2020
-                        </td>
-                            <td>
-                                0
                         </td>
                             <td>
                                 <div style={{ justifyContent: 'space-between', display: 'flex' }}>

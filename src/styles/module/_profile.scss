@@ -62,6 +62,12 @@
     height: 293px; 
   }
 }
+.activeVendorHeader{
+  height: 10%;
+  @media screen and (max-width: 575px) {
+    height: 22%; 
+  }
+}
 .pLineHeight{
   line-height: 5px;
 }
@@ -276,7 +282,7 @@ margin-top: -30px;
   color: black;
 }
 .candidateHeader{
-  height: 28%;
+  height: 23%;
 }
 .customers tr:nth-child(even){
   background-color: #f2f2f2;
@@ -284,12 +290,32 @@ margin-top: -30px;
 .customers td {
   padding: 7px;
 }
+.employerDashboardGraphCardMargin{
+  margin-left: -35px;
+}
+.DisplayAndSpaceBetween{
+  display: flex;
+  justify-content: space-between;
+}
+.canidatesListGraphCardMargin{
+  margin-left: -8px;
+  width: 98%;
+}
+.overFlow{
+  overflow-y: auto;
+}
+.alignCenter{
+  align-items: center;
+}
+.emloyerDashboardTabsMinHeight{
+  min-width: 120px !important;
+}
 .employerDashboardStyle{
   width: 100%;
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
-    margin-left: auto;
+    margin-left: -14px;
     margin-top: 15px;
 }
 .customers tr:hover {

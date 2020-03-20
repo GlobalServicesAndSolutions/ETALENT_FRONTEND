@@ -4,6 +4,8 @@ import CandidateListHeader from './CandidateListHeader';
 import CandidatesTable from './CandidatesList';
 import CandidatesPopUpInfo from './CandidatePopUp';
 import AddNewUserByEtalentIdDialog from 'util/Models/AddNewUserByEtalentIdDialog';
+import Projects from 'components/profile/Projects/Projects';
+import CandidatesListGraph from './CandidatesListGraph';
 
 class Candidates extends Component {
     constructor(props) {
@@ -77,16 +79,21 @@ class Candidates extends Component {
                 onClickStage={this.onClickStage}
                 jobStatus={this.state.candidateStatus ?this.state.candidateStatus:'All' }
                 candidateStagefilter={this.state.candidateStagefilter}
-                onClickAddNewUserById={this.onClickAddNewUserById}
                 />
-                <div style={{width:'100%'}} >
+                <div className='row'>
+                <div className="col-xl-7 col-lg-6 col-md-6 col-12">
                     <CandidatesTable
                     data={this.state.candidatesData}
                     onCandidateEditClick={this.onCandidateEditClick}
                     onChangeCandidateStatus={this.onChangeCandidateStatus}
                     candidateStatus={this.state.candidateStatus}
                     candidateStagefilter={this.state.candidateStagefilter}
+                    onClickAddNewUserById={this.onClickAddNewUserById}
                     />
+                </div>
+                <div className="col-xl-5 col-lg-4 col-md-7 col-12">
+                <CandidatesListGraph/>
+                </div>
                 </div>
                 {this.state.isCandidatePopUpOpen ?
                     <CandidatesPopUpInfo 

@@ -1,16 +1,12 @@
 import React from 'react';
 import Widget from 'components/Widget';
-import Fab from '@material-ui/core/Fab';
-import AddIcon from '@material-ui/icons/Add';
-import { Tooltip } from '@material-ui/core';
 
 const CandidateListHeader = ({ onClickStage, jobStatus, candidateStagefilter,onClickAddNewUserById }) => {
   return (
     <Widget styleName="jr-card-profile candidateHeader">
       <div className="mb-3">
-        <h4>Operations Manager{` (${jobStatus})`}</h4>
+        <h4>Req# - Operations Manager{` (${jobStatus})`}</h4>
         <p className="mb-0 jr-fs-lg jobDetailsHeaderLineHeight">Location, City</p>
-        <p className="mb-0 jr-fs-lg jobDetailsHeaderLineHeight">Req Id</p>
         <p className="mb-0 jr-fs-lg jobDetailsHeaderLineHeight">Hiring Manager</p>
         <hr />
         <div className='row'>
@@ -63,12 +59,6 @@ const CandidateListHeader = ({ onClickStage, jobStatus, candidateStagefilter,onC
             Hired
             <sup> 8</sup>
           </h6>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <Tooltip title='Add New User By E-Talent Id' placeholder='top'>
-          <Fab onClick={onClickAddNewUserById} size="small" color="primary" aria-label="add">
-              <AddIcon />
-            </Fab>
-          </Tooltip>
         </div>
       </div>
     </Widget>

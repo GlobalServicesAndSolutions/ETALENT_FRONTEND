@@ -7,8 +7,10 @@ const JobDetailHeader = () => {
         <div className="jr-profile-banner-top">
           <div className="jr-profile-banner-top-left">
             <div className="jr-profile-banner-avatar-info">
-              <h2 className="mb-2 jr-mb-sm-3 jr-fs-xxl jr-font-weight-black">Operation Manager (124)</h2>
+              <h2 className="mb-2 jr-mb-sm-3 jr-fs-xxl jr-font-weight-black">Req# - Operation Manager</h2>
               <p className="mb-0 jr-fs-lg">I-9/3 Islamabad, Pakistan</p>
+              <p className="mb-0 jr-fs-lg">Date Posted</p>
+              <p className="mb-0 jr-fs-lg">Days Left</p>
             </div>
           </div>
         </div>

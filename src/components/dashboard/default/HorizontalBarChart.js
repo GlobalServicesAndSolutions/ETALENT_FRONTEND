@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Bar} from 'react-chartjs-2';
+import {  HorizontalBar } from 'react-chartjs-2';
 
-export default class Chart extends Component {
+export default class HorizontalBarChart extends Component {
   render() {
     const {labels,label, borderColor, chartdata, pointBackgroundColor, height, pointBorderColor,shadowColor } = this.props;
     const data = (canvas) => {
@@ -49,6 +49,9 @@ export default class Chart extends Component {
       scales: {
         xAxes: [{
           display: true,
+          ticks: {
+            beginAtZero: true
+          },
           gridLines: {
             display: true,
             drawBorder: true,
@@ -65,7 +68,7 @@ export default class Chart extends Component {
       },
     };
     return (
-      <Bar data={data} options={options} height={height} />
+      <HorizontalBar data={data} options={options} height={height} />
     );
   }
 }

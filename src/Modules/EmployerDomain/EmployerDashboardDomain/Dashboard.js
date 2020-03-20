@@ -1,13 +1,14 @@
 import React,{Component} from 'react';
 import EmployerProfileCard from '../EmployerprofileCard/EmployerProfileCard';
 import EmployerDashboardView from './EmployerDashboardData';
-import AddVendorDialog from 'util/Models/AddVendorDialog';
 import TotalRequisitionCard from './DashboardQuickLinksCards/TotalRequisition';
 import AppliedCandidates from './DashboardQuickLinksCards/AppliedCandidates';
 import RejectedCandidates from './DashboardQuickLinksCards/RejectedCandidates';
 import OfferLetters from './DashboardQuickLinksCards/OfferLetters';
 import HiredCandidates from './DashboardQuickLinksCards/HiredCandidates';
 import AddNewUserDialog from 'util/Models/AddNewUserDialog';
+import EmployerGraphDetail from './DashBoardGraphCard';
+import TotalVendors from './DashboardQuickLinksCards/TotalVendors';
 
 class EmployerDashboard extends Component {
   constructor(props)
@@ -16,7 +17,8 @@ class EmployerDashboard extends Component {
     this.state={
       isFilterOptionClick:false,
       openAddVendorDialog:false,
-      openAddNewUserDialog:false
+      openAddNewUserDialog:false,
+      value:'one'
     }
   }
   onClickFilterOptions=()=>{
@@ -33,6 +35,15 @@ class EmployerDashboard extends Component {
   }
   onCloseAddNewUser=()=>{
     this.setState({openAddNewUserDialog:false});
+  }
+  tabHandleChange = (event, newValue) => {
+    this.setState({ value: newValue });
+  }
+  a11yProps = (index) => {
+    return {
+      id: `wrapped-tab-${index}`,
+      'aria-controls': `wrapped-tabpanel-${index}`,
+    };
   }
   render() {
     return (
@@ -61,20 +72,25 @@ class EmployerDashboard extends Component {
               <HiredCandidates />
             </div>
             <div className='col-6 col-md-4 col-xl-2'>
-              <TotalRequisitionCard />
+              <TotalVendors />
             </div>
           </div>
+          <div className='row'>
+          <div className="col-xl-9 col-lg-9 col-md-7 col-12">
           <EmployerDashboardView 
           onClickFilterOptions={this.onClickFilterOptions}
           isFilterOptionClick={this.state.isFilterOptionClick}
           />
+          </div>
+          <div className="col-xl-3 col-lg-3 col-md-5 col-12 employerDashboardStyle">
+          <EmployerGraphDetail
+          a11yProps={this.a11yProps}
+          tabHandleChange={this.tabHandleChange}
+          value={this.state.value}
+          />
+          </div>
+          </div>
         </div>
-        {this.state.openAddVendorDialog  &&
-        <AddVendorDialog 
-        open={this.state.openAddVendorDialog}
-        onCloseAddVendorDialog={this.onCloseAddVendorDialog}
-        />
-        }
         {this.state.openAddNewUserDialog &&
         <AddNewUserDialog
         open={this.state.openAddNewUserDialog}

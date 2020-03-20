@@ -100,7 +100,7 @@ const AddVendorDialog = ({ open,
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={onCloseAddVendorDialog} color="primary">
-                        Save
+                        Create
                     </Button>
                     <Button onClick={onCloseAddVendorDialog} color="primary">
                         Cancel
