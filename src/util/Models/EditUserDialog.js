@@ -9,99 +9,80 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 
 const EditUserDialog = ({ open,
     handleClose,
-    selectedUser,
-    isEdit
+    selectedUser
 }) => {;
     return (
         <div>
             <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title" maxWidth="sm" >
-                <DialogTitle id="form-dialog-title">{isEdit?'Edit User':'Add New User'}</DialogTitle>
+                <DialogTitle id="form-dialog-title">Edit User</DialogTitle>
                 <DialogContent>
                     <TextField
                         autoFocus
                         margin="dense"
-                        name="userName"
+                        name="firstName"
                         label="Name"
                         type="text"
-                        value={isEdit?selectedUser.name:''}
+                        value={selectedUser.firstName}
                         placeholder="Ex: Salman"
                         className="profileInfoTextField"
                         required
                     />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <TextField
+                        autoFocus
+                        margin="dense"
+                        name="lastName"
+                        label="Name"
+                        type="text"
+                        value={selectedUser.lastName}
+                        placeholder="Ex: Haider"
+                        className="profileInfoTextField"
+                        required
+                    />
+                    <TextField
                         margin="dense"
                         name="userPhoneNumber"
-                        label="PhoneNumber"
-                        type="number"
-                        value={isEdit? selectedUser.phoneNo:''}
-                        placeholder="Ex: xxxx-xxxxxxx"
-                        className="profileInfoTextField"
-                        required
-                    />
-                    <TextField
-                        margin="dense"
-                        name="userCurrentJob"
-                        label="Current Job"
+                        label="Phone Number"
                         type="text"
-                        value={isEdit? selectedUser.currentJob:''}
+                        value={selectedUser.phoneNo}
                         className="profileInfoTextField"
                         required
                     />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <TextField
                         margin="dense"
-                        name="userEmployer"
-                        label="Employer"
+                        name="userEmail"
+                        label="Email"
                         type="text"
-                        value={isEdit? selectedUser.employer:''}
+                        value={selectedUser.email}
                         className="profileInfoTextField"
                         required
                     />
                     <TextField
                         margin="dense"
-                        name="userExperience"
-                        label="Experience"
+                        name="userDesignation"
+                        label="Designation"
                         type="text"
-                        value={isEdit? selectedUser.experience:''}
-                        className="profileInfoTextField"
-                        required
-                    />
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <TextField
-                        margin="dense"
-                        name="userStage"
-                        label="Stage"
-                        type="text"
-                        value={isEdit? selectedUser.stage:''}
-                        className="profileInfoTextField"
-                        required
-                    />
-                    <TextField
-                        margin="dense"
-                        name="userAddress"
-                        label="Address"
-                        type="text"
-                        value={isEdit? selectedUser.address:''}
+                        value={selectedUser.designation}
                         className="profileInfoTextField"
                         required
                     />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <TextField
                         margin="dense"
-                        name="userAppliedDate"
-                        label="Applied Date"
-                        type="text"
-                        value={isEdit? selectedUser.appliedDate:''}
-                        className="profileInfoTextField"
-                        required
-                    />
-                    <TextField
-                        margin="dense"
-                        name="userDeparment"
+                        name="userDepartment"
                         label="Department"
                         type="text"
-                        value={isEdit? selectedUser.department:''}
+                        value={selectedUser.department}
+                        className="profileInfoTextField"
+                        required
+                    />
+                    <TextField
+                        margin="dense"
+                        name="userEtalentId"
+                        label="E-Talent Id"
+                        type="text"
+                        value={selectedUser.eTalentId}
                         className="profileInfoTextField"
                         required
                     />

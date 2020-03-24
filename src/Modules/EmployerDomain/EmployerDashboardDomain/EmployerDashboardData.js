@@ -101,7 +101,7 @@ const EmployerDashboardView = ({ onClickFilterOptions, isFilterOptionClick,onCli
                             <th >Req. #</th>
                             <th >Job Title</th>
                             <th >Hiring Manager</th>
-                            <th >Department</th>
+                            <th >Dept.</th>
                             <th>Location</th>
                             <th >End Date</th>
                             <th >Job Status</th>

@@ -31,27 +31,23 @@ class UserDashboard extends Component {
     const data = [
       {
         id: 1,
-        name: 'Salman',
+        firstName: 'Salman',
+        lastName: 'Haider',
         phoneNo: '03110200751',
-        currentJob: 'React Js Developer',
-        employer: 'Seven',
-        experience: '3 Years',
-        stage: 'Hired',
-        address: 'PAF',
-        appliedDate: '1/17/2020',
-        department: 'Software'
+        email: 'salmanhaider0006@hotmail.com',
+        designation: 'Software Engineer',
+        department: 'Software',
+        eTalentId:'1234564'
       },
       {
         id: 2,
-        name: 'Atif',
-        phoneNo: '03111234567',
-        currentJob: 'React Js Developer',
-        employer: 'Zigron',
-        experience: '5 Years',
-        stage: 'Hired',
-        address: 'UAE',
-        appliedDate: '1/17/2020',
-        department: 'Software'
+        firstName: 'Imran',
+        lastName: 'Khan',
+        phoneNo: '03110200751',
+        email: 'salmanhaider0006@hotmail.com',
+        designation: 'Software Engineer',
+        department: 'Software',
+        eTalentId:'1234564'
       }
     ];
     this.setState({ usersData: data });

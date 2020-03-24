@@ -24,46 +24,38 @@ const UsersTable = ({onClickAddNewUser,usersData,onClickEditUser}) => {
                 <table border='2' className='customers' style={{ width: '100%' }}>
                     <tbody>
                         <tr>
-                            <th >Name</th>
+                            <th >First Name</th>
+                            <th >Last Name</th>
                             <th >Phone No.</th>
-                            <th >Current Job</th>
-                            <th >Employer</th>
-                            <th >Experience</th>
-                            <th >Stage</th>
-                            <th>Address</th>
-                            <th >Applied Date</th>
+                            <th >Email</th>
+                            <th >Designation</th>
                             <th >Department</th>
+                            <th >E-Talent Id</th>
                             <th >Action</th>
                         </tr>
                         {usersData.map((user)=>{
                             return(
                                 <tr>
                             <td>
-                                {user.name}  
+                                {user.firstName}  
+                            </td>
+                            <td>
+                                {user.lastName}  
                             </td>
                             <td>
                                 {user.phoneNo}
                             </td>
                             <td>
-                                {user.currentJob}
+                                {user.email}
                             </td>
                             <td>
-                                {user.employer}
-                            </td>
-                            <td>
-                                {user.experience}
-                            </td>
-                            <td>
-                                {user.stage}
-                            </td>
-                            <td>
-                                {user.address}
-                            </td>
-                            <td>
-                                {user.appliedDate}
+                                {user.designation}
                             </td>
                             <td>
                                 {user.department}
+                            </td>
+                            <td>
+                                {user.eTalentId}
                             </td>
                             <td>
                             <div className='row'>

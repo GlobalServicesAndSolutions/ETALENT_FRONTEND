@@ -116,10 +116,10 @@ class JobsList extends Component {
                             </div>
                             <div className="col-xl-9 col-lg-8 col-md-9 col-12">
                                 <div className='row'>
-                                    {filterArray.length > 0 ? filterArray.map((filter) => {
+                                    {filterArray.length > 0 ? filterArray.map((filter,index) => {
                                         return (
-                                            <div style={{ display: 'flex', marginLeft: '15px' }}>
-                                                <span style={{ color: 'gray' }}>{filter.name}</span>
+                                            <div style={{ display: 'flex', marginLeft: '15px' }} >
+                                                <span style={{ color: 'gray' }} key={index}>{filter.name}</span>
                                         &nbsp;
                                                 <sup>
                                                     <CancelIcon data-tip='Cancel Filter' className='cancleJobFilterButton' onClick={() => this.onCancelFilterClick(filter)} />
@@ -156,7 +156,7 @@ const mapStateToProps = ({
 }) => {
     const { filterArray } = jobReducer;
     return {
-        filterArray,
+        filterArray
     };
 }
 function mapDispatchToProps(dispatch) {

@@ -411,6 +411,9 @@ p {
 .fontLabelColor{
   color:white;
 }
+.fontLabelColor :hover{
+  color: red;
+}
 .cardScrolling{
   @media (max-width: 575px) {
     overflow-x: auto;
@@ -586,7 +589,6 @@ p {
 }
 .employerDashboardRequsitionStyle :hover{
   background:wheat;
-  zoom: 1.05
 }
 .employerDashboardAppliedCandidates{
   background: white;
@@ -594,7 +596,6 @@ p {
 }
 .employerDashboardAppliedCandidates :hover{
   background: rgb(176, 206, 203);
-  zoom: 1.05;
 }
 .employerDashboardRejectedcandidates{
   background: white;
@@ -602,7 +603,6 @@ p {
 }
 .employerDashboardRejectedcandidates :hover{
   background: rgb(191, 241, 189);
-  zoom: 1.05;
 }
 .employerDashboardOfferLatter{
   background: white;
@@ -610,7 +610,6 @@ p {
 }
 .employerDashboardOfferLatter :hover{
   background: yellowgreen;
-  zoom: 1.05;
 }
 .employerDashboardHiredCandidates{
   background: white;
@@ -618,7 +617,6 @@ p {
 }
 .employerDashboardHiredCandidates :hover{
   background: violet;
-  zoom: 1.05;
 }
 .QuickSettingsAndEventsStyle{
   width: 65%;

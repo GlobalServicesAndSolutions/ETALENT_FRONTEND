@@ -165,6 +165,11 @@ class Header extends React.Component {
                 <span className='fontLabelColor' >Jobs</span>
               </li>
             </Link>
+            <Link to='/eTalentPool'>
+              <li className="list-inline-item headerLinks" >
+                <span className='fontLabelColor' >E-Talent Pool</span>
+              </li>
+            </Link>
             <Link to='#'>
               <li className="list-inline-item headerLinks">
                 <span className='fontLabelColor' >Messaging</span>

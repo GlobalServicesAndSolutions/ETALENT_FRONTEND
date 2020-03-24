@@ -98,7 +98,8 @@ class App extends Component {
                   <RestrictedRoute path='/jobDescription' authUser={authUser} component={JobDescription} />   
                   <RestrictedRoute path='/Events' authUser={authUser} component={Events}/>  
                   <RestrictedRoute path='/savejobsandalterts' authUser={authUser} component={FavoriteJobsAndAlerts} /> 
-                  <RestrictedRoute path='/userManagement' authUser={authUser} component={MainApp} />         
+                  <RestrictedRoute path='/userManagement' authUser={authUser} component={MainApp} />  
+                  <RestrictedRoute path='/eTalentPool' authUser={authUser} component={MainApp} />       
                   <Route component={asyncComponent(() => import('components/Error404'))}/>
                 </Switch>
               </div>

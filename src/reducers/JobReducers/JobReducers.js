@@ -3,7 +3,7 @@ import {
 } from "constants/ActionTypes";
 
 const INIT_STATE = {
-    filterArray:[],
+    filterArray:[]
 };
 function removeItem(array, action) {
     return [...array.slice(0, action.index), ...array.slice(action.index + 1)];

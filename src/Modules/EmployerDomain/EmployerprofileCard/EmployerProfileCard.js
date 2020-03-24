@@ -2,7 +2,6 @@ import React from "react";
 import Avatar from '@material-ui/core/Avatar';
 import Widget from "components/Widget";
 import { Link } from "react-router-dom";
-import { Button } from "@material-ui/core";
 
 const ProfileCard = ({onClickAddNewUser}) => {
   return (
@@ -10,9 +9,9 @@ const ProfileCard = ({onClickAddNewUser}) => {
       <div >
         <div className="jr-profile-container">
           <div className="jr-Dashboardprofile-banner-top">
-            <div className="jr-profile-banner-top-left">
               <div className="jr-profile-banner-avatar-info">
                 <Avatar className="size-120" alt="..." src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Phoenicopterus_ruber_in_S%C3%A3o_Paulo_Zoo.jpg" />
+               
               </div>
               <div className='jr-profile-banner-avatar-info employerDashboardProfileheaderAvatarInfo'>
                 <div>
@@ -24,8 +23,11 @@ const ProfileCard = ({onClickAddNewUser}) => {
                   </div>
                 </div>
               </div>
-            </div>
           </div>
+          <div align='right'>
+                 <Link to='#'><p className="mb-0 jr-fs-lg">www.Faceboob.com/Emoloyer</p></Link>
+                 <Link to='#'> <p className="mb-0 jr-fs-lg">Linkedin.com/Emoloyer</p></Link>
+                  </div>
         </div>
       </div>
     </Widget>

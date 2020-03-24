@@ -49,10 +49,9 @@ const CandidatesTable = ({ data,
                     <tbody>
                         <tr>
                             <th >Name</th>
-                            <th >Phone No.</th>
                             <th >Current Job</th>
                             <th >Employer</th>
-                            <th >Experience</th>
+                            <th >Exp.</th>
                             <th >Recruiter</th>
                             <th >Stage</th>
                             <th >Applied Date</th>
@@ -63,9 +62,6 @@ const CandidatesTable = ({ data,
                                     <tr onClick={() => onCandidateEditClick(candidates)} key={index}>
                                         <td>
                                             <Link to='/candidateDetails'> {candidates.name}</Link>
-                                        </td>
-                                        <td>
-                                            {candidates.phoneNo}
                                         </td>
                                         <td>
 

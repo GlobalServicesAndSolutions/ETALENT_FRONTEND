@@ -83,6 +83,9 @@
 .headerLinks{
   cursor: pointer;
 }
+.headerLinks :hover{
+  color: red;
+}
 .app-toolbar {
   position: relative;
   z-index: 2;

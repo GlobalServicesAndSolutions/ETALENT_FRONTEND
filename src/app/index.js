@@ -50,6 +50,8 @@ class App extends React.Component {
                   component={asyncComponent(() => import('../Modules/EmployerDomain/EmployerProfile'))} />
                   <Route path='/userManagement'
                   component={asyncComponent(() => import('../Modules/UserDomain/UserDashboard'))} />
+                  <Route path='/eTalentPool'
+                  component={asyncComponent(() => import('../Modules/UserDomain/ETalenPool/ETalentPool'))} />
                 <Route component={asyncComponent(() => import('components/Error404'))} />
               </Switch>
             </div>
