@@ -4,7 +4,6 @@ import CandidateListHeader from './CandidateListHeader';
 import CandidatesTable from './CandidatesList';
 import CandidatesPopUpInfo from './CandidatePopUp';
 import AddNewUserByEtalentIdDialog from 'util/Models/AddNewUserByEtalentIdDialog';
-import Projects from 'components/profile/Projects/Projects';
 import CandidatesListGraph from './CandidatesListGraph';
 
 class Candidates extends Component {

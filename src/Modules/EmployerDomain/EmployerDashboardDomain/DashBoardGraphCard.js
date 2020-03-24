@@ -1,6 +1,7 @@
 import React from "react";
 import Widget from "components/Widget";
 import HorizontalBarChart from "components/dashboard/default/HorizontalBarChart";
+import PieChart from 'components/dashboard/default/PieChart';
 import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
@@ -48,6 +49,7 @@ const a11yProps = (index) => {
 }
 const EmployerGraphDetail = ({ tabHandleChange, value }) => {
     let lableList = ['communication', 'Humanidity', 'Code', 'Style'];
+    let experienceData=['Salman','Haris','Arsalan','Maaz']
     const classes = useStyles();
     return (
         <Widget styleName="jr-card-profile employerDashboardGraphCardMargin">
@@ -63,11 +65,10 @@ const EmployerGraphDetail = ({ tabHandleChange, value }) => {
                         aria-label="scrollable auto tabs example" >
                         <Tab className='emloyerDashboardTabsMinHeight' value="one" label="Skills" {...a11yProps('one')} />
                         <Tab className='emloyerDashboardTabsMinHeight' value="two" label="Experience" {...a11yProps('two')} />
-                        <Tab className='emloyerDashboardTabsMinHeight' value="three" label="Other" {...a11yProps('three')} />
                     </Tabs>
                 </AppBar>
                 <TabPanel value={value} index="one">
-                <h3 style={{color:'gray'}}>Skills</h3>
+                    <h3 style={{ color: 'gray' }}>Operational Manager</h3>
                     <div>
                         <HorizontalBarChart
                             borderColor="white"
@@ -83,34 +84,13 @@ const EmployerGraphDetail = ({ tabHandleChange, value }) => {
                     </div>
                 </TabPanel>
                 <TabPanel value={value} index="two">
-                <h3 style={{color:'gray'}}>Experience</h3>
+                    <h3 style={{ color: 'gray' }}>Operational Manager</h3>
                     <div>
-                        <HorizontalBarChart
-                            borderColor="white"
-                            pointBorderColor='white'
-                            pointBackgroundColor='white'
+                        <PieChart
                             height={250}
-                            pointHoverBorderColor='blue'
-                            borderWidth={0}
-                            chartdata={[99, 25, 20, 30]}
-                            shadowColor='black'
-                            labels={lableList}
-                        />
-                    </div>
-                </TabPanel>
-                <TabPanel value={value} index="three">
-                <h3 style={{color:'gray'}}>Other</h3>
-                    <div>
-                        <HorizontalBarChart
-                            borderColor="white"
-                            pointBorderColor='white'
-                            pointBackgroundColor='white'
-                            height={250}
-                            pointHoverBorderColor='blue'
-                            borderWidth={0}
-                            chartdata={[99, 25, 20, 30]}
-                            shadowColor='black'
-                            labels={lableList}
+                            chartdata={[5, 9, 3, 10]}
+                            shadowColor='gray'
+                            labels={experienceData}
                         />
                     </div>
                 </TabPanel>

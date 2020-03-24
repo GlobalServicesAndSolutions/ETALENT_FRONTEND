@@ -15,7 +15,7 @@ const ActiveVendorsTable = ({ onChangeVendorActiveInactive, vendorActiveInactive
                     </div>
                     <div>
                         <Tooltip title='Add Vendor' placement='top'>
-                            <Fab onClick={onClickAddVendor} size="small" color="primary" aria-label="add">
+                            <Fab onClick={onClickAddVendor} size="small"  aria-label="add">
                                 <AddIcon />
                             </Fab>
                         </Tooltip>

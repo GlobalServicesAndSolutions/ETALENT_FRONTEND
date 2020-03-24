@@ -308,7 +308,7 @@ margin-top: -30px;
   align-items: center;
 }
 .emloyerDashboardTabsMinHeight{
-  min-width: 120px !important;
+  min-width: 141px !important;
 }
 .employerDashboardStyle{
   width: 100%;
@@ -317,6 +317,9 @@ margin-top: -30px;
     margin-right: auto;
     margin-left: -14px;
     margin-top: 15px;
+}
+.candidatesHeaderlineHeight{
+  line-height: 0;
 }
 .customers tr:hover {
   background-color: #ddd;

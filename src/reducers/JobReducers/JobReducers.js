@@ -28,7 +28,7 @@ export default (state = INIT_STATE, action) => {
         selectedFilter.map((filter)=>{
             if(filter.name===action.payload.name)
             {
-                selectedFilter= removeItem(selectedFilter,{index:selectedFilterIndex});
+                 selectedFilter= removeItem(selectedFilter,{index:selectedFilterIndex});
             }
         })
         return {

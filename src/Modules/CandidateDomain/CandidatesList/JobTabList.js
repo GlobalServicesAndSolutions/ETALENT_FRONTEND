@@ -80,6 +80,9 @@ const JobTabList = ({ tabValue, tabHandleChange, sectionOneData,
                     <Tab label="Test Form" {...a11yProps(2)} />
                     <Tab label="Interview Form" {...a11yProps(3)} />
                     <Tab label="Feedback Form" {...a11yProps(4)} />
+                    <div style={{width:'60%'}} align='right'>
+                    <p>Days Ago</p>
+                    </div>
                 </Tabs>
             </AppBar>
             <TabPanel value={tabValue} index={0}>

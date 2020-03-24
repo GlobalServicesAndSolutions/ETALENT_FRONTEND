@@ -38,7 +38,7 @@ const CandidatesTable = ({ data,
                     </div>
                     <div>
                         <Tooltip title='Add New Application By E-Talent Id' placement='top'>
-                            <Fab onClick={onClickAddNewUserById} size="small" color="primary" aria-label="add">
+                            <Fab onClick={onClickAddNewUserById} size="small" aria-label="add">
                                 <AddIcon />
                             </Fab>
                         </Tooltip>

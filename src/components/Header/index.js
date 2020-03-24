@@ -130,7 +130,7 @@ class Header extends React.Component {
   };
 
   render() {
-    const { navigationStyle, horizontalNavPosition } = this.props;
+    const { navigationStyle, horizontalNavPosition,match } = this.props;
     return (
       <AppBar
         className={`app-main-header ${(navigationStyle === HORIZONTAL_NAVIGATION && horizontalNavPosition === BELOW_THE_HEADER) ? 'app-main-header-top' : ''}`}>
@@ -154,11 +154,12 @@ class Header extends React.Component {
                 <span className="fontLabelColor" >EmployerHome</span>
               </li>
             </Link>
-            <Link to="/dashboard">
+            {match.path !=='/employerHome' &&
+              <Link to="/dashboard">
               <li className="list-inline-item headerLinks">
                 <span className="fontLabelColor" >Home</span>
               </li>
-            </Link>
+            </Link>}
             <Link to='/jobs'>
               <li className="list-inline-item headerLinks">
                 <span className='fontLabelColor' >Jobs</span>

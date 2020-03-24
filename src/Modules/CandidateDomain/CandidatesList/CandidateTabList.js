@@ -15,6 +15,7 @@ import Skills from "components/profile/Skills/Skills";
 import SoftSkills from "components/profile/SoftSkills/SoftSkills";
 import Certification from "components/profile/LisenceAndCertification/Certification";
 import Experience from "components/profile/Experience/Experience";
+import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 
 const TabPanel = (props) => {
     const { children, value, index, ...other } = props;
@@ -100,7 +101,11 @@ const CandidateTabList = ({ tabValue, tabHandleChange }) => {
             </TabPanel>
             <TabPanel value={tabValue} index={1}>
                 <div className='candidate-details'>
-                    <h5>Documents Attached</h5>
+                    <div className='row'>
+                    <AddCircleOutlineIcon className='pointer' fontSize='small'></AddCircleOutlineIcon>
+                    <p>Add Document</p>
+                    </div>
+                    <hr/>
                 </div>
             </TabPanel>
             <TabPanel value={tabValue} index={2}>

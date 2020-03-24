@@ -24,7 +24,7 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-const EmployerDashboardView = ({ onClickFilterOptions, isFilterOptionClick }) => {
+const EmployerDashboardView = ({ onClickFilterOptions, isFilterOptionClick,onClickEmployer }) => {
     const classes = useStyles();
     return (
         <div className='employerDashboardStyle'>
@@ -98,10 +98,9 @@ const EmployerDashboardView = ({ onClickFilterOptions, isFilterOptionClick }) =>
                 <table border='2' className='customers' style={{ width: '100%' }}>
                     <tbody>
                         <tr>
-                            <th>Req. #</th>
+                            <th >Req. #</th>
                             <th >Job Title</th>
                             <th >Hiring Manager</th>
-                            <th >Division</th>
                             <th >Department</th>
                             <th>Location</th>
                             <th >End Date</th>
@@ -109,18 +108,15 @@ const EmployerDashboardView = ({ onClickFilterOptions, isFilterOptionClick }) =>
                             <th>Candidates </th>
                         </tr>
                         <tr>
-                            <td>
+                            <td onClick={onClickEmployer}>
                                 1
                         </td>
-                            <td>
+                            <td >
                                 <Link to='/jobDetails'>Operational Manager</Link>
                             </td>
                             <td>
                                 Arsalan Khan
                         </td>
-                            <td>
-                                www.seven.pk
-                            </td>
                             <td>
                                 IT
                         </td>
@@ -154,9 +150,6 @@ const EmployerDashboardView = ({ onClickFilterOptions, isFilterOptionClick }) =>
                             <td>
                                 Rehmat Ali
                         </td>
-                            <td>
-                                www.seven.pk
-                            </td>
                             <td>
                                 IT
                         </td>

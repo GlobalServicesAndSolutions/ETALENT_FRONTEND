@@ -109,41 +109,41 @@ class SidenavContent extends Component {
           <li className="nav-header">
             <IntlMessages id="sidebar.main"/>
           </li>
-          <li className="menu no-arrow">
+          <li >
             <NavLink to="/dashboard">
-              <i className="zmdi zmdi-view-dashboard zmdi-hc-fw"/>
-              <span className="nav-text">Home</span>
-            </NavLink>
-          </li>
-          <li className="menu no-arrow">
-            <NavLink to="/dashboard">
-              <i className="zmdi zmdi-view-dashboard zmdi-hc-fw"/>
+            <i className="zmdi zmdi-view-dashboard zmdi-hc-fw"/>
               <span className="nav-text">Jobs</span>
             </NavLink>
           </li>
-          <li className="menu no-arrow">
+          <li >
             <NavLink to="/dashboard">
-              <i className="zmdi zmdi-view-dashboard zmdi-hc-fw"/>
+            <i className="zmdi zmdi-view-dashboard zmdi-hc-fw"/>
               <span className="nav-text">Notification</span>
             </NavLink>
           </li>
-          <li className="menu no-arrow">
+          <li >
             <NavLink to="/employerHome">
-              <i className="zmdi zmdi-view-dashboard zmdi-hc-fw"/>
+            <i className="zmdi zmdi-view-dashboard zmdi-hc-fw"/>
               <span className="nav-text">Employer Home</span>
             </NavLink>
           </li>
-          <li className="menu no-arrow">
+          <li >
             <NavLink to='/employerWorkflow'>
-              <i className="zmdi zmdi-view-dashboard zmdi-hc-fw"/>
+            <i className="zmdi zmdi-view-dashboard zmdi-hc-fw"/>
               <span className="nav-text">Create Job</span>
             </NavLink>
           </li>
-          <li className="menu no-arrow">
+          <li >
             <NavLink to="/activeVendors">
-              <i className="zmdi zmdi-view-dashboard zmdi-hc-fw"/>
+            <i className="zmdi zmdi-view-dashboard zmdi-hc-fw"/>
               <span className="nav-text">Active Vendors</span>
             </NavLink>
+          </li>
+          <li >
+              <NavLink to="/userManagement">
+              <i className="zmdi zmdi-account-box zmdi-hc-fw"/>
+              <span className="nav-text">User Management</span>
+              </NavLink>
           </li>
         </ul>
       </CustomScrollbars>

@@ -48,7 +48,7 @@ class App extends Component {
 
 
   render() {
-    const {location, locale, authUser, initURL, isDirectionRTL, isAdmin} = this.props;
+    const {location, locale, authUser, initURL, isDirectionRTL} = this.props;
     if (location.pathname === '/') {
       if (authUser === null) {
         return ( <Redirect to={'/signin'}/> );
@@ -97,7 +97,8 @@ class App extends Component {
                   <RestrictedRoute path='/jobsearch' authUser={authUser} component={JobsSearchedList}/>  
                   <RestrictedRoute path='/jobDescription' authUser={authUser} component={JobDescription} />   
                   <RestrictedRoute path='/Events' authUser={authUser} component={Events}/>  
-                  <RestrictedRoute path='/savejobsandalterts' authUser={authUser} component={FavoriteJobsAndAlerts} />           
+                  <RestrictedRoute path='/savejobsandalterts' authUser={authUser} component={FavoriteJobsAndAlerts} /> 
+                  <RestrictedRoute path='/userManagement' authUser={authUser} component={MainApp} />         
                   <Route component={asyncComponent(() => import('components/Error404'))}/>
                 </Switch>
               </div>

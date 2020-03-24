@@ -26,9 +26,6 @@ const ProfileCard = ({onClickAddNewUser}) => {
               </div>
             </div>
           </div>
-          <div align='right'>
-            <Button color='primary' onClick={onClickAddNewUser}>Create User</Button>
-          </div>
         </div>
       </div>
     </Widget>

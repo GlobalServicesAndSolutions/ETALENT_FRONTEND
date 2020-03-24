@@ -8,8 +8,6 @@ import Widget from "components/Widget";
 import { Button } from "@material-ui/core";
 import QuickApplyForJobDialog from 'util/Models/QuickApplyForJobDialog';
 import ApplyForJobDialog from 'util/Models/ApplyForJobDialog';
-import AddNewUserDialog from 'util/Models/AddNewUserDialog';
-import AddNewUserByEtalentIdDialog from 'util/Models/AddNewUserByEtalentIdDialog';
 
 class JobDescription extends Component {
     constructor(props) {

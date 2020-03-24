@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import DropDownData from '../../Api/DropDownData.json'
+//import DropDownData from '../../Api/DropDownData.json'
 import Header from 'components/Header';
 import EducationDialog from '../../util/Models/EducationDialog';
 import LisenceAndCertification from '../../util/Models/LisenceAndCertification';

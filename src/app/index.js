@@ -13,10 +13,11 @@ import {
 import { isIOS, isMobile } from 'react-device-detect';
 import asyncComponent from '../util/asyncComponent';
 import TopNav from 'components/TopNav';
+
 class App extends React.Component {
 
   render() {
-    const { drawerType, navigationStyle, horizontalNavPosition,isAdmin } = this.props;
+    const { drawerType, navigationStyle, horizontalNavPosition} = this.props;
     const drawerStyle = drawerType.includes(FIXED_DRAWER) ? 'fixed-drawer' : drawerType.includes(COLLAPSED_DRAWER) ? 'collapsible-drawer' : 'mini-drawer';
 
     //set default height and overflow for iOS mobile Safari 10+ support.
@@ -47,6 +48,8 @@ class App extends React.Component {
                   component={asyncComponent(() => import('../Modules/EmployerDomain/EmployerDashboardDomain/Dashboard'))} />
                 <Route path="/employerProfile"
                   component={asyncComponent(() => import('../Modules/EmployerDomain/EmployerProfile'))} />
+                  <Route path='/userManagement'
+                  component={asyncComponent(() => import('../Modules/UserDomain/UserDashboard'))} />
                 <Route component={asyncComponent(() => import('components/Error404'))} />
               </Switch>
             </div>

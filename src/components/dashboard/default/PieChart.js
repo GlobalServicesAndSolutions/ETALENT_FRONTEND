@@ -20,20 +20,12 @@ export default class PieChart extends Component {
       return {
         labels:labels ,
         responsive: [{
-            breakpoint: 480,
-            options: {
-              chart: {
-                width: 200
-              },
-              legend: {
-                position: 'bottom'
-              }
-            }
+            breakpoint: 600,
           }],
         datasets: [
           {
             label: label,
-            backgroundColor:['lightblue','red','green'],
+            backgroundColor:['lightblue','red','green','pink'],
             data: chartdata,
             
           }
@@ -43,7 +35,7 @@ export default class PieChart extends Component {
     }
     const options = {
         chart: {
-          width: 380,
+          width: 500,
           type: 'pie',
         },
   };

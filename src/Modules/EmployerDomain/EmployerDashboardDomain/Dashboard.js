@@ -6,7 +6,6 @@ import AppliedCandidates from './DashboardQuickLinksCards/AppliedCandidates';
 import RejectedCandidates from './DashboardQuickLinksCards/RejectedCandidates';
 import OfferLetters from './DashboardQuickLinksCards/OfferLetters';
 import HiredCandidates from './DashboardQuickLinksCards/HiredCandidates';
-import AddNewUserDialog from 'util/Models/AddNewUserDialog';
 import EmployerGraphDetail from './DashBoardGraphCard';
 import TotalVendors from './DashboardQuickLinksCards/TotalVendors';
 
@@ -18,7 +17,8 @@ class EmployerDashboard extends Component {
       isFilterOptionClick:false,
       openAddVendorDialog:false,
       openAddNewUserDialog:false,
-      value:'one'
+      value:'one',
+      employerClick:false
     }
   }
   onClickFilterOptions=()=>{
@@ -30,12 +30,6 @@ class EmployerDashboard extends Component {
   onCloseAddVendorDialog=()=>{
     this.setState({openAddVendorDialog:false});
   }
-  onClickAddNewUser=()=>{
-    this.setState({openAddNewUserDialog:true});
-  }
-  onCloseAddNewUser=()=>{
-    this.setState({openAddNewUserDialog:false});
-  }
   tabHandleChange = (event, newValue) => {
     this.setState({ value: newValue });
   }
@@ -45,14 +39,14 @@ class EmployerDashboard extends Component {
       'aria-controls': `wrapped-tabpanel-${index}`,
     };
   }
+  onClickEmployer=()=>{
+    this.setState({employerClick:!this.state.employerClick})
+  }
   render() {
     return (
       <div>
         <div >
-          <EmployerProfileCard 
-          onClickAddVendor={this.onClickAddVendor}
-          onClickAddNewUser={this.onClickAddNewUser}
-          />
+          <EmployerProfileCard  />
         </div>
         <div  className="app-wrapper employerDashboardStyle">
           <div className='row rowMarginRight'>
@@ -80,23 +74,19 @@ class EmployerDashboard extends Component {
           <EmployerDashboardView 
           onClickFilterOptions={this.onClickFilterOptions}
           isFilterOptionClick={this.state.isFilterOptionClick}
+          onClickEmployer={this.onClickEmployer}
           />
           </div>
           <div className="col-xl-3 col-lg-3 col-md-5 col-12 employerDashboardStyle">
-          <EmployerGraphDetail
+          {this.state.employerClick &&
+            <EmployerGraphDetail
           a11yProps={this.a11yProps}
           tabHandleChange={this.tabHandleChange}
           value={this.state.value}
-          />
+          />}
           </div>
           </div>
         </div>
-        {this.state.openAddNewUserDialog &&
-        <AddNewUserDialog
-        open={this.state.openAddNewUserDialog}
-        handleClose={this.onCloseAddNewUser}
-        />
-        }
         </div>
       
     );
