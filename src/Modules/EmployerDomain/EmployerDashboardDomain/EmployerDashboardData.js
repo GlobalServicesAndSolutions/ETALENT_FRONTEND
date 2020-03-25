@@ -95,7 +95,7 @@ const EmployerDashboardView = ({ onClickFilterOptions, isFilterOptionClick,onCli
                         </div>}
                 
                 <hr />
-                <table border='2' className='customers' style={{ width: '100%' }}>
+                <table border='0' className='customers' style={{ width: '100%' }}>
                     <tbody>
                         <tr>
                             <th >Req. #</th>
@@ -137,7 +137,7 @@ const EmployerDashboardView = ({ onClickFilterOptions, isFilterOptionClick,onCli
                                 </div>
                             </td>
                             <td>
-                                <Link to='/candidates'> 4</Link>
+                                 4
                             </td>
                         </tr>
                         <tr>
@@ -170,7 +170,7 @@ const EmployerDashboardView = ({ onClickFilterOptions, isFilterOptionClick,onCli
                                 </div>
                             </td>
                             <td>
-                                <Link to='#'> 5</Link>
+                                 5
                             </td>
                         </tr>
                     </tbody>

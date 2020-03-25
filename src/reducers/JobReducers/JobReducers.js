@@ -3,7 +3,8 @@ import {
 } from "constants/ActionTypes";
 
 const INIT_STATE = {
-    filterArray:[]
+    filterArray:[],
+    pass:false
 };
 function removeItem(array, action) {
     return [...array.slice(0, action.index), ...array.slice(action.index + 1)];
@@ -18,7 +19,8 @@ export default (state = INIT_STATE, action) => {
             }
             return {
                 ...state,
-                filterArray:selectedFilter
+                filterArray:selectedFilter,
+                pass:true
             }
         
     }

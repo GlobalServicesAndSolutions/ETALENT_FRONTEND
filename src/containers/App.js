@@ -17,7 +17,6 @@ import ForgetPassword from '../Modules/LoginDomain/ForgetPassword/ForgetPassword
 import asyncComponent from 'util/asyncComponent';
 import Profile from '../Modules/CandidateDomain/Profile';
 import EmployerWorkFlow from '../Modules/EmployerDomain/EmployerWorkFlowSection/EmployerSections';
-import Candidates from '../Modules/CandidateDomain/CandidatesList/CandidatesWithEmployers';
 import ActiveVendors from 'Modules/VendorDomain/ActiveVendors';
 import CandidateDetails from 'Modules/CandidateDomain/CandidatesList/CandidateDetail';
 import JobDetails from 'Modules/CandidateDomain/CandidatesList/JobDetails';
@@ -90,7 +89,6 @@ class App extends Component {
                   <RestrictedRoute path='/employerProfile' authUser={authUser} component={MainApp} />
                   <RestrictedRoute path='/employerWorkflow' authUser={authUser} component={EmployerWorkFlow} />
                   <RestrictedRoute path='/activeVendors' authUser={authUser} component={ActiveVendors} />
-                  <RestrictedRoute path='/candidates' authUser={authUser} component={Candidates} />
                   <RestrictedRoute path='/candidateDetails' authUser={authUser} component={CandidateDetails}/>
                   <RestrictedRoute path='/jobDetails' authUser={authUser} component={JobDetails} />
                   <RestrictedRoute path='/jobs' authUser={authUser} component={JobsList}/>

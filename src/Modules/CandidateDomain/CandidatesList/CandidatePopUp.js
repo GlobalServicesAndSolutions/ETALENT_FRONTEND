@@ -36,9 +36,32 @@ const CandidatesPopUpInfo = ({ open,
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <TextField
                         margin="dense"
-                        name="phoneNo"
-                        value={selecteCandidate.phoneNo}
-                        label="Phone No."
+                        name="candidateCurrentJob"
+                        value={selecteCandidate.currentjob}
+                        label="Current Job"
+                        type="text"
+                        className="profileInfoTextField"
+                        InputProps={{
+                            readOnly: true,
+                          }}
+                    />
+                    <TextField
+                        margin="dense"
+                        name="candidateEmployer"
+                        value={selecteCandidate.employer}
+                        label="Employer"
+                        type="text"
+                        className="profileInfoTextField"
+                        InputProps={{
+                            readOnly: true,
+                          }}
+                    />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <TextField
+                        margin="dense"
+                        name="candidateExperience"
+                        value={selecteCandidate.experience}
+                        label="Experience"
                         type="text"
                         className="profileInfoTextField"
                         InputProps={{
@@ -80,11 +103,11 @@ const CandidatesPopUpInfo = ({ open,
                         name="appliedDate"
                         label="Applied Date"
                         type="text"
+                        className="profileInfoTextField"
                         value={selecteCandidate.appliedDate}
                         InputProps={{
                             readOnly: true,
                           }}
-                        fullWidth
                     />
                 </DialogContent>
                 <DialogActions>

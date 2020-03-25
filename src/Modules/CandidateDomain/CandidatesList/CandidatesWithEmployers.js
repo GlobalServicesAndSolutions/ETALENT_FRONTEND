@@ -25,6 +25,9 @@ class Candidates extends Component {
             {
                 id:1,
                 name:'Salman',
+                currentJob:'Reactjs Developer',
+                employer:'Global Services And Solutions',
+                experience:'2 Years',
                 phoneNo:'03110200751',
                 recruiter:'Seven',
                 stage:'Hired',
@@ -33,6 +36,9 @@ class Candidates extends Component {
             {
                 id:2,
                 name:'Haider',
+                currentJob:'Reactjs Developer',
+                employer:'Global Services And Solutions',
+                experience:'5 Years',
                 phoneNo:'03110200751',
                 recruiter:'Zigron',
                 stage:'New Application',
@@ -98,7 +104,6 @@ class Candidates extends Component {
                     <CandidatesPopUpInfo 
                     open={this.state.isCandidatePopUpOpen}
                     onCandidateStageChange={this.onCandidateStageChange}
-                    onCandidateEditClick={this.onCandidateEditClick}
                     onCloseCandidateEdit={this.onCloseCandidateEdit}
                     candidateStage={this.state.candidateStage}
                     selecteCandidate={this.state.selecteCandidate}

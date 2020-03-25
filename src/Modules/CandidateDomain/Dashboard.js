@@ -10,6 +10,11 @@ import QuickSettingsAndEvents from './CandidatesList/CandidateDashboardSidePanel
 import Chip from '@material-ui/core/Chip';
 import DoneIcon from '@material-ui/icons/Done';
 import Header from 'components/Header';
+import JobPostImage from './PostingCards/JobPostImage';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import { Link } from 'react-router-dom';
 
 class CandidateHome extends Component {
   constructor(props) {
@@ -30,8 +35,8 @@ class CandidateHome extends Component {
     return (
       <div className="app-main-content-wrapper">
         <div className="app-header ">
-                    <Header />
-                </div>
+          <Header />
+        </div>
         <div >
           <ProfileCard
             onChangeAvailabilitySwitch={this.onChangeAvailabilitySwitch}
@@ -46,6 +51,23 @@ class CandidateHome extends Component {
             <QuickProfile />
             <QuickEvents />
             <QuickSettingsAndEvents />
+            <div>
+              <p style={{color:'gray'}}><strong>Recent Searched Jobs</strong></p>
+            </div>
+            <div className=' employeeDashboardRecentJobs'>
+            <List>
+              <ListItem divider alignItems="center">
+                <Link to='#'><ListItemText
+                  primary="Sr. Software Engineer"
+                /></Link>
+              </ListItem>
+              <ListItem divider alignItems="center">
+              <Link to='#'> <ListItemText
+                  primary="Sr. Front End Developer"
+                /></Link>
+              </ListItem>
+            </List>
+            </div>
           </div>
           <div className="col-xl-5 col-lg-5 col-md-4 col-12 dashboardPostsDiv">
             <div className='dashboardFilterChipsAlign' >
@@ -75,7 +97,7 @@ class CandidateHome extends Component {
               />
             </div>
             <PicturePost />
-            <PicturePost />
+            <JobPostImage />
           </div>
           <div className="col-xl-5 col-lg-5 col-md-6 col-12 dashboardAltertsAndEventsDiv" >
             <div>

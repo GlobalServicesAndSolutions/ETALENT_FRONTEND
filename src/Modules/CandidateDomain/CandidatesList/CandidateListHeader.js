@@ -1,16 +1,9 @@
 import React from 'react';
-import Widget from 'components/Widget';
 
-const CandidateListHeader = ({ onClickStage, jobStatus, candidateStagefilter,onClickAddNewUserById }) => {
+const CandidateListHeader = ({ onClickStage,candidateStagefilter}) => {
   return (
-    <Widget styleName="jr-card-profile candidateHeader">
+    <div className="jr-card-profile">
       <div className="mb-3">
-        <div >
-        <h4>Req# - Operations Manager{` (${jobStatus})`}</h4>
-        <p className="candidatesHeaderlineHeight ">Location, City</p>
-        </div>
-        <p className="mb-0 jr-fs-lg jobDetailsHeaderLineHeight">Hiring Manager</p>
-        <hr />
         <div className='row'>
           <h6 onClick={onClickStage} className='stages' >
             All
@@ -63,7 +56,7 @@ const CandidateListHeader = ({ onClickStage, jobStatus, candidateStagefilter,onC
           </h6>
         </div>
       </div>
-    </Widget>
+    </div>
   )
 };
 

@@ -45,7 +45,7 @@ const CandidatesTable = ({ data,
                     </div>
                 </div>
                 <hr />
-                <table border='2' className='customers' style={{ width: '100%' }}>
+                <table border='0' className='customers'>
                     <tbody>
                         <tr>
                             <th >Name</th>
@@ -64,13 +64,13 @@ const CandidatesTable = ({ data,
                                             <Link to='/candidateDetails'> {candidates.name}</Link>
                                         </td>
                                         <td>
-
+                                            {candidates.currentJob}
                                         </td>
                                         <td>
-
+                                            {candidates.employer}
                                         </td>
                                         <td>
-
+                                            {candidates.experience}
                                         </td>
                                         <td>
                                             {candidates.recruiter}

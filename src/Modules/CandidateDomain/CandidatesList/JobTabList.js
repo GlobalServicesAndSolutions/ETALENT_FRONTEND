@@ -13,7 +13,10 @@ import EmployerSectionFourReview from '../../EmployerDomain/EmployerSectionsCard
 import EmployerSectionFiveReview from '../../EmployerDomain/EmployerSectionsCards/SectionFiveCard';
 import EmployerSectionSixReview from '../../EmployerDomain/EmployerSectionsCards/SectionSixCard';
 import ActiveVendorsTable from 'Modules/VendorDomain/ActiveVendorsTable';
+import CandidateListHeader from './CandidateListHeader';
 
+import CandidatesTable from './CandidatesList';
+import CandidatesListGraph from "./CandidatesListGraph";
 
 const TabPanel = (props) => {
     const { children, value, index, ...other } = props;
@@ -59,8 +62,14 @@ const JobTabList = ({ tabValue, tabHandleChange, sectionOneData,
     sectionSixData,
     isEdit,
     onEditClick,
-    onActivityClick,
-    onNavigateClick
+    data,
+    onCandidateEditClick,
+    onChangeCandidateStatus,
+    candidateStatus,
+    candidateStagefilter,
+    onClickAddNewUserById,
+    onClickStage,
+    jobStatus,
 }) => {
     const classes = useStyles();
     return (
@@ -76,12 +85,13 @@ const JobTabList = ({ tabValue, tabHandleChange, sectionOneData,
                     aria-label="scrollable auto tabs example"
                 >
                     <Tab label="Job Details" {...a11yProps(0)} />
-                    <Tab label="Team and vendors" {...a11yProps(1)} />
-                    <Tab label="Test Form" {...a11yProps(2)} />
-                    <Tab label="Interview Form" {...a11yProps(3)} />
-                    <Tab label="Feedback Form" {...a11yProps(4)} />
-                    <div style={{width:'60%'}} align='right'>
-                    <p>Days Ago</p>
+                    <Tab label="Candidates" {...a11yProps(1)} />
+                    <Tab label="Team and vendors" {...a11yProps(2)} />
+                    <Tab label="Test Form" {...a11yProps(3)} />
+                    <Tab label="Interview Form" {...a11yProps(4)} />
+                    <Tab label="Feedback Form" {...a11yProps(5)} />
+                    <div style={{ width: '60%' }} align='right'>
+                        <p>Days Ago</p>
                     </div>
                 </Tabs>
             </AppBar>
@@ -137,10 +147,32 @@ const JobTabList = ({ tabValue, tabHandleChange, sectionOneData,
                 </div>
             </TabPanel>
             <TabPanel value={tabValue} index={1}>
+                <CandidateListHeader 
+                onClickStage={onClickStage}
+                jobStatus={jobStatus}
+                candidateStagefilter={candidateStagefilter}
+                />
+                <div className='row'>
+                    <div className="col-xl-7 col-lg-6 col-md-6 col-12">
+                        <CandidatesTable
+                            data={data}
+                            onCandidateEditClick={onCandidateEditClick}
+                            onChangeCandidateStatus={onChangeCandidateStatus}
+                            candidateStatus={candidateStatus}
+                            candidateStagefilter={candidateStagefilter}
+                            onClickAddNewUserById={onClickAddNewUserById}
+                        />
+                    </div>
+                    <div className="col-xl-5 col-lg-4 col-md-7 col-12">
+                        <CandidatesListGraph/>
+                    </div>
+                </div>
+            </TabPanel>
+            <TabPanel value={tabValue} index={2}>
                 <h5>Team and Vendors</h5>
                 <ActiveVendorsTable />
             </TabPanel>
-            <TabPanel value={tabValue} index={2}>
+            <TabPanel value={tabValue} index={3}>
                 <div className='candidate-details'>
                     <h5>Test Form</h5>
                     <ul>
@@ -150,10 +182,10 @@ const JobTabList = ({ tabValue, tabHandleChange, sectionOneData,
                     </ul>
                 </div>
             </TabPanel>
-            <TabPanel value={tabValue} index={3}>
-                
-            </TabPanel>
             <TabPanel value={tabValue} index={4}>
+
+            </TabPanel>
+            <TabPanel value={tabValue} index={5}>
                 <div className='candidate-details'>
                     <h5>Feedback Form</h5>
                     <ul>
