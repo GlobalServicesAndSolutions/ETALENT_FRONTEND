@@ -69,7 +69,7 @@ class JobsList extends Component {
         this.setState({cancelFilter});
     }
     render() {
-        const { filterArray,pass } = this.props;
+        const { filterArray} = this.props;
         return (
             <div className="app-main-content-wrapper">
                 <div className="app-header ">
@@ -154,9 +154,9 @@ class JobsList extends Component {
 const mapStateToProps = ({
     jobReducer,
 }) => {
-    const { filterArray,pass } = jobReducer;
+    const { filterArray} = jobReducer;
     return {
-        filterArray,pass
+        filterArray
     };
 }
 function mapDispatchToProps(dispatch) {
