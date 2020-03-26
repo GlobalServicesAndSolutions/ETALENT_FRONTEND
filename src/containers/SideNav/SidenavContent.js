@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 import {NavLink, withRouter} from 'react-router-dom';
-
-import IntlMessages from 'util/IntlMessages';
 import CustomScrollbars from 'util/CustomScrollbars';
 
 
@@ -105,9 +103,11 @@ class SidenavContent extends Component {
     return (
       <CustomScrollbars className=" scrollbar">
         <ul className="nav-menu">
-
-          <li className="nav-header">
-            <IntlMessages id="sidebar.main"/>
+        <li >
+            <NavLink to="/employerHome">
+            <i className="zmdi zmdi-view-dashboard zmdi-hc-fw"/>
+              <span className="nav-text">Dashboard</span>
+            </NavLink>
           </li>
           <li >
             <NavLink to="/dashboard">
@@ -116,21 +116,15 @@ class SidenavContent extends Component {
             </NavLink>
           </li>
           <li >
-            <NavLink to="/dashboard">
-            <i className="zmdi zmdi-view-dashboard zmdi-hc-fw"/>
-              <span className="nav-text">Notification</span>
-            </NavLink>
-          </li>
-          <li >
-            <NavLink to="/employerHome">
-            <i className="zmdi zmdi-view-dashboard zmdi-hc-fw"/>
-              <span className="nav-text">Employer Home</span>
-            </NavLink>
-          </li>
-          <li >
             <NavLink to='/employerWorkflow'>
             <i className="zmdi zmdi-view-dashboard zmdi-hc-fw"/>
               <span className="nav-text">Create Job</span>
+            </NavLink>
+          </li>
+          <li >
+            <NavLink to='#'>
+            <i className="zmdi zmdi-view-dashboard zmdi-hc-fw"/>
+              <span className="nav-text">Create Quick Job</span>
             </NavLink>
           </li>
           <li >
@@ -143,6 +137,27 @@ class SidenavContent extends Component {
               <NavLink to="/userManagement">
               <i className="zmdi zmdi-account-box zmdi-hc-fw"/>
               <span className="nav-text">User Management</span>
+              </NavLink>
+          </li>
+          <li className="nav-header">
+            Forms
+          </li>
+          <li>
+                <NavLink to='#'>
+              <i className="zmdi zmdi-account-box zmdi-hc-fw"/>
+              <span className="nav-text">Test Forms</span>
+              </NavLink>
+          </li>
+          <li>
+                <NavLink to='#'>
+              <i className="zmdi zmdi-account-box zmdi-hc-fw"/>
+              <span className="nav-text">Interview Forms</span>
+              </NavLink>
+          </li>
+          <li>
+                <NavLink to='#'>
+              <i className="zmdi zmdi-account-box zmdi-hc-fw"/>
+              <span className="nav-text">Feedback Forms</span>
               </NavLink>
           </li>
         </ul>

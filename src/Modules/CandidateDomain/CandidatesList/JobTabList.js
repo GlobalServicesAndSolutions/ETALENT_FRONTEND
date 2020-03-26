@@ -87,9 +87,7 @@ const JobTabList = ({ tabValue, tabHandleChange, sectionOneData,
                     <Tab label="Job Details" {...a11yProps(0)} />
                     <Tab label="Candidates" {...a11yProps(1)} />
                     <Tab label="Team and vendors" {...a11yProps(2)} />
-                    <Tab label="Test Form" {...a11yProps(3)} />
-                    <Tab label="Interview Form" {...a11yProps(4)} />
-                    <Tab label="Feedback Form" {...a11yProps(5)} />
+                    <Tab label="Forms" {...a11yProps(3)} />
                 </Tabs>
             </AppBar>
             <TabPanel value={tabValue} index={0}>
@@ -171,25 +169,7 @@ const JobTabList = ({ tabValue, tabHandleChange, sectionOneData,
             </TabPanel>
             <TabPanel value={tabValue} index={3}>
                 <div className='candidate-details'>
-                    <h5>Test Form</h5>
-                    <ul>
-                        <li>
-                            <p>Test Form</p>
-                        </li>
-                    </ul>
-                </div>
-            </TabPanel>
-            <TabPanel value={tabValue} index={4}>
-
-            </TabPanel>
-            <TabPanel value={tabValue} index={5}>
-                <div className='candidate-details'>
-                    <h5>Feedback Form</h5>
-                    <ul>
-                        <li>
-                            <p>Feedback Form</p>
-                        </li>
-                    </ul>
+                    <h5>Forms</h5>
                 </div>
             </TabPanel>
         </div>

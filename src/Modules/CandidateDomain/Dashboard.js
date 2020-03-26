@@ -13,7 +13,6 @@ import Header from 'components/Header';
 import JobPostImage from './PostingCards/JobPostImage';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
 import { Link } from 'react-router-dom';
 
 class CandidateHome extends Component {
@@ -51,25 +50,25 @@ class CandidateHome extends Component {
             <QuickProfile />
             <QuickEvents />
             <QuickSettingsAndEvents />
+            <br />
             <div>
-              <p style={{color:'gray'}}><strong>Recent Searched Jobs</strong></p>
+              <p style={{ color: 'gray' }}><strong>Recent Searched Jobs</strong></p>
             </div>
             <div className=' employeeDashboardRecentJobs'>
-            <List>
-              <ListItem divider alignItems="center">
-                <Link to='#'><ListItemText
-                  primary="Sr. Software Engineer"
-                /></Link>
-              </ListItem>
-              <ListItem divider alignItems="center">
-              <Link to='#'> <ListItemText
-                  primary="Sr. Front End Developer"
-                /></Link>
-              </ListItem>
-            </List>
+              <List>
+                <ListItem divider alignItems="center">
+                  <Link to='#' className='candidateDashboardRecentJobs'>
+                    Sr. Software Engineer
+                </Link>
+                </ListItem>
+                <ListItem divider alignItems="center">
+                  <Link to='#' className='candidateDashboardRecentJobs'>Sr. Front End Developer</Link>
+                </ListItem>
+              </List>
             </div>
           </div>
           <div className="col-xl-5 col-lg-5 col-md-4 col-12 dashboardPostsDiv">
+            <div className='DisplayAndSpaceBetween'>
             <div className='dashboardFilterChipsAlign' >
               <Chip
                 className='dashboardFilterChipsStyle'
@@ -95,6 +94,17 @@ class CandidateHome extends Component {
                 deleteIcon={<DoneIcon />}
                 variant="outlined"
               />
+            </div>
+            <div align='right'>
+            <Chip
+                className='dashboardFilterChipsStyle'
+                label="Post"
+                clickable
+                color="primary"
+                deleteIcon={<DoneIcon />}
+                variant="outlined"
+              />
+            </div>
             </div>
             <PicturePost />
             <JobPostImage />

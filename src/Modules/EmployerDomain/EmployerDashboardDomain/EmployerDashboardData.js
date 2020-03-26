@@ -105,7 +105,6 @@ const EmployerDashboardView = ({ onClickFilterOptions, isFilterOptionClick,onCli
                             <th>Location</th>
                             <th >End Date</th>
                             <th >Job Status</th>
-                            <th>Candidates </th>
                         </tr>
                         <tr>
                             <td onClick={onClickEmployer}>
@@ -136,9 +135,6 @@ const EmployerDashboardView = ({ onClickFilterOptions, isFilterOptionClick,onCli
                                     </div>
                                 </div>
                             </td>
-                            <td>
-                                 4
-                            </td>
                         </tr>
                         <tr>
                             <td>
@@ -168,9 +164,6 @@ const EmployerDashboardView = ({ onClickFilterOptions, isFilterOptionClick,onCli
                                         <CreateIcon fontSize='small' className='stages' />
                                     </div>
                                 </div>
-                            </td>
-                            <td>
-                                 5
                             </td>
                         </tr>
                     </tbody>

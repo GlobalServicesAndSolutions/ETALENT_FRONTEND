@@ -316,7 +316,10 @@ margin-top: -30px;
     padding-left: 15px;
     margin-right: auto;
     margin-left: -14px;
-    margin-top: 15px;
+    margin-top: 0px;
+}
+.employerDashboardGraphmargin{
+  margin-left: -7px;
 }
 .candidatesHeaderlineHeight{
   line-height: 0;
@@ -431,6 +434,10 @@ p {
 }
 .employeeDashboardRecentJobs{
   margin-left: -16px;
+  margin-right: 70px;
+}
+.candidateDashboardRecentJobs{
+  font-size: 14px !important;
 }
 .dashboardAltertsAndEventsDiv{
   margin-top: 42px;
@@ -515,6 +522,14 @@ p {
 .ribbon-top-right {
   top: -1px;
     right: 13px;
+}
+.ribbon-top-right {
+  top: -1px;
+    right: 13px;
+}
+.ribbon-top-right-candidates {
+  top: -1px !important;
+    right: 0px !important;
 }
 .ribbon-top-right::before,
 .ribbon-top-right::after {

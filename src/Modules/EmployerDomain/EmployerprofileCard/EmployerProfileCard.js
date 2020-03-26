@@ -42,13 +42,13 @@ const ProfileCard = () => {
 
                 <li>
                   <IconButton className="icon">
-                    <i className="zmdi zmdi-google-plus" />
+                    <i className="zmdi zmdi-linkedin" />
                   </IconButton>
                 </li>
 
                 <li>
                   <IconButton className="icon">
-                    <i className="zmdi zmdi-github" />
+                    <i className="zmdi zmdi-instagram" />
                   </IconButton>
                 </li>
               </ul>

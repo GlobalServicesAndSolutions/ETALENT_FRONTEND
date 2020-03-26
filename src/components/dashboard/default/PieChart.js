@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {  Pie } from 'react-chartjs-2';
+import 'chart.piecelabel.js';
 
 export default class PieChart extends Component {
   render() {
@@ -19,15 +20,14 @@ export default class PieChart extends Component {
      
       return {
         labels:labels ,
-        responsive: [{
-            breakpoint: 600,
-          }],
+        responsive: false,
         datasets: [
           {
             label: label,
-            backgroundColor:['lightblue','red','green','pink'],
+            backgroundColor:'wheat',
             data: chartdata,
-            
+            color:'white',
+            fill:true
           }
         ]
       }
@@ -35,9 +35,15 @@ export default class PieChart extends Component {
     }
     const options = {
         chart: {
-          width: 500,
+          width: 400,
           type: 'pie',
         },
+        legend: {
+          display: false,
+      },
+      pieceLabel: {
+        render: 'label'
+     }
   };
     return (
       <Pie data={data} options={options} height={height} />

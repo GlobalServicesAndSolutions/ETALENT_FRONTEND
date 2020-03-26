@@ -16,7 +16,7 @@ const JobPostImage = () => {
           <br/>
         <p className="text-grey jr-fs-sm mb-0">Description of the PicturePost</p>
       </div>
-       <img aria-hidden alt="image" ight="70%" width="100%" src={require("assets/images/job.jpeg")} />
+       <img aria-hidden alt="image" style={{width:'100%', height:'30rem'}} src={require("assets/images/job.jpeg")} />
         <hr/>
         <div>
         <ThumbUpIcon color="action" style={{cursor:"pointer"}} />&nbsp;Like &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <ReplyAllIcon color="action" style={{cursor:"pointer"}}/>&nbsp; Share

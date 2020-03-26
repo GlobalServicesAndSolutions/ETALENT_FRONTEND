@@ -1,4 +1,4 @@
-import React,{Component} from 'react';
+import React, { Component } from 'react';
 import EmployerProfileCard from '../EmployerprofileCard/EmployerProfileCard';
 import EmployerDashboardView from './EmployerDashboardData';
 import TotalRequisitionCard from './DashboardQuickLinksCards/TotalRequisition';
@@ -6,29 +6,31 @@ import AppliedCandidates from './DashboardQuickLinksCards/AppliedCandidates';
 import RejectedCandidates from './DashboardQuickLinksCards/RejectedCandidates';
 import OfferLetters from './DashboardQuickLinksCards/OfferLetters';
 import HiredCandidates from './DashboardQuickLinksCards/HiredCandidates';
-import EmployerGraphDetail from './DashBoardGraphCard';
 import TotalVendors from './DashboardQuickLinksCards/TotalVendors';
+import EmployerCandidatesDetail from './EmployerCandidatesDetails';
+import EmployerSkillsGraph from './DashboardSkillsGraph';
+import EmployerExperienceGraph from './EmplyerExperienceGraph';
+import EmployerStagesGraph from './EmployerStagesGraph';
 
 class EmployerDashboard extends Component {
-  constructor(props)
-  {
+  constructor(props) {
     super(props);
-    this.state={
-      isFilterOptionClick:false,
-      openAddVendorDialog:false,
-      openAddNewUserDialog:false,
-      value:'one',
-      employerClick:false
+    this.state = {
+      isFilterOptionClick: false,
+      openAddVendorDialog: false,
+      openAddNewUserDialog: false,
+      value: 'one',
+      employerClick: false
     }
   }
-  onClickFilterOptions=()=>{
-    this.setState({isFilterOptionClick:!this.state.isFilterOptionClick});
+  onClickFilterOptions = () => {
+    this.setState({ isFilterOptionClick: !this.state.isFilterOptionClick });
   }
-  onClickAddVendor=()=>{
-    this.setState({openAddVendorDialog:true});
+  onClickAddVendor = () => {
+    this.setState({ openAddVendorDialog: true });
   }
-  onCloseAddVendorDialog=()=>{
-    this.setState({openAddVendorDialog:false});
+  onCloseAddVendorDialog = () => {
+    this.setState({ openAddVendorDialog: false });
   }
   tabHandleChange = (event, newValue) => {
     this.setState({ value: newValue });
@@ -39,16 +41,16 @@ class EmployerDashboard extends Component {
       'aria-controls': `wrapped-tabpanel-${index}`,
     };
   }
-  onClickEmployer=()=>{
-    this.setState({employerClick:!this.state.employerClick})
+  onClickEmployer = () => {
+    this.setState({ employerClick: !this.state.employerClick })
   }
   render() {
     return (
       <div>
         <div >
-          <EmployerProfileCard  />
+          <EmployerProfileCard />
         </div>
-        <div  className="app-wrapper employerDashboardStyle">
+        <div className="app-wrapper employerDashboardStyle">
           <div className='row rowMarginRight'>
             <div className='col-6 col-md-8 col-xl-2'>
               <TotalRequisitionCard />
@@ -70,25 +72,33 @@ class EmployerDashboard extends Component {
             </div>
           </div>
           <div className='row'>
-          <div className="col-xl-9 col-lg-9 col-md-7 col-12">
-          <EmployerDashboardView 
-          onClickFilterOptions={this.onClickFilterOptions}
-          isFilterOptionClick={this.state.isFilterOptionClick}
-          onClickEmployer={this.onClickEmployer}
-          />
+            <div className="col-xl-9 col-lg-9 col-md-7 col-12">
+              <EmployerDashboardView
+                onClickFilterOptions={this.onClickFilterOptions}
+                isFilterOptionClick={this.state.isFilterOptionClick}
+                onClickEmployer={this.onClickEmployer}
+              />
+            </div>
+            {this.state.employerClick &&
+              <div className="col-xl-3 col-lg-3 col-md-5 col-12 employerDashboardStyle">
+                <EmployerCandidatesDetail />
+              </div>}
           </div>
-          <div className="col-xl-3 col-lg-3 col-md-5 col-12 employerDashboardStyle">
           {this.state.employerClick &&
-            <EmployerGraphDetail
-          a11yProps={this.a11yProps}
-          tabHandleChange={this.tabHandleChange}
-          value={this.state.value}
-          />}
-          </div>
-          </div>
+            <div className='row'>
+              <div className="col-xl-4 col-lg-4 col-md-5 col-12">
+                <EmployerSkillsGraph />
+              </div>
+              <div className="col-xl-4 col-lg-4 col-md-5 col-12 employerDashboardGraphmargin">
+                <EmployerExperienceGraph />
+              </div>
+              <div className="col-xl-4 col-lg-4 col-md-5 col-12 employerDashboardGraphmargin">
+                <EmployerStagesGraph />
+              </div>
+            </div>}
         </div>
-        </div>
-      
+      </div>
+
     );
   }
 }
