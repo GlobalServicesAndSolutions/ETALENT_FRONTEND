@@ -9,7 +9,7 @@ const QuickSettingsAndEvents = () => {
    <Link to='/savejobsandalterts'> <Widget styleName='dashboardQuicklinkcardsStyle'>
       <div>
       <h3 className="card-title mb-2" style={{color:'gray'}}>Alerts</h3>
-      <Link to='/savejobsandalterts'><NotificationsNoneIcon fontSize='large' className='dashboardQuickLinksFont'/></Link>
+      <NotificationsNoneIcon fontSize='large' className='dashboardQuickLinksFont'/>
         </div>
     </Widget></Link>
     </div>

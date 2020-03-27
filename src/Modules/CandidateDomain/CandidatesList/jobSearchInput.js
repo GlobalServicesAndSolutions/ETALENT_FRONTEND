@@ -19,17 +19,17 @@ import RoomIcon from '@material-ui/icons/Room';
 import Tooltip from '@material-ui/core/Tooltip';
 
 const toogleOptions = [
-    <Tooltip title='Grid View' arrow>
+    <Tooltip title='Grid View' key={1} arrow>
         <ToggleButton key={1} value="gridView">
             <AppsIcon id='gridView' />
         </ToggleButton>
     </Tooltip>,
-    <Tooltip title='List View' arrow>
+    <Tooltip title='List View' key={2} arrow>
         <ToggleButton key={2} value="listView">
             <ViewListIcon id='listView' />
         </ToggleButton>
     </Tooltip>,
-    <Tooltip title='Map View' arrow>
+    <Tooltip title='Map View' key={3} arrow>
         <ToggleButton key={3} value="mapView">
             <RoomIcon id='mapView' />
         </ToggleButton>

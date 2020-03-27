@@ -10,11 +10,11 @@ const TotalRequisitionCard = () => {
         <Link to='#'> <Widget styleName='employerDashboardCardsBorder'>
           <div className='employerDashboardQuickCards'>
             <h3 className="card-title mb-2 " style={{ color: 'gray' }}>Requestions</h3>
-            <Link to='#'><LockOpenIcon fontSize='large' className='dashboardQuickLinksFont' /></Link>
+            <LockOpenIcon fontSize='large' className='dashboardQuickLinksFont' />
           </div>
         </Widget></Link>
       </div>
-      <div class="ribbon ribbon-top-right"><span>30</span></div>
+      <div className="ribbon ribbon-top-right"><span>30</span></div>
     </div>
   )
 }

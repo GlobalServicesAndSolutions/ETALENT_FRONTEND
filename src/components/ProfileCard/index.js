@@ -33,7 +33,7 @@ const ProfileCard = ({ onChangeAvailabilitySwitch,
 
                 <div className='row'>
                   <div>
-                    <Tooltip title={availabilitySwitch ? 'Profile is unlocked' : 'Profile is locked'} placement="down" arrow>
+                    <Tooltip title={availabilitySwitch ? 'Profile is unlocked' : 'Profile is locked'} placement="bottom" arrow>
                       <FormGroup row>
                         <FormControlLabel
                           control={
@@ -84,8 +84,6 @@ const ProfileCard = ({ onChangeAvailabilitySwitch,
                       <div>
                       <Rating
                         name="simple-controlled"
-                        value='{ratingValue}'
-                        onChange='{onRatingChange}'
                       />
                     </div>
                   </div>
@@ -114,7 +112,7 @@ const ProfileCard = ({ onChangeAvailabilitySwitch,
             </div>
           </div>
           <fieldset>
-            <div className="app-social-block" style={{ float: 'right' }} >
+            <div className="app-social-block" style={{ float: 'right',marginTop:'-40px' }} >
               <ul className="social-link" >
                 <li>
                   <IconButton className="icon">

@@ -28,7 +28,7 @@ const EmployerDashboardView = ({ onClickFilterOptions, isFilterOptionClick,onCli
     const classes = useStyles();
     return (
         <div className='employerDashboardStyle'>
-        <Widget styleName="jr-card-profile cardScrolling col-xl-12 col-lg-12 col-md-12 overFlow" >
+        <Widget styleName="jr-card-profile cardScrolling col-xl-12 col-lg-12 col-md-12 overFlow employerProfilejobListHeight" >
             <div className="mb-3">
                 <div className='row'>
                     <Paper component="form" className={classes.root}>
@@ -122,6 +122,366 @@ const EmployerDashboardView = ({ onClickFilterOptions, isFilterOptionClick,onCli
                             <td>
                                 I-9/3 Islamabad,Pakistan
                             </td>
+                            <td>
+                                1/13/2020
+                        </td>
+                            <td>
+                                <div style={{ justifyContent: 'space-between', display: 'flex' }}>
+                                    <div>
+                                        Closed
+                                </div>
+                                    <div>
+                                        <CreateIcon fontSize='small' className='stages' />
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                2
+                        </td>
+                            <td>
+                                <Link to='#'> Software Developer</Link>
+                            </td>
+                            <td>
+                                Rehmat Ali
+                        </td>
+                            <td>
+                                IT
+                        </td>
+                            <td>
+                                I-9/3 Islamabad
+                        </td>
+                            <td>
+                                1/13/2020
+                        </td>
+                            <td>
+                                <div style={{ justifyContent: 'space-between', display: 'flex' }}>
+                                    <div>
+                                        Closed
+                                </div>
+                                    <div>
+                                        <CreateIcon fontSize='small' className='stages' />
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                2
+                        </td>
+                            <td>
+                                <Link to='#'> Software Developer</Link>
+                            </td>
+                            <td>
+                                Rehmat Ali
+                        </td>
+                            <td>
+                                IT
+                        </td>
+                            <td>
+                                I-9/3 Islamabad
+                        </td>
+                            <td>
+                                1/13/2020
+                        </td>
+                            <td>
+                                <div style={{ justifyContent: 'space-between', display: 'flex' }}>
+                                    <div>
+                                        Closed
+                                </div>
+                                    <div>
+                                        <CreateIcon fontSize='small' className='stages' />
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                2
+                        </td>
+                            <td>
+                                <Link to='#'> Software Developer</Link>
+                            </td>
+                            <td>
+                                Rehmat Ali
+                        </td>
+                            <td>
+                                IT
+                        </td>
+                            <td>
+                                I-9/3 Islamabad
+                        </td>
+                            <td>
+                                1/13/2020
+                        </td>
+                            <td>
+                                <div style={{ justifyContent: 'space-between', display: 'flex' }}>
+                                    <div>
+                                        Closed
+                                </div>
+                                    <div>
+                                        <CreateIcon fontSize='small' className='stages' />
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                2
+                        </td>
+                            <td>
+                                <Link to='#'> Software Developer</Link>
+                            </td>
+                            <td>
+                                Rehmat Ali
+                        </td>
+                            <td>
+                                IT
+                        </td>
+                            <td>
+                                I-9/3 Islamabad
+                        </td>
+                            <td>
+                                1/13/2020
+                        </td>
+                            <td>
+                                <div style={{ justifyContent: 'space-between', display: 'flex' }}>
+                                    <div>
+                                        Closed
+                                </div>
+                                    <div>
+                                        <CreateIcon fontSize='small' className='stages' />
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                2
+                        </td>
+                            <td>
+                                <Link to='#'> Software Developer</Link>
+                            </td>
+                            <td>
+                                Rehmat Ali
+                        </td>
+                            <td>
+                                IT
+                        </td>
+                            <td>
+                                I-9/3 Islamabad
+                        </td>
+                            <td>
+                                1/13/2020
+                        </td>
+                            <td>
+                                <div style={{ justifyContent: 'space-between', display: 'flex' }}>
+                                    <div>
+                                        Closed
+                                </div>
+                                    <div>
+                                        <CreateIcon fontSize='small' className='stages' />
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                2
+                        </td>
+                            <td>
+                                <Link to='#'> Software Developer</Link>
+                            </td>
+                            <td>
+                                Rehmat Ali
+                        </td>
+                            <td>
+                                IT
+                        </td>
+                            <td>
+                                I-9/3 Islamabad
+                        </td>
+                            <td>
+                                1/13/2020
+                        </td>
+                            <td>
+                                <div style={{ justifyContent: 'space-between', display: 'flex' }}>
+                                    <div>
+                                        Closed
+                                </div>
+                                    <div>
+                                        <CreateIcon fontSize='small' className='stages' />
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                2
+                        </td>
+                            <td>
+                                <Link to='#'> Software Developer</Link>
+                            </td>
+                            <td>
+                                Rehmat Ali
+                        </td>
+                            <td>
+                                IT
+                        </td>
+                            <td>
+                                I-9/3 Islamabad
+                        </td>
+                            <td>
+                                1/13/2020
+                        </td>
+                            <td>
+                                <div style={{ justifyContent: 'space-between', display: 'flex' }}>
+                                    <div>
+                                        Closed
+                                </div>
+                                    <div>
+                                        <CreateIcon fontSize='small' className='stages' />
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                2
+                        </td>
+                            <td>
+                                <Link to='#'> Software Developer</Link>
+                            </td>
+                            <td>
+                                Rehmat Ali
+                        </td>
+                            <td>
+                                IT
+                        </td>
+                            <td>
+                                I-9/3 Islamabad
+                        </td>
+                            <td>
+                                1/13/2020
+                        </td>
+                            <td>
+                                <div style={{ justifyContent: 'space-between', display: 'flex' }}>
+                                    <div>
+                                        Closed
+                                </div>
+                                    <div>
+                                        <CreateIcon fontSize='small' className='stages' />
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                2
+                        </td>
+                            <td>
+                                <Link to='#'> Software Developer</Link>
+                            </td>
+                            <td>
+                                Rehmat Ali
+                        </td>
+                            <td>
+                                IT
+                        </td>
+                            <td>
+                                I-9/3 Islamabad
+                        </td>
+                            <td>
+                                1/13/2020
+                        </td>
+                            <td>
+                                <div style={{ justifyContent: 'space-between', display: 'flex' }}>
+                                    <div>
+                                        Closed
+                                </div>
+                                    <div>
+                                        <CreateIcon fontSize='small' className='stages' />
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                2
+                        </td>
+                            <td>
+                                <Link to='#'> Software Developer</Link>
+                            </td>
+                            <td>
+                                Rehmat Ali
+                        </td>
+                            <td>
+                                IT
+                        </td>
+                            <td>
+                                I-9/3 Islamabad
+                        </td>
+                            <td>
+                                1/13/2020
+                        </td>
+                            <td>
+                                <div style={{ justifyContent: 'space-between', display: 'flex' }}>
+                                    <div>
+                                        Closed
+                                </div>
+                                    <div>
+                                        <CreateIcon fontSize='small' className='stages' />
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                2
+                        </td>
+                            <td>
+                                <Link to='#'> Software Developer</Link>
+                            </td>
+                            <td>
+                                Rehmat Ali
+                        </td>
+                            <td>
+                                IT
+                        </td>
+                            <td>
+                                I-9/3 Islamabad
+                        </td>
+                            <td>
+                                1/13/2020
+                        </td>
+                            <td>
+                                <div style={{ justifyContent: 'space-between', display: 'flex' }}>
+                                    <div>
+                                        Closed
+                                </div>
+                                    <div>
+                                        <CreateIcon fontSize='small' className='stages' />
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                2
+                        </td>
+                            <td>
+                                <Link to='#'> Software Developer</Link>
+                            </td>
+                            <td>
+                                Rehmat Ali
+                        </td>
+                            <td>
+                                IT
+                        </td>
+                            <td>
+                                I-9/3 Islamabad
+                        </td>
                             <td>
                                 1/13/2020
                         </td>

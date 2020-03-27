@@ -297,6 +297,38 @@ margin-top: -30px;
   display: flex;
   justify-content: space-between;
 }
+.employerProfilejobListHeight{
+  max-height: 395px;
+}
+////////////////////////////////////// Employer Stages
+.employerStageHired{
+  background: lightcyan !important;
+}
+.employerStageNewApplication{
+  background: lightgoldenrodyellow !important;
+}
+.employerStageBackgroundCheck{
+  background: lightpink !important;
+}
+.employerStageAssesment{
+  background: lightskyblue !important;
+}
+.employerStageReadyToApply{
+  background: lightgreen !important;
+}
+.employerStageReadyForHired{
+  background: lightblue !important;
+}
+.employerStageInterView{
+  background: lightsalmon !important;
+}
+.employerStageShortList{
+  background: lightslategray !important;
+}
+.employerStageOffers{
+  background: lightyellow !important;
+}
+///////////////////////////////////////////////////////
 .canidatesListGraphCardMargin{
   margin-left: -8px;
   width: 98%;
@@ -423,7 +455,20 @@ p {
   }
   
 }
-
+.EmployerDashboardSmallcard{
+    align-items: center;
+}
+.employerDashboardSmallCardWidth{
+  width: 30%;
+}
+.employerDashboardSmallCardsMargin{
+  margin-bottom: -40px;
+}
+.EmployerDashboardSmallCardsTilte{
+    font-size: 12px !important;
+    margin-bottom: -2.8rem !important;
+    margin-top: -18px;
+}
 .dashboardQuickLinksDiv{
   margin-top: 42px;
   margin-left: 69px;

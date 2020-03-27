@@ -10,11 +10,11 @@ const TotalVendors = () => {
         <Link to='#'> <Widget styleName='employerDashboardCardsBorder'>
           <div className='employerDashboardQuickCards'>
             <h3 className="card-title mb-2 " style={{ color: 'gray' }}>Vendors</h3>
-            <Link to='#'><PeopleIcon fontSize='large' className='dashboardQuickLinksFont' /></Link>
+            <PeopleIcon fontSize='large' className='dashboardQuickLinksFont' />
           </div>
         </Widget></Link>
       </div>
-      <div class="ribbon ribbon-top-right"><span>10</span></div>
+      <div className="ribbon ribbon-top-right"><span>10</span></div>
     </div>
   )
 }

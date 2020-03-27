@@ -10,11 +10,11 @@ const HiredCandidates = () => {
         <Link to='#'> <Widget styleName='employerDashboardCardsBorder'>
           <div className='employerDashboardQuickCards'>
             <h3 className="card-title mb-2 " style={{ color: 'gray' }}>Hired Candidates</h3>
-            <Link to='#'> <DoneOutlineIcon fontSize='large' className='dashboardQuickLinksFont' /></Link>
+            <DoneOutlineIcon fontSize='large' className='dashboardQuickLinksFont' />
           </div>
         </Widget></Link>
       </div>
-      <div class="ribbon ribbon-top-right"><span>50</span></div>
+      <div className="ribbon ribbon-top-right"><span>50</span></div>
     </div>
   )
 }
